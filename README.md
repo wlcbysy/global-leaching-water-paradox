@@ -4,7 +4,7 @@
 
 Code and harmonized data accompanying an Analysis prepared for *Nature Water*. The study asks when irrigation with brackish water can replace freshwater withdrawals, and how much of a withdrawal saving survives as reduced basin depletion after leaching. Field comparisons relate irrigation-water electrical conductivity (ECw) to crop production and separately measured soil salinity. A second synthesis estimates hydraulic responses and distinguishes consumptive evapotranspiration (ET) from irrigation delivered. The spatial analysis links those estimates to a 0.5° grid and basin water and salt budgets.
 
-The field-harvest model estimates 90% of the fitted low-salinity plateau at 3.519 dS/m (95% family-bootstrap interval 2.899–4.282, 730 contrasts in 96 families). The broader continuous-irrigation production model supplies the 3.547 dS/m accounting reference. At that reference, modeled annual basin depletion relief is +72.72 km³ under an equal-production water cap and −6.36 km³ using the observed ET ratio. The negative value denotes increased depletion.
+The field-harvest model estimates 90% of the fitted low-salinity plateau at 3.519 dS/m (95% family-bootstrap interval 2.899–4.282, 730 contrasts in 96 families). The broader continuous-irrigation production model supplies the 3.547 dS/m accounting reference. A complete Arm B WUE denominator audit covering all 93 WUE-screened studies (91 independent families; 482 records) yields a verified consumptive-ET ratio of 1.0016 (95% CI 0.9769–1.0260; 28 families across 6 countries: 22 China, 6 non-China across Australia, India, Iran, Egypt, and Canada; direct ET alone 0.9950 across 21 families in 4 countries). At the accounting reference, modeled annual basin depletion relief is +72.72 km³ under an equal-production water cap (12/80 exceeded basins rescued) and −12.08 km³ (95% CI −24.54 to +0.53; 0/80 rescued) using verified ET (direct ET alone: −8.71 km³, 0/80 rescued; break-even requires 89.9% usable same-basin recovery of incremental leaching). Negative values denote increased depletion.
 
 ## Repository contents
 
@@ -50,7 +50,7 @@ node code/build_figure_source_workbooks.mjs
 python code/verify_all_pillars_and_gates.py
 ```
 
-The Arm A run includes the harvest-only model, matched monitoring and family-level SAR checks. `python code/field_threshold_checks.py` runs that subset independently. Arm B recomputes the effects from the harmonized rows and the ET ratios from the 64-family audit. The archived source-selection flow, mapped trial coordinates and district observation summaries enter the displays as evidence. The two generators together write 13 PDFs and 13 PNGs to `outputs/figures/`. Source workbooks use regenerated panel CSVs when available. The verifier checks every indexed worksheet against its CSV, including identifier types and numeric precision.
+The Arm A run includes the harvest-only model, matched monitoring and family-level SAR checks. `python code/field_threshold_checks.py` runs that subset independently. Arm B recomputes the effects from the harmonized rows and the ET ratios from the complete 93-study (91-family) audit. The archived source-selection flow, mapped trial coordinates and district observation summaries enter the displays as evidence. The two generators together write 13 PDFs and 13 PNGs to `outputs/figures/`. Source workbooks use regenerated panel CSVs when available. The verifier checks every indexed worksheet against its CSV, including identifier types and numeric precision.
 
 For an optional extraction check, run the following from the same environment.
 
@@ -61,9 +61,9 @@ python code/generate_10pct_human_audit_checklist.py
 
 The second command generates a blank recoding form for the registered sample. The completed observations are preserved in `qa/`.
 
-### Geographic coverage reported in two project outputs
+### Geographic coverage and area of applicability
 
-Extended Data Figure 4 and its released site and PCA tables contain 486 Arm B site coordinates and 296 matched training cells. Recalculation from these coordinates places 2,614 of 2,783 evaluated cells inside the area of applicability (96.92% of evaluated irrigated area). The original Pillar 3 summary and manuscript caption refer to 295 training cells, 2,606 cells inside and 96.84% coverage. The repository preserves both original records. The regenerated full-evidence diagnostic and figure follow the released site coordinates. One ancillary geographic comparison, restricted to the original brackish-water screening subset, is carried forward from the archived summary because membership of that subset is unavailable in the public site table.
+Extended Data Figure 4, its released site and PCA tables, and the Pillar 3 applicability summary are fully harmonized on the 486 Arm B site coordinates and 296 matched 0.5° empirical training cells. Both place 2,614 of 2,783 evaluated irrigated cells inside the area of applicability (96.92% of evaluated irrigated area; 169 cells / 2.99 Mha outside at DI > 1.754; PC1 35.7%, PC2 19.3%). One ancillary geographic comparison restricted to the original brackish-water screening subset is carried forward from the archived summary because membership of that subset is unavailable in the public site table.
 
 ## Level 2 — Rebuild the spatial and climate analysis
 
@@ -90,7 +90,7 @@ The 1991–2019 baseline uses 67,420 land cells. Five climate models, three path
 
 ## Citation and reuse
 
-Cite Yu, S.-Y., Du, J. & Li, S., *Supply, soil hydraulic and consumptive limits govern the global leaching-water paradox*, code and harmonized data, v1.0.0. The version release links to the citable archive. [GitHub release](https://github.com/wlcbysy/global-leaching-water-paradox/releases/tag/v1.0.0)
+Cite Yu, S.-Y., Du, J. & Li, S., *Supply, soil hydraulic and consumptive limits govern the global leaching-water paradox*, code and harmonized data, v1.1.0 (Concept DOI: https://doi.org/10.5281/zenodo.24564111). The version release links to the citable archive. [GitHub release](https://github.com/wlcbysy/global-leaching-water-paradox/releases/tag/v1.1.0)
 
 Code is licensed under MIT. Author-created harmonized data and figure source data are licensed under CC BY 4.0. Embedded third-party components retain their original terms. [License](LICENSE) · [Dataset references and file specifications](DATA_SOURCES.md)
 

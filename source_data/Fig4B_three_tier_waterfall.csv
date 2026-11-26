@@ -6,7 +6,7 @@ withdrawal,H_wd_conditional,187.29,,
 consumption,return_flow_credit,0.0,,
 consumption,B_gw_credit,2.16,,
 consumption,H_cons_conditional,83.99,60.3,105.89
-consumption,H_obs_et_ratio,4.9,-24.51,16.14
+consumption,H_obs_et_ratio,-0.82,-13.28,11.8
 consumption,delta_V_leach,13.43,,
 basin,net_depletion_relief_equal_prod,72.72,49.04,94.63
-basin,net_depletion_relief_actual_et,-6.36,-35.77,4.87
+basin,net_depletion_relief_actual_et,-12.08,-24.54,0.53

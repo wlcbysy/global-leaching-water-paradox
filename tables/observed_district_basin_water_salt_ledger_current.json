@@ -11,10 +11,10 @@
     "basin_boundary_new_shallow_gw_salt_mt_yr": -37.78,
     "field_salt_debt_pre_mt_yr": 130.23,
     "field_salt_debt_post_equal_prod_mt_yr": 178.35,
-    "field_salt_debt_post_actual_et_mt_yr": 284.6,
+    "field_salt_debt_post_actual_et_mt_yr": 285.65,
     "basin_boundary_salt_debt_post_equal_prod_mt_yr": 77.36,
-    "basin_boundary_salt_debt_post_actual_et_mt_yr": 119.9,
-    "interpretation": "At the field boundary, reusing internal return flows reapplies dissolved salts onto crops (+486.88 Mt/yr recycled gross) and lifts field salt-export obligation from 130.23 to 178.35 Mt/yr (equal-production capped) or 284.60 Mt/yr (actual-management ET); at the basin boundary, internal return-flow recycling is an internal transfer rather than net new basin salt creation, whereas shallow brackish groundwater mobilization and freshwater displacement sum to net basin-boundary shift (-37.78 Mt/yr)."
+    "basin_boundary_salt_debt_post_actual_et_mt_yr": 120.55,
+    "interpretation": "At the field boundary, reusing internal return flows reapplies dissolved salts onto crops (+486.88 Mt/yr recycled gross) and lifts field salt-export obligation from 130.23 to 178.35 Mt/yr (equal-production capped) or 285.65 Mt/yr (actual-management ET); at the basin boundary, internal return-flow recycling is an internal transfer rather than net new basin salt creation, whereas shallow brackish groundwater mobilization and freshwater displacement sum to net basin-boundary shift (-37.78 Mt/yr)."
   },
   "usgs_ucrb_benchmark": {
     "doi": "10.5066/P1K8G7JS",

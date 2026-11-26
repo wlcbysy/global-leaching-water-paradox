@@ -1,9 +1,7 @@
 {
   "script": "pillar2_armB_hydraulic_model.py",
   "seed": 20261124,
-  "upstream_master_mtime": "2026-11-26T09:33:20.891127+00:00",
-  "upstream_master_rows": 13462,
-  "upstream_master_sha256": "7f668a28f359bb60b0edcb3687f5b1b4606aadc191d2c0f71ace49c19006b68b",
+  "harmonized_input_sha256": "9cf0c41eb71bfe2d4fd242f80610ab384b14905efc709c75b9cabe1dd1ccf739",
   "total_merged_rows": 6879,
   "source_corpus_counts": {
     "core_reclamation_corpus": 5965,
@@ -574,135 +572,167 @@
     }
   },
   "comeasured_et_ratio": {
-    "audit_source": "tables/armB_wue_et_64families_audit_summary.json",
-    "n_families": 18,
-    "n_pairs_verified": 129,
-    "et_ratio_median": 0.9904,
+    "audit_source": "data/harmonized/armB_wue_et_64families_audit_current.csv",
+    "n_families": 28,
+    "n_pairs_verified": 279,
+    "et_ratio_median": 1.0016,
     "et_ratio_median_ci95": [
-      0.9684,
-      1.048
+      0.9769,
+      1.026
     ],
-    "et_ratio_mean": 0.9908,
+    "et_ratio_mean": 0.9992,
     "et_ratio_mean_ci95": [
-      0.9508,
-      1.0274
+      0.9707,
+      1.0295
     ],
-    "implied_et_pct_change_median": -0.96,
-    "implied_et_saving_frac_median": 0.0096,
+    "implied_et_pct_change_median": 0.16,
+    "implied_et_saving_frac_median": -0.0016,
     "implied_et_saving_frac_ci95": [
-      -0.048,
-      0.0316
+      -0.026,
+      0.0231
     ],
-    "share_families_et_increased": 0.3889,
+    "share_families_et_increased": 0.5,
     "stratification": {
       "A_direct_reported_ET": {
-        "n_pairs": 101,
-        "n_families": 15,
-        "n_pairs_et_increased": 49,
-        "n_families_et_increased": 5,
-        "share_families_increased": 0.3333,
-        "median_ln_ratio": -0.02333,
-        "mean_ln_ratio": -0.0168,
-        "ratio_median": 0.9769,
+        "n_pairs": 216,
+        "n_families": 21,
+        "n_unique_dois": 23,
+        "countries": {
+          "China": 17,
+          "Australia": 2,
+          "India": 1,
+          "Iran": 1
+        },
+        "n_pairs_et_increased": 95,
+        "n_families_et_increased": 9,
+        "share_families_increased": 0.4286,
+        "median_ln_ratio": -0.00503,
+        "mean_ln_ratio": -0.00792,
+        "ratio_median": 0.995,
         "ratio_median_ci95": [
           0.9626,
-          1.0606
+          1.0181
         ],
-        "ratio_mean": 0.9833,
+        "ratio_mean": 0.9921,
         "ratio_mean_ci95": [
-          0.9397,
-          1.0284
+          0.9572,
+          1.0304
         ],
-        "implied_saving_frac_median": 0.0231,
+        "implied_saving_frac_median": 0.005,
         "implied_saving_frac_ci95": [
-          -0.0606,
+          -0.0181,
           0.0374
         ]
       },
       "B_inferred_Y_over_WUE_ET": {
-        "n_pairs": 28,
-        "n_families": 4,
-        "n_pairs_et_increased": 21,
-        "n_families_et_increased": 3,
+        "n_pairs": 63,
+        "n_families": 8,
+        "n_unique_dois": 8,
+        "countries": {
+          "China": 6,
+          "Egypt": 1,
+          "Canada": 1
+        },
+        "n_pairs_et_increased": 48,
+        "n_families_et_increased": 6,
         "share_families_increased": 0.75,
-        "median_ln_ratio": 0.02012,
-        "mean_ln_ratio": 0.0247,
-        "ratio_median": 1.0203,
+        "median_ln_ratio": 0.0151,
+        "mean_ln_ratio": 0.01987,
+        "ratio_median": 1.0152,
         "ratio_median_ci95": [
-          0.9858,
-          1.0755
+          0.9977,
+          1.0355
         ],
-        "ratio_mean": 1.025,
+        "ratio_mean": 1.0201,
         "ratio_mean_ci95": [
-          0.9956,
-          1.0576
+          1.0037,
+          1.0391
         ],
-        "implied_saving_frac_median": -0.0203,
+        "implied_saving_frac_median": -0.0152,
         "implied_saving_frac_ci95": [
-          -0.0755,
-          0.0142
+          -0.0355,
+          0.0023
         ]
       },
       "verified_consumptive_ET_combined_AB": {
-        "n_pairs": 129,
-        "n_families": 18,
-        "n_pairs_et_increased": 70,
-        "n_families_et_increased": 7,
-        "share_families_increased": 0.3889,
-        "median_ln_ratio": -0.00964,
-        "mean_ln_ratio": -0.00928,
-        "ratio_median": 0.9904,
+        "n_pairs": 279,
+        "n_families": 28,
+        "n_unique_dois": 30,
+        "countries": {
+          "China": 22,
+          "Australia": 2,
+          "India": 1,
+          "Iran": 1,
+          "Egypt": 1,
+          "Canada": 1
+        },
+        "n_pairs_et_increased": 143,
+        "n_families_et_increased": 14,
+        "share_families_increased": 0.5,
+        "median_ln_ratio": 0.00163,
+        "mean_ln_ratio": -0.00075,
+        "ratio_median": 1.0016,
         "ratio_median_ci95": [
-          0.9684,
-          1.048
+          0.9769,
+          1.026
         ],
-        "ratio_mean": 0.9908,
+        "ratio_mean": 0.9992,
         "ratio_mean_ci95": [
-          0.9508,
-          1.0274
+          0.9707,
+          1.0295
         ],
-        "implied_saving_frac_median": 0.0096,
+        "implied_saving_frac_median": -0.0016,
         "implied_saving_frac_ci95": [
-          -0.048,
-          0.0316
+          -0.026,
+          0.0231
         ]
       },
       "C_IWUE_irrigation_supply_ratio": {
-        "n_pairs": 97,
-        "n_families": 20,
-        "n_pairs_et_increased": 20,
-        "n_families_et_increased": 5,
-        "share_families_increased": 0.25,
-        "median_ln_ratio": -0.00565,
-        "mean_ln_ratio": -0.10846,
-        "ratio_median": 0.9944,
+        "n_pairs": 169,
+        "n_families": 30,
+        "n_unique_dois": 30,
+        "countries": {
+          "Egypt": 12,
+          "China": 9,
+          "India": 4,
+          "Uzbekistan": 2,
+          "Brazil": 1,
+          "Iraq": 1,
+          "Senegal": 1
+        },
+        "n_pairs_et_increased": 35,
+        "n_families_et_increased": 6,
+        "share_families_increased": 0.2,
+        "median_ln_ratio": -0.0066,
+        "mean_ln_ratio": -0.07739,
+        "ratio_median": 0.9934,
         "ratio_median_ci95": [
-          0.9094,
+          0.932,
           1.0
         ],
-        "ratio_mean": 0.8972,
+        "ratio_mean": 0.9255,
         "ratio_mean_ci95": [
-          0.7811,
-          1.002
+          0.8479,
+          1.0036
         ],
-        "implied_saving_frac_median": 0.0056,
+        "implied_saving_frac_median": 0.0066,
         "implied_saving_frac_ci95": [
           0.0,
-          0.0906
+          0.068
         ]
       },
-      "D_unclear_or_non_WUE_families": 26,
+      "D_unclear_or_non_WUE_families": 32,
       "families_by_primary_category": {
-        "D_unclear_or_non_WUE": 25,
-        "C_IWUE_irrigation_supply": 21,
-        "A_direct_reported_ET": 15,
-        "B_inferred_Y_over_WUE_ET": 3
+        "D_unclear_or_non_WUE": 32,
+        "C_IWUE_irrigation_supply": 31,
+        "A_direct_reported_ET": 21,
+        "B_inferred_Y_over_WUE_ET": 7
       },
       "records_by_category": {
-        "A_direct_reported_ET": 101,
-        "C_IWUE_irrigation_supply": 99,
-        "B_inferred_Y_over_WUE_ET": 28,
-        "D_unclear_or_non_WUE": 27
+        "A_direct_reported_ET": 216,
+        "C_IWUE_irrigation_supply": 171,
+        "B_inferred_Y_over_WUE_ET": 63,
+        "D_unclear_or_non_WUE": 32
       }
     },
     "legacy_unverified_cleaned_reference": {
@@ -831,111 +861,6 @@
         ]
       }
     }
-  },
-  "excluded_non_wue_contaminants": {
-    "count": 35,
-    "sample": [
-      {
-        "family_id": "DOI_10.3389/fpls.2026.1774960",
-        "unit": "kg/kg",
-        "source_locator": "Table 1 (GHGI column)"
-      },
-      {
-        "family_id": "DOI_10.3389/fpls.2026.1774960",
-        "unit": "kg/kg",
-        "source_locator": "Table 1 (GHGI column)"
-      },
-      {
-        "family_id": "DOI_10.3389/fpls.2026.1774960",
-        "unit": "kg/kg",
-        "source_locator": "Table 1 (GHGI column)"
-      },
-      {
-        "family_id": "DOI_10.3389/fpls.2026.1774960",
-        "unit": "kg/kg",
-        "source_locator": "Table 1 (GHGI column)"
-      },
-      {
-        "family_id": "DOI_10.3389/fpls.2026.1774960",
-        "unit": "kg/kg",
-        "source_locator": "Table 1 (GHGI column)"
-      },
-      {
-        "family_id": "DOI_10.3389/fpls.2026.1774960",
-        "unit": "kg/kg",
-        "source_locator": "Table 1 (GHGI column)"
-      },
-      {
-        "family_id": "DOI_10.3389/fpls.2026.1774960",
-        "unit": "kg/kg",
-        "source_locator": "Table 1 (GHGI column)"
-      },
-      {
-        "family_id": "DOI_10.3389/fpls.2026.1774960",
-        "unit": "kg/kg",
-        "source_locator": "Table 1 (GHGI column)"
-      },
-      {
-        "family_id": "DOI_10.3389/fpls.2026.1774960",
-        "unit": "kg/kg",
-        "source_locator": "Table 1 (GHGI column)"
-      },
-      {
-        "family_id": "DOI_10.3389/fpls.2026.1774960",
-        "unit": "kg/kg",
-        "source_locator": "Table 1 (GHGI column)"
-      },
-      {
-        "family_id": "DOI_10.3389/fpls.2026.1774960",
-        "unit": "kg/kg",
-        "source_locator": "Table 1 (GHGI column)"
-      },
-      {
-        "family_id": "DOI_10.3389/fpls.2026.1774960",
-        "unit": "kg/kg",
-        "source_locator": "Table 1 (GHGI column)"
-      },
-      {
-        "family_id": "DOI_10.1016/j.heliyon.2023.e17816",
-        "unit": "mmol CO2 mol-1 H2O",
-        "source_locator": "Table 1"
-      },
-      {
-        "family_id": "DOI_10.1016/j.heliyon.2023.e17816",
-        "unit": "mmol CO2 mol-1 H2O",
-        "source_locator": "Table 1"
-      },
-      {
-        "family_id": "DOI_10.1016/j.heliyon.2023.e17816",
-        "unit": "mmol CO2 mol-1 H2O",
-        "source_locator": "Table 1"
-      },
-      {
-        "family_id": "DOI_10.1016/j.heliyon.2023.e17816",
-        "unit": "mmol CO2 mol-1 H2O",
-        "source_locator": "Table 1"
-      },
-      {
-        "family_id": "DOI_10.1016/j.still.2026.107425",
-        "unit": "cm3/cm3",
-        "source_locator": "Table 3"
-      },
-      {
-        "family_id": "DOI_10.1016/j.still.2026.107425",
-        "unit": "cm3/cm3",
-        "source_locator": "Table 3"
-      },
-      {
-        "family_id": "FAM_SATKHIRA_ISLAM_2024",
-        "unit": "kg CO2 eq/ha",
-        "source_locator": "Table 5 GWP"
-      },
-      {
-        "family_id": "DOI_10.1007/s42729-024-01798-7",
-        "unit": "t/hm2/d",
-        "source_locator": "Table 1 (Vmax)"
-      }
-    ]
   },
   "dual_pathway_hydraulic_vs_ec": {
     "sign_convention_note": "Negative soil_EC lnRR indicates salinity reduction (mean Arm B soil_EC lnRR = -0.251); a negative slope/correlation implies larger hydraulic gain associates with stronger EC reduction, whereas P > 0.45 indicates no monotonic statistical coupling.",

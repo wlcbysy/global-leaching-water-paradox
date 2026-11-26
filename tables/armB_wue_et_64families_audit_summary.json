@@ -1,250 +1,466 @@
 {
-  "total_audited_records": 255,
-  "total_families_audited": 64,
+  "audit_scope": "Complete 100% Arm B WUE denominator audit (all 83 cleaned WUE clusters + 10 previously screened non-WUE exclusions = 93 study records across 91 independent experimental families, clustering 3 Pingluo Ningxia sister DOIs into 1 family).",
+  "total_audited_records": 482,
+  "total_studies_audited": 93,
+  "total_families_audited": 91,
   "families_by_primary_category": {
-    "D_unclear_or_non_WUE": 25,
-    "C_IWUE_irrigation_supply": 21,
-    "A_direct_reported_ET": 15,
-    "B_inferred_Y_over_WUE_ET": 3
+    "D_unclear_or_non_WUE": 32,
+    "C_IWUE_irrigation_supply": 31,
+    "A_direct_reported_ET": 21,
+    "B_inferred_Y_over_WUE_ET": 7
   },
   "records_by_category": {
-    "A_direct_reported_ET": 101,
-    "C_IWUE_irrigation_supply": 99,
-    "B_inferred_Y_over_WUE_ET": 28,
-    "D_unclear_or_non_WUE": 27
+    "A_direct_reported_ET": 216,
+    "C_IWUE_irrigation_supply": 171,
+    "B_inferred_Y_over_WUE_ET": 63,
+    "D_unclear_or_non_WUE": 32
   },
   "A_direct_reported_ET": {
-    "n_pairs": 101,
-    "n_families": 15,
-    "n_pairs_et_increased": 49,
-    "n_families_et_increased": 5,
-    "share_families_increased": 0.3333,
-    "median_ln_ratio": -0.02333,
-    "mean_ln_ratio": -0.0168,
-    "ratio_median": 0.9769,
+    "n_pairs": 216,
+    "n_families": 21,
+    "n_unique_dois": 23,
+    "countries": {
+      "China": 17,
+      "Australia": 2,
+      "India": 1,
+      "Iran": 1
+    },
+    "n_pairs_et_increased": 95,
+    "n_families_et_increased": 9,
+    "share_families_increased": 0.4286,
+    "median_ln_ratio": -0.00503,
+    "mean_ln_ratio": -0.00792,
+    "ratio_median": 0.995,
     "ratio_median_ci95": [
       0.9626,
-      1.0606
+      1.0181
     ],
-    "ratio_mean": 0.9833,
+    "ratio_mean": 0.9921,
     "ratio_mean_ci95": [
-      0.9397,
-      1.0284
+      0.9572,
+      1.0304
     ],
-    "implied_saving_frac_median": 0.0231,
+    "implied_saving_frac_median": 0.005,
     "implied_saving_frac_ci95": [
-      -0.0606,
+      -0.0181,
       0.0374
     ]
   },
   "B_inferred_Y_over_WUE_ET": {
-    "n_pairs": 28,
-    "n_families": 4,
-    "n_pairs_et_increased": 21,
-    "n_families_et_increased": 3,
+    "n_pairs": 63,
+    "n_families": 8,
+    "n_unique_dois": 8,
+    "countries": {
+      "China": 6,
+      "Egypt": 1,
+      "Canada": 1
+    },
+    "n_pairs_et_increased": 48,
+    "n_families_et_increased": 6,
     "share_families_increased": 0.75,
-    "median_ln_ratio": 0.02012,
-    "mean_ln_ratio": 0.0247,
-    "ratio_median": 1.0203,
+    "median_ln_ratio": 0.0151,
+    "mean_ln_ratio": 0.01987,
+    "ratio_median": 1.0152,
     "ratio_median_ci95": [
-      0.9858,
-      1.0755
+      0.9977,
+      1.0355
     ],
-    "ratio_mean": 1.025,
+    "ratio_mean": 1.0201,
     "ratio_mean_ci95": [
-      0.9956,
-      1.0576
+      1.0037,
+      1.0391
     ],
-    "implied_saving_frac_median": -0.0203,
+    "implied_saving_frac_median": -0.0152,
     "implied_saving_frac_ci95": [
-      -0.0755,
-      0.0142
+      -0.0355,
+      0.0023
     ]
   },
   "verified_consumptive_ET_combined_AB": {
-    "n_pairs": 129,
-    "n_families": 18,
-    "n_pairs_et_increased": 70,
-    "n_families_et_increased": 7,
-    "share_families_increased": 0.3889,
-    "median_ln_ratio": -0.00964,
-    "mean_ln_ratio": -0.00928,
-    "ratio_median": 0.9904,
+    "n_pairs": 279,
+    "n_families": 28,
+    "n_unique_dois": 30,
+    "countries": {
+      "China": 22,
+      "Australia": 2,
+      "India": 1,
+      "Iran": 1,
+      "Egypt": 1,
+      "Canada": 1
+    },
+    "n_pairs_et_increased": 143,
+    "n_families_et_increased": 14,
+    "share_families_increased": 0.5,
+    "median_ln_ratio": 0.00163,
+    "mean_ln_ratio": -0.00075,
+    "ratio_median": 1.0016,
     "ratio_median_ci95": [
-      0.9684,
-      1.048
+      0.9769,
+      1.026
     ],
-    "ratio_mean": 0.9908,
+    "ratio_mean": 0.9992,
     "ratio_mean_ci95": [
-      0.9508,
-      1.0274
+      0.9707,
+      1.0295
     ],
-    "implied_saving_frac_median": 0.0096,
+    "implied_saving_frac_median": -0.0016,
     "implied_saving_frac_ci95": [
-      -0.048,
-      0.0316
+      -0.026,
+      0.0231
     ]
   },
   "C_IWUE_irrigation_supply_ratio": {
-    "n_pairs": 97,
-    "n_families": 20,
-    "n_pairs_et_increased": 20,
-    "n_families_et_increased": 5,
-    "share_families_increased": 0.25,
-    "median_ln_ratio": -0.00565,
-    "mean_ln_ratio": -0.10846,
-    "ratio_median": 0.9944,
+    "n_pairs": 169,
+    "n_families": 30,
+    "n_unique_dois": 30,
+    "countries": {
+      "Egypt": 12,
+      "China": 9,
+      "India": 4,
+      "Uzbekistan": 2,
+      "Brazil": 1,
+      "Iraq": 1,
+      "Senegal": 1
+    },
+    "n_pairs_et_increased": 35,
+    "n_families_et_increased": 6,
+    "share_families_increased": 0.2,
+    "median_ln_ratio": -0.0066,
+    "mean_ln_ratio": -0.07739,
+    "ratio_median": 0.9934,
     "ratio_median_ci95": [
-      0.9094,
+      0.932,
       1.0
     ],
-    "ratio_mean": 0.8972,
+    "ratio_mean": 0.9255,
     "ratio_mean_ci95": [
-      0.7811,
-      1.002
+      0.8479,
+      1.0036
     ],
-    "implied_saving_frac_median": 0.0056,
+    "implied_saving_frac_median": 0.0066,
     "implied_saving_frac_ci95": [
       0.0,
-      0.0906
+      0.068
     ]
   },
-  "D_unclear_or_non_WUE_families": 26,
+  "geographic_and_design_sensitivity": {
+    "verified_ET_china": {
+      "n_pairs": 217,
+      "n_families": 22,
+      "n_unique_dois": 24,
+      "countries": {
+        "China": 22
+      },
+      "n_pairs_et_increased": 94,
+      "n_families_et_increased": 9,
+      "share_families_increased": 0.4091,
+      "median_ln_ratio": -0.00466,
+      "mean_ln_ratio": -0.01157,
+      "ratio_median": 0.9954,
+      "ratio_median_ci95": [
+        0.9715,
+        1.0107
+      ],
+      "ratio_mean": 0.9885,
+      "ratio_mean_ci95": [
+        0.9569,
+        1.0158
+      ],
+      "implied_saving_frac_median": 0.0046,
+      "implied_saving_frac_ci95": [
+        -0.0107,
+        0.0285
+      ]
+    },
+    "verified_ET_non_china": {
+      "n_pairs": 62,
+      "n_families": 6,
+      "n_unique_dois": 6,
+      "countries": {
+        "Australia": 2,
+        "India": 1,
+        "Iran": 1,
+        "Egypt": 1,
+        "Canada": 1
+      },
+      "n_pairs_et_increased": 49,
+      "n_families_et_increased": 5,
+      "share_families_increased": 0.8333,
+      "median_ln_ratio": 0.05299,
+      "mean_ln_ratio": 0.0389,
+      "ratio_median": 1.0544,
+      "ratio_median_ci95": [
+        0.9474,
+        1.1249
+      ],
+      "ratio_mean": 1.0397,
+      "ratio_mean_ci95": [
+        0.9641,
+        1.1054
+      ],
+      "implied_saving_frac_median": -0.0544,
+      "implied_saving_frac_ci95": [
+        -0.1249,
+        0.0526
+      ]
+    },
+    "direct_ET_non_china": {
+      "n_pairs": 47,
+      "n_families": 4,
+      "n_unique_dois": 4,
+      "countries": {
+        "Australia": 2,
+        "India": 1,
+        "Iran": 1
+      },
+      "n_pairs_et_increased": 34,
+      "n_families_et_increased": 3,
+      "share_families_increased": 0.75,
+      "median_ln_ratio": 0.03837,
+      "mean_ln_ratio": 0.03143,
+      "ratio_median": 1.0391,
+      "ratio_median_ci95": [
+        0.8925,
+        1.1766
+      ],
+      "ratio_mean": 1.0319,
+      "ratio_mean_ci95": [
+        0.9347,
+        1.15
+      ],
+      "implied_saving_frac_median": -0.0391,
+      "implied_saving_frac_ci95": [
+        -0.1766,
+        0.1075
+      ]
+    },
+    "verified_ET_excluding_deficit_irrigation_confounded": {
+      "n_pairs": 232,
+      "n_families": 26,
+      "n_unique_dois": 26,
+      "countries": {
+        "China": 20,
+        "Australia": 2,
+        "India": 1,
+        "Iran": 1,
+        "Egypt": 1,
+        "Canada": 1
+      },
+      "n_pairs_et_increased": 143,
+      "n_families_et_increased": 14,
+      "share_families_increased": 0.5385,
+      "median_ln_ratio": 0.00759,
+      "mean_ln_ratio": 0.01158,
+      "ratio_median": 1.0076,
+      "ratio_median_ci95": [
+        0.9858,
+        1.0329
+      ],
+      "ratio_mean": 1.0116,
+      "ratio_mean_ci95": [
+        0.9852,
+        1.0366
+      ],
+      "implied_saving_frac_median": -0.0076,
+      "implied_saving_frac_ci95": [
+        -0.0329,
+        0.0142
+      ]
+    }
+  },
+  "D_unclear_or_non_WUE_families": 32,
   "D_reasons": [
     {
       "idx": 3,
       "family_id": "DOI_10.1002/ldr.4370",
+      "country": "China",
       "exclusion_reason": "Full text unavailable (ABSTRACT_ONLY_NO_LOCAL_PDF); abstract does not specify WUE denominator formula or ET values."
     },
     {
       "idx": 4,
       "family_id": "DOI_10.1002/nzc2.70099",
+      "country": "Iraq",
       "exclusion_reason": "Non-WUE metric (Table 4 RWC in %, i.e. leaf relative water content, not water use efficiency) and full text unavailable (ABSTRACT_ONLY_NO_LOCAL_PDF)."
     },
     {
       "idx": 5,
       "family_id": "DOI_10.1007/s00271-021-00759-7",
+      "country": "Iran",
       "exclusion_reason": "Full text and abstract unavailable (UNAVAILABLE_NO_LOCAL_PDF); cannot verify WUE denominator definition or ET."
     },
     {
       "idx": 6,
       "family_id": "DOI_10.1007/s10343-026-01359-1",
+      "country": "Egypt",
       "exclusion_reason": "Full text and abstract unavailable (UNAVAILABLE_NO_LOCAL_PDF); cannot verify WUE denominator definition or ET."
     },
     {
       "idx": 7,
       "family_id": "DOI_10.1007/s10811-024-03277-z",
+      "country": "Chile",
       "exclusion_reason": "Non-WUE metric (Table 5 yield efficiency in kg/m2 PARi, radiation interception efficiency, not water use efficiency) and full text unavailable (UNAVAILABLE_NO_LOCAL_PDF)."
     },
     {
       "idx": 11,
       "family_id": "DOI_10.1007/s40333-023-0095-3",
+      "country": "Egypt",
       "exclusion_reason": "Full text and abstract unavailable (UNAVAILABLE_NO_LOCAL_PDF); packet lists both WUE and IWUE in Table 4 without Methods definitions or ET table."
     },
     {
       "idx": 13,
       "family_id": "DOI_10.1007/s42729-021-00755-y",
+      "country": "Egypt",
       "exclusion_reason": "Full text and abstract unavailable (UNAVAILABLE_NO_LOCAL_PDF); cannot verify WUE denominator definition or ET."
     },
     {
       "idx": 14,
       "family_id": "DOI_10.1007/s42729-024-01798-7",
+      "country": "China",
       "exclusion_reason": "Non-WUE metric (Table 1 Vmax in t/hm2/d, maximum dry matter accumulation rate, not water use efficiency) and full text unavailable (UNAVAILABLE_NO_LOCAL_PDF)."
-    },
-    {
-      "idx": 15,
-      "family_id": "DOI_10.1016/0167-1987(92)90023-5",
-      "exclusion_reason": "Strict pairing failure / treatment mismatch: Table 7 reports WUE only as marginal factor means (Tillage Z and Stubble So/S), whereas Table 5 reports grain yield per individual factorial treatment (ZS vs ZSo, without marginal So/S means). Candidate rows erroneously paired tillage marginal Z (7.44, 9.67, 15.33, 9.16) against Z (1984) or stubble marginal So (1985-1987) with ZS vs ZSo yield."
-    },
-    {
-      "idx": 18,
-      "family_id": "DOI_10.1016/j.agwat.2018.06.037",
-      "exclusion_reason": "Numerator mismatch: Table 7 maize Crop Yield (49135-61418 kg/ha) is fresh forage yield, which does not match the dry-weight numerator of WUE (1.18-1.70 kg/m3; 49135 / 13150 m3 = 3.74 != 1.18); also WUE uses gross water supply V (I+P), not ET."
-    },
-    {
-      "idx": 18,
-      "family_id": "DOI_10.1016/j.agwat.2018.06.037",
-      "exclusion_reason": "Numerator mismatch: Table 7 maize Crop Yield (49135-61418 kg/ha) is fresh forage yield, which does not match the dry-weight numerator of WUE (1.18-1.70 kg/m3; 49135 / 13150 m3 = 3.74 != 1.18); also WUE uses gross water supply V (I+P), not ET."
     },
     {
       "idx": 27,
       "family_id": "DOI_10.1016/j.agwat.2026.110498",
+      "country": "China",
       "exclusion_reason": "Inaccessible fulltext (ABSTRACT_ONLY_NO_LOCAL_PDF; no local PDF to verify Methods formula or Table 4a/4b values); abstract indicates irrigation water productivity (IWP) on forage biomass, not ET-based WUE."
     },
     {
       "idx": 28,
       "family_id": "DOI_10.1016/j.agwat.2026.110514",
+      "country": "China",
       "exclusion_reason": "Inaccessible fulltext (ABSTRACT_ONLY_NO_LOCAL_PDF; no local PDF to verify Methods denominator definition or Table 2 pairing)."
     },
     {
       "idx": 32,
       "family_id": "DOI_10.1016/j.fcr.2024.109377",
+      "country": "China",
       "exclusion_reason": "Inaccessible fulltext (UNAVAILABLE_NO_LOCAL_PDF, no local PDF and no abstract/text excerpt to verify WUE denominator definition)."
     },
     {
       "idx": 33,
       "family_id": "DOI_10.1016/j.fcr.2025.109947",
+      "country": "China",
       "exclusion_reason": "inaccessible_fulltext: fulltext_status is UNAVAILABLE_NO_LOCAL_PDF (note source_locator says Table 2 (IWP), suggesting irrigation water productivity, but cannot verify equation/denominator without full text)"
     },
     {
       "idx": 34,
       "family_id": "DOI_10.1016/j.heliyon.2023.e17816",
+      "country": "Pakistan",
       "exclusion_reason": "non_WUE_leaf_gas_exchange_and_inaccessible_fulltext: unit is 'mmol CO2 mol-1 H2O' (leaf photosynthetic WUE, not crop yield/ET) and fulltext_status is ABSTRACT_ONLY_NO_LOCAL_PDF"
     },
     {
       "idx": 39,
       "family_id": "DOI_10.1016/j.still.2025.106768",
+      "country": "China",
       "exclusion_reason": "inaccessible_fulltext: fulltext_status is UNAVAILABLE_NO_LOCAL_PDF (source_locator says Table 3 (WPI), suggesting water productivity of irrigation, but cannot verify without full text)"
-    },
-    {
-      "idx": 40,
-      "family_id": "DOI_10.1016/j.still.2026.107425",
-      "exclusion_reason": "non_WUE_and_unpaired: candidate WUE rows (0.37 vs 0.33 and 0.48 vs 0.41 cm3/cm3, Table 3) are actually field capacity (FC) and saturated soil water content (theta_s), not crop WUE; WP = Y/ETc is only shown in bar chart Fig. 4a without numeric table, and candidate yield rows are 2019-2023 averages"
     },
     {
       "idx": 43,
       "family_id": "DOI_10.1111/aab.70090",
+      "country": "China",
       "exclusion_reason": "inaccessible_fulltext: fulltext_status is ABSTRACT_ONLY_NO_LOCAL_PDF; abstract mentions maize evapotranspiration and grain yield qualitatively without WUE equation or Table 5 denominator"
     },
     {
       "idx": 44,
       "family_id": "DOI_10.1155/aess/4199651",
+      "country": "Ethiopia",
       "exclusion_reason": "inaccessible_fulltext_and_unclear_denominator: fulltext_status is ABSTRACT_ONLY_NO_LOCAL_PDF; abstract reports seasonal crop water consumption 378 mm (non-mulching) & 333.02 mm (mulching), yield 14.9-18.6 t/ha, and WP 5.5-7.8 kg/m3, which do not satisfy Y/ET (14900/3780=3.94 != 5.5), indicating WP denominator cannot be verified without fulltext Methods/Table 5"
-    },
-    {
-      "idx": 47,
-      "family_id": "DOI_10.2134/agronj2018.09.0620",
-      "exclusion_reason": "unpaired_in_packet: candidate_rows contains WUE (IWP, Table 6) for 2008-2010 but grain_yield (Table 5) only for 2007, yielding zero exact same-year pairs in candidate_rows; moreover, PDF Eq. [1] defines IWP = Y/W (irrigation water supply, not ET)"
     },
     {
       "idx": 48,
       "family_id": "DOI_10.3389/fpls.2026.1774960",
+      "country": "China",
       "exclusion_reason": "non_WUE_GHGI_mislabeled: candidate WUE rows (unit kg/kg, 'Table 1 (GHGI column)') are Greenhouse Gas Intensity (GHGI = GWP / Yield, Eq. 6 Page 4), not Water Use Efficiency"
     },
     {
       "idx": 55,
       "family_id": "DOI_10.3390/plants11223016",
+      "country": "Egypt",
       "exclusion_reason": "non_WUE_metric_RWC_percent"
     },
     {
       "idx": 61,
       "family_id": "FAM_S061",
+      "country": "Australia",
       "exclusion_reason": "inaccessible_fulltext_and_non_WUE_unit_cm"
     },
     {
       "idx": 62,
       "family_id": "FAM_S095",
+      "country": "Canada",
       "exclusion_reason": "inaccessible_fulltext_and_non_WUE_units_percent_mm"
     },
     {
       "idx": 63,
       "family_id": "FAM_S117",
+      "country": "Australia",
       "exclusion_reason": "inaccessible_fulltext_cannot_verify_WUE_denominator"
     },
     {
       "idx": 64,
       "family_id": "FAM_SATKHIRA_ISLAM_2024",
+      "country": "Bangladesh",
       "exclusion_reason": "non_WUE_metric_GWP_kg_CO2_eq_ha"
+    },
+    {
+      "idx": 84,
+      "family_id": "10.3390/su142315646",
+      "country": "Italy",
+      "exclusion_reason": "Pure soil salinity-gradient trial (pre-existing ECe zones C=0.95, S1=2.25/2.88, S2=3.96/4.18, S3=6.48/7.03 dS m-1 on maize and hemp, Vitulazio 2002) with no soil amendment, drainage, mulch, drip, or management treatment vs control under a matched salinity regime; 3 Arm B rows were also extracted from secondary literature review Table 4 (Di Bari et al. [62] non-saline drought trial)."
+    },
+    {
+      "idx": 85,
+      "family_id": "DOI_10.1016/0378-3774(92)90033-s",
+      "country": "Australia",
+      "exclusion_reason": "Non-WUE metric and no agricultural crop yield: Arm B row (lnRR=1.6094=ln(2000/400)) erroneously coded modeled annual evaporation of eucalypt tree plantations vs grazed annual pasture-crop as WUE; catchment land-use conversion with no crop yield, no WUE, and explicitly no formal water balance (p. 7)."
+    },
+    {
+      "idx": 86,
+      "family_id": "10.1016/j.agwat.2021.107175",
+      "country": "China",
+      "exclusion_reason": "Pure salinity-stress / model-simulation contrast with no undrained control or soil amendment (verified on genuine Feng et al. 2021 PDF)."
+    },
+    {
+      "idx": 87,
+      "family_id": "10.1016/j.agwat.2025.109323",
+      "country": "China",
+      "exclusion_reason": "No numeric table for ET, biomass, or WUE anywhere in PDF (bar plots Fig. 9 only; Table 7 reports grain yield without ET/WUE)."
+    },
+    {
+      "idx": 88,
+      "family_id": "10.3389/fpls.2025.1503943",
+      "country": "China",
+      "exclusion_reason": "No numeric table for ET, grain yield, or WUE anywhere in PDF (Fig. 8 unlabelled bar charts only; prose reports only relative % ranges)."
+    },
+    {
+      "idx": 89,
+      "family_id": "10.3390/plants15172573",
+      "country": "China",
+      "exclusion_reason": "No numeric table of Yield or WUE (Fig. 6 bar chart only), L9 salinity x irrigation x N vs freshwater CK with no same-salinity control, and irrigation-supply denominator."
+    },
+    {
+      "idx": 90,
+      "family_id": "10.9734/ijpss/2017/31012",
+      "country": "Egypt",
+      "exclusion_reason": "Full text unavailable (UNAVAILABLE_NO_LOCAL_PDF); cannot verify WUE denominator definition or ET."
+    },
+    {
+      "idx": 91,
+      "family_id": "DOI_10.1016/j.plaphy.2012.11.024",
+      "country": "Pakistan",
+      "exclusion_reason": "Full text unavailable (UNAVAILABLE_NO_LOCAL_PDF); cannot verify WUE denominator definition or ET."
+    },
+    {
+      "idx": 92,
+      "family_id": "DOI_10.1016/j.agwat.2021.107203",
+      "country": "China",
+      "exclusion_reason": "Full text unavailable (UNAVAILABLE_NO_LOCAL_PDF); cannot verify WUE denominator definition or ET."
+    },
+    {
+      "idx": 93,
+      "family_id": "DOI_10.1016/j.indcrop.2024.118943",
+      "country": "China",
+      "exclusion_reason": "Full text unavailable (UNAVAILABLE_NO_LOCAL_PDF); cannot verify WUE denominator definition or ET."
     }
   ]
 }

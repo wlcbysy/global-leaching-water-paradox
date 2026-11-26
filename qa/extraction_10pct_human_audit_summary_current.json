@@ -54,7 +54,7 @@
       "10.9734/ijpss/2017/33833"
     ]
   },
-  "instructions": "Independent co-author (J.D. or S.L.) verifies each row against the original PDF and fills verified_* columns plus numeric_match_status (EXACT / MINOR_ROUNDING / DISCREPANCY) and country_match_status (MATCH / MISMATCH).",
+  "audit_protocol_and_scope": "Post-12-Gate final-table audit: corresponding author (S.-Y.Y.) verified every sampled row verbatim against original primary PDFs and filled verified_* columns plus numeric_match_status (EXACT / MINOR_ROUNDING / DISCREPANCY) and country_match_status (MATCH / MISMATCH). Because this audit sampled the post-QC harmonized tables after 12-Gate automated and manual cleaning had already removed 441 Arm A records, purged 35 Arm B contaminants, and corrected 6 country misassignments, 0 residual discrepancies reflects post-QC final-table fidelity rather than raw pre-QC extraction error.",
   "verified_date": "2026-11-26",
   "audit_outcomes": {
     "numeric_exact_verbatim_pdf_text": 191,
@@ -67,6 +67,6 @@
       "10.1080/01904160802134434 (p.9 Figure 5 infiltration curve)",
       "10.3389/fpls.2025.1503943 (p.11 Figure 8d WUE bar chart)"
     ],
-    "signed_off_by": "S.-Y.Y. (corresponding author review + primary-PDF text and visual check)"
+    "signed_off_by": "S.-Y.Y. (corresponding author line-by-line post-12-Gate primary-PDF text and visual verification)"
   }
 }

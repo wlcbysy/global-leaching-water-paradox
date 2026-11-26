@@ -1703,7 +1703,7 @@ r,c,lat,lon,salt_irrig_ha,management_zone_baseline,risk_decomposition_class,blue
 115,129,32.25,-115.25,45925.69999998808,Zone_III_Water_Salt_Dual_Redline,Risk_SalArid_Only,False,False,True,False
 115,130,32.25,-114.75,33039.49999538064,Zone_III_Water_Salt_Dual_Redline,Risk_SalArid_Only,False,False,True,False
 115,137,32.25,-111.25,5688.155613946728,Zone_I_Safe_Brackish_Substitution_Window,Zone_I_Safe_Window_GW_Sustainable,False,False,False,False
-115,140,32.25,-109.75,7246.411615676712,Zone_I_Safe_Brackish_Substitution_Window,Zone_I_Safe_Window_GW_Sustainable,False,False,False,False
+115,140,32.25,-109.75,7246.411615676712,Zone_I_Safe_Brackish_Substitution_Window,Zone_I_Safe_Window_GW_Sustainable,False,True,False,False
 115,141,32.25,-109.25,3087.8191025166307,Zone_I_Safe_Brackish_Substitution_Window,Zone_I_Safe_Window_GW_Sustainable,False,False,False,False
 115,142,32.25,-108.75,10.235482496209443,Zone_I_Safe_Brackish_Substitution_Window,Zone_I_Safe_Window_GW_Sustainable,False,False,False,False
 115,144,32.25,-107.75,2708.4756122394465,Zone_III_Water_Salt_Dual_Redline,Risk_BW_Only,True,True,False,True

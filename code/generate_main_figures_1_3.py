@@ -1480,6 +1480,7 @@ def build_fig3() -> None:
     # -------------------------------------------------------------------------
     aud_sum = json.loads((table_input("armB_wue_et_64families_audit_summary.json")).read_text(encoding="utf-8"))
     audit_df = pd.read_csv(HARMONIZED / "armB_wue_et_64families_audit_current.csv")
+    fam_country = audit_df.groupby("family_id")["country"].first().to_dict()
 
     r_ab = np.exp(audit_df[audit_df["category"].isin(["A_direct_reported_ET", "B_inferred_Y_over_WUE_ET"])].groupby("family_id")["ln_et_ratio"].mean().dropna())
     r_a = np.exp(audit_df[audit_df["category"] == "A_direct_reported_ET"].groupby("family_id")["ln_et_ratio"].mean().dropna())
@@ -1509,14 +1510,24 @@ def build_fig3() -> None:
         ax_d.fill_between(x_e_grid, yi + 0.04, yi + 0.04 + d_scaled, facecolor=col_r, alpha=0.24, edgecolor=col_r, lw=0.80, zorder=2.2)
         rng_e = np.random.default_rng(20261125 + yi)
         y_jit = yi - 0.16 + rng_e.uniform(-0.07, 0.07, size=len(arr_r))
-        ax_d.scatter(np.clip(arr_r, 0.40, 1.85), y_jit, color=col_r, s=13.0, alpha=0.70, edgecolors="white", linewidths=0.30, zorder=3.0)
+        is_cn = np.array([fam_country.get(fam, "") == "China" for fam in arr_r.index])
+        x_clipped = np.clip(arr_r.values, 0.40, 1.85)
+        if is_cn.any():
+            ax_d.scatter(x_clipped[is_cn], y_jit[is_cn], color=col_r, s=12.5, alpha=0.72, edgecolors="white", linewidths=0.30, zorder=3.0)
+        if (~is_cn).any():
+            ax_d.scatter(x_clipped[~is_cn], y_jit[~is_cn], color=COL_EX, marker="^", s=16.5, alpha=0.88, edgecolors="white", linewidths=0.32, zorder=3.4)
         ax_d.plot([ci_v[0], ci_v[1]], [yi, yi], "-", color=col_r, lw=2.3, solid_capstyle="round", zorder=4.0)
         ax_d.scatter([med_v], [yi], marker="D", s=24, facecolor=col_r, edgecolor="white", linewidths=0.55, zorder=5.0)
         txt_r = f"{med_v:.3f} ({ci_v[0]:.2f}–{ci_v[1]:.2f})"
         ax_d.text(1.13, yi + 0.14, txt_r, ha="left", va="center", fontsize=5.1, color=col_r, fontweight="bold" if is_main else "normal", zorder=5.5)
         for family, rv in arr_r.items():
-            et_export_rows.append({"family_id": family, "stratum": clean_lbl, "ratio": float(rv), "median": float(med_v), "ci95_low": float(ci_v[0]), "ci95_high": float(ci_v[1])})
+            et_export_rows.append({"family_id": family, "country": fam_country.get(family, "Unknown"), "stratum": clean_lbl, "ratio": float(rv), "median": float(med_v), "ci95_low": float(ci_v[0]), "ci95_high": float(ci_v[1])})
 
+    d_handles = [
+        mpl.lines.Line2D([0], [0], color="none", marker="o", markersize=3.8, markerfacecolor=COL_TEAL, markeredgecolor="white", markeredgewidth=0.3, label="China"),
+        mpl.lines.Line2D([0], [0], color="none", marker="^", markersize=4.2, markerfacecolor=COL_EX, markeredgecolor="white", markeredgewidth=0.3, label="Non-China"),
+    ]
+    ax_d.legend(handles=d_handles, loc="lower left", bbox_to_anchor=(-0.03, 1.015), ncol=2, frameon=False, fontsize=4.85, columnspacing=0.65, handletextpad=0.18, borderaxespad=0.0)
     ax_d.text(0.03, 0.96, r"$\leftarrow$ ET$\downarrow$ (saving)", transform=ax_d.transAxes, ha="left", va="top", fontsize=5.05, color=COL_TEAL, fontweight="bold")
     ax_d.text(0.97, 0.96, r"ET$\uparrow$ (depletion) $\rightarrow$", transform=ax_d.transAxes, ha="right", va="top", fontsize=5.05, color=COL_RISK, fontweight="bold")
     ax_d.text(0.40, 0.43, r"Supply ratio ($\mathit{I}_{\mathrm{T}}/\mathit{I}_{\mathrm{C}}$)", ha="left", va="top", fontsize=5.05, style="italic", color="#55606E")
@@ -1538,7 +1549,7 @@ def build_fig3() -> None:
     effects.loc[physical].to_csv(SRC_DIR/"Fig3A_amendment_contrasts.csv",index=False)
     salt_audit[["doi","contrast_index","treatment_label","control_label","mean_treatment","mean_control","unit",
                 "physical_category","soil_depth_cm","sampling_period"]].to_csv(SRC_DIR/"Fig3B_salt_observations.csv",index=False)
-    audit_df.drop(columns=["evidence_quote","local_pdf_path"],errors="ignore").to_csv(SRC_DIR/"Fig3D_denominator_records.csv",index=False)
+    audit_df.drop(columns=["evidence_quote"],errors="ignore").to_csv(SRC_DIR/"Fig3D_denominator_records.csv",index=False)
     pd.DataFrame(salt_rows).to_csv(SRC_DIR / "Fig3B_salt_transport.csv", index=False)
     pd.DataFrame(clay_export).to_csv(SRC_DIR / "Fig3A_clay_moderation.csv", index=False)
     fp_d.to_csv(SRC_DIR / "Fig3C_dual_pathway_hyd_ec.csv", index=False)

@@ -158,8 +158,17 @@ def main() -> None:
         failures.append("Missing armB_wue_et_64families_audit_summary.json")
     else:
         a64 = json.loads(audit64_p.read_text(encoding="utf-8"))
-        if a64.get("total_families_audited") != 64 or a64.get("verified_consumptive_ET_combined_AB", {}).get("n_families") != 18:
-            failures.append("64-family WUE/ET audit mismatch (expected 64 total, 18 verified A+B)")
+        if (
+            a64.get("total_studies_audited") != 93
+            or a64.get("total_families_audited") != 91
+            or a64.get("verified_consumptive_ET_combined_AB", {}).get("n_families") != 28
+            or a64.get("A_direct_reported_ET", {}).get("n_families") != 21
+        ):
+            failures.append("Complete Arm B WUE/ET audit mismatch (expected 93 studies / 91 families, 28 verified A+B, 21 direct A)")
+
+    aoa_all = p3_json.get("aoa_applicability_assessment", {}).get("all_empirical_armA_and_armB_sites", {})
+    if aoa_all.get("training_unique_05deg_cells") != 296 or aoa_all.get("inside_aoa_cells") != 2614:
+        failures.append(f"Pillar 3 AOA parity mismatch: got {aoa_all.get('training_unique_05deg_cells')} training / {aoa_all.get('inside_aoa_cells')} inside")
 
     leach7_p = HARMONIZED / "armB_leaching_7clusters_audit_current.csv"
     if not leach7_p.is_file() or len(pd.read_csv(leach7_p)) != 33:

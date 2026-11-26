@@ -212,14 +212,20 @@ def summarize_ratio(df_sub: pd.DataFrame, col: str, rng: np.random.Generator) ->
     med = float(np.median(vals))
     mn = float(np.mean(vals))
     med_b, mn_b = [], []
-    for _ in range(1000):
+    for _ in range(N_BOOT):
         idx = rng.integers(0, n_f, size=n_f)
         s = vals[idx]
         med_b.append(math.exp(float(np.median(s))))
         mn_b.append(math.exp(float(np.mean(s))))
+    countries = {}
+    if "country" in sub.columns:
+        fc = sub.groupby("family_id")["country"].first()
+        countries = {str(k): int(v) for k, v in fc.value_counts().items()}
     return {
         "n_pairs": int(len(sub)),
         "n_families": int(n_f),
+        "n_unique_dois": int(sub["doi"].dropna().nunique()) if "doi" in sub.columns else int(n_f),
+        "countries": countries,
         "n_pairs_et_increased": int((sub[col] > 0).sum()),
         "n_families_et_increased": int((vals > 0).sum()),
         "share_families_increased": round(float((vals > 0).mean()), 4),
@@ -248,8 +254,16 @@ def summarize_denominators():
     df["prio"] = df["category"].map(prio)
     fam_primary = df.sort_values("prio").groupby("family_id").first()
 
+    ab_china = cat_ab[cat_ab["country"] == "China"].copy()
+    ab_non_china = cat_ab[cat_ab["country"].notna() & (cat_ab["country"] != "China")].copy()
+    a_non_china = cat_a[cat_a["country"].notna() & (cat_a["country"] != "China")].copy()
+    deficit_confounded_fams = {"DOI_10.3390/su15129602", "10.3390/agronomy14010003"}
+    ab_non_deficit = cat_ab[~cat_ab["family_id"].isin(deficit_confounded_fams)].copy()
+
     summary = {
+        "audit_scope": "Complete 100% Arm B WUE denominator audit (all 83 cleaned WUE clusters + 10 previously screened non-WUE exclusions = 93 study records across 91 independent experimental families, clustering 3 Pingluo Ningxia sister DOIs into 1 family).",
         "total_audited_records": int(len(df)),
+        "total_studies_audited": int(df["idx"].nunique()),
         "total_families_audited": int(df["family_id"].nunique()),
         "families_by_primary_category": {k: int(v) for k, v in fam_primary["category"].value_counts().to_dict().items()},
         "records_by_category": {k: int(v) for k, v in df["category"].value_counts().to_dict().items()},
@@ -257,10 +271,16 @@ def summarize_denominators():
         "B_inferred_Y_over_WUE_ET": summarize_ratio(cat_b, "ln_et_ratio", rng),
         "verified_consumptive_ET_combined_AB": summarize_ratio(cat_ab, "ln_et_ratio", rng),
         "C_IWUE_irrigation_supply_ratio": summarize_ratio(cat_c, "ln_irr_ratio", rng),
+        "geographic_and_design_sensitivity": {
+            "verified_ET_china": summarize_ratio(ab_china, "ln_et_ratio", rng),
+            "verified_ET_non_china": summarize_ratio(ab_non_china, "ln_et_ratio", rng),
+            "direct_ET_non_china": summarize_ratio(a_non_china, "ln_et_ratio", rng),
+            "verified_ET_excluding_deficit_irrigation_confounded": summarize_ratio(ab_non_deficit, "ln_et_ratio", rng),
+        },
         "D_unclear_or_non_WUE_families": int(cat_d["family_id"].nunique()),
-        "D_reasons": cat_d[["idx", "family_id", "exclusion_reason"]].fillna("").to_dict(orient="records"),
+        "D_reasons": cat_d.drop_duplicates("family_id")[["idx", "family_id", "country", "exclusion_reason"]].fillna("").to_dict(orient="records"),
     }
-    (OUT_TABLES / "armB_wue_et_64families_audit_summary.json").write_text(json.dumps(summary, indent=2))
+    (OUT_TABLES / "armB_wue_et_64families_audit_summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return summary
 
 
