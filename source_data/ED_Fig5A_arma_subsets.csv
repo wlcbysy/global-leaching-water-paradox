@@ -1,0 +1,13 @@
+subset,label,ecw90,ci_lo,ci_hi,k,n_clusters
+field_continuous_harvest,Field harvest (cont.),3.519,2.899,4.282,730,96
+continuous,Mixed ref. (cont.),3.547,3.016,4.267,1272,124
+continuous_excl_ry_gt2,Cont. (excl. RY > 2),3.536,2.903,4.116,1268,124
+pooled,Pooled,4.78,3.195,5.829,1744,137
+multiyear_ge2yr,Multi-year (≥2 yr),3.959,3.318,4.802,1301,94
+field_only,Field only,5.047,3.268,6.086,1537,116
+exact_variance,Exact var.,3.812,2.743,4.894,298,30
+exact_plus_lsd,Exact + LSD,3.686,2.757,4.659,437,40
+grain_only,Harvest (all sched.),4.409,3.264,5.045,1170,124
+wue,WUE / IWUE (−10%),3.961,2.936,5.167,459,40
+blended,Blended,4.599,2.486,25.097,181,12
+cyclic,Cyclic (unadj.),6.335,3.053,6.963,291,35

@@ -1,0 +1,250 @@
+{
+  "total_audited_records": 255,
+  "total_families_audited": 64,
+  "families_by_primary_category": {
+    "D_unclear_or_non_WUE": 25,
+    "C_IWUE_irrigation_supply": 21,
+    "A_direct_reported_ET": 15,
+    "B_inferred_Y_over_WUE_ET": 3
+  },
+  "records_by_category": {
+    "A_direct_reported_ET": 101,
+    "C_IWUE_irrigation_supply": 99,
+    "B_inferred_Y_over_WUE_ET": 28,
+    "D_unclear_or_non_WUE": 27
+  },
+  "A_direct_reported_ET": {
+    "n_pairs": 101,
+    "n_families": 15,
+    "n_pairs_et_increased": 49,
+    "n_families_et_increased": 5,
+    "share_families_increased": 0.3333,
+    "median_ln_ratio": -0.02333,
+    "mean_ln_ratio": -0.0168,
+    "ratio_median": 0.9769,
+    "ratio_median_ci95": [
+      0.9626,
+      1.0606
+    ],
+    "ratio_mean": 0.9833,
+    "ratio_mean_ci95": [
+      0.9397,
+      1.0284
+    ],
+    "implied_saving_frac_median": 0.0231,
+    "implied_saving_frac_ci95": [
+      -0.0606,
+      0.0374
+    ]
+  },
+  "B_inferred_Y_over_WUE_ET": {
+    "n_pairs": 28,
+    "n_families": 4,
+    "n_pairs_et_increased": 21,
+    "n_families_et_increased": 3,
+    "share_families_increased": 0.75,
+    "median_ln_ratio": 0.02012,
+    "mean_ln_ratio": 0.0247,
+    "ratio_median": 1.0203,
+    "ratio_median_ci95": [
+      0.9858,
+      1.0755
+    ],
+    "ratio_mean": 1.025,
+    "ratio_mean_ci95": [
+      0.9956,
+      1.0576
+    ],
+    "implied_saving_frac_median": -0.0203,
+    "implied_saving_frac_ci95": [
+      -0.0755,
+      0.0142
+    ]
+  },
+  "verified_consumptive_ET_combined_AB": {
+    "n_pairs": 129,
+    "n_families": 18,
+    "n_pairs_et_increased": 70,
+    "n_families_et_increased": 7,
+    "share_families_increased": 0.3889,
+    "median_ln_ratio": -0.00964,
+    "mean_ln_ratio": -0.00928,
+    "ratio_median": 0.9904,
+    "ratio_median_ci95": [
+      0.9684,
+      1.048
+    ],
+    "ratio_mean": 0.9908,
+    "ratio_mean_ci95": [
+      0.9508,
+      1.0274
+    ],
+    "implied_saving_frac_median": 0.0096,
+    "implied_saving_frac_ci95": [
+      -0.048,
+      0.0316
+    ]
+  },
+  "C_IWUE_irrigation_supply_ratio": {
+    "n_pairs": 97,
+    "n_families": 20,
+    "n_pairs_et_increased": 20,
+    "n_families_et_increased": 5,
+    "share_families_increased": 0.25,
+    "median_ln_ratio": -0.00565,
+    "mean_ln_ratio": -0.10846,
+    "ratio_median": 0.9944,
+    "ratio_median_ci95": [
+      0.9094,
+      1.0
+    ],
+    "ratio_mean": 0.8972,
+    "ratio_mean_ci95": [
+      0.7811,
+      1.002
+    ],
+    "implied_saving_frac_median": 0.0056,
+    "implied_saving_frac_ci95": [
+      0.0,
+      0.0906
+    ]
+  },
+  "D_unclear_or_non_WUE_families": 26,
+  "D_reasons": [
+    {
+      "idx": 3,
+      "family_id": "DOI_10.1002/ldr.4370",
+      "exclusion_reason": "Full text unavailable (ABSTRACT_ONLY_NO_LOCAL_PDF); abstract does not specify WUE denominator formula or ET values."
+    },
+    {
+      "idx": 4,
+      "family_id": "DOI_10.1002/nzc2.70099",
+      "exclusion_reason": "Non-WUE metric (Table 4 RWC in %, i.e. leaf relative water content, not water use efficiency) and full text unavailable (ABSTRACT_ONLY_NO_LOCAL_PDF)."
+    },
+    {
+      "idx": 5,
+      "family_id": "DOI_10.1007/s00271-021-00759-7",
+      "exclusion_reason": "Full text and abstract unavailable (UNAVAILABLE_NO_LOCAL_PDF); cannot verify WUE denominator definition or ET."
+    },
+    {
+      "idx": 6,
+      "family_id": "DOI_10.1007/s10343-026-01359-1",
+      "exclusion_reason": "Full text and abstract unavailable (UNAVAILABLE_NO_LOCAL_PDF); cannot verify WUE denominator definition or ET."
+    },
+    {
+      "idx": 7,
+      "family_id": "DOI_10.1007/s10811-024-03277-z",
+      "exclusion_reason": "Non-WUE metric (Table 5 yield efficiency in kg/m2 PARi, radiation interception efficiency, not water use efficiency) and full text unavailable (UNAVAILABLE_NO_LOCAL_PDF)."
+    },
+    {
+      "idx": 11,
+      "family_id": "DOI_10.1007/s40333-023-0095-3",
+      "exclusion_reason": "Full text and abstract unavailable (UNAVAILABLE_NO_LOCAL_PDF); packet lists both WUE and IWUE in Table 4 without Methods definitions or ET table."
+    },
+    {
+      "idx": 13,
+      "family_id": "DOI_10.1007/s42729-021-00755-y",
+      "exclusion_reason": "Full text and abstract unavailable (UNAVAILABLE_NO_LOCAL_PDF); cannot verify WUE denominator definition or ET."
+    },
+    {
+      "idx": 14,
+      "family_id": "DOI_10.1007/s42729-024-01798-7",
+      "exclusion_reason": "Non-WUE metric (Table 1 Vmax in t/hm2/d, maximum dry matter accumulation rate, not water use efficiency) and full text unavailable (UNAVAILABLE_NO_LOCAL_PDF)."
+    },
+    {
+      "idx": 15,
+      "family_id": "DOI_10.1016/0167-1987(92)90023-5",
+      "exclusion_reason": "Strict pairing failure / treatment mismatch: Table 7 reports WUE only as marginal factor means (Tillage Z and Stubble So/S), whereas Table 5 reports grain yield per individual factorial treatment (ZS vs ZSo, without marginal So/S means). Candidate rows erroneously paired tillage marginal Z (7.44, 9.67, 15.33, 9.16) against Z (1984) or stubble marginal So (1985-1987) with ZS vs ZSo yield."
+    },
+    {
+      "idx": 18,
+      "family_id": "DOI_10.1016/j.agwat.2018.06.037",
+      "exclusion_reason": "Numerator mismatch: Table 7 maize Crop Yield (49135-61418 kg/ha) is fresh forage yield, which does not match the dry-weight numerator of WUE (1.18-1.70 kg/m3; 49135 / 13150 m3 = 3.74 != 1.18); also WUE uses gross water supply V (I+P), not ET."
+    },
+    {
+      "idx": 18,
+      "family_id": "DOI_10.1016/j.agwat.2018.06.037",
+      "exclusion_reason": "Numerator mismatch: Table 7 maize Crop Yield (49135-61418 kg/ha) is fresh forage yield, which does not match the dry-weight numerator of WUE (1.18-1.70 kg/m3; 49135 / 13150 m3 = 3.74 != 1.18); also WUE uses gross water supply V (I+P), not ET."
+    },
+    {
+      "idx": 27,
+      "family_id": "DOI_10.1016/j.agwat.2026.110498",
+      "exclusion_reason": "Inaccessible fulltext (ABSTRACT_ONLY_NO_LOCAL_PDF; no local PDF to verify Methods formula or Table 4a/4b values); abstract indicates irrigation water productivity (IWP) on forage biomass, not ET-based WUE."
+    },
+    {
+      "idx": 28,
+      "family_id": "DOI_10.1016/j.agwat.2026.110514",
+      "exclusion_reason": "Inaccessible fulltext (ABSTRACT_ONLY_NO_LOCAL_PDF; no local PDF to verify Methods denominator definition or Table 2 pairing)."
+    },
+    {
+      "idx": 32,
+      "family_id": "DOI_10.1016/j.fcr.2024.109377",
+      "exclusion_reason": "Inaccessible fulltext (UNAVAILABLE_NO_LOCAL_PDF, no local PDF and no abstract/text excerpt to verify WUE denominator definition)."
+    },
+    {
+      "idx": 33,
+      "family_id": "DOI_10.1016/j.fcr.2025.109947",
+      "exclusion_reason": "inaccessible_fulltext: fulltext_status is UNAVAILABLE_NO_LOCAL_PDF (note source_locator says Table 2 (IWP), suggesting irrigation water productivity, but cannot verify equation/denominator without full text)"
+    },
+    {
+      "idx": 34,
+      "family_id": "DOI_10.1016/j.heliyon.2023.e17816",
+      "exclusion_reason": "non_WUE_leaf_gas_exchange_and_inaccessible_fulltext: unit is 'mmol CO2 mol-1 H2O' (leaf photosynthetic WUE, not crop yield/ET) and fulltext_status is ABSTRACT_ONLY_NO_LOCAL_PDF"
+    },
+    {
+      "idx": 39,
+      "family_id": "DOI_10.1016/j.still.2025.106768",
+      "exclusion_reason": "inaccessible_fulltext: fulltext_status is UNAVAILABLE_NO_LOCAL_PDF (source_locator says Table 3 (WPI), suggesting water productivity of irrigation, but cannot verify without full text)"
+    },
+    {
+      "idx": 40,
+      "family_id": "DOI_10.1016/j.still.2026.107425",
+      "exclusion_reason": "non_WUE_and_unpaired: candidate WUE rows (0.37 vs 0.33 and 0.48 vs 0.41 cm3/cm3, Table 3) are actually field capacity (FC) and saturated soil water content (theta_s), not crop WUE; WP = Y/ETc is only shown in bar chart Fig. 4a without numeric table, and candidate yield rows are 2019-2023 averages"
+    },
+    {
+      "idx": 43,
+      "family_id": "DOI_10.1111/aab.70090",
+      "exclusion_reason": "inaccessible_fulltext: fulltext_status is ABSTRACT_ONLY_NO_LOCAL_PDF; abstract mentions maize evapotranspiration and grain yield qualitatively without WUE equation or Table 5 denominator"
+    },
+    {
+      "idx": 44,
+      "family_id": "DOI_10.1155/aess/4199651",
+      "exclusion_reason": "inaccessible_fulltext_and_unclear_denominator: fulltext_status is ABSTRACT_ONLY_NO_LOCAL_PDF; abstract reports seasonal crop water consumption 378 mm (non-mulching) & 333.02 mm (mulching), yield 14.9-18.6 t/ha, and WP 5.5-7.8 kg/m3, which do not satisfy Y/ET (14900/3780=3.94 != 5.5), indicating WP denominator cannot be verified without fulltext Methods/Table 5"
+    },
+    {
+      "idx": 47,
+      "family_id": "DOI_10.2134/agronj2018.09.0620",
+      "exclusion_reason": "unpaired_in_packet: candidate_rows contains WUE (IWP, Table 6) for 2008-2010 but grain_yield (Table 5) only for 2007, yielding zero exact same-year pairs in candidate_rows; moreover, PDF Eq. [1] defines IWP = Y/W (irrigation water supply, not ET)"
+    },
+    {
+      "idx": 48,
+      "family_id": "DOI_10.3389/fpls.2026.1774960",
+      "exclusion_reason": "non_WUE_GHGI_mislabeled: candidate WUE rows (unit kg/kg, 'Table 1 (GHGI column)') are Greenhouse Gas Intensity (GHGI = GWP / Yield, Eq. 6 Page 4), not Water Use Efficiency"
+    },
+    {
+      "idx": 55,
+      "family_id": "DOI_10.3390/plants11223016",
+      "exclusion_reason": "non_WUE_metric_RWC_percent"
+    },
+    {
+      "idx": 61,
+      "family_id": "FAM_S061",
+      "exclusion_reason": "inaccessible_fulltext_and_non_WUE_unit_cm"
+    },
+    {
+      "idx": 62,
+      "family_id": "FAM_S095",
+      "exclusion_reason": "inaccessible_fulltext_and_non_WUE_units_percent_mm"
+    },
+    {
+      "idx": 63,
+      "family_id": "FAM_S117",
+      "exclusion_reason": "inaccessible_fulltext_cannot_verify_WUE_denominator"
+    },
+    {
+      "idx": 64,
+      "family_id": "FAM_SATKHIRA_ISLAM_2024",
+      "exclusion_reason": "non_WUE_metric_GWP_kg_CO2_eq_ha"
+    }
+  ]
+}

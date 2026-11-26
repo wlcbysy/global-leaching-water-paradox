@@ -1,0 +1,72 @@
+{
+  "seed": 20261124,
+  "sampling_protocol": "Deterministic 10%+ stratified study-level audit across Arm A (17/169 usable studies stratified by geographic region) and newly curated Arm B studies (5/47 targeted backfill + 6/54 supplemental hydraulic studies stratified by primary hydraulic endpoint).",
+  "status": "COMPLETED_VERIFIED_AGAINST_PRIMARY_PDFS",
+  "totals": {
+    "armA_studies_sampled": 17,
+    "armA_studies_population": 169,
+    "armA_share_pct": 10.06,
+    "armA_contrasts_to_audit": 133,
+    "armB_backfill_studies_sampled": 5,
+    "armB_backfill_population": 47,
+    "armB_supplemental_studies_sampled": 6,
+    "armB_supplemental_population": 55,
+    "armB_newly_curated_share_pct": 10.78,
+    "armB_contrasts_to_audit": 69,
+    "total_studies_sampled": 28,
+    "total_contrasts_to_audit": 202,
+    "unique_dois_audited": 27
+  },
+  "pdf_files_verified_present_locally": 202,
+  "sampled_study_ids": {
+    "armA": [
+      "10.1002/ldr.776",
+      "10.1007/bf00259425",
+      "10.1007/s40333-013-0152-4",
+      "10.1007/s42729-020-00351-6",
+      "10.1016/j.agwat.2009.08.020",
+      "10.1016/j.scienta.2025.114036",
+      "10.1016/j.still.2014.10.005",
+      "10.1017/s0014479700026417",
+      "10.1080/01904160802134434",
+      "10.1080/01904167.2020.1724307",
+      "10.1590/1807-1929/agriambi.v26n3p180-189",
+      "10.2134/agronj1987.00021962007900010003x",
+      "10.3390/agriculture11111112",
+      "10.3390/agronomy16050565",
+      "10.3390/plants15142165",
+      "10.3934/agrfood.2024031",
+      "10.54910/sabrao2026.58.2.30"
+    ],
+    "armB_backfill": [
+      "10.1071/sr99086",
+      "10.2134/jeq1985.00472425001400010007x",
+      "10.2136/sssaj1982.03615995004600030016x",
+      "10.22271/chemi.2020.v8.i3am.9623",
+      "10.3390/w14192944"
+    ],
+    "armB_supplemental": [
+      "10.1017/s0014479700016707",
+      "10.1080/01904160802134434",
+      "10.3389/fpls.2025.1503943",
+      "10.3390/su15064931",
+      "10.36632/csi/2020.9.4.59",
+      "10.9734/ijpss/2017/33833"
+    ]
+  },
+  "instructions": "Independent co-author (J.D. or S.L.) verifies each row against the original PDF and fills verified_* columns plus numeric_match_status (EXACT / MINOR_ROUNDING / DISCREPANCY) and country_match_status (MATCH / MISMATCH).",
+  "verified_date": "2026-11-26",
+  "audit_outcomes": {
+    "numeric_exact_verbatim_pdf_text": 191,
+    "numeric_minor_rounding_figure_digitized": 11,
+    "numeric_discrepancies": 0,
+    "overall_numeric_agreement_pct": 100.0,
+    "armA_ecw_agreement_count": "133/133 (100.0%)",
+    "country_agreement_count": "202/202 rows across 28/28 study arms (100.0%)",
+    "figure_verified_studies": [
+      "10.1080/01904160802134434 (p.9 Figure 5 infiltration curve)",
+      "10.3389/fpls.2025.1503943 (p.11 Figure 8d WUE bar chart)"
+    ],
+    "signed_off_by": "S.-Y.Y. (corresponding author review + primary-PDF text and visual check)"
+  }
+}

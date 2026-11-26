@@ -1,0 +1,12 @@
+metric,mt_yr
+salt_import_pre_all_salt_cells,385.37
+salt_import_post_all_salt_cells,834.47
+delta_s_field_recycled_gross,486.88
+delta_s_fresh_displaced,-39.09
+delta_s_basin_gw_gross,1.31
+delta_s_basin_new_net,-37.78
+unfunded_salt_debt_pre_376_basins,130.23
+unfunded_salt_debt_post_equal_prod_376_basins,178.35
+unfunded_salt_debt_post_actual_et_376_basins,284.6
+unfunded_salt_debt_post_basin_boundary_equal_prod_376_basins,77.36
+unfunded_salt_debt_post_basin_boundary_actual_et_376_basins,119.9

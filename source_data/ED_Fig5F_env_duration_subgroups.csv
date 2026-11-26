@@ -1,0 +1,13 @@
+moderator,level,label,endpoint,coef,ci_lo,ci_hi,p_val,k,n_clusters
+climate_ai,arid,Arid (<0.20),yield_combined,0.01256,-0.00665,0.03177,0.19791,665,45
+climate_ai,arid,Arid (<0.20),soil_EC,-0.03502,-0.08575,0.01571,0.17323,159,21
+climate_ai,humid_subhumid,Sub-humid+ (≥0.50),yield_combined,0.00294,-0.01931,0.02519,0.79439,162,25
+climate_ai,humid_subhumid,Sub-humid+ (≥0.50),soil_EC,-0.01919,-0.0684,0.03002,0.44015,129,16
+soil_texture,coarse,Coarse (sandy),yield_combined,-0.00118,-0.01601,0.01365,0.8752,925,68
+soil_texture,coarse,Coarse (sandy),soil_EC,-0.00704,-0.04398,0.0299,0.70507,560,38
+soil_texture,fine,Fine (clay),yield_combined,-0.00482,-0.03703,0.02739,0.76743,295,19
+soil_texture,fine,Fine (clay),soil_EC,0.07152,0.02154,0.1215,0.00568,140,17
+duration_pooled,2_3yr,2–3 yr,yield_combined,-0.00152,-0.02203,0.01899,0.88371,1112,80
+duration_pooled,2_3yr,2–3 yr,soil_EC,-0.05948,-0.11378,-0.00518,0.03222,688,46
+duration_pooled,ge4yr,≥4 yr (pooled),yield_combined,0.003,-0.02051,0.02651,0.80094,189,14
+duration_pooled,ge4yr,≥4 yr (pooled),soil_EC,-0.03834,-0.10147,0.02479,0.23055,109,15

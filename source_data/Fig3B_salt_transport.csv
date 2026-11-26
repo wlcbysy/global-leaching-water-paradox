@@ -1,0 +1,5 @@
+outcome,families,contrasts,estimate_pct,lower_pct,upper_pct
+Drainage / infiltration,1,6,40.46,15.465315479935107,70.88147473771839
+Change in soil salt storage,3,17,9.99,-39.079472554724646,98.59551851783992
+Salt removal per unit water,3,10,65.02,-0.20977965426900025,172.8630950285219
+Direct salt outcomes combined,6,27,31.77,-3.120282235902385,79.23005175169952

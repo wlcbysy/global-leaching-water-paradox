@@ -1,0 +1,137 @@
+{
+  "script": "build_spatial_validation_and_soil_layers.py",
+  "grace_csr_validation_376_basins": {
+    "basins_with_grace": 376,
+    "spearman_r_watergap_gws_vs_grace_twsa": 0.2178,
+    "spearman_p": 2.0320043246882057e-05,
+    "gw_depletion_basins_median_grace_mm_yr": -3.79,
+    "non_depletion_basins_median_grace_mm_yr": -0.86,
+    "mannwhitney_less_p": 6.297144063204211e-09
+  },
+  "jasechko_2024_well_validation": {
+    "basins_with_ge3_wells": 37,
+    "salt_area_covered_mha": 13.86,
+    "total_matched_wells": 38684,
+    "gw_depletion_basins_median_dtw_decline_m_yr": 0.0402,
+    "non_depletion_basins_median_dtw_decline_m_yr": -0.0006,
+    "mannwhitney_greater_p": 0.094668817956503
+  },
+  "jasechko_2024_1693_aquifer_systems_validation": {
+    "basins_matched_376": 180,
+    "salt_area_covered_mha": 79.68,
+    "salt_area_covered_pct": 82.9,
+    "total_aquifer_well_records": 103470,
+    "gw_depletion_basins_n": 72,
+    "non_depletion_basins_n": 108,
+    "gw_depletion_basins_median_dtw_m_yr": 0.2389,
+    "non_depletion_basins_median_dtw_m_yr": 0.0271,
+    "mannwhitney_greater_p": 3.7000111686412115e-09,
+    "spearman_r_vs_neg_watergap_gws": 0.4027,
+    "spearman_p": 2.0972888600345907e-08
+  },
+  "dynqual_v1_global_salinity_coverage": {
+    "salt_cells_covered": 2767,
+    "salt_cells_total": 2784,
+    "salt_area_covered_pct": 98.91,
+    "salt_cropland_median_ecw_dsm": 0.461,
+    "salt_cropland_p90_annual_ecw_dsm": 1.996,
+    "salt_cropland_median_p90_monthly_ecw_dsm": 0.845,
+    "cross_check_vs_thorslund_rivers_cells": 4603,
+    "cross_check_vs_thorslund_rivers_spearman_r": 0.588,
+    "cross_check_vs_thorslund_rivers_p": 0.0
+  },
+  "isimip3a_multighm_structural_validation": {
+    "n_ghms": 4,
+    "ghms_evaluated": [
+      "WaterGAP2-2e",
+      "H08",
+      "LPJmL5-7-10-fire",
+      "CWatM"
+    ],
+    "paradox_exceeded_n_range": [
+      21,
+      165
+    ],
+    "paradox_exceeded_mha_range": [
+      4.27,
+      57.66
+    ],
+    "basins_exceeded_in_at_least_2_of_4_ghms": 111,
+    "area_mha_exceeded_in_at_least_2_of_4_ghms": 46.95,
+    "basins_exceeded_in_at_least_3_of_4_ghms": 54,
+    "area_mha_exceeded_in_at_least_3_of_4_ghms": 21.19,
+    "basins_exceeded_in_all_4_ghms": 17,
+    "area_mha_exceeded_in_all_4_ghms": 3.94,
+    "models": [
+      {
+        "ghm": "WaterGAP2-2e (Primary)",
+        "global_qtot_km3_yr": 50714.1,
+        "salt_basins_qtot_km3_yr": 10828.1,
+        "global_irr_or_tot_ww_km3_yr": 2808.4,
+        "salt_basins_demand_km3_yr": 990.0,
+        "runoff_corr_vs_watergap_376basins": 1.0,
+        "paradox_exceeded_efr60_native_n": 80,
+        "paradox_exceeded_efr60_native_mha": 29.52,
+        "paradox_exceeded_efr60_wg_demand_n": 80,
+        "paradox_agreement_vs_watergap_pct": 100.0,
+        "demand_variable_note": "atotuse (consumptive total blue-water use)"
+      },
+      {
+        "ghm": "H08",
+        "global_qtot_km3_yr": 45721.8,
+        "salt_basins_qtot_km3_yr": 8265.3,
+        "global_irr_or_tot_ww_km3_yr": 3036.3,
+        "salt_basins_demand_km3_yr": 1261.1,
+        "runoff_corr_vs_watergap_376basins": 0.9232,
+        "paradox_exceeded_efr60_native_n": 165,
+        "paradox_exceeded_efr60_native_mha": 57.66,
+        "paradox_exceeded_efr60_wg_demand_n": 178,
+        "paradox_agreement_vs_watergap_pct": 73.1,
+        "demand_variable_note": "airruse (native consumptive irrigation use)"
+      },
+      {
+        "ghm": "LPJmL5-7-10-fire",
+        "global_qtot_km3_yr": 56899.9,
+        "salt_basins_qtot_km3_yr": 12803.3,
+        "global_irr_or_tot_ww_km3_yr": 3904.4,
+        "salt_basins_demand_km3_yr": 577.0,
+        "runoff_corr_vs_watergap_376basins": 0.9391,
+        "paradox_exceeded_efr60_native_n": 21,
+        "paradox_exceeded_efr60_native_mha": 4.27,
+        "paradox_exceeded_efr60_wg_demand_n": 96,
+        "paradox_agreement_vs_watergap_pct": 82.2,
+        "demand_variable_note": "airruse (native consumptive irrigation use)"
+      },
+      {
+        "ghm": "CWatM",
+        "global_qtot_km3_yr": 52375.7,
+        "salt_basins_qtot_km3_yr": 11549.7,
+        "global_irr_or_tot_ww_km3_yr": 2160.0,
+        "salt_basins_demand_km3_yr": 1259.3,
+        "runoff_corr_vs_watergap_376basins": 0.9514,
+        "paradox_exceeded_efr60_native_n": 92,
+        "paradox_exceeded_efr60_native_mha": 38.82,
+        "paradox_exceeded_efr60_wg_demand_n": 110,
+        "paradox_agreement_vs_watergap_pct": 81.4,
+        "demand_variable_note": "atotww scaled by basin consumptive ratio [0.35-0.70]"
+      }
+    ]
+  },
+  "whymap_gwr_overlap_on_salt_croplands": {
+    "saline_gw_gt5gl_cells": 232,
+    "saline_gw_gt5gl_mha": 6.8,
+    "aquifer_tier_mha": {
+      "Complex_Hydro": 8.82,
+      "Local_Shallow": 11.76,
+      "Major_Basin": 74.34,
+      "Non_Aquifer_or_Ice": 2.2
+    }
+  },
+  "soil_mechanistic_layers_on_salt_croplands": {
+    "total_mha": 97.12,
+    "hwsd2_sodic_share_ge10pct_mha": 41.75,
+    "hwsd2_mean_esp_ge15pct_mha": 11.16,
+    "soilgrids_heavy_clay_ge35pct_mha": 7.93,
+    "hwsd2_poorly_imperfectly_drained_ge30pct_mha": 16.37
+  }
+}

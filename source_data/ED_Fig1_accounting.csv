@@ -1,0 +1,21 @@
+quantity,value,unit
+Major basins,376.0,count
+Exceeded basins,80.0,count
+Leaching on salt cells,10.48,km3/yr
+Leaching on all cells,15.09,km3/yr
+Salt imports in major basins,372.18,Mt/yr
+Modeled salt debt,130.23,Mt/yr
+Mixed-production ECw90,3.547,dS/m
+Withdrawal penalty,31.25,km3/yr
+Increase in salt applied to fields,449.1,Mt/yr
+Hydraulic conductivity change,140.24,%
+Water use efficiency change,27.61,%
+Net freshwater withdrawal relief,178.14,km3/yr
+Hydraulic withdrawal relief under equal production,187.29,km3/yr
+Equal-production consumptive relief,83.99,km3/yr
+Groundwater credit,2.16,km3/yr
+Incremental leaching,13.43,km3/yr
+Net relief under caps,72.72,km3/yr
+Net relief under verified ET,-6.36,km3/yr
+Basins rescued under caps,12.0,count
+Basins rescued under verified ET,0.0,count

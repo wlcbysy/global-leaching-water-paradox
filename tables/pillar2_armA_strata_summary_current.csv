@@ -1,0 +1,299 @@
+metric,group_by,level,k,n_clusters,mu_lnrr,se_cr,ci95,pct_change,p_val,status
+grain_yield,ALL,ALL,1170,124,-0.2121,0.0233,"[-0.2582, -0.1659]",-19.11,0.0,OK
+grain_yield,EXACT_VARIANCE_RE,PASS_READY,196,24,-0.2539,0.0508,"[-0.3591, -0.1487]",-22.42,4.7e-05,OK
+grain_yield,ecw_stratum,fresh_<1,3,1,-0.0137,,,-1.36,,SINGLE_CLUSTER
+grain_yield,ecw_stratum,highly_saline_ge8,219,37,-0.2694,0.031,"[-0.3322, -0.2066]",-23.61,0.0,OK
+grain_yield,ecw_stratum,moderately_brackish_3_5,418,80,-0.2002,0.0365,"[-0.2727, -0.1276]",-18.14,0.0,OK
+grain_yield,ecw_stratum,saline_5_8,343,68,-0.2179,0.0474,"[-0.3125, -0.1232]",-19.58,2e-05,OK
+grain_yield,ecw_stratum,slightly_brackish_1_3,187,33,-0.1305,0.0276,"[-0.1867, -0.0743]",-12.24,4.3e-05,OK
+grain_yield,irrigation_mode_std,drip_mulched,232,27,-0.16,0.0376,"[-0.2373, -0.0827]",-14.78,0.000241,OK
+grain_yield,irrigation_mode_std,drip_unmulched,223,36,-0.2634,0.0313,"[-0.3268, -0.1999]",-23.15,0.0,OK
+grain_yield,irrigation_mode_std,other,134,20,-0.1325,0.0681,"[-0.2751, 0.0101]",-12.41,0.066742,OK
+grain_yield,irrigation_mode_std,sprinkler,3,1,-0.1633,,,-15.07,,SINGLE_CLUSTER
+grain_yield,irrigation_mode_std,subsurface_drip,31,5,-0.1941,0.0522,"[-0.3391, -0.049]",-17.64,0.020579,OK
+grain_yield,irrigation_mode_std,surface_flood_furrow,547,44,-0.2404,0.0359,"[-0.3129, -0.1679]",-21.37,0.0,OK
+grain_yield,drip_vs_flood,drip_system,486,64,-0.2278,0.0279,"[-0.2835, -0.1721]",-20.37,0.0,OK
+grain_yield,drip_vs_flood,other_mode,137,21,-0.1339,0.0649,"[-0.2692, 0.0014]",-12.54,0.052148,OK
+grain_yield,drip_vs_flood,surface_flood_furrow,547,44,-0.2404,0.0359,"[-0.3129, -0.1679]",-21.37,0.0,OK
+grain_yield,irrigation_scheduling,blended_conjunctive,106,12,-0.15,0.0522,"[-0.2649, -0.0351]",-13.93,0.015157,OK
+grain_yield,irrigation_scheduling,continuous_brackish,858,112,-0.2174,0.0279,"[-0.2727, -0.1621]",-19.54,0.0,OK
+grain_yield,irrigation_scheduling,cyclic_alternating,206,33,-0.2065,0.0467,"[-0.3017, -0.1113]",-18.66,0.000107,OK
+grain_yield,drainage_regime,explicitly_not_reported_in_paper,341,37,-0.1775,0.0501,"[-0.2792, -0.0758]",-16.26,0.001123,OK
+grain_yield,drainage_regime,mixed_natural_and_subsurface,6,1,-0.1285,,,-12.06,,SINGLE_CLUSTER
+grain_yield,drainage_regime,none_or_natural,482,51,-0.211,0.0313,"[-0.2739, -0.1481]",-19.02,0.0,OK
+grain_yield,drainage_regime,open_ditch,16,2,0.0031,0.0249,"[-0.3135, 0.3196]",0.31,0.922169,OK
+grain_yield,drainage_regime,shallow_water_table_controlled,5,1,-0.1203,,,-11.34,,SINGLE_CLUSTER
+grain_yield,drainage_regime,subsurface_drainage,20,2,-0.1853,0.0203,"[-0.4434, 0.0727]",-16.92,0.069473,OK
+grain_yield,drainage_regime,subsurface_pipe_tile,94,5,-0.2306,0.0815,"[-0.4569, -0.0044]",-20.6,0.047348,OK
+grain_yield,drainage_regime,subsurface_tile_drain,4,1,-1.0635,,,-65.48,,SINGLE_CLUSTER
+grain_yield,drainage_regime,unreported,197,24,-0.2922,0.0695,"[-0.436, -0.1484]",-25.34,0.000339,OK
+grain_yield,drainage_regime,unspecified,5,2,-0.0981,0.0827,"[-1.1486, 0.9524]",-9.34,0.445863,OK
+grain_yield,has_drainage_engineered,engineered_drain,145,12,-0.1836,0.0452,"[-0.2831, -0.0841]",-16.77,0.001876,OK
+grain_yield,has_drainage_engineered,none_or_natural,1025,114,-0.2156,0.0253,"[-0.2657, -0.1655]",-19.4,0.0,OK
+grain_yield,duration_stratum,multiyear_ge_3yr,405,32,-0.1224,0.0403,"[-0.2046, -0.0402]",-11.52,0.004804,OK
+grain_yield,duration_stratum,short_le_2yr,765,92,-0.2454,0.0248,"[-0.2947, -0.1962]",-21.76,0.0,OK
+grain_yield,soil_depth_stratum_std,rootzone_0_40_60,10,1,-0.2091,,,-18.87,,SINGLE_CLUSTER
+grain_yield,soil_depth_stratum_std,whole_profile_or_unspecified,1160,123,-0.2121,0.0235,"[-0.2586, -0.1656]",-19.11,0.0,OK
+grain_yield,crop_group_std,Cotton_Fiber,163,15,-0.0833,0.0253,"[-0.1376, -0.029]",-7.99,0.005353,OK
+grain_yield,crop_group_std,Forage_Halophyte_SaltTolerant,16,2,-0.3347,0.0313,"[-0.7321, 0.0627]",-28.44,0.059319,OK
+grain_yield,crop_group_std,Fruit_Tree,138,19,-0.1808,0.0718,"[-0.3317, -0.03]",-16.54,0.021486,OK
+grain_yield,crop_group_std,Maize,135,19,-0.2713,0.0798,"[-0.439, -0.1035]",-23.76,0.003207,OK
+grain_yield,crop_group_std,Oilseed_Legume,160,15,-0.2529,0.0635,"[-0.389, -0.1167]",-22.34,0.001357,OK
+grain_yield,crop_group_std,Other,82,10,-0.1257,0.0369,"[-0.2092, -0.0423]",-11.81,0.007777,OK
+grain_yield,crop_group_std,Rice,11,3,-0.4681,0.6936,"[-3.4524, 2.5162]",-37.38,0.569301,OK
+grain_yield,crop_group_std,Root_Tuber,2,1,,,,,,INSUFFICIENT_K
+grain_yield,crop_group_std,Vegetable,302,33,-0.2246,0.0325,"[-0.2907, -0.1585]",-20.12,0.0,OK
+grain_yield,crop_group_std,Wheat,161,16,-0.1226,0.0332,"[-0.1934, -0.0517]",-11.54,0.0022,OK
+grain_yield,crop_group7,cotton,163,15,-0.0833,0.0253,"[-0.1376, -0.029]",-7.99,0.005353,OK
+grain_yield,crop_group7,fruit,154,20,-0.1791,0.0696,"[-0.3247, -0.0335]",-16.4,0.018555,OK
+grain_yield,crop_group7,maize,135,19,-0.2713,0.0798,"[-0.439, -0.1035]",-23.76,0.003207,OK
+grain_yield,crop_group7,oilseed_legume,168,16,-0.249,0.0602,"[-0.3774, -0.1206]",-22.04,0.000885,OK
+grain_yield,crop_group7,other,69,8,-0.2077,0.0668,"[-0.3657, -0.0497]",-18.76,0.0171,OK
+grain_yield,crop_group7,other_cereals,18,6,-0.3076,0.0383,"[-0.4061, -0.2092]",-26.48,0.000484,OK
+grain_yield,crop_group7,vegetables,302,33,-0.2246,0.0325,"[-0.2907, -0.1585]",-20.12,0.0,OK
+grain_yield,crop_group7,wheat,161,16,-0.1226,0.0332,"[-0.1934, -0.0517]",-11.54,0.0022,OK
+shoot_biomass,ALL,ALL,574,55,-0.2176,0.0304,"[-0.2784, -0.1567]",-19.55,0.0,OK
+shoot_biomass,EXACT_VARIANCE_RE,PASS_READY,102,13,-0.2313,0.049,"[-0.338, -0.1246]",-20.65,0.000495,OK
+shoot_biomass,ecw_stratum,highly_saline_ge8,173,22,-0.2358,0.0612,"[-0.363, -0.1085]",-21.0,0.000922,OK
+shoot_biomass,ecw_stratum,moderately_brackish_3_5,178,31,-0.1759,0.0309,"[-0.2391, -0.1127]",-16.13,3e-06,OK
+shoot_biomass,ecw_stratum,saline_5_8,174,35,-0.2316,0.0411,"[-0.3152, -0.1481]",-20.68,3e-06,OK
+shoot_biomass,ecw_stratum,slightly_brackish_1_3,49,7,-0.1309,0.0255,"[-0.1933, -0.0686]",-12.27,0.002132,OK
+shoot_biomass,irrigation_mode_std,drip_mulched,80,9,-0.2156,0.0482,"[-0.3267, -0.1046]",-19.4,0.002063,OK
+shoot_biomass,irrigation_mode_std,drip_unmulched,81,16,-0.2433,0.0578,"[-0.3664, -0.1202]",-21.6,0.000756,OK
+shoot_biomass,irrigation_mode_std,other,44,11,-0.191,0.101,"[-0.4161, 0.0341]",-17.39,0.087999,OK
+shoot_biomass,irrigation_mode_std,sprinkler,10,1,-0.0284,,,-2.8,,SINGLE_CLUSTER
+shoot_biomass,irrigation_mode_std,surface_flood_furrow,359,21,-0.2095,0.0328,"[-0.2779, -0.1412]",-18.9,3e-06,OK
+shoot_biomass,drip_vs_flood,drip_system,161,24,-0.2372,0.0437,"[-0.3277, -0.1467]",-21.12,1.6e-05,OK
+shoot_biomass,drip_vs_flood,other_mode,54,12,-0.1824,0.0948,"[-0.3911, 0.0263]",-16.68,0.080598,OK
+shoot_biomass,drip_vs_flood,surface_flood_furrow,359,21,-0.2095,0.0328,"[-0.2779, -0.1412]",-18.9,3e-06,OK
+shoot_biomass,irrigation_scheduling,blended_conjunctive,75,8,-0.0879,0.085,"[-0.2889, 0.113]",-8.42,0.335228,OK
+shoot_biomass,irrigation_scheduling,continuous_brackish,414,49,-0.2615,0.0445,"[-0.351, -0.172]",-23.01,0.0,OK
+shoot_biomass,irrigation_scheduling,cyclic_alternating,85,15,-0.1654,0.0252,"[-0.2194, -0.1114]",-15.24,1.3e-05,OK
+shoot_biomass,drainage_regime,explicitly_not_reported_in_paper,201,16,-0.2604,0.0462,"[-0.3589, -0.1618]",-22.92,4.8e-05,OK
+shoot_biomass,drainage_regime,none_or_natural,196,21,-0.1859,0.0252,"[-0.2386, -0.1333]",-16.97,0.0,OK
+shoot_biomass,drainage_regime,shallow_water_table_controlled,5,1,-0.0537,,,-5.23,,SINGLE_CLUSTER
+shoot_biomass,drainage_regime,subsurface_drainage,24,3,-0.6622,0.1033,"[-1.1067, -0.2178]",-48.43,0.023478,OK
+shoot_biomass,drainage_regime,subsurface_pipe_tile,8,1,-0.0365,,,-3.59,,SINGLE_CLUSTER
+shoot_biomass,drainage_regime,unreported,135,11,-0.2614,0.1111,"[-0.5089, -0.0138]",-23.0,0.04045,OK
+shoot_biomass,drainage_regime,unspecified,5,2,-0.0312,0.0268,"[-0.3723, 0.3099]",-3.07,0.452375,OK
+shoot_biomass,has_drainage_engineered,engineered_drain,37,5,-0.2483,0.1559,"[-0.6811, 0.1844]",-21.99,0.186296,OK
+shoot_biomass,has_drainage_engineered,none_or_natural,537,50,-0.2132,0.029,"[-0.2716, -0.1549]",-19.2,0.0,OK
+shoot_biomass,duration_stratum,multiyear_ge_3yr,91,9,-0.2166,0.09,"[-0.4242, -0.0091]",-19.48,0.042723,OK
+shoot_biomass,duration_stratum,short_le_2yr,483,46,-0.2178,0.0319,"[-0.282, -0.1536]",-19.57,0.0,OK
+shoot_biomass,soil_depth_stratum_std,whole_profile_or_unspecified,574,55,-0.2176,0.0304,"[-0.2784, -0.1567]",-19.55,0.0,OK
+shoot_biomass,crop_group_std,Cotton_Fiber,65,7,-0.2018,0.0464,"[-0.3153, -0.0883]",-18.27,0.004824,OK
+shoot_biomass,crop_group_std,Forage_Halophyte_SaltTolerant,78,6,-0.2346,0.0733,"[-0.4231, -0.046]",-20.91,0.024041,OK
+shoot_biomass,crop_group_std,Fruit_Tree,7,2,-0.2159,0.1499,"[-2.1206, 1.6887]",-19.42,0.386291,OK
+shoot_biomass,crop_group_std,Maize,41,5,-0.1157,0.0598,"[-0.2819, 0.0504]",-10.93,0.125264,OK
+shoot_biomass,crop_group_std,Oilseed_Legume,117,7,-0.2407,0.0473,"[-0.3565, -0.1249]",-21.39,0.002252,OK
+shoot_biomass,crop_group_std,Other,82,9,-0.3444,0.1495,"[-0.6891, 0.0002]",-29.14,0.050107,OK
+shoot_biomass,crop_group_std,Root_Tuber,1,1,,,,,,INSUFFICIENT_K
+shoot_biomass,crop_group_std,Vegetable,52,8,-0.1846,0.0863,"[-0.3888, 0.0195]",-16.86,0.069793,OK
+shoot_biomass,crop_group_std,Wheat,131,10,-0.1333,0.0351,"[-0.2126, -0.054]",-12.48,0.004201,OK
+shoot_biomass,crop_group7,cotton,65,7,-0.2018,0.0464,"[-0.3153, -0.0883]",-18.27,0.004824,OK
+shoot_biomass,crop_group7,fruit,7,2,-0.2159,0.1499,"[-2.1206, 1.6887]",-19.42,0.386291,OK
+shoot_biomass,crop_group7,maize,41,5,-0.1157,0.0598,"[-0.2819, 0.0504]",-10.93,0.125264,OK
+shoot_biomass,crop_group7,oilseed_legume,125,8,-0.2273,0.0436,"[-0.3304, -0.1242]",-20.34,0.001234,OK
+shoot_biomass,crop_group7,other,100,11,-0.3731,0.1058,"[-0.6089, -0.1373]",-31.14,0.005483,OK
+shoot_biomass,crop_group7,other_cereals,53,5,-0.2052,0.0641,"[-0.3831, -0.0272]",-18.55,0.032858,OK
+shoot_biomass,crop_group7,vegetables,52,8,-0.1846,0.0863,"[-0.3888, 0.0195]",-16.86,0.069793,OK
+shoot_biomass,crop_group7,wheat,131,10,-0.1333,0.0351,"[-0.2126, -0.054]",-12.48,0.004201,OK
+wue_or_iwue,ALL,ALL,459,40,-0.1869,0.029,"[-0.2457, -0.1282]",-17.05,0.0,OK
+wue_or_iwue,EXACT_VARIANCE_RE,PASS_READY,47,7,-0.1284,0.0453,"[-0.2391, -0.0177]",-12.05,0.029681,OK
+wue_or_iwue,ecw_stratum,highly_saline_ge8,59,9,-0.2621,0.0551,"[-0.3891, -0.1351]",-23.05,0.001429,OK
+wue_or_iwue,ecw_stratum,moderately_brackish_3_5,171,24,-0.1559,0.0629,"[-0.286, -0.0258]",-14.43,0.020961,OK
+wue_or_iwue,ecw_stratum,saline_5_8,142,21,-0.2276,0.041,"[-0.3131, -0.1421]",-20.36,1.9e-05,OK
+wue_or_iwue,ecw_stratum,slightly_brackish_1_3,87,11,-0.1009,0.0172,"[-0.1392, -0.0626]",-9.6,0.000157,OK
+wue_or_iwue,irrigation_mode_std,drip_mulched,137,10,-0.062,0.0288,"[-0.1271, 0.003]",-6.01,0.05944,OK
+wue_or_iwue,irrigation_mode_std,drip_unmulched,66,12,-0.3136,0.0694,"[-0.4663, -0.1608]",-26.92,0.000874,OK
+wue_or_iwue,irrigation_mode_std,other,38,4,-0.2068,0.0532,"[-0.3762, -0.0374]",-18.68,0.030224,OK
+wue_or_iwue,irrigation_mode_std,subsurface_drip,16,3,-0.1211,0.0246,"[-0.2271, -0.0152]",-11.41,0.038923,OK
+wue_or_iwue,irrigation_mode_std,surface_flood_furrow,202,16,-0.1783,0.0345,"[-0.252, -0.1047]",-16.33,0.000116,OK
+wue_or_iwue,drip_vs_flood,drip_system,219,23,-0.1899,0.0451,"[-0.2835, -0.0963]",-17.29,0.000364,OK
+wue_or_iwue,drip_vs_flood,other_mode,38,4,-0.2068,0.0532,"[-0.3762, -0.0374]",-18.68,0.030224,OK
+wue_or_iwue,drip_vs_flood,surface_flood_furrow,202,16,-0.1783,0.0345,"[-0.252, -0.1047]",-16.33,0.000116,OK
+wue_or_iwue,irrigation_scheduling,blended_conjunctive,19,6,-0.1316,0.0559,"[-0.2753, 0.012]",-12.34,0.065152,OK
+wue_or_iwue,irrigation_scheduling,continuous_brackish,336,36,-0.2201,0.0354,"[-0.292, -0.1482]",-19.75,0.0,OK
+wue_or_iwue,irrigation_scheduling,cyclic_alternating,104,13,-0.1013,0.0433,"[-0.1957, -0.0069]",-9.64,0.037535,OK
+wue_or_iwue,drainage_regime,explicitly_not_reported_in_paper,184,17,-0.1907,0.053,"[-0.303, -0.0785]",-17.37,0.00239,OK
+wue_or_iwue,drainage_regime,none_or_natural,218,16,-0.1423,0.0254,"[-0.1966, -0.0881]",-13.27,5.1e-05,OK
+wue_or_iwue,drainage_regime,open_ditch,15,1,0.0275,,,2.78,,SINGLE_CLUSTER
+wue_or_iwue,drainage_regime,subsurface_pipe_tile,12,1,-0.5059,,,-39.71,,SINGLE_CLUSTER
+wue_or_iwue,drainage_regime,unreported,26,4,-0.2616,0.0798,"[-0.5155, -0.0077]",-23.02,0.046481,OK
+wue_or_iwue,drainage_regime,unspecified,4,1,-0.181,,,-16.56,,SINGLE_CLUSTER
+wue_or_iwue,has_drainage_engineered,engineered_drain,27,2,-0.3059,0.25,"[-3.4828, 2.871]",-26.35,0.436222,OK
+wue_or_iwue,has_drainage_engineered,none_or_natural,432,38,-0.1794,0.0277,"[-0.2355, -0.1232]",-16.42,0.0,OK
+wue_or_iwue,duration_stratum,multiyear_ge_3yr,134,8,-0.2161,0.0777,"[-0.3998, -0.0324]",-19.43,0.027214,OK
+wue_or_iwue,duration_stratum,short_le_2yr,325,32,-0.1795,0.031,"[-0.2428, -0.1162]",-16.43,2e-06,OK
+wue_or_iwue,soil_depth_stratum_std,rootzone_0_40_60,2,1,,,,,,INSUFFICIENT_K
+wue_or_iwue,soil_depth_stratum_std,whole_profile_or_unspecified,457,39,-0.1804,0.0293,"[-0.2397, -0.1211]",-16.51,0.0,OK
+wue_or_iwue,crop_group_std,Cotton_Fiber,89,5,-0.0486,0.0266,"[-0.1225, 0.0253]",-4.74,0.142044,OK
+wue_or_iwue,crop_group_std,Fruit_Tree,27,5,-0.2561,0.1565,"[-0.6907, 0.1784]",-22.6,0.177074,OK
+wue_or_iwue,crop_group_std,Maize,62,7,-0.135,0.0751,"[-0.3187, 0.0487]",-12.63,0.122189,OK
+wue_or_iwue,crop_group_std,Oilseed_Legume,47,6,-0.1534,0.0211,"[-0.2076, -0.0992]",-14.22,0.000766,OK
+wue_or_iwue,crop_group_std,Other,44,2,-0.2324,0.0615,"[-1.0135, 0.5487]",-20.74,0.164626,OK
+wue_or_iwue,crop_group_std,Vegetable,108,11,-0.284,0.0504,"[-0.3964, -0.1716]",-24.72,0.000218,OK
+wue_or_iwue,crop_group_std,Wheat,82,5,-0.1059,0.0258,"[-0.1776, -0.0342]",-10.05,0.014831,OK
+wue_or_iwue,crop_group7,cotton,89,5,-0.0486,0.0266,"[-0.1225, 0.0253]",-4.74,0.142044,OK
+wue_or_iwue,crop_group7,fruit,27,5,-0.2561,0.1565,"[-0.6907, 0.1784]",-22.6,0.177074,OK
+wue_or_iwue,crop_group7,maize,62,7,-0.135,0.0751,"[-0.3187, 0.0487]",-12.63,0.122189,OK
+wue_or_iwue,crop_group7,oilseed_legume,55,7,-0.1553,0.0186,"[-0.2007, -0.1098]",-14.38,0.00016,OK
+wue_or_iwue,crop_group7,other,36,1,-0.2939,,,-25.46,,SINGLE_CLUSTER
+wue_or_iwue,crop_group7,vegetables,108,11,-0.284,0.0504,"[-0.3964, -0.1716]",-24.72,0.000218,OK
+wue_or_iwue,crop_group7,wheat,82,5,-0.1059,0.0258,"[-0.1776, -0.0342]",-10.05,0.014831,OK
+soil_EC,ALL,ALL,1050,84,0.7731,0.0526,"[0.6684, 0.8778]",116.65,0.0,OK
+soil_EC,EXACT_VARIANCE_RE,PASS_READY,77,13,0.9762,0.1116,"[0.7332, 1.2193]",165.44,1e-06,OK
+soil_EC,ecw_stratum,fresh_<1,6,3,0.5724,0.1068,"[0.1127, 1.0321]",77.25,0.033124,OK
+soil_EC,ecw_stratum,highly_saline_ge8,258,30,1.0655,0.1117,"[0.837, 1.294]",190.23,0.0,OK
+soil_EC,ecw_stratum,moderately_brackish_3_5,288,47,0.6841,0.0736,"[0.536, 0.8322]",98.19,0.0,OK
+soil_EC,ecw_stratum,saline_5_8,360,44,0.7308,0.0743,"[0.581, 0.8806]",107.67,0.0,OK
+soil_EC,ecw_stratum,slightly_brackish_1_3,138,27,0.7024,0.1221,"[0.4513, 0.9534]",101.85,5e-06,OK
+soil_EC,irrigation_mode_std,drip_mulched,238,22,0.7886,0.0914,"[0.5986, 0.9787]",120.04,0.0,OK
+soil_EC,irrigation_mode_std,drip_unmulched,163,21,0.9136,0.0957,"[0.7139, 1.1133]",149.32,0.0,OK
+soil_EC,irrigation_mode_std,other,190,12,0.7483,0.1563,"[0.4043, 1.0923]",111.34,0.000564,OK
+soil_EC,irrigation_mode_std,sprinkler,10,2,0.6849,0.2012,"[-1.871, 3.2408]",98.36,0.181856,OK
+soil_EC,irrigation_mode_std,subsurface_drip,37,3,0.4693,0.0685,"[0.1745, 0.764]",59.88,0.020652,OK
+soil_EC,irrigation_mode_std,surface_flood_furrow,412,28,0.7174,0.0965,"[0.5193, 0.9155]",104.91,0.0,OK
+soil_EC,drip_vs_flood,drip_system,438,45,0.825,0.0644,"[0.6952, 0.9549]",128.19,0.0,OK
+soil_EC,drip_vs_flood,other_mode,200,14,0.7398,0.1358,"[0.4464, 1.0332]",109.55,0.000112,OK
+soil_EC,drip_vs_flood,surface_flood_furrow,412,28,0.7174,0.0965,"[0.5193, 0.9155]",104.91,0.0,OK
+soil_EC,irrigation_scheduling,blended_conjunctive,51,8,0.8761,0.1498,"[0.522, 1.2302]",140.15,0.000631,OK
+soil_EC,irrigation_scheduling,continuous_brackish,749,75,0.793,0.059,"[0.6755, 0.9105]",121.0,0.0,OK
+soil_EC,irrigation_scheduling,cyclic_alternating,250,23,0.6881,0.1061,"[0.4681, 0.9081]",98.99,2e-06,OK
+soil_EC,drainage_regime,explicitly_not_reported_in_paper,280,27,0.7911,0.0989,"[0.5878, 0.9944]",120.58,0.0,OK
+soil_EC,drainage_regime,none_or_natural,570,31,0.7643,0.1033,"[0.5534, 0.9752]",114.75,0.0,OK
+soil_EC,drainage_regime,open_ditch,6,1,0.613,,,84.59,,SINGLE_CLUSTER
+soil_EC,drainage_regime,shallow_water_table_controlled,30,3,0.7782,0.1327,"[0.2074, 1.349]",117.76,0.027849,OK
+soil_EC,drainage_regime,subsurface_drainage,26,3,0.4145,0.2544,"[-0.6802, 1.5093]",51.36,0.24483,OK
+soil_EC,drainage_regime,subsurface_pipe_tile,48,4,0.9475,0.2996,"[-0.006, 1.9011]",157.94,0.050775,OK
+soil_EC,drainage_regime,unreported,86,14,0.8333,0.0812,"[0.6579, 1.0087]",130.09,0.0,OK
+soil_EC,drainage_regime,unspecified,4,1,0.1635,,,17.76,,SINGLE_CLUSTER
+soil_EC,has_drainage_engineered,engineered_drain,110,11,0.7124,0.1135,"[0.4596, 0.9652]",103.88,9.2e-05,OK
+soil_EC,has_drainage_engineered,none_or_natural,940,73,0.7821,0.0582,"[0.6661, 0.8982]",118.61,0.0,OK
+soil_EC,duration_stratum,multiyear_ge_3yr,292,27,0.7225,0.0823,"[0.5534, 0.8916]",105.96,0.0,OK
+soil_EC,duration_stratum,short_le_2yr,758,57,0.8029,0.0681,"[0.6665, 0.9393]",123.2,0.0,OK
+soil_EC,soil_depth_stratum_std,rootzone_0_40_60,386,48,0.7199,0.0648,"[0.5895, 0.8502]",105.42,0.0,OK
+soil_EC,soil_depth_stratum_std,subsoil_40_100,177,20,0.6351,0.1315,"[0.3598, 0.9104]",88.72,0.000117,OK
+soil_EC,soil_depth_stratum_std,topsoil_0_20,301,43,0.9673,0.096,"[0.7735, 1.1611]",163.08,0.0,OK
+soil_EC,soil_depth_stratum_std,whole_profile_or_unspecified,186,25,0.6756,0.0826,"[0.5051, 0.8462]",96.53,0.0,OK
+soil_EC,crop_group_std,Cotton_Fiber,189,15,0.9612,0.1106,"[0.724, 1.1985]",161.49,1e-06,OK
+soil_EC,crop_group_std,Forage_Halophyte_SaltTolerant,9,2,0.6924,0.2906,"[-2.9994, 4.3843]",99.86,0.252929,OK
+soil_EC,crop_group_std,Fruit_Tree,58,13,0.6613,0.1306,"[0.3767, 0.9459]",93.73,0.000279,OK
+soil_EC,crop_group_std,Maize,118,11,0.7453,0.0747,"[0.5787, 0.9118]",110.7,2e-06,OK
+soil_EC,crop_group_std,Oilseed_Legume,129,10,0.7627,0.2084,"[0.2912, 1.2341]",114.4,0.005239,OK
+soil_EC,crop_group_std,Other,124,8,0.5859,0.1335,"[0.2702, 0.9016]",79.67,0.0032,OK
+soil_EC,crop_group_std,Root_Tuber,2,1,,,,,,INSUFFICIENT_K
+soil_EC,crop_group_std,Vegetable,203,18,0.8479,0.0987,"[0.6398, 1.0561]",133.48,0.0,OK
+soil_EC,crop_group_std,Wheat,218,10,0.8636,0.2148,"[0.3776, 1.3496]",137.18,0.003019,OK
+soil_EC,crop_group7,cotton,189,15,0.9612,0.1106,"[0.724, 1.1985]",161.49,1e-06,OK
+soil_EC,crop_group7,fruit,58,13,0.6613,0.1306,"[0.3767, 0.9459]",93.73,0.000279,OK
+soil_EC,crop_group7,maize,118,11,0.7453,0.0747,"[0.5787, 0.9118]",110.7,2e-06,OK
+soil_EC,crop_group7,oilseed_legume,171,12,0.7733,0.184,"[0.3683, 1.1783]",116.7,0.001479,OK
+soil_EC,crop_group7,other,93,9,0.5289,0.1265,"[0.2372, 0.8206]",69.71,0.003077,OK
+soil_EC,crop_group7,vegetables,203,18,0.8479,0.0987,"[0.6398, 1.0561]",133.48,0.0,OK
+soil_EC,crop_group7,wheat,218,10,0.8636,0.2148,"[0.3776, 1.3496]",137.18,0.003019,OK
+soil_EC,duration_x_depth,multiyear_ge_3yr::rootzone_0_40_60,95,13,0.6831,0.1108,"[0.4416, 0.9245]",97.99,4.8e-05,OK
+soil_EC,duration_x_depth,multiyear_ge_3yr::subsoil_40_100,48,6,0.4588,0.1714,"[0.0181, 0.8994]",58.21,0.044008,OK
+soil_EC,duration_x_depth,multiyear_ge_3yr::topsoil_0_20,79,12,0.8483,0.1502,"[0.5178, 1.1788]",133.57,0.000149,OK
+soil_EC,duration_x_depth,multiyear_ge_3yr::whole_profile_or_unspecified,70,11,0.736,0.1041,"[0.504, 0.9679]",108.75,3.4e-05,OK
+soil_EC,duration_x_depth,short_le_2yr::rootzone_0_40_60,291,35,0.7345,0.0802,"[0.5714, 0.8975]",108.44,0.0,OK
+soil_EC,duration_x_depth,short_le_2yr::subsoil_40_100,129,14,0.7496,0.1758,"[0.3698, 1.1295]",111.62,0.000924,OK
+soil_EC,duration_x_depth,short_le_2yr::topsoil_0_20,222,31,1.0271,0.1233,"[0.7752, 1.279]",179.29,0.0,OK
+soil_EC,duration_x_depth,short_le_2yr::whole_profile_or_unspecified,116,14,0.6146,0.1171,"[0.3617, 0.8676]",84.9,0.000157,OK
+soil_EC,drainage_x_duration,engineered_drain::multiyear_ge_3yr,57,5,0.556,0.1375,"[0.1743, 0.9376]",74.37,0.015545,OK
+soil_EC,drainage_x_duration,engineered_drain::short_le_2yr,53,6,0.8852,0.1782,"[0.4271, 1.3434]",142.35,0.004223,OK
+soil_EC,drainage_x_duration,none_or_natural::multiyear_ge_3yr,235,22,0.7597,0.0967,"[0.5585, 0.9609]",113.77,0.0,OK
+soil_EC,drainage_x_duration,none_or_natural::short_le_2yr,705,51,0.794,0.0733,"[0.6467, 0.9413]",121.23,0.0,OK
+soil_SAR,ALL,ALL,93,11,1.2085,0.2129,"[0.7341, 1.6828]",234.83,0.000205,OK
+soil_SAR,ecw_stratum,fresh_<1,2,1,,,,,,INSUFFICIENT_K
+soil_SAR,ecw_stratum,highly_saline_ge8,38,5,1.3536,0.1687,"[0.8852, 1.8221]",287.15,0.00131,OK
+soil_SAR,ecw_stratum,moderately_brackish_3_5,15,6,1.5947,0.664,"[-0.1123, 3.3017]",392.68,0.061509,OK
+soil_SAR,ecw_stratum,saline_5_8,12,4,0.9154,0.3806,"[-0.2958, 2.1266]",149.78,0.09542,OK
+soil_SAR,ecw_stratum,slightly_brackish_1_3,26,4,1.1431,0.4356,"[-0.2432, 2.5294]",213.64,0.078722,OK
+soil_SAR,irrigation_mode_std,drip_mulched,2,1,,,,,,INSUFFICIENT_K
+soil_SAR,irrigation_mode_std,drip_unmulched,10,3,1.4131,0.7953,"[-2.0086, 4.8348]",310.87,0.21756,OK
+soil_SAR,irrigation_mode_std,other,37,3,0.9397,0.2491,"[-0.1322, 2.0117]",155.93,0.063646,OK
+soil_SAR,irrigation_mode_std,surface_flood_furrow,44,4,1.6817,0.3974,"[0.4169, 2.9465]",437.47,0.024152,OK
+soil_SAR,drip_vs_flood,drip_system,12,4,1.2549,0.609,"[-0.6832, 3.193]",250.75,0.13142,OK
+soil_SAR,drip_vs_flood,other_mode,37,3,0.9397,0.2491,"[-0.1322, 2.0117]",155.93,0.063646,OK
+soil_SAR,drip_vs_flood,surface_flood_furrow,44,4,1.6817,0.3974,"[0.4169, 2.9465]",437.47,0.024152,OK
+soil_SAR,irrigation_scheduling,blended_conjunctive,6,1,1.1947,,,230.27,,SINGLE_CLUSTER
+soil_SAR,irrigation_scheduling,continuous_brackish,81,9,1.2421,0.3708,"[0.387, 2.0973]",246.29,0.010088,OK
+soil_SAR,irrigation_scheduling,cyclic_alternating,6,3,1.1646,0.0798,"[0.8213, 1.508]",220.48,0.004661,OK
+soil_SAR,drainage_regime,explicitly_not_reported_in_paper,29,4,0.9078,0.2244,"[0.1937, 1.622]",147.9,0.027191,OK
+soil_SAR,drainage_regime,none_or_natural,48,5,1.8963,0.3647,"[0.8838, 2.9089]",566.14,0.006517,OK
+soil_SAR,drainage_regime,subsurface_drainage,4,1,-0.0693,,,-6.7,,SINGLE_CLUSTER
+soil_SAR,drainage_regime,unreported,12,1,1.2831,,,260.78,,SINGLE_CLUSTER
+soil_SAR,has_drainage_engineered,engineered_drain,4,1,-0.0693,,,-6.7,,SINGLE_CLUSTER
+soil_SAR,has_drainage_engineered,none_or_natural,89,10,1.2881,0.2166,"[0.7981, 1.7781]",262.58,0.000216,OK
+soil_SAR,duration_stratum,multiyear_ge_3yr,74,7,1.0471,0.2486,"[0.4387, 1.6555]",184.94,0.005616,OK
+soil_SAR,duration_stratum,short_le_2yr,19,4,1.5972,0.3592,"[0.4541, 2.7404]",393.93,0.021159,OK
+soil_SAR,soil_depth_stratum_std,rootzone_0_40_60,35,4,0.789,0.3807,"[-0.4225, 2.0005]",120.12,0.129918,OK
+soil_SAR,soil_depth_stratum_std,subsoil_40_100,5,2,0.9231,0.5104,"[-5.5618, 7.408]",151.7,0.321534,OK
+soil_SAR,soil_depth_stratum_std,topsoil_0_20,42,7,1.4795,0.3215,"[0.6928, 2.2661]",339.06,0.003684,OK
+soil_SAR,soil_depth_stratum_std,whole_profile_or_unspecified,11,3,1.1905,0.359,"[-0.354, 2.7351]",228.89,0.08014,OK
+soil_SAR,crop_group_std,Cotton_Fiber,42,3,1.2136,0.2851,"[-0.013, 2.4402]",236.55,0.050996,OK
+soil_SAR,crop_group_std,Fruit_Tree,29,3,1.1483,0.3791,"[-0.483, 2.7796]",215.27,0.093916,OK
+soil_SAR,crop_group_std,Maize,2,1,,,,,,INSUFFICIENT_K
+soil_SAR,crop_group_std,Other,16,2,0.7035,0.6624,"[-7.7134, 9.1204]",102.08,0.48087,OK
+soil_SAR,crop_group_std,Wheat,4,2,1.8747,0.8605,"[-9.0589, 12.8082]",551.86,0.273951,OK
+soil_SAR,crop_group7,cotton,42,3,1.2136,0.2851,"[-0.013, 2.4402]",236.55,0.050996,OK
+soil_SAR,crop_group7,fruit,29,3,1.1483,0.3791,"[-0.483, 2.7796]",215.27,0.093916,OK
+soil_SAR,crop_group7,maize,2,1,,,,,,INSUFFICIENT_K
+soil_SAR,crop_group7,other,16,2,0.7035,0.6624,"[-7.7134, 9.1204]",102.08,0.48087,OK
+soil_SAR,crop_group7,wheat,4,2,1.8747,0.8605,"[-9.0589, 12.8082]",551.86,0.273951,OK
+soil_ESP,ALL,ALL,50,7,0.8126,0.2009,"[0.321, 1.3041]",125.37,0.006767,OK
+soil_ESP,ecw_stratum,fresh_<1,2,1,,,,,,INSUFFICIENT_K
+soil_ESP,ecw_stratum,moderately_brackish_3_5,8,3,1.2334,0.2992,"[-0.054, 2.5208]",243.28,0.054116,OK
+soil_ESP,ecw_stratum,saline_5_8,33,4,0.8327,0.467,"[-0.6536, 2.3191]",129.96,0.172597,OK
+soil_ESP,ecw_stratum,slightly_brackish_1_3,7,3,0.697,0.1244,"[0.1618, 1.2322]",100.77,0.030406,OK
+soil_ESP,irrigation_mode_std,drip_unmulched,5,3,1.3725,0.2091,"[0.4727, 2.2722]",294.51,0.022437,OK
+soil_ESP,irrigation_mode_std,other,4,1,0.6348,,,88.67,,SINGLE_CLUSTER
+soil_ESP,irrigation_mode_std,surface_flood_furrow,41,4,0.6662,0.3741,"[-0.5244, 1.8568]",94.68,0.173006,OK
+soil_ESP,drip_vs_flood,drip_system,5,3,1.3725,0.2091,"[0.4727, 2.2722]",294.51,0.022437,OK
+soil_ESP,drip_vs_flood,other_mode,4,1,0.6348,,,88.67,,SINGLE_CLUSTER
+soil_ESP,drip_vs_flood,surface_flood_furrow,41,4,0.6662,0.3741,"[-0.5244, 1.8568]",94.68,0.173006,OK
+soil_ESP,irrigation_scheduling,continuous_brackish,24,6,1.0276,0.3055,"[0.2422, 1.813]",179.43,0.020038,OK
+soil_ESP,irrigation_scheduling,cyclic_alternating,26,4,0.6495,0.16,"[0.1405, 1.1586]",91.46,0.026924,OK
+soil_ESP,drainage_regime,explicitly_not_reported_in_paper,6,2,0.6921,0.0964,"[-0.533, 1.9172]",99.79,0.088122,OK
+soil_ESP,drainage_regime,none_or_natural,30,2,0.6374,0.6661,"[-7.8262, 9.1009]",89.15,0.51403,OK
+soil_ESP,drainage_regime,unreported,14,3,1.0964,0.4951,"[-1.0339, 3.2268]",199.35,0.157205,OK
+soil_ESP,has_drainage_engineered,none_or_natural,50,7,0.8126,0.2009,"[0.321, 1.3041]",125.37,0.006767,OK
+soil_ESP,duration_stratum,multiyear_ge_3yr,10,2,0.7755,0.2368,"[-2.2339, 3.7849]",117.16,0.188709,OK
+soil_ESP,duration_stratum,short_le_2yr,40,5,0.8461,0.3494,"[-0.1239, 1.8161]",133.06,0.072621,OK
+soil_ESP,soil_depth_stratum_std,rootzone_0_40_60,21,3,0.449,0.3142,"[-0.903, 1.801]",56.67,0.289244,OK
+soil_ESP,soil_depth_stratum_std,subsoil_40_100,11,2,0.2184,0.1438,"[-1.6091, 2.046]",24.41,0.370702,OK
+soil_ESP,soil_depth_stratum_std,topsoil_0_20,4,2,1.0736,0.4507,"[-4.6532, 6.8005]",192.6,0.253031,OK
+soil_ESP,soil_depth_stratum_std,whole_profile_or_unspecified,14,3,0.9608,0.347,"[-0.5323, 2.4538]",161.38,0.109441,OK
+soil_ESP,crop_group_std,Fruit_Tree,4,1,0.6348,,,88.67,,SINGLE_CLUSTER
+soil_ESP,crop_group_std,Maize,16,4,1.0779,0.3788,"[-0.1275, 2.2832]",193.84,0.065333,OK
+soil_ESP,crop_group_std,Oilseed_Legume,24,1,0.1045,,,11.01,,SINGLE_CLUSTER
+soil_ESP,crop_group_std,Wheat,6,1,1.5255,,,359.74,,SINGLE_CLUSTER
+soil_ESP,crop_group7,fruit,4,1,0.6348,,,88.67,,SINGLE_CLUSTER
+soil_ESP,crop_group7,maize,16,4,1.0779,0.3788,"[-0.1275, 2.2832]",193.84,0.065333,OK
+soil_ESP,crop_group7,oilseed_legume,24,1,0.1045,,,11.01,,SINGLE_CLUSTER
+soil_ESP,crop_group7,wheat,6,1,1.5255,,,359.74,,SINGLE_CLUSTER
+ks_saturated,ALL,ALL,4,1,-0.7147,,,-51.07,,SINGLE_CLUSTER
+ks_saturated,ecw_stratum,saline_5_8,4,1,-0.7147,,,-51.07,,SINGLE_CLUSTER
+ks_saturated,irrigation_mode_std,drip_mulched,4,1,-0.7147,,,-51.07,,SINGLE_CLUSTER
+ks_saturated,drip_vs_flood,drip_system,4,1,-0.7147,,,-51.07,,SINGLE_CLUSTER
+ks_saturated,irrigation_scheduling,continuous_brackish,4,1,-0.7147,,,-51.07,,SINGLE_CLUSTER
+ks_saturated,drainage_regime,subsurface_pipe_tile,4,1,-0.7147,,,-51.07,,SINGLE_CLUSTER
+ks_saturated,has_drainage_engineered,engineered_drain,4,1,-0.7147,,,-51.07,,SINGLE_CLUSTER
+ks_saturated,duration_stratum,short_le_2yr,4,1,-0.7147,,,-51.07,,SINGLE_CLUSTER
+ks_saturated,soil_depth_stratum_std,topsoil_0_20,4,1,-0.7147,,,-51.07,,SINGLE_CLUSTER
+ks_saturated,crop_group_std,Maize,4,1,-0.7147,,,-51.07,,SINGLE_CLUSTER
+ks_saturated,crop_group7,maize,4,1,-0.7147,,,-51.07,,SINGLE_CLUSTER
+infiltration_rate,ALL,ALL,6,1,-1.2221,,,-70.54,,SINGLE_CLUSTER
+infiltration_rate,ecw_stratum,moderately_brackish_3_5,4,1,-1.2792,,,-72.18,,SINGLE_CLUSTER
+infiltration_rate,ecw_stratum,slightly_brackish_1_3,2,1,,,,,,INSUFFICIENT_K
+infiltration_rate,irrigation_mode_std,surface_flood_furrow,6,1,-1.2221,,,-70.54,,SINGLE_CLUSTER
+infiltration_rate,drip_vs_flood,surface_flood_furrow,6,1,-1.2221,,,-70.54,,SINGLE_CLUSTER
+infiltration_rate,irrigation_scheduling,continuous_brackish,4,1,-1.2792,,,-72.18,,SINGLE_CLUSTER
+infiltration_rate,irrigation_scheduling,cyclic_alternating,2,1,,,,,,INSUFFICIENT_K
+infiltration_rate,drainage_regime,none_or_natural,6,1,-1.2221,,,-70.54,,SINGLE_CLUSTER
+infiltration_rate,has_drainage_engineered,none_or_natural,6,1,-1.2221,,,-70.54,,SINGLE_CLUSTER
+infiltration_rate,duration_stratum,multiyear_ge_3yr,6,1,-1.2221,,,-70.54,,SINGLE_CLUSTER
+infiltration_rate,soil_depth_stratum_std,topsoil_0_20,6,1,-1.2221,,,-70.54,,SINGLE_CLUSTER
+infiltration_rate,crop_group_std,Wheat,6,1,-1.2221,,,-70.54,,SINGLE_CLUSTER
+infiltration_rate,crop_group7,wheat,6,1,-1.2221,,,-70.54,,SINGLE_CLUSTER

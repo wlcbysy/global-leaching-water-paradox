@@ -1,0 +1,6 @@
+regime,exceeded_basins
+EFR 50% (Amb.),58
+Inflow-aware (EFR 60%),74
+EFR 60% (Baseline),80
+EFR 60% (ECw=3),87
+EFR 80% (Amb.),162

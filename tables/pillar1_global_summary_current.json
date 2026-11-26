@@ -1,0 +1,262 @@
+{
+  "script": "pillar1_global_leaching_paradox.py",
+  "baseline_period": "1991-2019 (WaterGAP 2.2e ISIMIP3a gswp3-w5e5)",
+  "global_hydrology_1991_2019": {
+    "land_cells": 67420,
+    "qtot_km3_yr": 50714.1,
+    "atotuse_km3_yr": 1457.7,
+    "atotusegw_mining_pos_km3_yr": 441.4,
+    "atotusegw_net_km3_yr": -133.8,
+    "qr_km3_yr": 17005.3,
+    "pirrww_km3_yr": 2808.4,
+    "pirruse_km3_yr": 1296.9
+  },
+  "global_irrigated_and_salinity_scope": {
+    "irrig_active_cells": 11914,
+    "salt_affected_irrig_cells": 3261,
+    "spam2020_total_irrig_mha": 290.61,
+    "spam2020_salt_affected_irrig_mha": 97.12,
+    "thorslund_gw_valid_stations": 205471,
+    "thorslund_riv_valid_stations": 33823
+  },
+  "physical_leaching_demand_V_leach_km3_yr": {
+    "ambient_observed_water_ec": 15.09,
+    "ambient_station_fallback07_sensitivity": 39.48,
+    "ambient_both_capped_625_sensitivity": 23.28,
+    "ambient_dynqual_only_annual_sensitivity": 15.0,
+    "ambient_dynqual_p90_dryseason_sensitivity": 25.21,
+    "ambient_dynqual_unscreened_raw_upper_bound": 141.69,
+    "ambient_strict_ecet_100pct_yield": 20.35,
+    "counterfactual_ecw_1_dsm": 15.18,
+    "counterfactual_ecw_2_dsm": 31.86,
+    "counterfactual_ecw_3_dsm": 50.44,
+    "counterfactual_ecw_3_no_peff_sensitivity": 248.16,
+    "counterfactual_ecw_5_dsm": 95.93,
+    "unleachable_cells_amb": 0,
+    "unleachable_cells_ec3": 0,
+    "unleachable_cells_ec5": 0,
+    "salt_affected_only_vleach_km3_yr": {
+      "ambient_observed_water_ec": 10.48,
+      "ambient_station_fallback07_sensitivity": 29.69,
+      "ambient_both_capped_625_sensitivity": 18.0,
+      "ambient_dynqual_only_annual_sensitivity": 10.38,
+      "ambient_dynqual_p90_dryseason_sensitivity": 17.06,
+      "ambient_dynqual_unscreened_raw_upper_bound": 126.26,
+      "counterfactual_ecw_1_dsm": 8.94,
+      "counterfactual_ecw_2_dsm": 18.95,
+      "counterfactual_ecw_3_dsm": 30.36,
+      "counterfactual_ecw_5_dsm": 59.44
+    }
+  },
+  "whole_basin_mass_conservation_check_top20_basins": {
+    "top20_corr_qtot_vs_max_dis": 0.9584,
+    "top20_sum_qtot_km3_yr": 6439.9,
+    "top20_sum_max_dis_km3_yr": 5771.2
+  },
+  "salt_affected_basins_ge_10kha": {
+    "n_basins": 376,
+    "salt_irrig_mha": 96.15,
+    "paradox_status_ambient_counts": {
+      "HYDROLOGICALLY_FEASIBLE": 243,
+      "PARADOX_INSOLVENT_BLUE_AND_GW": 59,
+      "GW_DEPLETION_ONLY": 53,
+      "PARADOX_BLUE_WATER_EXCEEDED": 21
+    },
+    "paradox_status_ec3_counts": {
+      "HYDROLOGICALLY_FEASIBLE": 236,
+      "PARADOX_INSOLVENT_BLUE_AND_GW": 59,
+      "GW_DEPLETION_ONLY": 53,
+      "PARADOX_BLUE_WATER_EXCEEDED": 28
+    },
+    "salt_irrig_mha_by_status_ambient": {
+      "GW_DEPLETION_ONLY": 30.62,
+      "HYDROLOGICALLY_FEASIBLE": 36.01,
+      "PARADOX_BLUE_WATER_EXCEEDED": 8.34,
+      "PARADOX_INSOLVENT_BLUE_AND_GW": 21.18
+    },
+    "salt_irrig_mha_by_status_ec3": {
+      "GW_DEPLETION_ONLY": 30.62,
+      "HYDROLOGICALLY_FEASIBLE": 34.65,
+      "PARADOX_BLUE_WATER_EXCEEDED": 9.71,
+      "PARADOX_INSOLVENT_BLUE_AND_GW": 21.18
+    },
+    "efr_sensitivity_exceeded_basins_amb": {
+      "efr_50pct": 58,
+      "efr_60pct": 80,
+      "efr_80pct": 162
+    }
+  },
+  "hassani_2021_cmip6_salt_irrig_mean_ece_dsm": {
+    "hassani_ssp245_2020": 6.135,
+    "hassani_ssp245_2050": 6.087,
+    "hassani_ssp245_2080": 6.067,
+    "hassani_ssp585_2020": 6.079,
+    "hassani_ssp585_2050": 6.081,
+    "hassani_ssp585_2080": 6.007
+  },
+  "isimip3b_future_hydrology": {
+    "available": true,
+    "scenarios": {
+      "ssp126": {
+        "n_gcms": 5,
+        "gcms_used": [
+          "gfdl-esm4",
+          "ipsl-cm6a-lr",
+          "mpi-esm1-2-hr",
+          "mri-esm2-0",
+          "ukesm1-0-ll"
+        ],
+        "2050": {
+          "global_qtot_km3_median": 53146.4,
+          "global_qtot_km3_iqr": [
+            52794.8,
+            54654.2
+          ],
+          "global_pirrww_km3_median": 3115.7,
+          "global_pirrww_km3_iqr": [
+            3055.9,
+            3122.9
+          ],
+          "global_atotuse_km3_median": 1640.9,
+          "global_gw_mining_pos_km3_median": 494.8,
+          "salt_basins_blue_exceeded_amb": 78,
+          "salt_basins_blue_exceeded_ec3": 84,
+          "salt_basins_insolvent_blue_and_gw_amb": 54,
+          "salt_basins_insolvent_blue_and_gw_ec3": 55
+        },
+        "2080": {
+          "global_qtot_km3_median": 53229.7,
+          "global_qtot_km3_iqr": [
+            52530.9,
+            53329.1
+          ],
+          "global_pirrww_km3_median": 3119.8,
+          "global_pirrww_km3_iqr": [
+            3066.5,
+            3168.0
+          ],
+          "global_atotuse_km3_median": 1638.1,
+          "global_gw_mining_pos_km3_median": 498.8,
+          "salt_basins_blue_exceeded_amb": 83,
+          "salt_basins_blue_exceeded_ec3": 90,
+          "salt_basins_insolvent_blue_and_gw_amb": 57,
+          "salt_basins_insolvent_blue_and_gw_ec3": 57
+        }
+      },
+      "ssp370": {
+        "n_gcms": 5,
+        "gcms_used": [
+          "gfdl-esm4",
+          "ipsl-cm6a-lr",
+          "mpi-esm1-2-hr",
+          "mri-esm2-0",
+          "ukesm1-0-ll"
+        ],
+        "2050": {
+          "global_qtot_km3_median": 53324.4,
+          "global_qtot_km3_iqr": [
+            53065.9,
+            53345.9
+          ],
+          "global_pirrww_km3_median": 2935.0,
+          "global_pirrww_km3_iqr": [
+            2935.0,
+            2957.4
+          ],
+          "global_atotuse_km3_median": 1559.4,
+          "global_gw_mining_pos_km3_median": 484.6,
+          "salt_basins_blue_exceeded_amb": 84,
+          "salt_basins_blue_exceeded_ec3": 90,
+          "salt_basins_insolvent_blue_and_gw_amb": 56,
+          "salt_basins_insolvent_blue_and_gw_ec3": 57
+        },
+        "2080": {
+          "global_qtot_km3_median": 54050.4,
+          "global_qtot_km3_iqr": [
+            53842.4,
+            57637.3
+          ],
+          "global_pirrww_km3_median": 2976.9,
+          "global_pirrww_km3_iqr": [
+            2973.7,
+            2996.9
+          ],
+          "global_atotuse_km3_median": 1575.4,
+          "global_gw_mining_pos_km3_median": 489.5,
+          "salt_basins_blue_exceeded_amb": 82,
+          "salt_basins_blue_exceeded_ec3": 93,
+          "salt_basins_insolvent_blue_and_gw_amb": 55,
+          "salt_basins_insolvent_blue_and_gw_ec3": 57
+        }
+      },
+      "ssp585": {
+        "n_gcms": 5,
+        "gcms_used": [
+          "gfdl-esm4",
+          "ipsl-cm6a-lr",
+          "mpi-esm1-2-hr",
+          "mri-esm2-0",
+          "ukesm1-0-ll"
+        ],
+        "2050": {
+          "global_qtot_km3_median": 53893.4,
+          "global_qtot_km3_iqr": [
+            53128.7,
+            53917.3
+          ],
+          "global_pirrww_km3_median": 3037.8,
+          "global_pirrww_km3_iqr": [
+            2979.1,
+            3055.5
+          ],
+          "global_atotuse_km3_median": 1599.7,
+          "global_gw_mining_pos_km3_median": 489.9,
+          "salt_basins_blue_exceeded_amb": 86,
+          "salt_basins_blue_exceeded_ec3": 93,
+          "salt_basins_insolvent_blue_and_gw_amb": 58,
+          "salt_basins_insolvent_blue_and_gw_ec3": 60
+        },
+        "2080": {
+          "global_qtot_km3_median": 56649.6,
+          "global_qtot_km3_iqr": [
+            54687.9,
+            59442.8
+          ],
+          "global_pirrww_km3_median": 3087.8,
+          "global_pirrww_km3_iqr": [
+            3041.7,
+            3129.3
+          ],
+          "global_atotuse_km3_median": 1627.1,
+          "global_gw_mining_pos_km3_median": 500.3,
+          "salt_basins_blue_exceeded_amb": 81,
+          "salt_basins_blue_exceeded_ec3": 88,
+          "salt_basins_insolvent_blue_and_gw_amb": 58,
+          "salt_basins_insolvent_blue_and_gw_ec3": 59
+        }
+      }
+    }
+  },
+  "hswud_china_cross_validation": {
+    "hswud_china_1991_2019_mean_km3_yr": 335.22,
+    "watergap_china_box_pirrww_km3_yr": 977.03,
+    "watergap_china_box_atotuse_km3_yr": 507.69,
+    "regional_benchmarks": {
+      "Tarim_Xinjiang": {
+        "hswud_km3_yr": 22.3,
+        "watergap_pirrww_km3_yr": 58.55,
+        "watergap_atotuse_km3_yr": 19.3
+      },
+      "Hetao_UpperYellow": {
+        "hswud_km3_yr": 2.83,
+        "watergap_pirrww_km3_yr": 6.91,
+        "watergap_atotuse_km3_yr": 3.85
+      },
+      "North_China_Plain": {
+        "hswud_km3_yr": 41.12,
+        "watergap_pirrww_km3_yr": 78.67,
+        "watergap_atotuse_km3_yr": 48.98
+      }
+    }
+  }
+}

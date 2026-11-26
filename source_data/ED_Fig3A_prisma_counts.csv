@@ -1,0 +1,11 @@
+stage,count
+"1. Arm A raw brackish contrasts
+(443 full-text records, 189 studies)",4216
+"2. Arm A 12-Gate usable contrasts
+(169 studies, 26 ctry; −441)",3775
+"3. Arm B curated reclamation baseline
+(5,965 core + 537 supplemental)",6502
+"4. Arm B PDF backfill merged
+(191 full-text records, 47 studies; 473 pass)",377
+"5. Arm B harmonized total
+(3 + 4; exact variance: 2,174)",6879

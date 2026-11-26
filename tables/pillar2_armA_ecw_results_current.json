@@ -1,0 +1,5058 @@
+{
+  "script": "pillar2_armA_ecw_threshold_model.py",
+  "seed": 20261124,
+  "n_boot": 1000,
+  "usable_rows_total": 3775,
+  "usable_studies_total": 169,
+  "field_only_rows": 3136,
+  "field_only_studies": 143,
+  "exact_variance_rows": 485,
+  "exact_plus_lsd_variance_rows": 784,
+  "ece90_ref_sites": 4.2068,
+  "ece90_ref_sites_n_grid_cells": 88,
+  "countries_represented": {
+    "China": 56,
+    "India": 18,
+    "Brazil": 14,
+    "Israel": 13,
+    "Italy": 8,
+    "Iraq": 8,
+    "USA": 7,
+    "Iran": 7,
+    "Australia": 5,
+    "Saudi Arabia": 5,
+    "Egypt": 4,
+    "Tunisia": 4,
+    "Spain": 3,
+    "Syria": 2,
+    "Canada": 2,
+    "South Africa": 2,
+    "Pakistan": 2,
+    "Ethiopia": 1,
+    "Croatia": 1,
+    "Tonga": 1,
+    "Oman": 1,
+    "Bangladesh": 1,
+    "United Arab Emirates": 1,
+    "Japan": 1,
+    "Turkey": 1,
+    "Morocco": 1
+  },
+  "metrics_counts": {
+    "grain_yield": 1170,
+    "soil_EC": 1050,
+    "shoot_biomass": 574,
+    "wue_or_iwue": 459,
+    "soil_SAR": 93,
+    "plant_height": 73,
+    "soil_ESP": 50,
+    "thousand_grain_weight": 37,
+    "root_depth": 31,
+    "harvest_index": 24,
+    "fruit_weight": 20,
+    "seed_yield": 18,
+    "straw_yield": 18,
+    "pruning_wood_biomass": 16,
+    "root_biomass": 15,
+    "oil_yield": 12,
+    "soil_aggregate_MWD": 11,
+    "soil_aggregate_GMD": 9,
+    "soil_aggregate_PAD": 9,
+    "soil_aggregate_D": 9,
+    "bulk_density": 8,
+    "grain_weight_per_spike": 7,
+    "spike_length": 7,
+    "grain_number_per_spike": 6,
+    "infiltration_rate": 6,
+    "relative_growth_rate": 5,
+    "seedling_density": 5,
+    "ks_saturated": 4,
+    "fruit_juice_yield_pct": 4,
+    "fruit_pulp_yield_pct": 4,
+    "tiller_number": 4,
+    "specific_leaf_area": 4,
+    "grain_number": 3,
+    "spikelet_number_per_spike": 3,
+    "sugar_yield": 2,
+    "soil_exchangeable_Na": 1,
+    "single_fruit_weight": 1,
+    "leaf_N": 1,
+    "leaf_P": 1,
+    "leaf_K": 1
+  },
+  "dose_response_ecw_star": {
+    "yield_combined_all": {
+      "k": 1744,
+      "n_clusters": 137,
+      "median_ctrl_ecw_dsm": 0.6,
+      "linear_slope_per_dsm": -0.0271,
+      "linear_se_cr": 0.0054,
+      "quad_b1": -0.0625,
+      "quad_b2": 0.0032,
+      "quad_se_cr": [
+        0.0084,
+        0.0006
+      ],
+      "status": "OK",
+      "ecw_star_90pct_dsm": 2.47,
+      "ecw_star_80pct_dsm": 5.28
+    },
+    "yield_combined_field_only": {
+      "k": 1537,
+      "n_clusters": 116,
+      "median_ctrl_ecw_dsm": 0.6,
+      "linear_slope_per_dsm": -0.0255,
+      "linear_se_cr": 0.0051,
+      "quad_b1": -0.0644,
+      "quad_b2": 0.0034,
+      "quad_se_cr": [
+        0.0085,
+        0.0006
+      ],
+      "status": "OK",
+      "ecw_star_90pct_dsm": 2.41,
+      "ecw_star_80pct_dsm": 5.15
+    },
+    "yield_combined_exact_variance": {
+      "k": 298,
+      "n_clusters": 30,
+      "median_ctrl_ecw_dsm": 1.11,
+      "linear_slope_per_dsm": -0.0405,
+      "linear_se_cr": 0.0084,
+      "quad_b1": -0.0823,
+      "quad_b2": 0.0044,
+      "quad_se_cr": [
+        0.0187,
+        0.0014
+      ],
+      "status": "OK",
+      "ecw_star_90pct_dsm": 2.5,
+      "ecw_star_80pct_dsm": 4.39
+    },
+    "yield_combined_exact_plus_lsd_variance": {
+      "k": 437,
+      "n_clusters": 40,
+      "median_ctrl_ecw_dsm": 0.78,
+      "linear_slope_per_dsm": -0.0372,
+      "linear_se_cr": 0.0063,
+      "quad_b1": -0.0722,
+      "quad_b2": 0.0038,
+      "quad_se_cr": [
+        0.0125,
+        0.001
+      ],
+      "status": "OK",
+      "ecw_star_90pct_dsm": 2.38,
+      "ecw_star_80pct_dsm": 4.68
+    },
+    "grain_yield_only": {
+      "k": 1170,
+      "n_clusters": 124,
+      "median_ctrl_ecw_dsm": 0.65,
+      "linear_slope_per_dsm": -0.0299,
+      "linear_se_cr": 0.0039,
+      "quad_b1": -0.061,
+      "quad_b2": 0.0029,
+      "quad_se_cr": [
+        0.0095,
+        0.0007
+      ],
+      "status": "OK",
+      "ecw_star_90pct_dsm": 2.55,
+      "ecw_star_80pct_dsm": 5.34
+    },
+    "grain_yield_exact_variance": {
+      "k": 196,
+      "n_clusters": 24,
+      "median_ctrl_ecw_dsm": 0.78,
+      "linear_slope_per_dsm": -0.0393,
+      "linear_se_cr": 0.0094,
+      "quad_b1": -0.0822,
+      "quad_b2": 0.0043,
+      "quad_se_cr": [
+        0.0232,
+        0.0016
+      ],
+      "status": "OK",
+      "ecw_star_90pct_dsm": 2.17,
+      "ecw_star_80pct_dsm": 4.05
+    },
+    "wue_or_iwue_all": {
+      "k": 459,
+      "n_clusters": 40,
+      "median_ctrl_ecw_dsm": 0.6,
+      "linear_slope_per_dsm": -0.0345,
+      "linear_se_cr": 0.0066,
+      "quad_b1": -0.064,
+      "quad_b2": 0.004,
+      "quad_se_cr": [
+        0.0122,
+        0.0011
+      ],
+      "status": "OK",
+      "ecw_star_90pct_dsm": 2.47,
+      "ecw_star_80pct_dsm": 5.7
+    },
+    "soil_EC_all": {
+      "k": 1050,
+      "n_clusters": 84,
+      "median_ctrl_ecw_dsm": 0.8,
+      "linear_slope_per_dsm": 0.1425,
+      "linear_se_cr": 0.0103,
+      "quad_b1": 0.2059,
+      "quad_b2": -0.0079,
+      "quad_se_cr": [
+        0.0262,
+        0.0033
+      ],
+      "status": "OK",
+      "ecw_star_plus50pct_dsm": 2.95,
+      "ecw_star_plus100pct_dsm": 4.77
+    },
+    "soil_EC_field_only": {
+      "k": 779,
+      "n_clusters": 72,
+      "median_ctrl_ecw_dsm": 0.8,
+      "linear_slope_per_dsm": 0.1414,
+      "linear_se_cr": 0.0105,
+      "quad_b1": 0.2284,
+      "quad_b2": -0.0112,
+      "quad_se_cr": [
+        0.0241,
+        0.0023
+      ],
+      "status": "OK",
+      "ecw_star_plus50pct_dsm": 2.77,
+      "ecw_star_plus100pct_dsm": 4.51
+    },
+    "soil_EC_exact_variance": {
+      "k": 77,
+      "n_clusters": 13,
+      "median_ctrl_ecw_dsm": 1.02,
+      "linear_slope_per_dsm": 0.1465,
+      "linear_se_cr": 0.0183,
+      "quad_b1": 0.247,
+      "quad_b2": -0.0111,
+      "quad_se_cr": [
+        0.043,
+        0.0035
+      ],
+      "status": "OK",
+      "ecw_star_plus50pct_dsm": 2.81,
+      "ecw_star_plus100pct_dsm": 4.31
+    },
+    "soil_EC_exact_plus_lsd_variance": {
+      "k": 121,
+      "n_clusters": 15,
+      "median_ctrl_ecw_dsm": 0.6,
+      "linear_slope_per_dsm": 0.1465,
+      "linear_se_cr": 0.0165,
+      "quad_b1": 0.2268,
+      "quad_b2": -0.0089,
+      "quad_se_cr": [
+        0.0409,
+        0.0033
+      ],
+      "status": "OK",
+      "ecw_star_plus50pct_dsm": 2.54,
+      "ecw_star_plus100pct_dsm": 4.15
+    },
+    "by_scheduling": {
+      "blended_conjunctive": {
+        "k": 181,
+        "n_clusters": 12,
+        "median_ctrl_ecw_dsm": 0.6,
+        "linear_slope_per_dsm": -0.0285,
+        "linear_se_cr": 0.018,
+        "quad_b1": -0.0719,
+        "quad_b2": 0.0082,
+        "quad_se_cr": [
+          0.0338,
+          0.0067
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 2.47,
+        "ecw_star_80pct_dsm": 8.43
+      },
+      "continuous_brackish": {
+        "k": 1272,
+        "n_clusters": 124,
+        "median_ctrl_ecw_dsm": 0.6,
+        "linear_slope_per_dsm": -0.0389,
+        "linear_se_cr": 0.0049,
+        "quad_b1": -0.0651,
+        "quad_b2": 0.003,
+        "quad_se_cr": [
+          0.0107,
+          0.0009
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 2.37,
+        "ecw_star_80pct_dsm": 4.86
+      },
+      "cyclic_alternating": {
+        "k": 291,
+        "n_clusters": 35,
+        "median_ctrl_ecw_dsm": 0.78,
+        "linear_slope_per_dsm": -0.0186,
+        "linear_se_cr": 0.0016,
+        "quad_b1": -0.0444,
+        "quad_b2": 0.002,
+        "quad_se_cr": [
+          0.0105,
+          0.0007
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 3.48,
+        "ecw_star_80pct_dsm": 8.36
+      }
+    },
+    "by_scheduling_field_only": {
+      "blended_conjunctive": {
+        "k": 181,
+        "n_clusters": 12,
+        "median_ctrl_ecw_dsm": 0.6,
+        "linear_slope_per_dsm": -0.0285,
+        "linear_se_cr": 0.018,
+        "quad_b1": -0.0719,
+        "quad_b2": 0.0082,
+        "quad_se_cr": [
+          0.0338,
+          0.0067
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 2.47,
+        "ecw_star_80pct_dsm": 8.43
+      },
+      "continuous_brackish": {
+        "k": 1082,
+        "n_clusters": 104,
+        "median_ctrl_ecw_dsm": 0.6,
+        "linear_slope_per_dsm": -0.0389,
+        "linear_se_cr": 0.005,
+        "quad_b1": -0.0732,
+        "quad_b2": 0.0038,
+        "quad_se_cr": [
+          0.0108,
+          0.0009
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 2.18,
+        "ecw_star_80pct_dsm": 4.41
+      },
+      "cyclic_alternating": {
+        "k": 274,
+        "n_clusters": 31,
+        "median_ctrl_ecw_dsm": 0.78,
+        "linear_slope_per_dsm": -0.018,
+        "linear_se_cr": 0.001,
+        "quad_b1": -0.0377,
+        "quad_b2": 0.0015,
+        "quad_se_cr": [
+          0.0083,
+          0.0006
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 3.98,
+        "ecw_star_80pct_dsm": 10.32
+      }
+    },
+    "by_irrigation_mode": {
+      "drip_mulched": {
+        "k": 312,
+        "n_clusters": 30,
+        "median_ctrl_ecw_dsm": 0.8,
+        "linear_slope_per_dsm": -0.0356,
+        "linear_se_cr": 0.0072,
+        "quad_b1": -0.0487,
+        "quad_b2": 0.0019,
+        "quad_se_cr": [
+          0.0117,
+          0.0019
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 3.19,
+        "ecw_star_80pct_dsm": 6.73
+      },
+      "drip_unmulched": {
+        "k": 304,
+        "n_clusters": 43,
+        "median_ctrl_ecw_dsm": 0.7,
+        "linear_slope_per_dsm": -0.0232,
+        "linear_se_cr": 0.0057,
+        "quad_b1": -0.0952,
+        "quad_b2": 0.0056,
+        "quad_se_cr": [
+          0.0136,
+          0.001
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 1.9,
+        "ecw_star_80pct_dsm": 3.51
+      },
+      "other": {
+        "k": 178,
+        "n_clusters": 23,
+        "median_ctrl_ecw_dsm": 1.01,
+        "linear_slope_per_dsm": -0.0271,
+        "linear_se_cr": 0.0102,
+        "quad_b1": -0.0219,
+        "quad_b2": -0.0006,
+        "quad_se_cr": [
+          0.0253,
+          0.0028
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 5.31,
+        "ecw_star_80pct_dsm": 9.31
+      },
+      "sprinkler": {
+        "k": 13,
+        "n_clusters": 2,
+        "status": "INSUFFICIENT_DATA_FOR_DOSE_CURVE"
+      },
+      "subsurface_drip": {
+        "k": 31,
+        "n_clusters": 5,
+        "median_ctrl_ecw_dsm": 0.25,
+        "linear_slope_per_dsm": -0.0784,
+        "linear_se_cr": 0.0185,
+        "quad_b1": -0.0849,
+        "quad_b2": 0.0024,
+        "quad_se_cr": [
+          0.0626,
+          0.0179
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 1.54,
+        "ecw_star_80pct_dsm": 3.11
+      },
+      "surface_flood_furrow": {
+        "k": 906,
+        "n_clusters": 46,
+        "median_ctrl_ecw_dsm": 0.6,
+        "linear_slope_per_dsm": -0.0352,
+        "linear_se_cr": 0.0053,
+        "quad_b1": -0.0662,
+        "quad_b2": 0.0032,
+        "quad_se_cr": [
+          0.0132,
+          0.0011
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 2.35,
+        "ecw_star_80pct_dsm": 4.86
+      }
+    },
+    "by_drip_vs_flood": {
+      "drip_system": {
+        "k": 647,
+        "n_clusters": 73,
+        "median_ctrl_ecw_dsm": 0.72,
+        "linear_slope_per_dsm": -0.0248,
+        "linear_se_cr": 0.0062,
+        "quad_b1": -0.0776,
+        "quad_b2": 0.0043,
+        "quad_se_cr": [
+          0.0093,
+          0.0007
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 2.21,
+        "ecw_star_80pct_dsm": 4.32
+      },
+      "other_mode": {
+        "k": 191,
+        "n_clusters": 25,
+        "median_ctrl_ecw_dsm": 1.0,
+        "linear_slope_per_dsm": -0.0265,
+        "linear_se_cr": 0.0091,
+        "quad_b1": -0.0197,
+        "quad_b2": -0.0008,
+        "quad_se_cr": [
+          0.022,
+          0.0023
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 5.55,
+        "ecw_star_80pct_dsm": 9.54
+      },
+      "surface_flood_furrow": {
+        "k": 906,
+        "n_clusters": 46,
+        "median_ctrl_ecw_dsm": 0.6,
+        "linear_slope_per_dsm": -0.0352,
+        "linear_se_cr": 0.0053,
+        "quad_b1": -0.0662,
+        "quad_b2": 0.0032,
+        "quad_se_cr": [
+          0.0132,
+          0.0011
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 2.35,
+        "ecw_star_80pct_dsm": 4.86
+      }
+    },
+    "by_duration": {
+      "soil_EC_multiyear_ge_3yr": {
+        "k": 292,
+        "n_clusters": 27,
+        "median_ctrl_ecw_dsm": 1.2,
+        "linear_slope_per_dsm": 0.1258,
+        "linear_se_cr": 0.0132,
+        "quad_b1": 0.2083,
+        "quad_b2": -0.0093,
+        "quad_se_cr": [
+          0.0321,
+          0.0027
+        ],
+        "status": "OK",
+        "ecw_star_plus50pct_dsm": 3.36,
+        "ecw_star_plus100pct_dsm": 5.26
+      },
+      "soil_EC_short_le_2yr": {
+        "k": 758,
+        "n_clusters": 57,
+        "median_ctrl_ecw_dsm": 0.7,
+        "linear_slope_per_dsm": 0.1529,
+        "linear_se_cr": 0.0139,
+        "quad_b1": 0.1987,
+        "quad_b2": -0.0061,
+        "quad_se_cr": [
+          0.037,
+          0.0052
+        ],
+        "status": "OK",
+        "ecw_star_plus50pct_dsm": 2.9,
+        "ecw_star_plus100pct_dsm": 4.68
+      },
+      "yield_multiyear_ge_3yr": {
+        "k": 496,
+        "n_clusters": 34,
+        "median_ctrl_ecw_dsm": 1.11,
+        "linear_slope_per_dsm": -0.0265,
+        "linear_se_cr": 0.007,
+        "quad_b1": -0.0436,
+        "quad_b2": 0.0021,
+        "quad_se_cr": [
+          0.0178,
+          0.0015
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 3.9,
+        "ecw_star_80pct_dsm": 10.44
+      },
+      "yield_short_le_2yr": {
+        "k": 1248,
+        "n_clusters": 103,
+        "median_ctrl_ecw_dsm": 0.6,
+        "linear_slope_per_dsm": -0.0271,
+        "linear_se_cr": 0.0062,
+        "quad_b1": -0.0706,
+        "quad_b2": 0.0037,
+        "quad_se_cr": [
+          0.0088,
+          0.0006
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 2.24,
+        "ecw_star_80pct_dsm": 4.61
+      }
+    },
+    "by_crop_group": {
+      "Cotton_Fiber": {
+        "k": 228,
+        "n_clusters": 16,
+        "median_ctrl_ecw_dsm": 1.05,
+        "linear_slope_per_dsm": -0.0202,
+        "linear_se_cr": 0.0046,
+        "quad_b1": -0.0298,
+        "quad_b2": 0.001,
+        "quad_se_cr": [
+          0.0105,
+          0.0008
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 5.17,
+        "ecw_star_80pct_dsm": 12.13
+      },
+      "Forage_Halophyte_SaltTolerant": {
+        "k": 94,
+        "n_clusters": 6,
+        "median_ctrl_ecw_dsm": 1.02,
+        "linear_slope_per_dsm": -0.0195,
+        "linear_se_cr": 0.003,
+        "quad_b1": -0.1482,
+        "quad_b2": 0.0094,
+        "quad_se_cr": [
+          0.0276,
+          0.002
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 1.77,
+        "ecw_star_80pct_dsm": 2.71
+      },
+      "Fruit_Tree": {
+        "k": 145,
+        "n_clusters": 19,
+        "median_ctrl_ecw_dsm": 1.0,
+        "linear_slope_per_dsm": -0.0433,
+        "linear_se_cr": 0.0144,
+        "quad_b1": -0.0597,
+        "quad_b2": 0.0021,
+        "quad_se_cr": [
+          0.0304,
+          0.0024
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 2.9,
+        "ecw_star_80pct_dsm": 5.44
+      },
+      "Maize": {
+        "k": 176,
+        "n_clusters": 20,
+        "median_ctrl_ecw_dsm": 1.11,
+        "linear_slope_per_dsm": -0.0517,
+        "linear_se_cr": 0.0138,
+        "quad_b1": -0.0854,
+        "quad_b2": 0.0058,
+        "quad_se_cr": [
+          0.041,
+          0.0054
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 2.47,
+        "ecw_star_80pct_dsm": 4.5
+      },
+      "Oilseed_Legume": {
+        "k": 277,
+        "n_clusters": 15,
+        "median_ctrl_ecw_dsm": 0.6,
+        "linear_slope_per_dsm": -0.0466,
+        "linear_se_cr": 0.0138,
+        "quad_b1": -0.0925,
+        "quad_b2": 0.0056,
+        "quad_se_cr": [
+          0.0229,
+          0.0017
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 1.84,
+        "ecw_star_80pct_dsm": 3.54
+      },
+      "Other": {
+        "k": 164,
+        "n_clusters": 14,
+        "median_ctrl_ecw_dsm": 0.45,
+        "linear_slope_per_dsm": -0.0338,
+        "linear_se_cr": 0.0184,
+        "quad_b1": -0.0573,
+        "quad_b2": 0.0024,
+        "quad_se_cr": [
+          0.037,
+          0.0033
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 2.46,
+        "ecw_star_80pct_dsm": 5.31
+      },
+      "Rice": {
+        "k": 11,
+        "n_clusters": 3,
+        "median_ctrl_ecw_dsm": 0.4,
+        "linear_slope_per_dsm": -0.0751,
+        "linear_se_cr": 0.1951,
+        "quad_b1": -1.9447,
+        "quad_b2": 0.5641,
+        "quad_se_cr": [
+          0.2452,
+          0.0576
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 0.46,
+        "ecw_star_80pct_dsm": 0.52
+      },
+      "Vegetable": {
+        "k": 354,
+        "n_clusters": 36,
+        "median_ctrl_ecw_dsm": 0.7,
+        "linear_slope_per_dsm": -0.0429,
+        "linear_se_cr": 0.013,
+        "quad_b1": -0.0662,
+        "quad_b2": 0.0036,
+        "quad_se_cr": [
+          0.0146,
+          0.003
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 2.46,
+        "ecw_star_80pct_dsm": 5.12
+      },
+      "Wheat": {
+        "k": 292,
+        "n_clusters": 16,
+        "median_ctrl_ecw_dsm": 0.6,
+        "linear_slope_per_dsm": -0.0217,
+        "linear_se_cr": 0.0038,
+        "quad_b1": -0.0114,
+        "quad_b2": -0.001,
+        "quad_se_cr": [
+          0.0081,
+          0.0006
+        ],
+        "status": "OK",
+        "ecw_star_90pct_dsm": 6.6,
+        "ecw_star_80pct_dsm": 10.79
+      }
+    }
+  },
+  "dose_response_absolute": {
+    "pooled": {
+      "k": 1744,
+      "n_clusters": 137,
+      "converged": true,
+      "n_boot": 1000,
+      "boot_converged_pct": 100.0,
+      "t_dsm": 0.2,
+      "t_ci95": [
+        0.016,
+        0.4
+      ],
+      "b_per_dsm": 0.0218,
+      "b_ci95": [
+        0.0178,
+        0.0336
+      ],
+      "ecw_star_90pct_dsm": 4.78,
+      "ecw_star_90pct_ci95": [
+        3.195,
+        5.829
+      ],
+      "ecw_star_80pct_dsm": 9.361,
+      "ecw_star_80pct_ci95": [
+        6.147,
+        11.457
+      ],
+      "t_hit_lower_pct": 2.2,
+      "t_hit_upper_pct": 0.0,
+      "b_hit_lower_pct": 0.0,
+      "ecw90_hit_bound_pct": 0.0,
+      "status": "OK"
+    },
+    "continuous": {
+      "k": 1272,
+      "n_clusters": 124,
+      "converged": true,
+      "n_boot": 1000,
+      "boot_converged_pct": 100.0,
+      "t_dsm": 0.25,
+      "t_ci95": [
+        0.03,
+        0.45
+      ],
+      "b_per_dsm": 0.0303,
+      "b_ci95": [
+        0.025,
+        0.0358
+      ],
+      "ecw_star_90pct_dsm": 3.547,
+      "ecw_star_90pct_ci95": [
+        3.016,
+        4.267
+      ],
+      "ecw_star_80pct_dsm": 6.845,
+      "ecw_star_80pct_ci95": [
+        5.815,
+        8.248
+      ],
+      "t_hit_lower_pct": 1.3,
+      "t_hit_upper_pct": 0.0,
+      "b_hit_lower_pct": 0.0,
+      "ecw90_hit_bound_pct": 0.0,
+      "status": "OK"
+    },
+    "cyclic": {
+      "k": 291,
+      "n_clusters": 35,
+      "converged": true,
+      "n_boot": 1000,
+      "boot_converged_pct": 100.0,
+      "t_dsm": 0.119,
+      "t_ci95": [
+        0.0,
+        1.02
+      ],
+      "b_per_dsm": 0.0161,
+      "b_ci95": [
+        0.0152,
+        0.0376
+      ],
+      "ecw_star_90pct_dsm": 6.335,
+      "ecw_star_90pct_ci95": [
+        3.053,
+        6.963
+      ],
+      "ecw_star_80pct_dsm": 12.551,
+      "ecw_star_80pct_ci95": [
+        5.906,
+        13.458
+      ],
+      "t_hit_lower_pct": 8.7,
+      "t_hit_upper_pct": 0.0,
+      "b_hit_lower_pct": 0.0,
+      "ecw90_hit_bound_pct": 0.0,
+      "status": "OK"
+    },
+    "blended": {
+      "k": 181,
+      "n_clusters": 12,
+      "converged": true,
+      "n_boot": 1000,
+      "boot_converged_pct": 100.0,
+      "t_dsm": 0.6,
+      "t_ci95": [
+        0.019,
+        3.577
+      ],
+      "b_per_dsm": 0.025,
+      "b_ci95": [
+        0.004,
+        0.0976
+      ],
+      "ecw_star_90pct_dsm": 4.599,
+      "ecw_star_90pct_ci95": [
+        2.486,
+        25.097
+      ],
+      "ecw_star_80pct_dsm": 8.599,
+      "ecw_star_80pct_ci95": [
+        4.237,
+        50.157
+      ],
+      "t_hit_lower_pct": 1.7,
+      "t_hit_upper_pct": 0.0,
+      "b_hit_lower_pct": 0.5,
+      "ecw90_hit_bound_pct": 1.9,
+      "status": "OK"
+    },
+    "field_only": {
+      "k": 1537,
+      "n_clusters": 116,
+      "converged": true,
+      "n_boot": 1000,
+      "boot_converged_pct": 100.0,
+      "t_dsm": 0.2,
+      "t_ci95": [
+        0.02,
+        0.46
+      ],
+      "b_per_dsm": 0.0206,
+      "b_ci95": [
+        0.017,
+        0.0333
+      ],
+      "ecw_star_90pct_dsm": 5.047,
+      "ecw_star_90pct_ci95": [
+        3.268,
+        6.086
+      ],
+      "ecw_star_80pct_dsm": 9.894,
+      "ecw_star_80pct_ci95": [
+        6.29,
+        11.949
+      ],
+      "t_hit_lower_pct": 1.8,
+      "t_hit_upper_pct": 0.0,
+      "b_hit_lower_pct": 0.0,
+      "ecw90_hit_bound_pct": 0.0,
+      "status": "OK"
+    },
+    "multiyear_ge2yr": {
+      "k": 1301,
+      "n_clusters": 94,
+      "converged": true,
+      "n_boot": 1000,
+      "boot_converged_pct": 100.0,
+      "t_dsm": 0.2,
+      "t_ci95": [
+        0.0,
+        0.452
+      ],
+      "b_per_dsm": 0.0266,
+      "b_ci95": [
+        0.022,
+        0.0327
+      ],
+      "ecw_star_90pct_dsm": 3.959,
+      "ecw_star_90pct_ci95": [
+        3.318,
+        4.802
+      ],
+      "ecw_star_80pct_dsm": 7.717,
+      "ecw_star_80pct_ci95": [
+        6.415,
+        9.366
+      ],
+      "t_hit_lower_pct": 6.0,
+      "t_hit_upper_pct": 0.0,
+      "b_hit_lower_pct": 0.0,
+      "ecw90_hit_bound_pct": 0.0,
+      "status": "OK"
+    },
+    "exact_variance": {
+      "k": 298,
+      "n_clusters": 30,
+      "converged": true,
+      "n_boot": 1000,
+      "boot_converged_pct": 100.0,
+      "t_dsm": 0.5,
+      "t_ci95": [
+        0.03,
+        1.02
+      ],
+      "b_per_dsm": 0.0302,
+      "b_ci95": [
+        0.0229,
+        0.0428
+      ],
+      "ecw_star_90pct_dsm": 3.812,
+      "ecw_star_90pct_ci95": [
+        2.743,
+        4.894
+      ],
+      "ecw_star_80pct_dsm": 7.124,
+      "ecw_star_80pct_ci95": [
+        5.143,
+        9.117
+      ],
+      "t_hit_lower_pct": 1.3,
+      "t_hit_upper_pct": 0.0,
+      "b_hit_lower_pct": 0.0,
+      "ecw90_hit_bound_pct": 0.0,
+      "status": "OK"
+    },
+    "exact_plus_lsd": {
+      "k": 437,
+      "n_clusters": 40,
+      "converged": true,
+      "n_boot": 1000,
+      "boot_converged_pct": 100.0,
+      "t_dsm": 0.177,
+      "t_ci95": [
+        0.0,
+        0.73
+      ],
+      "b_per_dsm": 0.0285,
+      "b_ci95": [
+        0.0225,
+        0.0397
+      ],
+      "ecw_star_90pct_dsm": 3.686,
+      "ecw_star_90pct_ci95": [
+        2.757,
+        4.659
+      ],
+      "ecw_star_80pct_dsm": 7.196,
+      "ecw_star_80pct_ci95": [
+        5.307,
+        9.081
+      ],
+      "t_hit_lower_pct": 9.8,
+      "t_hit_upper_pct": 0.0,
+      "b_hit_lower_pct": 0.0,
+      "ecw90_hit_bound_pct": 0.0,
+      "status": "OK"
+    },
+    "grain_only": {
+      "k": 1170,
+      "n_clusters": 124,
+      "converged": true,
+      "n_boot": 1000,
+      "boot_converged_pct": 100.0,
+      "t_dsm": 0.2,
+      "t_ci95": [
+        0.021,
+        0.4
+      ],
+      "b_per_dsm": 0.0238,
+      "b_ci95": [
+        0.0207,
+        0.0325
+      ],
+      "ecw_star_90pct_dsm": 4.409,
+      "ecw_star_90pct_ci95": [
+        3.264,
+        5.045
+      ],
+      "ecw_star_80pct_dsm": 8.618,
+      "ecw_star_80pct_ci95": [
+        6.363,
+        9.855
+      ],
+      "t_hit_lower_pct": 2.1,
+      "t_hit_upper_pct": 0.0,
+      "b_hit_lower_pct": 0.0,
+      "ecw90_hit_bound_pct": 0.0,
+      "status": "OK"
+    },
+    "wue": {
+      "k": 459,
+      "n_clusters": 40,
+      "converged": true,
+      "n_boot": 1000,
+      "boot_converged_pct": 100.0,
+      "t_dsm": 0.45,
+      "t_ci95": [
+        0.0,
+        1.2
+      ],
+      "b_per_dsm": 0.0285,
+      "b_ci95": [
+        0.0205,
+        0.0415
+      ],
+      "ecw_star_90pct_dsm": 3.961,
+      "ecw_star_90pct_ci95": [
+        2.936,
+        5.167
+      ],
+      "ecw_star_80pct_dsm": 7.471,
+      "ecw_star_80pct_ci95": [
+        5.412,
+        9.939
+      ],
+      "t_hit_lower_pct": 4.7,
+      "t_hit_upper_pct": 0.0,
+      "b_hit_lower_pct": 0.0,
+      "ecw90_hit_bound_pct": 0.0,
+      "status": "OK"
+    },
+    "continuous_excl_ry_gt2": {
+      "k": 1268,
+      "n_clusters": 124,
+      "converged": true,
+      "n_boot": 1000,
+      "boot_converged_pct": 100.0,
+      "t_dsm": 0.3,
+      "t_ci95": [
+        0.014,
+        0.401
+      ],
+      "b_per_dsm": 0.0309,
+      "b_ci95": [
+        0.0259,
+        0.0373
+      ],
+      "ecw_star_90pct_dsm": 3.536,
+      "ecw_star_90pct_ci95": [
+        2.903,
+        4.116
+      ],
+      "ecw_star_80pct_dsm": 6.772,
+      "ecw_star_80pct_ci95": [
+        5.569,
+        7.983
+      ],
+      "t_hit_lower_pct": 2.3,
+      "t_hit_upper_pct": 0.0,
+      "b_hit_lower_pct": 0.0,
+      "ecw90_hit_bound_pct": 0.0,
+      "status": "OK"
+    },
+    "field_continuous_harvest": {
+      "curve_ecw_dsm": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2000000000000002,
+        1.3,
+        1.4000000000000001,
+        1.5,
+        1.6,
+        1.7000000000000002,
+        1.8,
+        1.9000000000000001,
+        2.0,
+        2.1,
+        2.2,
+        2.3000000000000003,
+        2.4000000000000004,
+        2.5,
+        2.6,
+        2.7,
+        2.8000000000000003,
+        2.9000000000000004,
+        3.0,
+        3.1,
+        3.2,
+        3.3000000000000003,
+        3.4000000000000004,
+        3.5,
+        3.6,
+        3.7,
+        3.8000000000000003,
+        3.9000000000000004,
+        4.0,
+        4.1000000000000005,
+        4.2,
+        4.3,
+        4.4,
+        4.5,
+        4.6000000000000005,
+        4.7,
+        4.800000000000001,
+        4.9,
+        5.0,
+        5.1000000000000005,
+        5.2,
+        5.300000000000001,
+        5.4,
+        5.5,
+        5.6000000000000005,
+        5.7,
+        5.800000000000001,
+        5.9,
+        6.0,
+        6.1000000000000005,
+        6.2,
+        6.300000000000001,
+        6.4,
+        6.5,
+        6.6000000000000005,
+        6.7,
+        6.800000000000001,
+        6.9,
+        7.0,
+        7.1000000000000005,
+        7.2,
+        7.300000000000001,
+        7.4,
+        7.5,
+        7.6000000000000005,
+        7.7,
+        7.800000000000001,
+        7.9,
+        8.0,
+        8.1,
+        8.200000000000001,
+        8.3,
+        8.4,
+        8.5,
+        8.6,
+        8.700000000000001,
+        8.8,
+        8.9,
+        9.0,
+        9.1,
+        9.200000000000001,
+        9.3,
+        9.4,
+        9.5,
+        9.600000000000001,
+        9.700000000000001,
+        9.8,
+        9.9,
+        10.0,
+        10.100000000000001,
+        10.200000000000001,
+        10.3,
+        10.4,
+        10.5,
+        10.600000000000001,
+        10.700000000000001,
+        10.8,
+        10.9,
+        11.0,
+        11.100000000000001,
+        11.200000000000001,
+        11.3,
+        11.4,
+        11.5,
+        11.600000000000001,
+        11.700000000000001,
+        11.8,
+        11.9,
+        12.0,
+        12.100000000000001,
+        12.200000000000001,
+        12.3,
+        12.4,
+        12.5,
+        12.600000000000001,
+        12.700000000000001,
+        12.8,
+        12.9,
+        13.0,
+        13.100000000000001,
+        13.200000000000001,
+        13.3,
+        13.4,
+        13.5,
+        13.600000000000001,
+        13.700000000000001,
+        13.8,
+        13.9,
+        14.0,
+        14.100000000000001,
+        14.200000000000001,
+        14.3,
+        14.4,
+        14.5,
+        14.600000000000001,
+        14.700000000000001,
+        14.8,
+        14.9,
+        15.0,
+        15.100000000000001,
+        15.200000000000001,
+        15.3,
+        15.4,
+        15.5,
+        15.600000000000001,
+        15.700000000000001,
+        15.8,
+        15.9,
+        16.0
+      ],
+      "curve_lo": [
+        1.0,
+        0.9979799949944405,
+        0.9947795365126222,
+        0.9918757479321891,
+        0.9889253928152008,
+        0.9858214983855178,
+        0.9827123558191987,
+        0.9793375872805303,
+        0.9760457034980601,
+        0.9727750221453664,
+        0.9694297763698131,
+        0.9660793787629558,
+        0.9624154662045631,
+        0.9587304984655962,
+        0.9551313674688613,
+        0.9513930823747628,
+        0.9477197418507288,
+        0.9442752263706116,
+        0.9408443034678148,
+        0.9371013991399835,
+        0.9337023115903902,
+        0.9300397385858145,
+        0.9263553276671884,
+        0.9226735961227347,
+        0.918998416059019,
+        0.9152202266575449,
+        0.9115585989721902,
+        0.9079577009907062,
+        0.9039667822449566,
+        0.8999729470999313,
+        0.8964900019953511,
+        0.8928411970311143,
+        0.8888056482752251,
+        0.8847706814998728,
+        0.8809162088432079,
+        0.8771006012311054,
+        0.8733801488601842,
+        0.8696665779526972,
+        0.8659530070452103,
+        0.8622394361377232,
+        0.8585258652302363,
+        0.8548122943227493,
+        0.8510987234152623,
+        0.8473851525077754,
+        0.8436715816002883,
+        0.8399580106928013,
+        0.8362438251486547,
+        0.8325220949835126,
+        0.8288003648183706,
+        0.8250786346532286,
+        0.8213569044880866,
+        0.8176351743229446,
+        0.8138704598623149,
+        0.8099966559268675,
+        0.8061228519914202,
+        0.8022490480559731,
+        0.7983752441205257,
+        0.7945014401850785,
+        0.7906276362496312,
+        0.7868774052684369,
+        0.78313501163516,
+        0.7793982791103407,
+        0.7756615770890365,
+        0.7719216810039712,
+        0.7681795221266088,
+        0.7644373632492464,
+        0.7605792291423993,
+        0.7566558834889808,
+        0.7527325378355625,
+        0.7488091921821441,
+        0.7448858465287259,
+        0.7409625008753075,
+        0.7370398435822192,
+        0.7332530897502725,
+        0.7294960907071494,
+        0.7257390916640261,
+        0.7219820926209028,
+        0.7182250935777797,
+        0.7144680945346564,
+        0.7107110954915333,
+        0.7069336885928816,
+        0.7031022562380772,
+        0.6993416164787071,
+        0.695580976719337,
+        0.6918203369599671,
+        0.6880596972005971,
+        0.684299057441227,
+        0.6805384176818571,
+        0.6767777779224871,
+        0.6728861785455738,
+        0.6689957576451554,
+        0.6651055469009464,
+        0.6612153361567373,
+        0.6573251254125283,
+        0.6535103456330476,
+        0.6497645794717103,
+        0.6460214142013173,
+        0.6422787826383012,
+        0.6385361510752849,
+        0.6347935195122686,
+        0.6310508879492523,
+        0.627308256386236,
+        0.6235609899270597,
+        0.6197216985560831,
+        0.6158824071851063,
+        0.6120431158141298,
+        0.6082038244431532,
+        0.6043645330721765,
+        0.6005254014272858,
+        0.5967549615609824,
+        0.5929845216946787,
+        0.5892140818283752,
+        0.5854436419620717,
+        0.5816732020957681,
+        0.5779027622294646,
+        0.5740543588819814,
+        0.5702000817124941,
+        0.566348355661165,
+        0.5624968344389906,
+        0.5586453132168162,
+        0.5548629372574017,
+        0.5511289781571795,
+        0.5473950190569575,
+        0.5436610599567355,
+        0.5399271008565136,
+        0.5361931417562916,
+        0.5324591826560695,
+        0.5287252235558474,
+        0.5249912644556254,
+        0.5212573053554034,
+        0.5175233462551814,
+        0.5137893871549594,
+        0.5100397904710549,
+        0.5062690128120126,
+        0.5024982351529703,
+        0.4987274574939282,
+        0.49495667983488595,
+        0.4911859021758437,
+        0.4874151245168016,
+        0.4836443468577593,
+        0.4798760768084479,
+        0.4761083627883597,
+        0.4723406487682716,
+        0.46857293474818335,
+        0.46480522072809516,
+        0.461037506708007,
+        0.4572697926879188,
+        0.4535020786678306,
+        0.44973436464774236,
+        0.4459666506276542,
+        0.44219893660756604,
+        0.4384312225874778,
+        0.43466350856738956,
+        0.4308957945473015,
+        0.42708306761326037,
+        0.4232660607419006,
+        0.4194490538705409,
+        0.4156320469991812,
+        0.4118150401278215,
+        0.40799803325646183,
+        0.4041810263851021
+      ],
+      "curve_hi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.9999999867839442,
+        0.9968070679401694,
+        0.99371016211028,
+        0.9908402914631645,
+        0.9879854579761127,
+        0.9851165248620122,
+        0.9822620890007338,
+        0.9794385936680461,
+        0.9766298034013445,
+        0.9739271219859541,
+        0.9712547990249623,
+        0.9685715529575399,
+        0.9661489023470382,
+        0.9633880381058347,
+        0.9607448223524917,
+        0.9580885577488913,
+        0.9555359863838372,
+        0.9529424300013473,
+        0.9503707866888366,
+        0.9476955895728124,
+        0.9452432964770966,
+        0.9425980025392529,
+        0.9399281506600035,
+        0.9372785716201517,
+        0.9348133160721296,
+        0.9323989985646711,
+        0.9299821718252006,
+        0.9275331973853221,
+        0.9249035287463665,
+        0.9222710817410841,
+        0.9196350727561553,
+        0.9169990637712266,
+        0.9143705638932602,
+        0.9119182911494956,
+        0.9093539012146976,
+        0.9069040065053454,
+        0.9044541117959933,
+        0.9020042170866411,
+        0.899554322377289,
+        0.8971044276679369,
+        0.8946536736107673,
+        0.8921457505872495,
+        0.8895807089377169,
+        0.8870130204736002,
+        0.8844788419572431,
+        0.8819514899422968,
+        0.8793322863561015,
+        0.8767646297566891,
+        0.87429992338131,
+        0.8718352170059309,
+        0.8693705106305518,
+        0.8669058042551727,
+        0.8644391804541398,
+        0.8619721190958489,
+        0.859505057737558,
+        0.8570379963792671,
+        0.854528662751892,
+        0.8519786967860503,
+        0.8494287308202084,
+        0.8468787648543668,
+        0.8443287988885251,
+        0.8417788329226834,
+        0.8392288669568417,
+        0.836678900991,
+        0.8341289350251582,
+        0.8315789690593165,
+        0.8290290030934748,
+        0.8265067508508469,
+        0.8240282754912013,
+        0.8215498001315558,
+        0.8190713247719101,
+        0.8165916690989665,
+        0.814111465621878,
+        0.8116312621447893,
+        0.8091510586677008,
+        0.8066708551906121,
+        0.8041906517135236,
+        0.8017104482364349,
+        0.7992302447593462,
+        0.7967500412822577,
+        0.794269837805169,
+        0.7917896343280805,
+        0.7893094308509918,
+        0.7868292273739033,
+        0.7843490238968146,
+        0.7818688204197259,
+        0.7793886169426374,
+        0.7769084134655487,
+        0.7744282099884601,
+        0.7719397781762845,
+        0.7694071533301812,
+        0.766874528484078,
+        0.7643887888382244,
+        0.7619074348007836,
+        0.759425646041934,
+        0.7568935706327901,
+        0.7543490822331412,
+        0.7518034768857849,
+        0.7492578715384286,
+        0.7467122661910722,
+        0.744166660843716,
+        0.7416210554963597,
+        0.7390754501490032,
+        0.736529844801647,
+        0.7339842394542906,
+        0.7314613287159503,
+        0.7289643854642164,
+        0.7264548836146828,
+        0.7239205587433448,
+        0.72143313217939,
+        0.7189457056154351,
+        0.7164582790514802,
+        0.7139708524875255,
+        0.7114834259235705,
+        0.7089959993596158,
+        0.7065021726576389,
+        0.7040066642783712,
+        0.7015111558991035,
+        0.6990156475198359,
+        0.6965201391405683,
+        0.6940246307613006,
+        0.6915291223820328,
+        0.6890336140027651,
+        0.6865381056234975,
+        0.6840425972442299,
+        0.6815470888649622,
+        0.6790515804856945,
+        0.6765560721064268,
+        0.6740605637271591,
+        0.6715650553478915,
+        0.6690695469686238,
+        0.666574038589356,
+        0.6640785302100883,
+        0.6615830218308207,
+        0.6590875134515531,
+        0.6565920050722853,
+        0.6540964966930176,
+        0.6516009883137499,
+        0.6491054799344823,
+        0.6466099715552147,
+        0.644114463175947,
+        0.6416189547966793,
+        0.6391234464174116,
+        0.6366279380381439,
+        0.6341324296588763,
+        0.6316369212796086,
+        0.6291414129003409,
+        0.6266459045210732,
+        0.6241503961418056,
+        0.6216548877625379,
+        0.6191593793832701,
+        0.6166638710040024,
+        0.6141683626247347,
+        0.6116728542454671,
+        0.6091773458661995,
+        0.6066818374869318
+      ],
+      "k": 730,
+      "n_clusters": 96,
+      "converged": true,
+      "n_boot": 1000,
+      "boot_converged_pct": 100.0,
+      "t_dsm": 0.278,
+      "t_ci95": [
+        0.036,
+        0.5
+      ],
+      "b_per_dsm": 0.0308,
+      "b_ci95": [
+        0.0249,
+        0.0379
+      ],
+      "ecw_star_90pct_dsm": 3.519,
+      "ecw_star_90pct_ci95": [
+        2.899,
+        4.282
+      ],
+      "ecw_star_80pct_dsm": 6.761,
+      "ecw_star_80pct_ci95": [
+        5.558,
+        8.269
+      ],
+      "t_hit_lower_pct": 1.4,
+      "t_hit_upper_pct": 0.0,
+      "b_hit_lower_pct": 0.0,
+      "ecw90_hit_bound_pct": 0.0,
+      "status": "OK"
+    }
+  },
+  "crop_composition_by_ecw_band": {
+    "continuous_ecw_le_4": {
+      "k": 438,
+      "n_clusters": 67,
+      "horticultural_pct": 41.3,
+      "cereal_group7_pct": 22.4,
+      "cereal_raw_pct": 18.7,
+      "cotton_pct": 4.3
+    },
+    "continuous_ecw_4_to_8": {
+      "k": 507,
+      "n_clusters": 85,
+      "horticultural_pct": 31.4,
+      "cereal_group7_pct": 40.4,
+      "cereal_raw_pct": 33.1,
+      "cotton_pct": 16.0
+    },
+    "continuous_ecw_gt_8": {
+      "k": 327,
+      "n_clusters": 38,
+      "horticultural_pct": 13.5,
+      "cereal_group7_pct": 36.1,
+      "cereal_raw_pct": 36.1,
+      "cotton_pct": 28.4
+    }
+  },
+  "logistic_sensitivity": {
+    "pooled_sigmoidal_p_ge_1": {
+      "k": 1744,
+      "n_clusters": 137,
+      "p_lower_bound": 1.0,
+      "ec50_dsm": 29.242,
+      "p_shape": 1.0,
+      "ecw_star_90pct_dsm": 3.249,
+      "ecw_star_80pct_dsm": 7.31,
+      "cost": 40.3018,
+      "status": "OK"
+    },
+    "continuous_sigmoidal_p_ge_1": {
+      "k": 1272,
+      "n_clusters": 124,
+      "p_lower_bound": 1.0,
+      "ec50_dsm": 19.938,
+      "p_shape": 1.0,
+      "ecw_star_90pct_dsm": 2.215,
+      "ecw_star_80pct_dsm": 4.985,
+      "cost": 34.4665,
+      "status": "OK"
+    },
+    "cyclic_sigmoidal_p_ge_1": {
+      "k": 291,
+      "n_clusters": 35,
+      "p_lower_bound": 1.0,
+      "ec50_dsm": 45.749,
+      "p_shape": 1.0,
+      "ecw_star_90pct_dsm": 5.083,
+      "ecw_star_80pct_dsm": 11.437,
+      "cost": 3.1382,
+      "status": "OK"
+    },
+    "pooled_unconstrained_p_ge_02": {
+      "k": 1744,
+      "n_clusters": 137,
+      "p_lower_bound": 0.2,
+      "ec50_dsm": 21.877,
+      "p_shape": 0.309,
+      "ecw_star_90pct_dsm": 0.018,
+      "ecw_star_80pct_dsm": 0.245,
+      "cost": 37.8052,
+      "status": "OK"
+    }
+  },
+  "soil_EC_absolute": {
+    "all": {
+      "k": 1050,
+      "n_clusters": 84,
+      "median_ctrl_ecw_dsm": 0.8,
+      "model_form": "power_law_log_ratio",
+      "power_exponent_b": 0.4045,
+      "power_exponent_b_ci95": [
+        0.3572,
+        0.4609
+      ],
+      "r2_power_law": 0.1518,
+      "ecw_plus50pct_dsm": 2.18,
+      "ecw_plus50pct_ci95": [
+        1.928,
+        2.489
+      ],
+      "ecw_plus100pct_dsm": 4.439,
+      "ecw_plus100pct_ci95": [
+        3.599,
+        5.569
+      ],
+      "linear_slope_per_dsm": 0.1425,
+      "r2_exponential_legacy": -0.1578,
+      "exp_legacy_ecw_plus50pct_dsm": 3.646,
+      "exp_legacy_ecw_plus100pct_dsm": 5.665,
+      "status": "OK"
+    },
+    "field_only": {
+      "k": 779,
+      "n_clusters": 72,
+      "median_ctrl_ecw_dsm": 0.8,
+      "model_form": "power_law_log_ratio",
+      "power_exponent_b": 0.3976,
+      "power_exponent_b_ci95": [
+        0.3455,
+        0.4532
+      ],
+      "r2_power_law": 0.1359,
+      "ecw_plus50pct_dsm": 2.218,
+      "ecw_plus50pct_ci95": [
+        1.957,
+        2.587
+      ],
+      "ecw_plus100pct_dsm": 4.573,
+      "ecw_plus100pct_ci95": [
+        3.692,
+        5.947
+      ],
+      "linear_slope_per_dsm": 0.1414,
+      "r2_exponential_legacy": -0.2465,
+      "exp_legacy_ecw_plus50pct_dsm": 3.668,
+      "exp_legacy_ecw_plus100pct_dsm": 5.703,
+      "status": "OK"
+    },
+    "exact_variance": {
+      "k": 77,
+      "n_clusters": 13,
+      "median_ctrl_ecw_dsm": 1.02,
+      "model_form": "power_law_log_ratio",
+      "power_exponent_b": 0.4679,
+      "power_exponent_b_ci95": [
+        0.4101,
+        0.5497
+      ],
+      "r2_power_law": 0.3284,
+      "ecw_plus50pct_dsm": 2.426,
+      "ecw_plus50pct_ci95": [
+        2.133,
+        2.741
+      ],
+      "ecw_plus100pct_dsm": 4.487,
+      "ecw_plus100pct_ci95": [
+        3.6,
+        5.529
+      ],
+      "linear_slope_per_dsm": 0.1465,
+      "r2_exponential_legacy": -0.1354,
+      "exp_legacy_ecw_plus50pct_dsm": 3.788,
+      "exp_legacy_ecw_plus100pct_dsm": 5.751,
+      "status": "OK"
+    },
+    "exact_plus_lsd": {
+      "k": 121,
+      "n_clusters": 15,
+      "median_ctrl_ecw_dsm": 0.6,
+      "model_form": "power_law_log_ratio",
+      "power_exponent_b": 0.4435,
+      "power_exponent_b_ci95": [
+        0.3672,
+        0.5165
+      ],
+      "r2_power_law": 0.276,
+      "ecw_plus50pct_dsm": 1.497,
+      "ecw_plus50pct_ci95": [
+        1.315,
+        1.81
+      ],
+      "ecw_plus100pct_dsm": 2.864,
+      "ecw_plus100pct_ci95": [
+        2.296,
+        3.962
+      ],
+      "linear_slope_per_dsm": 0.1465,
+      "r2_exponential_legacy": 0.0684,
+      "exp_legacy_ecw_plus50pct_dsm": 3.367,
+      "exp_legacy_ecw_plus100pct_dsm": 5.331,
+      "status": "OK"
+    },
+    "saturated_paste_ECe_only": {
+      "k": 520,
+      "n_clusters": 43,
+      "median_ctrl_ecw_dsm": 0.6,
+      "model_form": "power_law_log_ratio",
+      "power_exponent_b": 0.4412,
+      "power_exponent_b_ci95": [
+        0.3626,
+        0.5278
+      ],
+      "r2_power_law": 0.1717,
+      "ecw_plus50pct_dsm": 1.504,
+      "ecw_plus50pct_ci95": [
+        1.293,
+        1.836
+      ],
+      "ecw_plus100pct_dsm": 2.888,
+      "ecw_plus100pct_ci95": [
+        2.231,
+        4.059
+      ],
+      "linear_slope_per_dsm": 0.1642,
+      "r2_exponential_legacy": -0.1588,
+      "exp_legacy_ecw_plus50pct_dsm": 3.069,
+      "exp_legacy_ecw_plus100pct_dsm": 4.821,
+      "status": "OK"
+    },
+    "extract_1_5_only": {
+      "k": 368,
+      "n_clusters": 24,
+      "median_ctrl_ecw_dsm": 1.3,
+      "model_form": "power_law_log_ratio",
+      "power_exponent_b": 0.3554,
+      "power_exponent_b_ci95": [
+        0.2874,
+        0.4209
+      ],
+      "r2_power_law": 0.2795,
+      "ecw_plus50pct_dsm": 4.068,
+      "ecw_plus50pct_ci95": [
+        3.407,
+        5.329
+      ],
+      "ecw_plus100pct_dsm": 9.14,
+      "ecw_plus100pct_ci95": [
+        6.748,
+        14.498
+      ],
+      "linear_slope_per_dsm": 0.1086,
+      "r2_exponential_legacy": 0.0665,
+      "exp_legacy_ecw_plus50pct_dsm": 5.033,
+      "exp_legacy_ecw_plus100pct_dsm": 7.682,
+      "status": "OK"
+    },
+    "multiyear_ge2yr_monitored": {
+      "k": 797,
+      "n_clusters": 61,
+      "median_ctrl_ecw_dsm": 0.8,
+      "model_form": "power_law_log_ratio",
+      "power_exponent_b": 0.3868,
+      "power_exponent_b_ci95": [
+        0.3403,
+        0.4396
+      ],
+      "r2_power_law": 0.2146,
+      "ecw_plus50pct_dsm": 2.282,
+      "ecw_plus50pct_ci95": [
+        2.012,
+        2.634
+      ],
+      "ecw_plus100pct_dsm": 4.8,
+      "ecw_plus100pct_ci95": [
+        3.871,
+        6.133
+      ],
+      "linear_slope_per_dsm": 0.1304,
+      "r2_exponential_legacy": -0.1844,
+      "exp_legacy_ecw_plus50pct_dsm": 3.908,
+      "exp_legacy_ecw_plus100pct_dsm": 6.114,
+      "status": "OK"
+    },
+    "multiyear_covariate_cr1": {
+      "k": 470,
+      "n_clusters": 33,
+      "terms": {
+        "intercept": {
+          "coef": 0.08269,
+          "se_cr": 0.14249,
+          "p_val": 0.56577
+        },
+        "delta_ecw_per_dsm": {
+          "coef": 0.07671,
+          "se_cr": 0.01462,
+          "p_val": 1e-05
+        },
+        "irr_per_100mm": {
+          "coef": 0.04978,
+          "se_cr": 0.02193,
+          "p_val": 0.03009
+        },
+        "rain_per_100mm": {
+          "coef": -0.01257,
+          "se_cr": 0.04198,
+          "p_val": 0.7665
+        },
+        "engineered_drain": {
+          "coef": -0.14471,
+          "se_cr": 0.22505,
+          "p_val": 0.52479
+        }
+      },
+      "note": "Multi-year (>=2 yr) soil salinity CR1 model incorporating backfilled seasonal irrigation, rainfall, and drainage covariates."
+    },
+    "multiyear_pre_post_monitoring_summary": {
+      "n_pairs": 326,
+      "n_families": 18,
+      "median_post_to_pre_ratio_lt3_55": 1.056,
+      "median_post_to_pre_ratio_ge3_55": 1.42,
+      "share_accumulating_lt3_55": 0.573,
+      "share_accumulating_ge3_55": 0.827
+    }
+  },
+  "crop_group_vs_fao29": {
+    "by_crop_group7": {
+      "wheat": {
+        "k": 292,
+        "n_clusters": 16,
+        "converged": true,
+        "n_boot": 1000,
+        "boot_converged_pct": 100.0,
+        "t_dsm": 1.499,
+        "t_ci95": [
+          0.015,
+          4.0
+        ],
+        "b_per_dsm": 0.0216,
+        "b_ci95": [
+          0.0139,
+          0.0367
+        ],
+        "ecw_star_90pct_dsm": 6.127,
+        "ecw_star_90pct_ci95": [
+          4.445,
+          8.715
+        ],
+        "ecw_star_80pct_dsm": 10.756,
+        "ecw_star_80pct_ci95": [
+          8.314,
+          14.807
+        ],
+        "t_hit_lower_pct": 2.1,
+        "t_hit_upper_pct": 0.0,
+        "b_hit_lower_pct": 0.0,
+        "ecw90_hit_bound_pct": 0.0,
+        "status": "OK",
+        "fao29_spam_codes": [
+          "WHEA"
+        ],
+        "fao29_ece90_median_dsm": 7.408,
+        "fao29_ecw_ref_dsm": 4.939,
+        "k_emp_ecw90_over_ece90": 0.827,
+        "k_emp_vs_067_ratio": 1.24
+      },
+      "cotton": {
+        "k": 228,
+        "n_clusters": 16,
+        "converged": true,
+        "n_boot": 1000,
+        "boot_converged_pct": 100.0,
+        "t_dsm": 0.35,
+        "t_ci95": [
+          0.001,
+          3.201
+        ],
+        "b_per_dsm": 0.0176,
+        "b_ci95": [
+          0.0115,
+          0.0307
+        ],
+        "ecw_star_90pct_dsm": 6.022,
+        "ecw_star_90pct_ci95": [
+          4.378,
+          9.55
+        ],
+        "ecw_star_80pct_dsm": 11.693,
+        "ecw_star_80pct_ci95": [
+          7.953,
+          17.84
+        ],
+        "t_hit_lower_pct": 4.4,
+        "t_hit_upper_pct": 0.0,
+        "b_hit_lower_pct": 0.0,
+        "ecw90_hit_bound_pct": 0.0,
+        "status": "OK",
+        "fao29_spam_codes": [
+          "COTT"
+        ],
+        "fao29_ece90_median_dsm": 9.623,
+        "fao29_ecw_ref_dsm": 6.415,
+        "k_emp_ecw90_over_ece90": 0.626,
+        "k_emp_vs_067_ratio": 0.939
+      },
+      "maize": {
+        "k": 176,
+        "n_clusters": 20,
+        "converged": true,
+        "n_boot": 1000,
+        "boot_converged_pct": 100.0,
+        "t_dsm": 0.248,
+        "t_ci95": [
+          0.0,
+          0.619
+        ],
+        "b_per_dsm": 0.0405,
+        "b_ci95": [
+          0.0266,
+          0.0587
+        ],
+        "ecw_star_90pct_dsm": 2.716,
+        "ecw_star_90pct_ci95": [
+          1.944,
+          4.347
+        ],
+        "ecw_star_80pct_dsm": 5.183,
+        "ecw_star_80pct_ci95": [
+          3.658,
+          8.028
+        ],
+        "t_hit_lower_pct": 4.9,
+        "t_hit_upper_pct": 0.0,
+        "b_hit_lower_pct": 0.0,
+        "ecw90_hit_bound_pct": 0.0,
+        "status": "OK",
+        "fao29_spam_codes": [
+          "MAIZ"
+        ],
+        "fao29_ece90_median_dsm": 2.533,
+        "fao29_ecw_ref_dsm": 1.689,
+        "k_emp_ecw90_over_ece90": 1.072,
+        "k_emp_vs_067_ratio": 1.608
+      },
+      "vegetables": {
+        "k": 354,
+        "n_clusters": 36,
+        "converged": true,
+        "n_boot": 1000,
+        "boot_converged_pct": 100.0,
+        "t_dsm": 0.25,
+        "t_ci95": [
+          0.001,
+          2.26
+        ],
+        "b_per_dsm": 0.0359,
+        "b_ci95": [
+          0.0232,
+          0.0672
+        ],
+        "ecw_star_90pct_dsm": 3.032,
+        "ecw_star_90pct_ci95": [
+          2.206,
+          4.544
+        ],
+        "ecw_star_80pct_dsm": 5.815,
+        "ecw_star_80pct_ci95": [
+          4.069,
+          8.809
+        ],
+        "t_hit_lower_pct": 3.1,
+        "t_hit_upper_pct": 0.0,
+        "b_hit_lower_pct": 0.0,
+        "ecw90_hit_bound_pct": 0.0,
+        "status": "OK",
+        "fao29_spam_codes": [
+          "VEGE",
+          "TOMA",
+          "ONIO"
+        ],
+        "fao29_ece90_median_dsm": 2.633,
+        "fao29_ecw_ref_dsm": 1.756,
+        "k_emp_ecw90_over_ece90": 1.151,
+        "k_emp_vs_067_ratio": 1.727
+      },
+      "fruit": {
+        "k": 161,
+        "n_clusters": 20,
+        "converged": true,
+        "n_boot": 1000,
+        "boot_converged_pct": 100.0,
+        "t_dsm": 0.3,
+        "t_ci95": [
+          0.019,
+          5.0
+        ],
+        "b_per_dsm": 0.034,
+        "b_ci95": [
+          0.021,
+          0.0629
+        ],
+        "ecw_star_90pct_dsm": 3.241,
+        "ecw_star_90pct_ci95": [
+          1.994,
+          7.643
+        ],
+        "ecw_star_80pct_dsm": 6.181,
+        "ecw_star_80pct_ci95": [
+          3.665,
+          10.645
+        ],
+        "t_hit_lower_pct": 2.3,
+        "t_hit_upper_pct": 0.0,
+        "b_hit_lower_pct": 0.0,
+        "ecw90_hit_bound_pct": 0.0,
+        "status": "OK",
+        "fao29_spam_codes": [
+          "TEMF",
+          "TROF",
+          "CITR",
+          "BANA",
+          "PLNT",
+          "CNUT"
+        ],
+        "fao29_ece90_median_dsm": 2.296,
+        "fao29_ecw_ref_dsm": 1.531,
+        "k_emp_ecw90_over_ece90": 1.412,
+        "k_emp_vs_067_ratio": 2.118
+      },
+      "oilseed_legume": {
+        "k": 293,
+        "n_clusters": 16,
+        "converged": true,
+        "n_boot": 1000,
+        "boot_converged_pct": 100.0,
+        "t_dsm": 0.5,
+        "t_ci95": [
+          0.142,
+          0.6
+        ],
+        "b_per_dsm": 0.0342,
+        "b_ci95": [
+          0.0229,
+          0.0597
+        ],
+        "ecw_star_90pct_dsm": 3.422,
+        "ecw_star_90pct_ci95": [
+          2.105,
+          4.69
+        ],
+        "ecw_star_80pct_dsm": 6.344,
+        "ecw_star_80pct_ci95": [
+          3.743,
+          9.042
+        ],
+        "t_hit_lower_pct": 0.8,
+        "t_hit_upper_pct": 0.0,
+        "b_hit_lower_pct": 0.0,
+        "ecw90_hit_bound_pct": 0.0,
+        "status": "OK",
+        "fao29_spam_codes": [
+          "SOYB",
+          "GROU",
+          "SUNF",
+          "RAPE",
+          "SESA",
+          "BEAN",
+          "LENT",
+          "CHIC",
+          "PIGE",
+          "COWP",
+          "OPUL",
+          "OOIL"
+        ],
+        "fao29_ece90_median_dsm": 3.689,
+        "fao29_ecw_ref_dsm": 2.459,
+        "k_emp_ecw90_over_ece90": 0.928,
+        "k_emp_vs_067_ratio": 1.392
+      },
+      "other_cereals": {
+        "k": 71,
+        "n_clusters": 8,
+        "converged": true,
+        "n_boot": 1000,
+        "boot_converged_pct": 100.0,
+        "t_dsm": 10.673,
+        "t_ci95": [
+          0.009,
+          14.42
+        ],
+        "b_per_dsm": 0.054,
+        "b_ci95": [
+          0.015,
+          0.3656
+        ],
+        "ecw_star_90pct_dsm": 12.525,
+        "ecw_star_90pct_ci95": [
+          2.682,
+          14.693
+        ],
+        "ecw_star_80pct_dsm": 14.377,
+        "ecw_star_80pct_ci95": [
+          5.227,
+          14.967
+        ],
+        "t_hit_lower_pct": 2.9,
+        "t_hit_upper_pct": 0.0,
+        "b_hit_lower_pct": 0.0,
+        "ecw90_hit_bound_pct": 0.0,
+        "status": "OK",
+        "fao29_spam_codes": [
+          "BARL",
+          "RICE",
+          "SORG",
+          "MILL",
+          "PMIL",
+          "OCER"
+        ],
+        "fao29_ece90_median_dsm": 5.777,
+        "fao29_ecw_ref_dsm": 3.851,
+        "k_emp_ecw90_over_ece90": 2.168,
+        "k_emp_vs_067_ratio": 3.252
+      }
+    },
+    "median_k_emp_across_7_groups": 1.072,
+    "median_k_emp_excl_other_cereals": 1.0,
+    "theoretical_fao29_lf15_20_ratio": 0.667
+  },
+  "adjusted_scheduling_and_tech": {
+    "t_pooled_used_dsm": 0.2,
+    "cyclic_advantage_robust": false,
+    "cyclic_robustness_note": "Cyclic interaction is borderline in additive-covariate CR1 (P = 0.0494), attenuates under origin-constrained slope moderation (P = 0.0690) and when adding scheduling main effects (P = 0.2976), and yields an imprecise adjusted difference CI spanning zero; Pillar 3 uses continuous ECw*90 as baseline and unadjusted cyclic ECw*90 as an upper-bound managed sensitivity.",
+    "scheduling_adjusted_cr1": {
+      "k": 1744,
+      "n_clusters": 137,
+      "terms": {
+        "intercept": {
+          "coef": 0.07797,
+          "se_cr": 0.07151,
+          "p_val": 0.27747
+        },
+        "excess_continuous": {
+          "coef": -0.02265,
+          "se_cr": 0.00663,
+          "p_val": 0.00084
+        },
+        "excess_x_cyclic": {
+          "coef": 0.01458,
+          "se_cr": 0.00743,
+          "p_val": 0.05167
+        },
+        "excess_x_blended": {
+          "coef": 0.01921,
+          "se_cr": 0.01494,
+          "p_val": 0.20052
+        }
+      },
+      "adjusted_ecw90_continuous_dsm": 4.615,
+      "adjusted_ecw90_continuous_ci95": [
+        2.707,
+        7.948
+      ],
+      "adjusted_ecw90_cyclic_dsm": 12.599,
+      "adjusted_ecw90_cyclic_ci95": [
+        3.56,
+        84.566
+      ],
+      "adjusted_cyclic_minus_continuous_dsm": 7.983,
+      "adjusted_cyclic_minus_continuous_ci95": [
+        -0.871,
+        80.155
+      ],
+      "valid_boot_positive_slope_pct": 86.3
+    },
+    "scheduling_origin_slope_sensitivity": {
+      "terms": {
+        "excess_continuous": {
+          "coef": 0.00142,
+          "se_cr": 0.01255,
+          "p_val": 0.91026
+        },
+        "excess_x_cyclic": {
+          "coef": 0.01281,
+          "se_cr": 0.00709,
+          "p_val": 0.07273
+        },
+        "excess_x_blended": {
+          "coef": 0.00767,
+          "se_cr": 0.01254,
+          "p_val": 0.54189
+        }
+      }
+    },
+    "technology_adjusted_cr1": {
+      "k": 1744,
+      "n_clusters": 137,
+      "terms": {
+        "intercept": {
+          "coef": 0.10934,
+          "se_cr": 0.07181,
+          "p_val": 0.13015
+        },
+        "excess_surface_flood": {
+          "coef": -0.02977,
+          "se_cr": 0.00653,
+          "p_val": 1e-05
+        },
+        "excess_x_drip_mulched": {
+          "coef": 0.00711,
+          "se_cr": 0.00962,
+          "p_val": 0.46117
+        },
+        "excess_x_drip_unmulched": {
+          "coef": 0.01191,
+          "se_cr": 0.00857,
+          "p_val": 0.16722
+        },
+        "excess_x_subsurface_drip": {
+          "coef": -0.02102,
+          "se_cr": 0.02612,
+          "p_val": 0.42234
+        },
+        "excess_x_other_mode": {
+          "coef": 0.0292,
+          "se_cr": 0.01029,
+          "p_val": 0.00526
+        }
+      }
+    },
+    "technology_fao48_adjusted_cr1": {
+      "k": 1744,
+      "n_clusters": 137,
+      "counts": {
+        "other": {
+          "k": 178,
+          "n_clusters": 23
+        },
+        "sprinkler": {
+          "k": 13,
+          "n_clusters": 2
+        },
+        "subsurface_drip": {
+          "k": 31,
+          "n_clusters": 5
+        },
+        "surface_drip": {
+          "k": 616,
+          "n_clusters": 70
+        },
+        "surface_flood_furrow": {
+          "k": 906,
+          "n_clusters": 46
+        }
+      },
+      "terms": {
+        "intercept": {
+          "coef": 0.09884,
+          "se_cr": 0.07078,
+          "p_val": 0.16487
+        },
+        "excess_surface_flood": {
+          "coef": -0.02963,
+          "se_cr": 0.00657,
+          "p_val": 1e-05
+        },
+        "excess_x_surface_drip": {
+          "coef": 0.01053,
+          "se_cr": 0.00743,
+          "p_val": 0.15869
+        },
+        "excess_x_subsurface_drip": {
+          "coef": -0.02131,
+          "se_cr": 0.02613,
+          "p_val": 0.41634
+        },
+        "excess_x_other_mode": {
+          "coef": 0.02866,
+          "se_cr": 0.01048,
+          "p_val": 0.00704
+        }
+      }
+    },
+    "soil_ec_scheduling_adjusted_cr1": {
+      "k": 1050,
+      "n_clusters": 84,
+      "terms": {
+        "intercept": {
+          "coef": 0.52033,
+          "se_cr": 0.21223,
+          "p_val": 0.01631
+        },
+        "dECw_continuous": {
+          "coef": 0.06101,
+          "se_cr": 0.01546,
+          "p_val": 0.00016
+        },
+        "dECw_x_cyclic": {
+          "coef": -0.0091,
+          "se_cr": 0.02355,
+          "p_val": 0.70013
+        },
+        "dECw_x_blended": {
+          "coef": 0.05418,
+          "se_cr": 0.03315,
+          "p_val": 0.10599
+        }
+      }
+    },
+    "soil_ec_technology_fao48_adjusted_cr1": {
+      "k": 1050,
+      "n_clusters": 84,
+      "counts": {
+        "other": {
+          "k": 190,
+          "n_clusters": 12
+        },
+        "sprinkler": {
+          "k": 10,
+          "n_clusters": 2
+        },
+        "subsurface_drip": {
+          "k": 37,
+          "n_clusters": 3
+        },
+        "surface_drip": {
+          "k": 401,
+          "n_clusters": 42
+        },
+        "surface_flood_furrow": {
+          "k": 412,
+          "n_clusters": 28
+        }
+      },
+      "terms": {
+        "intercept": {
+          "coef": 0.49824,
+          "se_cr": 0.21032,
+          "p_val": 0.02016
+        },
+        "dECw_surface_flood": {
+          "coef": 0.04801,
+          "se_cr": 0.01558,
+          "p_val": 0.00278
+        },
+        "dECw_x_surface_drip": {
+          "coef": 0.01675,
+          "se_cr": 0.02132,
+          "p_val": 0.43434
+        },
+        "dECw_x_subsurface_drip": {
+          "coef": -0.09594,
+          "se_cr": 0.04325,
+          "p_val": 0.02925
+        },
+        "dECw_x_other_mode": {
+          "coef": 0.03208,
+          "se_cr": 0.03049,
+          "p_val": 0.29576
+        }
+      }
+    }
+  },
+  "bridge_moderator_tests": {
+    "yield_combined": {
+      "amendment_co_applied": {
+        "counts_by_class": {
+          "ca_chemical": {
+            "k": 47,
+            "n_clusters": 6
+          },
+          "none_or_npk": {
+            "k": 1440,
+            "n_clusters": 125
+          },
+          "organic": {
+            "k": 257,
+            "n_clusters": 24
+          }
+        },
+        "terms": {
+          "intercept": {
+            "coef": -0.00114,
+            "se_cr": 0.04856,
+            "p_val": 0.98132
+          },
+          "slope_none_or_npk": {
+            "coef": -0.02143,
+            "se_cr": 0.00694,
+            "p_val": 0.00245
+          },
+          "delta_slope_ca_chemical": {
+            "coef": -0.02036,
+            "se_cr": 0.01046,
+            "p_val": 0.05366
+          },
+          "delta_slope_organic": {
+            "coef": 0.01316,
+            "se_cr": 0.00813,
+            "p_val": 0.10771
+          }
+        },
+        "terms_with_main_effect": {
+          "intercept": {
+            "coef": -0.00555,
+            "se_cr": 0.04842,
+            "p_val": 0.90899
+          },
+          "slope_none_or_npk": {
+            "coef": -0.02085,
+            "se_cr": 0.0069,
+            "p_val": 0.003
+          },
+          "main_ca_chemical": {
+            "coef": 0.13127,
+            "se_cr": 0.09491,
+            "p_val": 0.16892
+          },
+          "delta_slope_ca_chemical": {
+            "coef": -0.03781,
+            "se_cr": 0.01317,
+            "p_val": 0.00475
+          },
+          "main_organic": {
+            "coef": 0.00272,
+            "se_cr": 0.05477,
+            "p_val": 0.96044
+          },
+          "delta_slope_organic": {
+            "coef": 0.01237,
+            "se_cr": 0.01194,
+            "p_val": 0.30204
+          }
+        },
+        "terms_origin_slope_only": {
+          "slope_none_or_npk": {
+            "coef": -0.0201,
+            "se_cr": 0.00447,
+            "p_val": 1e-05
+          },
+          "delta_slope_ca_chemical": {
+            "coef": -0.01907,
+            "se_cr": 0.01035,
+            "p_val": 0.06764
+          },
+          "delta_slope_organic": {
+            "coef": 0.01762,
+            "se_cr": 0.00963,
+            "p_val": 0.06956
+          }
+        }
+      },
+      "mulching": {
+        "counts": {
+          "mulched_k": 417,
+          "mulched_clusters": 37,
+          "unmulched_k": 1327
+        },
+        "terms": {
+          "intercept": {
+            "coef": -0.06163,
+            "se_cr": 0.05458,
+            "p_val": 0.26082
+          },
+          "slope_unmulched": {
+            "coef": -0.02062,
+            "se_cr": 0.0073,
+            "p_val": 0.00543
+          },
+          "delta_slope_mulched": {
+            "coef": 0.01138,
+            "se_cr": 0.00894,
+            "p_val": 0.20554
+          }
+        },
+        "terms_with_main_effect": {
+          "intercept": {
+            "coef": -0.08128,
+            "se_cr": 0.06427,
+            "p_val": 0.20816
+          },
+          "slope_unmulched": {
+            "coef": -0.01915,
+            "se_cr": 0.00801,
+            "p_val": 0.01822
+          },
+          "main_mulched": {
+            "coef": 0.05621,
+            "se_cr": 0.05353,
+            "p_val": 0.29557
+          },
+          "delta_slope_mulched": {
+            "coef": 0.0037,
+            "se_cr": 0.01175,
+            "p_val": 0.75345
+          }
+        },
+        "terms_origin_slope_only": {
+          "slope_unmulched": {
+            "coef": -0.0385,
+            "se_cr": 0.0111,
+            "p_val": 0.0007
+          },
+          "delta_slope_mulched": {
+            "coef": 0.02024,
+            "se_cr": 0.01076,
+            "p_val": 0.06203
+          }
+        }
+      },
+      "subsurface_drainage": {
+        "counts": {
+          "subdrain_k": 156,
+          "subdrain_clusters": 13,
+          "other_k": 1588
+        },
+        "terms": {
+          "intercept": {
+            "coef": -0.02107,
+            "se_cr": 0.04649,
+            "p_val": 0.65112
+          },
+          "slope_no_subdrain": {
+            "coef": -0.01789,
+            "se_cr": 0.00645,
+            "p_val": 0.00636
+          },
+          "delta_slope_subdrain": {
+            "coef": -0.05101,
+            "se_cr": 0.01979,
+            "p_val": 0.011
+          }
+        },
+        "terms_with_main_effect": {
+          "intercept": {
+            "coef": -0.02533,
+            "se_cr": 0.04578,
+            "p_val": 0.58101
+          },
+          "slope_no_subdrain": {
+            "coef": -0.01712,
+            "se_cr": 0.0063,
+            "p_val": 0.00741
+          },
+          "main_subdrain": {
+            "coef": 0.09842,
+            "se_cr": 0.13232,
+            "p_val": 0.45831
+          },
+          "delta_slope_subdrain": {
+            "coef": -0.07421,
+            "se_cr": 0.03492,
+            "p_val": 0.03538
+          }
+        },
+        "terms_origin_slope_only": {
+          "slope_no_subdrain": {
+            "coef": -0.02016,
+            "se_cr": 0.00446,
+            "p_val": 1e-05
+          },
+          "delta_slope_subdrain": {
+            "coef": -0.06252,
+            "se_cr": 0.0198,
+            "p_val": 0.00196
+          }
+        }
+      }
+    },
+    "soil_EC": {
+      "amendment_co_applied": {
+        "counts_by_class": {
+          "none_or_npk": {
+            "k": 932,
+            "n_clusters": 80
+          },
+          "organic": {
+            "k": 118,
+            "n_clusters": 8
+          }
+        },
+        "terms": {
+          "intercept": {
+            "coef": 0.58238,
+            "se_cr": 0.14051,
+            "p_val": 8e-05
+          },
+          "slope_none_or_npk": {
+            "coef": 0.06079,
+            "se_cr": 0.01661,
+            "p_val": 0.00044
+          },
+          "delta_slope_organic": {
+            "coef": -0.01557,
+            "se_cr": 0.07444,
+            "p_val": 0.83485
+          }
+        },
+        "terms_with_main_effect": {
+          "intercept": {
+            "coef": 0.57804,
+            "se_cr": 0.14299,
+            "p_val": 0.00012
+          },
+          "slope_none_or_npk": {
+            "coef": 0.06149,
+            "se_cr": 0.01721,
+            "p_val": 0.00059
+          },
+          "main_organic": {
+            "coef": 0.11743,
+            "se_cr": 0.23266,
+            "p_val": 0.61509
+          },
+          "delta_slope_organic": {
+            "coef": -0.04774,
+            "se_cr": 0.11001,
+            "p_val": 0.66545
+          }
+        },
+        "terms_origin_slope_only": {
+          "slope_none_or_npk": {
+            "coef": 0.13464,
+            "se_cr": 0.0167,
+            "p_val": 0.0
+          },
+          "delta_slope_organic": {
+            "coef": 0.02717,
+            "se_cr": 0.06471,
+            "p_val": 0.67563
+          }
+        }
+      },
+      "mulching": {
+        "counts": {
+          "mulched_k": 388,
+          "mulched_clusters": 30,
+          "unmulched_k": 662
+        },
+        "terms": {
+          "intercept": {
+            "coef": 0.71647,
+            "se_cr": 0.14207,
+            "p_val": 0.0
+          },
+          "slope_unmulched": {
+            "coef": 0.09521,
+            "se_cr": 0.01832,
+            "p_val": 0.0
+          },
+          "delta_slope_mulched": {
+            "coef": -0.06559,
+            "se_cr": 0.01845,
+            "p_val": 0.00063
+          }
+        },
+        "terms_with_main_effect": {
+          "intercept": {
+            "coef": 0.85517,
+            "se_cr": 0.14923,
+            "p_val": 0.0
+          },
+          "slope_unmulched": {
+            "coef": 0.0802,
+            "se_cr": 0.02131,
+            "p_val": 0.00031
+          },
+          "main_mulched": {
+            "coef": -0.32616,
+            "se_cr": 0.13454,
+            "p_val": 0.01751
+          },
+          "delta_slope_mulched": {
+            "coef": -0.02014,
+            "se_cr": 0.02752,
+            "p_val": 0.46631
+          }
+        },
+        "terms_origin_slope_only": {
+          "slope_unmulched": {
+            "coef": 0.20597,
+            "se_cr": 0.02348,
+            "p_val": 0.0
+          },
+          "delta_slope_mulched": {
+            "coef": -0.08708,
+            "se_cr": 0.02118,
+            "p_val": 9e-05
+          }
+        }
+      },
+      "subsurface_drainage": {
+        "counts": {
+          "subdrain_k": 74,
+          "subdrain_clusters": 7,
+          "other_k": 976
+        },
+        "terms": {
+          "intercept": {
+            "coef": 0.57968,
+            "se_cr": 0.13906,
+            "p_val": 7e-05
+          },
+          "slope_no_subdrain": {
+            "coef": 0.06122,
+            "se_cr": 0.01643,
+            "p_val": 0.00035
+          },
+          "delta_slope_subdrain": {
+            "coef": 0.01428,
+            "se_cr": 0.05249,
+            "p_val": 0.78628
+          }
+        },
+        "terms_with_main_effect": {
+          "intercept": {
+            "coef": 0.57524,
+            "se_cr": 0.13994,
+            "p_val": 9e-05
+          },
+          "slope_no_subdrain": {
+            "coef": 0.06194,
+            "se_cr": 0.01662,
+            "p_val": 0.00035
+          },
+          "main_subdrain": {
+            "coef": 0.16932,
+            "se_cr": 0.21207,
+            "p_val": 0.4269
+          },
+          "delta_slope_subdrain": {
+            "coef": -0.02529,
+            "se_cr": 0.06453,
+            "p_val": 0.69615
+          }
+        },
+        "terms_origin_slope_only": {
+          "slope_no_subdrain": {
+            "coef": 0.13464,
+            "se_cr": 0.0167,
+            "p_val": 0.0
+          },
+          "delta_slope_subdrain": {
+            "coef": 0.05258,
+            "se_cr": 0.05359,
+            "p_val": 0.32939
+          }
+        }
+      }
+    }
+  },
+  "environmental_duration_subgroups": {
+    "yield_combined": {
+      "climate_ai": {
+        "ref": "semi_arid",
+        "k": 1610,
+        "n_clusters": 133,
+        "df_t": 132,
+        "counts_by_class": {
+          "semi_arid": {
+            "k": 783,
+            "n_clusters": 63
+          },
+          "arid": {
+            "k": 665,
+            "n_clusters": 45
+          },
+          "humid_subhumid": {
+            "k": 162,
+            "n_clusters": 25
+          }
+        },
+        "base_slope": {
+          "coef": -0.02445,
+          "se_cr": 0.00805,
+          "p_val": 0.00288
+        },
+        "contrasts": {
+          "arid": {
+            "coef": 0.01256,
+            "se_cr": 0.00971,
+            "ci95": [
+              -0.00665,
+              0.03177
+            ],
+            "p_val": 0.19791,
+            "k": 665,
+            "n_clusters": 45
+          },
+          "humid_subhumid": {
+            "coef": 0.00294,
+            "se_cr": 0.01125,
+            "ci95": [
+              -0.01931,
+              0.02519
+            ],
+            "p_val": 0.79439,
+            "k": 162,
+            "n_clusters": 25
+          }
+        }
+      },
+      "soil_texture": {
+        "ref": "medium",
+        "k": 1599,
+        "n_clusters": 121,
+        "df_t": 120,
+        "counts_by_class": {
+          "medium": {
+            "k": 379,
+            "n_clusters": 34
+          },
+          "coarse": {
+            "k": 925,
+            "n_clusters": 68
+          },
+          "fine": {
+            "k": 295,
+            "n_clusters": 19
+          }
+        },
+        "base_slope": {
+          "coef": -0.01419,
+          "se_cr": 0.00882,
+          "p_val": 0.11025
+        },
+        "contrasts": {
+          "coarse": {
+            "coef": -0.00118,
+            "se_cr": 0.00749,
+            "ci95": [
+              -0.01601,
+              0.01365
+            ],
+            "p_val": 0.8752,
+            "k": 925,
+            "n_clusters": 68
+          },
+          "fine": {
+            "coef": -0.00482,
+            "se_cr": 0.01627,
+            "ci95": [
+              -0.03703,
+              0.02739
+            ],
+            "p_val": 0.76743,
+            "k": 295,
+            "n_clusters": 19
+          }
+        }
+      },
+      "duration_pooled": {
+        "ref": "1yr",
+        "k": 1744,
+        "n_clusters": 137,
+        "df_t": 136,
+        "counts_by_class": {
+          "1yr": {
+            "k": 443,
+            "n_clusters": 45
+          },
+          "2_3yr": {
+            "k": 1112,
+            "n_clusters": 80
+          },
+          "ge4yr": {
+            "k": 189,
+            "n_clusters": 14
+          }
+        },
+        "base_slope": {
+          "coef": -0.01682,
+          "se_cr": 0.01104,
+          "p_val": 0.12995
+        },
+        "contrasts": {
+          "2_3yr": {
+            "coef": -0.00152,
+            "se_cr": 0.01037,
+            "ci95": [
+              -0.02203,
+              0.01899
+            ],
+            "p_val": 0.88371,
+            "k": 1112,
+            "n_clusters": 80
+          },
+          "ge4yr": {
+            "coef": 0.003,
+            "se_cr": 0.01189,
+            "ci95": [
+              -0.02051,
+              0.02651
+            ],
+            "p_val": 0.80094,
+            "k": 189,
+            "n_clusters": 14
+          }
+        }
+      }
+    },
+    "soil_EC": {
+      "climate_ai": {
+        "ref": "semi_arid",
+        "k": 983,
+        "n_clusters": 81,
+        "df_t": 80,
+        "counts_by_class": {
+          "semi_arid": {
+            "k": 695,
+            "n_clusters": 44
+          },
+          "arid": {
+            "k": 159,
+            "n_clusters": 21
+          },
+          "humid_subhumid": {
+            "k": 129,
+            "n_clusters": 16
+          }
+        },
+        "base_slope": {
+          "coef": 0.07396,
+          "se_cr": 0.02032,
+          "p_val": 0.00048
+        },
+        "contrasts": {
+          "arid": {
+            "coef": -0.03502,
+            "se_cr": 0.02549,
+            "ci95": [
+              -0.08575,
+              0.01571
+            ],
+            "p_val": 0.17323,
+            "k": 159,
+            "n_clusters": 21
+          },
+          "humid_subhumid": {
+            "coef": -0.01919,
+            "se_cr": 0.02473,
+            "ci95": [
+              -0.0684,
+              0.03002
+            ],
+            "p_val": 0.44015,
+            "k": 129,
+            "n_clusters": 16
+          }
+        }
+      },
+      "soil_texture": {
+        "ref": "medium",
+        "k": 898,
+        "n_clusters": 71,
+        "df_t": 70,
+        "counts_by_class": {
+          "medium": {
+            "k": 198,
+            "n_clusters": 16
+          },
+          "coarse": {
+            "k": 560,
+            "n_clusters": 38
+          },
+          "fine": {
+            "k": 140,
+            "n_clusters": 17
+          }
+        },
+        "base_slope": {
+          "coef": 0.03906,
+          "se_cr": 0.02016,
+          "p_val": 0.05675
+        },
+        "contrasts": {
+          "coarse": {
+            "coef": -0.00704,
+            "se_cr": 0.01852,
+            "ci95": [
+              -0.04398,
+              0.0299
+            ],
+            "p_val": 0.70507,
+            "k": 560,
+            "n_clusters": 38
+          },
+          "fine": {
+            "coef": 0.07152,
+            "se_cr": 0.02506,
+            "ci95": [
+              0.02154,
+              0.1215
+            ],
+            "p_val": 0.00568,
+            "k": 140,
+            "n_clusters": 17
+          }
+        }
+      },
+      "duration_pooled": {
+        "ref": "1yr",
+        "k": 1050,
+        "n_clusters": 84,
+        "df_t": 83,
+        "counts_by_class": {
+          "1yr": {
+            "k": 253,
+            "n_clusters": 24
+          },
+          "2_3yr": {
+            "k": 688,
+            "n_clusters": 46
+          },
+          "ge4yr": {
+            "k": 109,
+            "n_clusters": 15
+          }
+        },
+        "base_slope": {
+          "coef": 0.09975,
+          "se_cr": 0.02713,
+          "p_val": 0.00042
+        },
+        "contrasts": {
+          "2_3yr": {
+            "coef": -0.05948,
+            "se_cr": 0.0273,
+            "ci95": [
+              -0.11378,
+              -0.00518
+            ],
+            "p_val": 0.03222,
+            "k": 688,
+            "n_clusters": 46
+          },
+          "ge4yr": {
+            "coef": -0.03834,
+            "se_cr": 0.03174,
+            "ci95": [
+              -0.10147,
+              0.02479
+            ],
+            "p_val": 0.23055,
+            "k": 109,
+            "n_clusters": 15
+          }
+        }
+      }
+    }
+  },
+  "within_study_year_x_depth": {
+    "k": 467,
+    "n_clusters": 25,
+    "depth_row_counts": {
+      "rootzone_0_40_60": 269,
+      "subsoil_40_100": 117,
+      "topsoil_0_20": 81
+    },
+    "terms": {
+      "dECw_topsoil_yr1": {
+        "coef": 0.06209,
+        "se_cr": 0.02066,
+        "p_val": 0.00614
+      },
+      "dECw_x_rootzone": {
+        "coef": 0.01607,
+        "se_cr": 0.01476,
+        "p_val": 0.28707
+      },
+      "dECw_x_subsoil": {
+        "coef": 0.01617,
+        "se_cr": 0.03105,
+        "p_val": 0.60733
+      },
+      "dECw_x_logYr": {
+        "coef": -0.01962,
+        "se_cr": 0.01702,
+        "p_val": 0.26036
+      },
+      "dECw_x_root_x_logYr": {
+        "coef": 0.01913,
+        "se_cr": 0.02498,
+        "p_val": 0.45132
+      },
+      "dECw_x_subsoil_x_logYr": {
+        "coef": 0.01324,
+        "se_cr": 0.02188,
+        "p_val": 0.55087
+      }
+    },
+    "predicted_slopes": {
+      "year_1": {
+        "topsoil_0_20": {
+          "slope": 0.06209,
+          "se_cr": 0.02066,
+          "ci95": [
+            0.01944,
+            0.10474
+          ]
+        },
+        "rootzone_0_40_60": {
+          "slope": 0.07816,
+          "se_cr": 0.01855,
+          "ci95": [
+            0.03987,
+            0.11645
+          ]
+        },
+        "subsoil_40_100": {
+          "slope": 0.07826,
+          "se_cr": 0.02421,
+          "ci95": [
+            0.02828,
+            0.12823
+          ]
+        }
+      },
+      "year_2": {
+        "topsoil_0_20": {
+          "slope": 0.04849,
+          "se_cr": 0.02098,
+          "ci95": [
+            0.00519,
+            0.09179
+          ]
+        },
+        "rootzone_0_40_60": {
+          "slope": 0.07782,
+          "se_cr": 0.0162,
+          "ci95": [
+            0.04439,
+            0.11125
+          ]
+        },
+        "subsoil_40_100": {
+          "slope": 0.07383,
+          "se_cr": 0.01889,
+          "ci95": [
+            0.03484,
+            0.11282
+          ]
+        }
+      },
+      "year_3": {
+        "topsoil_0_20": {
+          "slope": 0.04053,
+          "se_cr": 0.02402,
+          "ci95": [
+            -0.00904,
+            0.0901
+          ]
+        },
+        "rootzone_0_40_60": {
+          "slope": 0.07762,
+          "se_cr": 0.01911,
+          "ci95": [
+            0.03817,
+            0.11706
+          ]
+        },
+        "subsoil_40_100": {
+          "slope": 0.07124,
+          "se_cr": 0.02006,
+          "ci95": [
+            0.02985,
+            0.11264
+          ]
+        }
+      }
+    },
+    "topsoil_slope_yr1": 0.0621,
+    "subsoil_slope_yr1": 0.0783,
+    "topsoil_slope_yr3": 0.0405,
+    "subsoil_slope_yr3": 0.0712,
+    "subsoil_to_topsoil_ratio_yr1": 1.26,
+    "subsoil_to_topsoil_ratio_yr2": 1.523,
+    "subsoil_to_topsoil_ratio_yr3": 1.758,
+    "ratio_yr3_minus_yr1": 0.497,
+    "ratio_yr3_minus_yr1_ci95": [
+      -0.948,
+      7.63
+    ],
+    "subsoil_to_topsoil_ratio_rises_significantly": false,
+    "recommended_depth_framing": "persistent_profile_wide_accumulation",
+    "status": "OK",
+    "observed_year_window": "Years 1-3",
+    "excluded_longterm_topsoil_only_rows": 74,
+    "excluded_longterm_families": 10,
+    "strict_multidepth_sensitivity": {
+      "k": 317,
+      "n_clusters": 11,
+      "depth_row_counts": {
+        "rootzone_0_40_60": 131,
+        "subsoil_40_100": 117,
+        "topsoil_0_20": 69
+      },
+      "terms": {
+        "dECw_topsoil_yr1": {
+          "coef": 0.05303,
+          "se_cr": 0.01703,
+          "p_val": 0.01099
+        },
+        "dECw_x_rootzone": {
+          "coef": 0.02041,
+          "se_cr": 0.00943,
+          "p_val": 0.05569
+        },
+        "dECw_x_subsoil": {
+          "coef": 0.01878,
+          "se_cr": 0.02951,
+          "p_val": 0.53878
+        },
+        "dECw_x_logYr": {
+          "coef": -0.01946,
+          "se_cr": 0.01078,
+          "p_val": 0.10129
+        },
+        "dECw_x_root_x_logYr": {
+          "coef": 0.01348,
+          "se_cr": 0.0162,
+          "p_val": 0.42484
+        },
+        "dECw_x_subsoil_x_logYr": {
+          "coef": 0.01384,
+          "se_cr": 0.01746,
+          "p_val": 0.44644
+        }
+      },
+      "predicted_slopes": {
+        "year_1": {
+          "topsoil_0_20": {
+            "slope": 0.05303,
+            "se_cr": 0.01703,
+            "ci95": [
+              0.01509,
+              0.09098
+            ]
+          },
+          "rootzone_0_40_60": {
+            "slope": 0.07345,
+            "se_cr": 0.01894,
+            "ci95": [
+              0.03125,
+              0.11564
+            ]
+          },
+          "subsoil_40_100": {
+            "slope": 0.07181,
+            "se_cr": 0.02487,
+            "ci95": [
+              0.01641,
+              0.12722
+            ]
+          }
+        },
+        "year_2": {
+          "topsoil_0_20": {
+            "slope": 0.03954,
+            "se_cr": 0.02094,
+            "ci95": [
+              -0.00712,
+              0.08621
+            ]
+          },
+          "rootzone_0_40_60": {
+            "slope": 0.0693,
+            "se_cr": 0.01614,
+            "ci95": [
+              0.03333,
+              0.10527
+            ]
+          },
+          "subsoil_40_100": {
+            "slope": 0.06791,
+            "se_cr": 0.01936,
+            "ci95": [
+              0.02479,
+              0.11104
+            ]
+          }
+        },
+        "year_3": {
+          "topsoil_0_20": {
+            "slope": 0.03165,
+            "se_cr": 0.02403,
+            "ci95": [
+              -0.02188,
+              0.08519
+            ]
+          },
+          "rootzone_0_40_60": {
+            "slope": 0.06688,
+            "se_cr": 0.0155,
+            "ci95": [
+              0.03234,
+              0.10141
+            ]
+          },
+          "subsoil_40_100": {
+            "slope": 0.06563,
+            "se_cr": 0.02038,
+            "ci95": [
+              0.02022,
+              0.11104
+            ]
+          }
+        }
+      },
+      "topsoil_slope_yr1": 0.053,
+      "subsoil_slope_yr1": 0.0718,
+      "topsoil_slope_yr3": 0.0317,
+      "subsoil_slope_yr3": 0.0656,
+      "subsoil_to_topsoil_ratio_yr1": 1.354,
+      "subsoil_to_topsoil_ratio_yr2": 1.717,
+      "subsoil_to_topsoil_ratio_yr3": 2.073,
+      "ratio_yr3_minus_yr1": 0.719,
+      "ratio_yr3_minus_yr1_ci95": [
+        -0.335,
+        10.326
+      ],
+      "subsoil_to_topsoil_ratio_rises_significantly": false,
+      "recommended_depth_framing": "persistent_profile_wide_accumulation",
+      "status": "OK"
+    }
+  },
+  "h3_interaction_slope_tests": {
+    "yield_scheduling_vs_continuous": {
+      "status": "OK",
+      "k": 1744,
+      "n_clusters": 137,
+      "terms": {
+        "slope_continuous_brackish": {
+          "coef_per_dsm": -0.03892,
+          "se_cr": 0.00486,
+          "p_val": 0.0
+        },
+        "delta_slope_cyclic_alternating_vs_continuous_brackish": {
+          "coef_per_dsm": 0.02028,
+          "se_cr": 0.00507,
+          "p_val": 0.0001
+        },
+        "delta_slope_blended_conjunctive_vs_continuous_brackish": {
+          "coef_per_dsm": 0.01043,
+          "se_cr": 0.01634,
+          "p_val": 0.52425
+        }
+      }
+    },
+    "yield_drip_vs_surface_flood": {
+      "status": "OK",
+      "k": 1553,
+      "n_clusters": 114,
+      "terms": {
+        "slope_surface_flood_furrow": {
+          "coef_per_dsm": -0.03523,
+          "se_cr": 0.00527,
+          "p_val": 0.0
+        },
+        "delta_slope_drip_system_vs_surface_flood_furrow": {
+          "coef_per_dsm": 0.01048,
+          "se_cr": 0.00809,
+          "p_val": 0.19776
+        }
+      }
+    },
+    "soil_EC_scheduling_vs_continuous": {
+      "status": "OK",
+      "k": 1050,
+      "n_clusters": 84,
+      "terms": {
+        "slope_continuous_brackish": {
+          "coef_per_dsm": 0.14201,
+          "se_cr": 0.01099,
+          "p_val": 0.0
+        },
+        "delta_slope_cyclic_alternating_vs_continuous_brackish": {
+          "coef_per_dsm": -0.00553,
+          "se_cr": 0.02076,
+          "p_val": 0.79041
+        },
+        "delta_slope_blended_conjunctive_vs_continuous_brackish": {
+          "coef_per_dsm": 0.04432,
+          "se_cr": 0.03122,
+          "p_val": 0.15945
+        }
+      }
+    },
+    "soil_EC_drainage_vs_undrained": {
+      "status": "OK",
+      "k": 1050,
+      "n_clusters": 84,
+      "terms": {
+        "slope_none_or_natural": {
+          "coef_per_dsm": 0.14314,
+          "se_cr": 0.01083,
+          "p_val": 0.0
+        },
+        "delta_slope_engineered_drain_vs_none_or_natural": {
+          "coef_per_dsm": -0.00687,
+          "se_cr": 0.03271,
+          "p_val": 0.83417
+        }
+      }
+    }
+  },
+  "egger_funnel_checks": {
+    "yield_combined": {
+      "n_clusters": 137,
+      "egger_intercept": 0.026,
+      "egger_p": 0.0,
+      "bias_flag": true
+    },
+    "soil_EC": {
+      "n_clusters": 84,
+      "egger_intercept": -0.06,
+      "egger_p": 0.0,
+      "bias_flag": true
+    }
+  },
+  "strict_exact_variance_yield_egger": {
+    "k": 298,
+    "n_clusters": 30,
+    "egger_intercept": 0.504,
+    "se_cr": 0.93,
+    "egger_p": 0.59205,
+    "bias_flag": false,
+    "n_prec_gt_90": 14
+  },
+  "strict_exact_plus_lsd_yield_egger": {
+    "k": 437,
+    "n_clusters": 40,
+    "egger_intercept": -4.374,
+    "se_cr": 1.855,
+    "egger_p": 0.02364,
+    "bias_flag": true,
+    "n_prec_gt_90": 40
+  },
+  "leave_one_country_out": {
+    "yield_combined": {
+      "n_countries_tested": 12,
+      "min_pct": -19.9,
+      "max_pct": -18.55,
+      "all_same_sign": true,
+      "details": [
+        {
+          "dropped_country": "Brazil",
+          "pct_change": -18.55,
+          "n_clusters": 127
+        },
+        {
+          "dropped_country": "China",
+          "pct_change": -19.79,
+          "n_clusters": 96
+        },
+        {
+          "dropped_country": "Egypt",
+          "pct_change": -19.39,
+          "n_clusters": 134
+        },
+        {
+          "dropped_country": "India",
+          "pct_change": -18.99,
+          "n_clusters": 121
+        },
+        {
+          "dropped_country": "Iran",
+          "pct_change": -19.63,
+          "n_clusters": 130
+        },
+        {
+          "dropped_country": "Iraq",
+          "pct_change": -19.62,
+          "n_clusters": 129
+        },
+        {
+          "dropped_country": "Israel",
+          "pct_change": -19.9,
+          "n_clusters": 126
+        },
+        {
+          "dropped_country": "Italy",
+          "pct_change": -19.12,
+          "n_clusters": 131
+        },
+        {
+          "dropped_country": "Saudi Arabia",
+          "pct_change": -19.1,
+          "n_clusters": 132
+        },
+        {
+          "dropped_country": "Spain",
+          "pct_change": -19.38,
+          "n_clusters": 134
+        },
+        {
+          "dropped_country": "Tunisia",
+          "pct_change": -19.23,
+          "n_clusters": 133
+        },
+        {
+          "dropped_country": "USA",
+          "pct_change": -19.24,
+          "n_clusters": 132
+        }
+      ]
+    },
+    "soil_EC": {
+      "n_countries_tested": 8,
+      "min_pct": 110.11,
+      "max_pct": 129.75,
+      "all_same_sign": true,
+      "details": [
+        {
+          "dropped_country": "Australia",
+          "pct_change": 113.92,
+          "n_clusters": 80
+        },
+        {
+          "dropped_country": "Brazil",
+          "pct_change": 115.26,
+          "n_clusters": 79
+        },
+        {
+          "dropped_country": "China",
+          "pct_change": 129.75,
+          "n_clusters": 52
+        },
+        {
+          "dropped_country": "India",
+          "pct_change": 113.32,
+          "n_clusters": 74
+        },
+        {
+          "dropped_country": "Iran",
+          "pct_change": 116.71,
+          "n_clusters": 79
+        },
+        {
+          "dropped_country": "Israel",
+          "pct_change": 122.59,
+          "n_clusters": 79
+        },
+        {
+          "dropped_country": "Italy",
+          "pct_change": 110.11,
+          "n_clusters": 78
+        },
+        {
+          "dropped_country": "USA",
+          "pct_change": 116.82,
+          "n_clusters": 80
+        }
+      ]
+    }
+  },
+  "headline_strata": [
+    {
+      "metric": "grain_yield",
+      "group_by": "ALL",
+      "level": "ALL",
+      "k": 1170,
+      "n_clusters": 124,
+      "mu_lnrr": -0.2121,
+      "se_cr": 0.0233,
+      "ci95": [
+        -0.2582,
+        -0.1659
+      ],
+      "pct_change": -19.11,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "grain_yield",
+      "group_by": "EXACT_VARIANCE_RE",
+      "level": "PASS_READY",
+      "k": 196,
+      "n_clusters": 24,
+      "mu_lnrr": -0.2539,
+      "se_cr": 0.0508,
+      "ci95": [
+        -0.3591,
+        -0.1487
+      ],
+      "pct_change": -22.42,
+      "p_val": 4.7e-05,
+      "status": "OK"
+    },
+    {
+      "metric": "grain_yield",
+      "group_by": "ecw_stratum",
+      "level": "fresh_<1",
+      "k": 3,
+      "n_clusters": 1,
+      "mu_lnrr": -0.0137,
+      "pct_change": -1.36,
+      "status": "SINGLE_CLUSTER"
+    },
+    {
+      "metric": "grain_yield",
+      "group_by": "ecw_stratum",
+      "level": "highly_saline_ge8",
+      "k": 219,
+      "n_clusters": 37,
+      "mu_lnrr": -0.2694,
+      "se_cr": 0.031,
+      "ci95": [
+        -0.3322,
+        -0.2066
+      ],
+      "pct_change": -23.61,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "grain_yield",
+      "group_by": "ecw_stratum",
+      "level": "moderately_brackish_3_5",
+      "k": 418,
+      "n_clusters": 80,
+      "mu_lnrr": -0.2002,
+      "se_cr": 0.0365,
+      "ci95": [
+        -0.2727,
+        -0.1276
+      ],
+      "pct_change": -18.14,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "grain_yield",
+      "group_by": "ecw_stratum",
+      "level": "saline_5_8",
+      "k": 343,
+      "n_clusters": 68,
+      "mu_lnrr": -0.2179,
+      "se_cr": 0.0474,
+      "ci95": [
+        -0.3125,
+        -0.1232
+      ],
+      "pct_change": -19.58,
+      "p_val": 2e-05,
+      "status": "OK"
+    },
+    {
+      "metric": "grain_yield",
+      "group_by": "ecw_stratum",
+      "level": "slightly_brackish_1_3",
+      "k": 187,
+      "n_clusters": 33,
+      "mu_lnrr": -0.1305,
+      "se_cr": 0.0276,
+      "ci95": [
+        -0.1867,
+        -0.0743
+      ],
+      "pct_change": -12.24,
+      "p_val": 4.3e-05,
+      "status": "OK"
+    },
+    {
+      "metric": "grain_yield",
+      "group_by": "drip_vs_flood",
+      "level": "drip_system",
+      "k": 486,
+      "n_clusters": 64,
+      "mu_lnrr": -0.2278,
+      "se_cr": 0.0279,
+      "ci95": [
+        -0.2835,
+        -0.1721
+      ],
+      "pct_change": -20.37,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "grain_yield",
+      "group_by": "drip_vs_flood",
+      "level": "other_mode",
+      "k": 137,
+      "n_clusters": 21,
+      "mu_lnrr": -0.1339,
+      "se_cr": 0.0649,
+      "ci95": [
+        -0.2692,
+        0.0014
+      ],
+      "pct_change": -12.54,
+      "p_val": 0.052148,
+      "status": "OK"
+    },
+    {
+      "metric": "grain_yield",
+      "group_by": "drip_vs_flood",
+      "level": "surface_flood_furrow",
+      "k": 547,
+      "n_clusters": 44,
+      "mu_lnrr": -0.2404,
+      "se_cr": 0.0359,
+      "ci95": [
+        -0.3129,
+        -0.1679
+      ],
+      "pct_change": -21.37,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "grain_yield",
+      "group_by": "irrigation_scheduling",
+      "level": "blended_conjunctive",
+      "k": 106,
+      "n_clusters": 12,
+      "mu_lnrr": -0.15,
+      "se_cr": 0.0522,
+      "ci95": [
+        -0.2649,
+        -0.0351
+      ],
+      "pct_change": -13.93,
+      "p_val": 0.015157,
+      "status": "OK"
+    },
+    {
+      "metric": "grain_yield",
+      "group_by": "irrigation_scheduling",
+      "level": "continuous_brackish",
+      "k": 858,
+      "n_clusters": 112,
+      "mu_lnrr": -0.2174,
+      "se_cr": 0.0279,
+      "ci95": [
+        -0.2727,
+        -0.1621
+      ],
+      "pct_change": -19.54,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "grain_yield",
+      "group_by": "irrigation_scheduling",
+      "level": "cyclic_alternating",
+      "k": 206,
+      "n_clusters": 33,
+      "mu_lnrr": -0.2065,
+      "se_cr": 0.0467,
+      "ci95": [
+        -0.3017,
+        -0.1113
+      ],
+      "pct_change": -18.66,
+      "p_val": 0.000107,
+      "status": "OK"
+    },
+    {
+      "metric": "shoot_biomass",
+      "group_by": "ALL",
+      "level": "ALL",
+      "k": 574,
+      "n_clusters": 55,
+      "mu_lnrr": -0.2176,
+      "se_cr": 0.0304,
+      "ci95": [
+        -0.2784,
+        -0.1567
+      ],
+      "pct_change": -19.55,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "shoot_biomass",
+      "group_by": "EXACT_VARIANCE_RE",
+      "level": "PASS_READY",
+      "k": 102,
+      "n_clusters": 13,
+      "mu_lnrr": -0.2313,
+      "se_cr": 0.049,
+      "ci95": [
+        -0.338,
+        -0.1246
+      ],
+      "pct_change": -20.65,
+      "p_val": 0.000495,
+      "status": "OK"
+    },
+    {
+      "metric": "shoot_biomass",
+      "group_by": "ecw_stratum",
+      "level": "highly_saline_ge8",
+      "k": 173,
+      "n_clusters": 22,
+      "mu_lnrr": -0.2358,
+      "se_cr": 0.0612,
+      "ci95": [
+        -0.363,
+        -0.1085
+      ],
+      "pct_change": -21.0,
+      "p_val": 0.000922,
+      "status": "OK"
+    },
+    {
+      "metric": "shoot_biomass",
+      "group_by": "ecw_stratum",
+      "level": "moderately_brackish_3_5",
+      "k": 178,
+      "n_clusters": 31,
+      "mu_lnrr": -0.1759,
+      "se_cr": 0.0309,
+      "ci95": [
+        -0.2391,
+        -0.1127
+      ],
+      "pct_change": -16.13,
+      "p_val": 3e-06,
+      "status": "OK"
+    },
+    {
+      "metric": "shoot_biomass",
+      "group_by": "ecw_stratum",
+      "level": "saline_5_8",
+      "k": 174,
+      "n_clusters": 35,
+      "mu_lnrr": -0.2316,
+      "se_cr": 0.0411,
+      "ci95": [
+        -0.3152,
+        -0.1481
+      ],
+      "pct_change": -20.68,
+      "p_val": 3e-06,
+      "status": "OK"
+    },
+    {
+      "metric": "shoot_biomass",
+      "group_by": "ecw_stratum",
+      "level": "slightly_brackish_1_3",
+      "k": 49,
+      "n_clusters": 7,
+      "mu_lnrr": -0.1309,
+      "se_cr": 0.0255,
+      "ci95": [
+        -0.1933,
+        -0.0686
+      ],
+      "pct_change": -12.27,
+      "p_val": 0.002132,
+      "status": "OK"
+    },
+    {
+      "metric": "shoot_biomass",
+      "group_by": "drip_vs_flood",
+      "level": "drip_system",
+      "k": 161,
+      "n_clusters": 24,
+      "mu_lnrr": -0.2372,
+      "se_cr": 0.0437,
+      "ci95": [
+        -0.3277,
+        -0.1467
+      ],
+      "pct_change": -21.12,
+      "p_val": 1.6e-05,
+      "status": "OK"
+    },
+    {
+      "metric": "shoot_biomass",
+      "group_by": "drip_vs_flood",
+      "level": "other_mode",
+      "k": 54,
+      "n_clusters": 12,
+      "mu_lnrr": -0.1824,
+      "se_cr": 0.0948,
+      "ci95": [
+        -0.3911,
+        0.0263
+      ],
+      "pct_change": -16.68,
+      "p_val": 0.080598,
+      "status": "OK"
+    },
+    {
+      "metric": "shoot_biomass",
+      "group_by": "drip_vs_flood",
+      "level": "surface_flood_furrow",
+      "k": 359,
+      "n_clusters": 21,
+      "mu_lnrr": -0.2095,
+      "se_cr": 0.0328,
+      "ci95": [
+        -0.2779,
+        -0.1412
+      ],
+      "pct_change": -18.9,
+      "p_val": 3e-06,
+      "status": "OK"
+    },
+    {
+      "metric": "shoot_biomass",
+      "group_by": "irrigation_scheduling",
+      "level": "blended_conjunctive",
+      "k": 75,
+      "n_clusters": 8,
+      "mu_lnrr": -0.0879,
+      "se_cr": 0.085,
+      "ci95": [
+        -0.2889,
+        0.113
+      ],
+      "pct_change": -8.42,
+      "p_val": 0.335228,
+      "status": "OK"
+    },
+    {
+      "metric": "shoot_biomass",
+      "group_by": "irrigation_scheduling",
+      "level": "continuous_brackish",
+      "k": 414,
+      "n_clusters": 49,
+      "mu_lnrr": -0.2615,
+      "se_cr": 0.0445,
+      "ci95": [
+        -0.351,
+        -0.172
+      ],
+      "pct_change": -23.01,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "shoot_biomass",
+      "group_by": "irrigation_scheduling",
+      "level": "cyclic_alternating",
+      "k": 85,
+      "n_clusters": 15,
+      "mu_lnrr": -0.1654,
+      "se_cr": 0.0252,
+      "ci95": [
+        -0.2194,
+        -0.1114
+      ],
+      "pct_change": -15.24,
+      "p_val": 1.3e-05,
+      "status": "OK"
+    },
+    {
+      "metric": "wue_or_iwue",
+      "group_by": "ALL",
+      "level": "ALL",
+      "k": 459,
+      "n_clusters": 40,
+      "mu_lnrr": -0.1869,
+      "se_cr": 0.029,
+      "ci95": [
+        -0.2457,
+        -0.1282
+      ],
+      "pct_change": -17.05,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "wue_or_iwue",
+      "group_by": "EXACT_VARIANCE_RE",
+      "level": "PASS_READY",
+      "k": 47,
+      "n_clusters": 7,
+      "mu_lnrr": -0.1284,
+      "se_cr": 0.0453,
+      "ci95": [
+        -0.2391,
+        -0.0177
+      ],
+      "pct_change": -12.05,
+      "p_val": 0.029681,
+      "status": "OK"
+    },
+    {
+      "metric": "wue_or_iwue",
+      "group_by": "ecw_stratum",
+      "level": "highly_saline_ge8",
+      "k": 59,
+      "n_clusters": 9,
+      "mu_lnrr": -0.2621,
+      "se_cr": 0.0551,
+      "ci95": [
+        -0.3891,
+        -0.1351
+      ],
+      "pct_change": -23.05,
+      "p_val": 0.001429,
+      "status": "OK"
+    },
+    {
+      "metric": "wue_or_iwue",
+      "group_by": "ecw_stratum",
+      "level": "moderately_brackish_3_5",
+      "k": 171,
+      "n_clusters": 24,
+      "mu_lnrr": -0.1559,
+      "se_cr": 0.0629,
+      "ci95": [
+        -0.286,
+        -0.0258
+      ],
+      "pct_change": -14.43,
+      "p_val": 0.020961,
+      "status": "OK"
+    },
+    {
+      "metric": "wue_or_iwue",
+      "group_by": "ecw_stratum",
+      "level": "saline_5_8",
+      "k": 142,
+      "n_clusters": 21,
+      "mu_lnrr": -0.2276,
+      "se_cr": 0.041,
+      "ci95": [
+        -0.3131,
+        -0.1421
+      ],
+      "pct_change": -20.36,
+      "p_val": 1.9e-05,
+      "status": "OK"
+    },
+    {
+      "metric": "wue_or_iwue",
+      "group_by": "ecw_stratum",
+      "level": "slightly_brackish_1_3",
+      "k": 87,
+      "n_clusters": 11,
+      "mu_lnrr": -0.1009,
+      "se_cr": 0.0172,
+      "ci95": [
+        -0.1392,
+        -0.0626
+      ],
+      "pct_change": -9.6,
+      "p_val": 0.000157,
+      "status": "OK"
+    },
+    {
+      "metric": "wue_or_iwue",
+      "group_by": "drip_vs_flood",
+      "level": "drip_system",
+      "k": 219,
+      "n_clusters": 23,
+      "mu_lnrr": -0.1899,
+      "se_cr": 0.0451,
+      "ci95": [
+        -0.2835,
+        -0.0963
+      ],
+      "pct_change": -17.29,
+      "p_val": 0.000364,
+      "status": "OK"
+    },
+    {
+      "metric": "wue_or_iwue",
+      "group_by": "drip_vs_flood",
+      "level": "other_mode",
+      "k": 38,
+      "n_clusters": 4,
+      "mu_lnrr": -0.2068,
+      "se_cr": 0.0532,
+      "ci95": [
+        -0.3762,
+        -0.0374
+      ],
+      "pct_change": -18.68,
+      "p_val": 0.030224,
+      "status": "OK"
+    },
+    {
+      "metric": "wue_or_iwue",
+      "group_by": "drip_vs_flood",
+      "level": "surface_flood_furrow",
+      "k": 202,
+      "n_clusters": 16,
+      "mu_lnrr": -0.1783,
+      "se_cr": 0.0345,
+      "ci95": [
+        -0.252,
+        -0.1047
+      ],
+      "pct_change": -16.33,
+      "p_val": 0.000116,
+      "status": "OK"
+    },
+    {
+      "metric": "wue_or_iwue",
+      "group_by": "irrigation_scheduling",
+      "level": "blended_conjunctive",
+      "k": 19,
+      "n_clusters": 6,
+      "mu_lnrr": -0.1316,
+      "se_cr": 0.0559,
+      "ci95": [
+        -0.2753,
+        0.012
+      ],
+      "pct_change": -12.34,
+      "p_val": 0.065152,
+      "status": "OK"
+    },
+    {
+      "metric": "wue_or_iwue",
+      "group_by": "irrigation_scheduling",
+      "level": "continuous_brackish",
+      "k": 336,
+      "n_clusters": 36,
+      "mu_lnrr": -0.2201,
+      "se_cr": 0.0354,
+      "ci95": [
+        -0.292,
+        -0.1482
+      ],
+      "pct_change": -19.75,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "wue_or_iwue",
+      "group_by": "irrigation_scheduling",
+      "level": "cyclic_alternating",
+      "k": 104,
+      "n_clusters": 13,
+      "mu_lnrr": -0.1013,
+      "se_cr": 0.0433,
+      "ci95": [
+        -0.1957,
+        -0.0069
+      ],
+      "pct_change": -9.64,
+      "p_val": 0.037535,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "ALL",
+      "level": "ALL",
+      "k": 1050,
+      "n_clusters": 84,
+      "mu_lnrr": 0.7731,
+      "se_cr": 0.0526,
+      "ci95": [
+        0.6684,
+        0.8778
+      ],
+      "pct_change": 116.65,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "EXACT_VARIANCE_RE",
+      "level": "PASS_READY",
+      "k": 77,
+      "n_clusters": 13,
+      "mu_lnrr": 0.9762,
+      "se_cr": 0.1116,
+      "ci95": [
+        0.7332,
+        1.2193
+      ],
+      "pct_change": 165.44,
+      "p_val": 1e-06,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "ecw_stratum",
+      "level": "fresh_<1",
+      "k": 6,
+      "n_clusters": 3,
+      "mu_lnrr": 0.5724,
+      "se_cr": 0.1068,
+      "ci95": [
+        0.1127,
+        1.0321
+      ],
+      "pct_change": 77.25,
+      "p_val": 0.033124,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "ecw_stratum",
+      "level": "highly_saline_ge8",
+      "k": 258,
+      "n_clusters": 30,
+      "mu_lnrr": 1.0655,
+      "se_cr": 0.1117,
+      "ci95": [
+        0.837,
+        1.294
+      ],
+      "pct_change": 190.23,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "ecw_stratum",
+      "level": "moderately_brackish_3_5",
+      "k": 288,
+      "n_clusters": 47,
+      "mu_lnrr": 0.6841,
+      "se_cr": 0.0736,
+      "ci95": [
+        0.536,
+        0.8322
+      ],
+      "pct_change": 98.19,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "ecw_stratum",
+      "level": "saline_5_8",
+      "k": 360,
+      "n_clusters": 44,
+      "mu_lnrr": 0.7308,
+      "se_cr": 0.0743,
+      "ci95": [
+        0.581,
+        0.8806
+      ],
+      "pct_change": 107.67,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "ecw_stratum",
+      "level": "slightly_brackish_1_3",
+      "k": 138,
+      "n_clusters": 27,
+      "mu_lnrr": 0.7024,
+      "se_cr": 0.1221,
+      "ci95": [
+        0.4513,
+        0.9534
+      ],
+      "pct_change": 101.85,
+      "p_val": 5e-06,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "drip_vs_flood",
+      "level": "drip_system",
+      "k": 438,
+      "n_clusters": 45,
+      "mu_lnrr": 0.825,
+      "se_cr": 0.0644,
+      "ci95": [
+        0.6952,
+        0.9549
+      ],
+      "pct_change": 128.19,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "drip_vs_flood",
+      "level": "other_mode",
+      "k": 200,
+      "n_clusters": 14,
+      "mu_lnrr": 0.7398,
+      "se_cr": 0.1358,
+      "ci95": [
+        0.4464,
+        1.0332
+      ],
+      "pct_change": 109.55,
+      "p_val": 0.000112,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "drip_vs_flood",
+      "level": "surface_flood_furrow",
+      "k": 412,
+      "n_clusters": 28,
+      "mu_lnrr": 0.7174,
+      "se_cr": 0.0965,
+      "ci95": [
+        0.5193,
+        0.9155
+      ],
+      "pct_change": 104.91,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "irrigation_scheduling",
+      "level": "blended_conjunctive",
+      "k": 51,
+      "n_clusters": 8,
+      "mu_lnrr": 0.8761,
+      "se_cr": 0.1498,
+      "ci95": [
+        0.522,
+        1.2302
+      ],
+      "pct_change": 140.15,
+      "p_val": 0.000631,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "irrigation_scheduling",
+      "level": "continuous_brackish",
+      "k": 749,
+      "n_clusters": 75,
+      "mu_lnrr": 0.793,
+      "se_cr": 0.059,
+      "ci95": [
+        0.6755,
+        0.9105
+      ],
+      "pct_change": 121.0,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "irrigation_scheduling",
+      "level": "cyclic_alternating",
+      "k": 250,
+      "n_clusters": 23,
+      "mu_lnrr": 0.6881,
+      "se_cr": 0.1061,
+      "ci95": [
+        0.4681,
+        0.9081
+      ],
+      "pct_change": 98.99,
+      "p_val": 2e-06,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "duration_x_depth",
+      "level": "multiyear_ge_3yr::rootzone_0_40_60",
+      "k": 95,
+      "n_clusters": 13,
+      "mu_lnrr": 0.6831,
+      "se_cr": 0.1108,
+      "ci95": [
+        0.4416,
+        0.9245
+      ],
+      "pct_change": 97.99,
+      "p_val": 4.8e-05,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "duration_x_depth",
+      "level": "multiyear_ge_3yr::subsoil_40_100",
+      "k": 48,
+      "n_clusters": 6,
+      "mu_lnrr": 0.4588,
+      "se_cr": 0.1714,
+      "ci95": [
+        0.0181,
+        0.8994
+      ],
+      "pct_change": 58.21,
+      "p_val": 0.044008,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "duration_x_depth",
+      "level": "multiyear_ge_3yr::topsoil_0_20",
+      "k": 79,
+      "n_clusters": 12,
+      "mu_lnrr": 0.8483,
+      "se_cr": 0.1502,
+      "ci95": [
+        0.5178,
+        1.1788
+      ],
+      "pct_change": 133.57,
+      "p_val": 0.000149,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "duration_x_depth",
+      "level": "multiyear_ge_3yr::whole_profile_or_unspecified",
+      "k": 70,
+      "n_clusters": 11,
+      "mu_lnrr": 0.736,
+      "se_cr": 0.1041,
+      "ci95": [
+        0.504,
+        0.9679
+      ],
+      "pct_change": 108.75,
+      "p_val": 3.4e-05,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "duration_x_depth",
+      "level": "short_le_2yr::rootzone_0_40_60",
+      "k": 291,
+      "n_clusters": 35,
+      "mu_lnrr": 0.7345,
+      "se_cr": 0.0802,
+      "ci95": [
+        0.5714,
+        0.8975
+      ],
+      "pct_change": 108.44,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "duration_x_depth",
+      "level": "short_le_2yr::subsoil_40_100",
+      "k": 129,
+      "n_clusters": 14,
+      "mu_lnrr": 0.7496,
+      "se_cr": 0.1758,
+      "ci95": [
+        0.3698,
+        1.1295
+      ],
+      "pct_change": 111.62,
+      "p_val": 0.000924,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "duration_x_depth",
+      "level": "short_le_2yr::topsoil_0_20",
+      "k": 222,
+      "n_clusters": 31,
+      "mu_lnrr": 1.0271,
+      "se_cr": 0.1233,
+      "ci95": [
+        0.7752,
+        1.279
+      ],
+      "pct_change": 179.29,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "duration_x_depth",
+      "level": "short_le_2yr::whole_profile_or_unspecified",
+      "k": 116,
+      "n_clusters": 14,
+      "mu_lnrr": 0.6146,
+      "se_cr": 0.1171,
+      "ci95": [
+        0.3617,
+        0.8676
+      ],
+      "pct_change": 84.9,
+      "p_val": 0.000157,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "drainage_x_duration",
+      "level": "engineered_drain::multiyear_ge_3yr",
+      "k": 57,
+      "n_clusters": 5,
+      "mu_lnrr": 0.556,
+      "se_cr": 0.1375,
+      "ci95": [
+        0.1743,
+        0.9376
+      ],
+      "pct_change": 74.37,
+      "p_val": 0.015545,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "drainage_x_duration",
+      "level": "engineered_drain::short_le_2yr",
+      "k": 53,
+      "n_clusters": 6,
+      "mu_lnrr": 0.8852,
+      "se_cr": 0.1782,
+      "ci95": [
+        0.4271,
+        1.3434
+      ],
+      "pct_change": 142.35,
+      "p_val": 0.004223,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "drainage_x_duration",
+      "level": "none_or_natural::multiyear_ge_3yr",
+      "k": 235,
+      "n_clusters": 22,
+      "mu_lnrr": 0.7597,
+      "se_cr": 0.0967,
+      "ci95": [
+        0.5585,
+        0.9609
+      ],
+      "pct_change": 113.77,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_EC",
+      "group_by": "drainage_x_duration",
+      "level": "none_or_natural::short_le_2yr",
+      "k": 705,
+      "n_clusters": 51,
+      "mu_lnrr": 0.794,
+      "se_cr": 0.0733,
+      "ci95": [
+        0.6467,
+        0.9413
+      ],
+      "pct_change": 121.23,
+      "p_val": 0.0,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_SAR",
+      "group_by": "ALL",
+      "level": "ALL",
+      "k": 93,
+      "n_clusters": 11,
+      "mu_lnrr": 1.2085,
+      "se_cr": 0.2129,
+      "ci95": [
+        0.7341,
+        1.6828
+      ],
+      "pct_change": 234.83,
+      "p_val": 0.000205,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_SAR",
+      "group_by": "ecw_stratum",
+      "level": "highly_saline_ge8",
+      "k": 38,
+      "n_clusters": 5,
+      "mu_lnrr": 1.3536,
+      "se_cr": 0.1687,
+      "ci95": [
+        0.8852,
+        1.8221
+      ],
+      "pct_change": 287.15,
+      "p_val": 0.00131,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_SAR",
+      "group_by": "ecw_stratum",
+      "level": "moderately_brackish_3_5",
+      "k": 15,
+      "n_clusters": 6,
+      "mu_lnrr": 1.5947,
+      "se_cr": 0.664,
+      "ci95": [
+        -0.1123,
+        3.3017
+      ],
+      "pct_change": 392.68,
+      "p_val": 0.061509,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_SAR",
+      "group_by": "ecw_stratum",
+      "level": "saline_5_8",
+      "k": 12,
+      "n_clusters": 4,
+      "mu_lnrr": 0.9154,
+      "se_cr": 0.3806,
+      "ci95": [
+        -0.2958,
+        2.1266
+      ],
+      "pct_change": 149.78,
+      "p_val": 0.09542,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_SAR",
+      "group_by": "ecw_stratum",
+      "level": "slightly_brackish_1_3",
+      "k": 26,
+      "n_clusters": 4,
+      "mu_lnrr": 1.1431,
+      "se_cr": 0.4356,
+      "ci95": [
+        -0.2432,
+        2.5294
+      ],
+      "pct_change": 213.64,
+      "p_val": 0.078722,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_SAR",
+      "group_by": "drip_vs_flood",
+      "level": "drip_system",
+      "k": 12,
+      "n_clusters": 4,
+      "mu_lnrr": 1.2549,
+      "se_cr": 0.609,
+      "ci95": [
+        -0.6832,
+        3.193
+      ],
+      "pct_change": 250.75,
+      "p_val": 0.13142,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_SAR",
+      "group_by": "drip_vs_flood",
+      "level": "other_mode",
+      "k": 37,
+      "n_clusters": 3,
+      "mu_lnrr": 0.9397,
+      "se_cr": 0.2491,
+      "ci95": [
+        -0.1322,
+        2.0117
+      ],
+      "pct_change": 155.93,
+      "p_val": 0.063646,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_SAR",
+      "group_by": "drip_vs_flood",
+      "level": "surface_flood_furrow",
+      "k": 44,
+      "n_clusters": 4,
+      "mu_lnrr": 1.6817,
+      "se_cr": 0.3974,
+      "ci95": [
+        0.4169,
+        2.9465
+      ],
+      "pct_change": 437.47,
+      "p_val": 0.024152,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_SAR",
+      "group_by": "irrigation_scheduling",
+      "level": "blended_conjunctive",
+      "k": 6,
+      "n_clusters": 1,
+      "mu_lnrr": 1.1947,
+      "pct_change": 230.27,
+      "status": "SINGLE_CLUSTER"
+    },
+    {
+      "metric": "soil_SAR",
+      "group_by": "irrigation_scheduling",
+      "level": "continuous_brackish",
+      "k": 81,
+      "n_clusters": 9,
+      "mu_lnrr": 1.2421,
+      "se_cr": 0.3708,
+      "ci95": [
+        0.387,
+        2.0973
+      ],
+      "pct_change": 246.29,
+      "p_val": 0.010088,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_SAR",
+      "group_by": "irrigation_scheduling",
+      "level": "cyclic_alternating",
+      "k": 6,
+      "n_clusters": 3,
+      "mu_lnrr": 1.1646,
+      "se_cr": 0.0798,
+      "ci95": [
+        0.8213,
+        1.508
+      ],
+      "pct_change": 220.48,
+      "p_val": 0.004661,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_ESP",
+      "group_by": "ALL",
+      "level": "ALL",
+      "k": 50,
+      "n_clusters": 7,
+      "mu_lnrr": 0.8126,
+      "se_cr": 0.2009,
+      "ci95": [
+        0.321,
+        1.3041
+      ],
+      "pct_change": 125.37,
+      "p_val": 0.006767,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_ESP",
+      "group_by": "ecw_stratum",
+      "level": "moderately_brackish_3_5",
+      "k": 8,
+      "n_clusters": 3,
+      "mu_lnrr": 1.2334,
+      "se_cr": 0.2992,
+      "ci95": [
+        -0.054,
+        2.5208
+      ],
+      "pct_change": 243.28,
+      "p_val": 0.054116,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_ESP",
+      "group_by": "ecw_stratum",
+      "level": "saline_5_8",
+      "k": 33,
+      "n_clusters": 4,
+      "mu_lnrr": 0.8327,
+      "se_cr": 0.467,
+      "ci95": [
+        -0.6536,
+        2.3191
+      ],
+      "pct_change": 129.96,
+      "p_val": 0.172597,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_ESP",
+      "group_by": "ecw_stratum",
+      "level": "slightly_brackish_1_3",
+      "k": 7,
+      "n_clusters": 3,
+      "mu_lnrr": 0.697,
+      "se_cr": 0.1244,
+      "ci95": [
+        0.1618,
+        1.2322
+      ],
+      "pct_change": 100.77,
+      "p_val": 0.030406,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_ESP",
+      "group_by": "drip_vs_flood",
+      "level": "drip_system",
+      "k": 5,
+      "n_clusters": 3,
+      "mu_lnrr": 1.3725,
+      "se_cr": 0.2091,
+      "ci95": [
+        0.4727,
+        2.2722
+      ],
+      "pct_change": 294.51,
+      "p_val": 0.022437,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_ESP",
+      "group_by": "drip_vs_flood",
+      "level": "other_mode",
+      "k": 4,
+      "n_clusters": 1,
+      "mu_lnrr": 0.6348,
+      "pct_change": 88.67,
+      "status": "SINGLE_CLUSTER"
+    },
+    {
+      "metric": "soil_ESP",
+      "group_by": "drip_vs_flood",
+      "level": "surface_flood_furrow",
+      "k": 41,
+      "n_clusters": 4,
+      "mu_lnrr": 0.6662,
+      "se_cr": 0.3741,
+      "ci95": [
+        -0.5244,
+        1.8568
+      ],
+      "pct_change": 94.68,
+      "p_val": 0.173006,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_ESP",
+      "group_by": "irrigation_scheduling",
+      "level": "continuous_brackish",
+      "k": 24,
+      "n_clusters": 6,
+      "mu_lnrr": 1.0276,
+      "se_cr": 0.3055,
+      "ci95": [
+        0.2422,
+        1.813
+      ],
+      "pct_change": 179.43,
+      "p_val": 0.020038,
+      "status": "OK"
+    },
+    {
+      "metric": "soil_ESP",
+      "group_by": "irrigation_scheduling",
+      "level": "cyclic_alternating",
+      "k": 26,
+      "n_clusters": 4,
+      "mu_lnrr": 0.6495,
+      "se_cr": 0.16,
+      "ci95": [
+        0.1405,
+        1.1586
+      ],
+      "pct_change": 91.46,
+      "p_val": 0.026924,
+      "status": "OK"
+    },
+    {
+      "metric": "ks_saturated",
+      "group_by": "ALL",
+      "level": "ALL",
+      "k": 4,
+      "n_clusters": 1,
+      "mu_lnrr": -0.7147,
+      "pct_change": -51.07,
+      "status": "SINGLE_CLUSTER"
+    },
+    {
+      "metric": "ks_saturated",
+      "group_by": "ecw_stratum",
+      "level": "saline_5_8",
+      "k": 4,
+      "n_clusters": 1,
+      "mu_lnrr": -0.7147,
+      "pct_change": -51.07,
+      "status": "SINGLE_CLUSTER"
+    },
+    {
+      "metric": "ks_saturated",
+      "group_by": "drip_vs_flood",
+      "level": "drip_system",
+      "k": 4,
+      "n_clusters": 1,
+      "mu_lnrr": -0.7147,
+      "pct_change": -51.07,
+      "status": "SINGLE_CLUSTER"
+    },
+    {
+      "metric": "ks_saturated",
+      "group_by": "irrigation_scheduling",
+      "level": "continuous_brackish",
+      "k": 4,
+      "n_clusters": 1,
+      "mu_lnrr": -0.7147,
+      "pct_change": -51.07,
+      "status": "SINGLE_CLUSTER"
+    },
+    {
+      "metric": "infiltration_rate",
+      "group_by": "ALL",
+      "level": "ALL",
+      "k": 6,
+      "n_clusters": 1,
+      "mu_lnrr": -1.2221,
+      "pct_change": -70.54,
+      "status": "SINGLE_CLUSTER"
+    },
+    {
+      "metric": "infiltration_rate",
+      "group_by": "ecw_stratum",
+      "level": "moderately_brackish_3_5",
+      "k": 4,
+      "n_clusters": 1,
+      "mu_lnrr": -1.2792,
+      "pct_change": -72.18,
+      "status": "SINGLE_CLUSTER"
+    },
+    {
+      "metric": "infiltration_rate",
+      "group_by": "drip_vs_flood",
+      "level": "surface_flood_furrow",
+      "k": 6,
+      "n_clusters": 1,
+      "mu_lnrr": -1.2221,
+      "pct_change": -70.54,
+      "status": "SINGLE_CLUSTER"
+    },
+    {
+      "metric": "infiltration_rate",
+      "group_by": "irrigation_scheduling",
+      "level": "continuous_brackish",
+      "k": 4,
+      "n_clusters": 1,
+      "mu_lnrr": -1.2792,
+      "pct_change": -72.18,
+      "status": "SINGLE_CLUSTER"
+    }
+  ],
+  "monitoring_checks": [
+    {
+      "threshold": "composite",
+      "ecw_cut_dsm": 3.55,
+      "matched_strata": 66,
+      "paired_families": 14,
+      "families_higher": 11,
+      "family_median_high_low": 1.2706643397925732,
+      "paired_sign_p": 0.057373046875,
+      "bands": {
+        "lower": {
+          "rows": 124,
+          "families": 16,
+          "median_post_pre": 1.0564693585652987,
+          "share_rising": 0.5725806451612904
+        },
+        "upper": {
+          "rows": 202,
+          "families": 16,
+          "median_post_pre": 1.4196230598669621,
+          "share_rising": 0.8267326732673267
+        }
+      }
+    },
+    {
+      "threshold": "field_harvest",
+      "ecw_cut_dsm": 3.519,
+      "matched_strata": 66,
+      "paired_families": 14,
+      "families_higher": 11,
+      "family_median_high_low": 1.2706643397925732,
+      "paired_sign_p": 0.057373046875,
+      "bands": {
+        "lower": {
+          "rows": 124,
+          "families": 16,
+          "median_post_pre": 1.0564693585652987,
+          "share_rising": 0.5725806451612904
+        },
+        "upper": {
+          "rows": 202,
+          "families": 16,
+          "median_post_pre": 1.4196230598669621,
+          "share_rising": 0.8267326732673267
+        }
+      }
+    }
+  ],
+  "family_level_sar": {
+    "soil_EC": {
+      "n_families": 32,
+      "family_bins": 44,
+      "spearman_r": 0.017051706316999964,
+      "p": 0.92745,
+      "permutations": 19999
+    },
+    "soil_SAR": {
+      "n_families": 7,
+      "family_bins": 12,
+      "spearman_r": 0.49999999999999994,
+      "p": 0.26666666666666666,
+      "permutations": 5040
+    }
+  }
+}

@@ -1,0 +1,10 @@
+external_raw_data/
+outputs/
+.venv/
+__pycache__/
+*.py[cod]
+node_modules/
+*.log
+.*.swp
+*.pdf
+[.]DS_Store

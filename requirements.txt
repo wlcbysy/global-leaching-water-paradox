@@ -1,0 +1,20 @@
+# Versions in the tested CPython environment. PyMuPDF supports optional figure-PDF inspection.
+numpy==2.4.6
+pandas==3.0.3
+scipy==1.16.3
+pyarrow==25.0.1
+geopandas==1.1.3
+xarray==2026.4.0
+rasterio==1.5.0
+netCDF4==1.7.4
+cftime==1.6.5
+shapely==2.1.2
+pyproj==3.7.2
+pyogrio==0.12.1
+matplotlib==3.11.0
+patsy==1.0.2
+statsmodels==0.14.6
+scikit-learn==1.9.0
+openpyxl==3.1.5
+Pillow==12.2.0
+PyMuPDF==1.28.0

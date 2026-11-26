@@ -1,0 +1,5 @@
+ghm,global_qtot_km3_yr,salt_basins_qtot_km3_yr,global_irr_or_tot_ww_km3_yr,salt_basins_demand_km3_yr,runoff_corr_vs_watergap_376basins,paradox_exceeded_efr60_native_n,paradox_exceeded_efr60_native_mha,paradox_exceeded_efr60_wg_demand_n,paradox_agreement_vs_watergap_pct,demand_variable_note
+WaterGAP2-2e (Primary),50714.1,10828.1,2808.4,990.0,1.0,80,29.52,80,100.0,atotuse (consumptive total blue-water use)
+H08,45721.8,8265.3,3036.3,1261.1,0.9232,165,57.66,178,73.1,airruse (native consumptive irrigation use)
+LPJmL5-7-10-fire,56899.9,12803.3,3904.4,577.0,0.9391,21,4.27,96,82.2,airruse (native consumptive irrigation use)
+CWatM,52375.7,11549.7,2160.0,1259.3,0.9514,92,38.82,110,81.4,atotww scaled by basin consumptive ratio [0.35-0.70]

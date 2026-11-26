@@ -1,0 +1,9 @@
+country,continent,salt_irrig_mha,zone1_safe_brackish_mha,zone2_hydraulic_mha,zone3_dual_redline_mha,zone3_share_pct,gross_brackish_substitution_km3_yr,leaching_penalty_P_km3_yr,deltaF_net_brackish_saving_km3_yr,hydraulic_saving_wd_km3_yr,hydraulic_saving_cons_km3_yr,net_fresh_withdrawal_relief_km3_yr,aware_scarcity_relief_km3_weq,shr_AEI_surface,shr_AEI_sprinkler,shr_AEI_drip,short_name
+Australia,Oceania,0.436,0.295,0.138,0.003,0.6,6.76,0.43,6.33,5.19,2.35,11.53,241.1,0.719,0.206,0.075,Australia*
+Uzbekistan,Asia,1.319,0.445,0.625,0.249,18.9,7.4,1.06,6.34,5.4,1.88,11.74,120.1,0.999,0.0,0.001,Uzbekistan
+Iraq,Asia,1.507,0.263,0.48,0.763,50.7,6.64,1.05,5.58,6.53,3.15,12.11,213.5,0.965,0.027,0.007,Iraq
+Iran,Asia,4.735,1.847,0.514,2.373,50.1,9.79,0.77,9.02,10.03,5.37,19.05,352.8,0.916,0.053,0.031,Iran
+Egypt,Africa,4.317,0.0,0.0,4.317,100.0,23.95,9.14,14.81,19.01,7.57,33.82,341.8,0.885,0.05,0.065,Egypt
+India,Asia,22.117,16.21,3.96,1.947,8.8,20.17,1.98,18.19,21.49,11.6,39.68,324.1,0.968,0.023,0.009,India
+Pakistan,Asia,15.273,2.532,0.185,12.556,82.2,35.29,5.87,29.42,28.12,10.34,57.54,388.3,1.0,0.0,0.0,Pakistan
+China,Asia,26.965,16.954,7.257,2.755,10.2,37.73,4.61,33.12,35.37,15.57,68.49,564.2,0.943,0.045,0.012,China

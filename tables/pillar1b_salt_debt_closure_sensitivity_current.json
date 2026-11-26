@@ -1,0 +1,192 @@
+{
+  "script": "pillar1b_salt_debt_and_closure_sensitivity.py",
+  "closure_decomposition": {
+    "major_salt_basins_ge10kha": 376,
+    "baseline_blue_water_exceeded_basins": 80,
+    "leaching_flipped_basins_ambient": 4,
+    "leaching_flipped_basins_ec3": 11,
+    "ec3_blue_water_exceeded_basins": 87,
+    "inflow_aware_exceeded_basins": 74,
+    "inflow_aware_exceeded_mha": 20.97,
+    "inflow_aware_leaching_flipped": 4,
+    "efr_sensitivity_exceeded_basins": {
+      "efr_50pct": 58,
+      "efr_60pct": 80,
+      "efr_80pct": 162
+    },
+    "salt_area_definitions_mha": {
+      "irrigated_cropland_in_salt_affected_cells": 97.12,
+      "strict_threshold_glosis_ge25pct_or_ece_ge4": 69.05,
+      "glosis_fraction_weighted_salt_cropland": 47.3
+    }
+  },
+  "continuous_vleach_ecw_curve": [
+    {
+      "ecw_uniform_dsm": 0.25,
+      "vleach_all_irrig_km3_yr": 3.669,
+      "vleach_salt_cells_km3_yr": 2.145
+    },
+    {
+      "ecw_uniform_dsm": 0.5,
+      "vleach_all_irrig_km3_yr": 7.418,
+      "vleach_salt_cells_km3_yr": 4.347
+    },
+    {
+      "ecw_uniform_dsm": 0.75,
+      "vleach_all_irrig_km3_yr": 11.253,
+      "vleach_salt_cells_km3_yr": 6.609
+    },
+    {
+      "ecw_uniform_dsm": 1.0,
+      "vleach_all_irrig_km3_yr": 15.177,
+      "vleach_salt_cells_km3_yr": 8.935
+    },
+    {
+      "ecw_uniform_dsm": 1.25,
+      "vleach_all_irrig_km3_yr": 19.195,
+      "vleach_salt_cells_km3_yr": 11.329
+    },
+    {
+      "ecw_uniform_dsm": 1.5,
+      "vleach_all_irrig_km3_yr": 23.312,
+      "vleach_salt_cells_km3_yr": 13.793
+    },
+    {
+      "ecw_uniform_dsm": 1.75,
+      "vleach_all_irrig_km3_yr": 27.533,
+      "vleach_salt_cells_km3_yr": 16.334
+    },
+    {
+      "ecw_uniform_dsm": 2.0,
+      "vleach_all_irrig_km3_yr": 31.865,
+      "vleach_salt_cells_km3_yr": 18.954
+    },
+    {
+      "ecw_uniform_dsm": 2.25,
+      "vleach_all_irrig_km3_yr": 36.314,
+      "vleach_salt_cells_km3_yr": 21.661
+    },
+    {
+      "ecw_uniform_dsm": 2.5,
+      "vleach_all_irrig_km3_yr": 40.888,
+      "vleach_salt_cells_km3_yr": 24.459
+    },
+    {
+      "ecw_uniform_dsm": 2.75,
+      "vleach_all_irrig_km3_yr": 45.594,
+      "vleach_salt_cells_km3_yr": 27.356
+    },
+    {
+      "ecw_uniform_dsm": 3.0,
+      "vleach_all_irrig_km3_yr": 50.442,
+      "vleach_salt_cells_km3_yr": 30.358
+    },
+    {
+      "ecw_uniform_dsm": 3.25,
+      "vleach_all_irrig_km3_yr": 55.443,
+      "vleach_salt_cells_km3_yr": 33.474
+    },
+    {
+      "ecw_uniform_dsm": 3.5,
+      "vleach_all_irrig_km3_yr": 60.607,
+      "vleach_salt_cells_km3_yr": 36.713
+    },
+    {
+      "ecw_uniform_dsm": 3.75,
+      "vleach_all_irrig_km3_yr": 65.948,
+      "vleach_salt_cells_km3_yr": 40.086
+    },
+    {
+      "ecw_uniform_dsm": 4.0,
+      "vleach_all_irrig_km3_yr": 71.481,
+      "vleach_salt_cells_km3_yr": 43.604
+    },
+    {
+      "ecw_uniform_dsm": 4.25,
+      "vleach_all_irrig_km3_yr": 77.224,
+      "vleach_salt_cells_km3_yr": 47.281
+    },
+    {
+      "ecw_uniform_dsm": 4.5,
+      "vleach_all_irrig_km3_yr": 83.196,
+      "vleach_salt_cells_km3_yr": 51.134
+    },
+    {
+      "ecw_uniform_dsm": 4.75,
+      "vleach_all_irrig_km3_yr": 89.423,
+      "vleach_salt_cells_km3_yr": 55.181
+    },
+    {
+      "ecw_uniform_dsm": 5.0,
+      "vleach_all_irrig_km3_yr": 95.935,
+      "vleach_salt_cells_km3_yr": 59.444
+    },
+    {
+      "ecw_uniform_dsm": 5.25,
+      "vleach_all_irrig_km3_yr": 102.772,
+      "vleach_salt_cells_km3_yr": 63.948
+    },
+    {
+      "ecw_uniform_dsm": 5.5,
+      "vleach_all_irrig_km3_yr": 109.991,
+      "vleach_salt_cells_km3_yr": 68.726
+    },
+    {
+      "ecw_uniform_dsm": 5.75,
+      "vleach_all_irrig_km3_yr": 117.549,
+      "vleach_salt_cells_km3_yr": 73.815
+    },
+    {
+      "ecw_uniform_dsm": 6.0,
+      "vleach_all_irrig_km3_yr": 125.47,
+      "vleach_salt_cells_km3_yr": 79.263
+    }
+  ],
+  "ambient_vleach_jensen_inequality": {
+    "ambient_vleach_all_irrig_km3_yr": 15.09,
+    "ambient_vleach_salt_cells_km3_yr": 10.48,
+    "equivalent_uniform_ecw_all_irrig_dsm": 0.995,
+    "equivalent_uniform_ecw_salt_cells_dsm": 1.161,
+    "explanation": "Ambient irrigation ECw is right-skewed across SW/GW mixes and LR(ECw) is strictly convex, placing ambient V_leach above uniform freshwater benchmarks."
+  },
+  "salt_debt_accounting": {
+    "salt_debt_definition": "salt export whose leaching volume can only be supplied beyond SBWA (EFR 60%); i.e., unsustainably funded salt-export obligation",
+    "total_irrigation_salt_input_salt_cells_mt_yr": 372.18,
+    "total_salt_debt_mt_yr": 130.23,
+    "unfunded_share_of_salt_input": 0.3499,
+    "salt_debt_by_status_mt_yr": {
+      "dual_insolvent": 95.26,
+      "blue_water_exceeded_only": 34.97,
+      "gw_subsidized_salt_input": 126.99,
+      "within_sbwa_salt_input": 114.96
+    },
+    "basins_with_positive_salt_debt": 80,
+    "cropland_in_salt_debt_basins_mha": 29.52,
+    "mean_salt_debt_over_all_major_basin_salt_mha_t_ha_yr": 1.354,
+    "mean_salt_debt_over_affected_basins_t_ha_yr": 4.412,
+    "counterfactual_dece_yr_if_leaching_curtailed_thetaD_045m": 1.532,
+    "counterfactual_dece_yr_if_leaching_curtailed_sensitivity_035_to_055m": [
+      1.253,
+      1.97
+    ],
+    "counterfactual_dece_note": "Counterfactual annual ECe equivalent if leaching were curtailed to sustainable SBWA limits while irrigation continues; not an observed accumulation rate.",
+    "aquifer_subsidized_salt_balance_gw_only_basins": 53,
+    "aquifer_subsidized_salt_input_mt_yr": 126.99,
+    "aquifer_subsidized_cropland_mha": 30.62
+  },
+  "dynqual_1991_2019_trend_consistency": {
+    "note": "Spike-screened (<= 5,000 mg/L) historical DynQual v1.0 surface-water salinity trend consistency check (not independent validation, as DynQual gap-fills ambient ECw where river stations are absent).",
+    "basins_with_valid_trend": 365,
+    "salt_debt_positive_n": 74,
+    "salt_debt_zero_n": 291,
+    "median_tds_slope_debt_pos_mgl_yr": 2.106,
+    "median_tds_slope_debt_zero_mgl_yr": 0.54,
+    "mannwhitney_twosided_u": 12804.0,
+    "mannwhitney_twosided_p": 0.011974929320701374,
+    "mannwhitney_greater_u": 12804.0,
+    "mannwhitney_greater_p": 0.005987464660350687,
+    "spearman_salt_debt_intensity_vs_tds_slope_rho": 0.145,
+    "spearman_salt_debt_intensity_vs_tds_slope_r": 0.145,
+    "spearman_p": 0.005515761925719405
+  }
+}

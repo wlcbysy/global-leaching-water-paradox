@@ -1,0 +1,15 @@
+endpoint,stratum,model,k,n_clusters,preliminary_low_cluster_flag,mu_lnrr,se_cr,se_model,ci95,pi95,pct_change,pct_ci95,pct_pi95,p_val,tau2_between,tau2_within,I2_pct,status
+ks_saturated,water_regime:saline_soil_trial,REML_harmonized,258,32,False,0.9236,0.2169,0.2169,"[0.4813, 1.366]","[-1.7306, 3.5779]",151.85,"[61.81, 291.97]","[-82.28, 3479.88]",0.000177,1.44306,0.2036,99.5,OK
+infiltration_rate_all,water_regime:brackish_irrigated,REML_harmonized,60,19,False,0.5627,0.0639,0.0639,"[0.4285, 0.697]","[-0.366, 1.4914]",75.55,"[53.49, 100.76]","[-30.65, 344.35]",0.0,0.0,0.19133,96.7,OK
+infiltration_rate_all,water_regime:irrigated_paddy,REML_harmonized,23,5,True,0.9516,0.2761,0.2761,"[0.185, 1.7182]","[-1.1603, 3.0634]",158.98,"[20.32, 457.43]","[-68.66, 2040.03]",0.026141,0.32833,0.17398,96.1,OK
+infiltration_rate_all,water_regime:irrigated_upland,REML_harmonized,107,18,False,0.8849,0.1621,0.1621,"[0.5429, 1.227]","[-0.8046, 2.5745]",142.28,"[72.09, 241.1]","[-55.27, 1212.41]",4.3e-05,0.37567,0.23931,98.6,OK
+infiltration_rate_all,water_regime:rainfed_upland,REML_harmonized,20,8,True,0.8209,0.2581,0.2581,"[0.2107, 1.4312]","[-1.1489, 2.7908]",127.26,"[23.45, 318.39]","[-68.3, 1529.46]",0.015473,0.33229,0.2951,93.1,OK
+infiltration_rate_all,water_regime:saline_soil_trial,REML_harmonized,226,29,False,0.2293,0.0865,0.0865,"[0.0521, 0.4065]","[-2.0232, 2.4818]",25.77,"[5.35, 50.15]","[-86.78, 1096.31]",0.013057,0.03224,1.16951,99.1,OK
+bulk_density,water_regime:brackish_irrigated,REML_harmonized,153,47,False,-0.0741,0.0112,0.0112,"[-0.0966, -0.0517]","[-0.1685, 0.0203]",-7.14,"[-9.21, -5.03]","[-15.51, 2.05]",0.0,0.00168,0.00039,74.4,OK
+bulk_density,water_regime:irrigated_paddy,REML_harmonized,55,14,False,-0.1087,0.0222,0.0222,"[-0.1567, -0.0607]","[-0.2808, 0.0634]",-10.3,"[-14.51, -5.89]","[-24.48, 6.55]",0.000296,0.00439,0.00147,90.7,OK
+bulk_density,water_regime:irrigated_upland,REML_harmonized,169,48,False,-0.0543,0.0184,0.0184,"[-0.0913, -0.0172]","[-0.2495, 0.141]",-5.28,"[-8.73, -1.71]","[-22.08, 15.14]",0.004976,0.0084,0.00068,75.1,OK
+bulk_density,water_regime:rainfed_upland,REML_harmonized,135,34,False,-0.0651,0.0087,0.0087,"[-0.0829, -0.0473]","[-0.1387, 0.0085]",-6.3,"[-7.95, -4.62]","[-12.95, 0.86]",0.0,0.00064,0.00059,40.7,OK
+wue_or_iwue,water_regime:brackish_irrigated,REML_harmonized,250,42,False,0.2523,0.0404,0.0404,"[0.1708, 0.3338]","[-0.2809, 0.7854]",28.7,"[18.62, 39.62]","[-24.49, 119.34]",0.0,0.05722,0.01085,95.2,OK
+wue_or_iwue,water_regime:irrigated_upland,REML_harmonized,165,22,False,0.2572,0.0477,0.0477,"[0.158, 0.3565]","[-0.2059, 0.7204]",29.34,"[17.12, 42.83]","[-18.61, 105.52]",2.4e-05,0.03936,0.00796,97.8,OK
+wue_or_iwue,water_regime:rainfed_upland,REML_harmonized,41,7,True,0.3865,0.2026,0.2026,"[-0.1091, 0.8821]","[-1.0009, 1.7738]",47.18,"[-10.34, 141.6]","[-63.24, 489.33]",0.104991,0.27221,0.00823,85.4,OK
+wue_or_iwue,water_regime:saline_soil_trial,REML_harmonized,154,12,False,0.1324,0.0806,0.0806,"[-0.0449, 0.3097]","[-0.5088, 0.7736]",14.16,"[-4.39, 36.3]","[-39.88, 116.75]",0.128545,0.06489,0.01349,59.3,OK

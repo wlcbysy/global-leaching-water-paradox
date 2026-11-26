@@ -1,0 +1,12 @@
+endpoint,stratum,mu_lnrr,ci95_low,ci95_high,pct_change,p_val,k,n_clusters
+ks_saturated,clay:coarse_lt20,0.4373,0.1619,0.7127,54.85,0.007125,50,8
+ks_saturated,clay:heavy_clay_ge35,1.4426,0.2907,2.5944,323.16,0.019622,78,10
+infiltration_rate_all,clay:coarse_lt20,0.6473,0.2996,0.995,91.04,0.001237,63,16
+infiltration_rate_all,clay:medium_20_35,0.5598,0.3066,0.813,75.02,0.000119,158,26
+infiltration_rate_all,clay:heavy_clay_ge35,0.5686,0.2286,0.9087,76.58,0.003936,55,11
+wue_or_iwue,clay:coarse_lt20,0.2529,0.1648,0.3411,28.78,1e-06,254,35
+wue_or_iwue,clay:medium_20_35,0.2329,0.1284,0.3375,26.23,0.00017,128,20
+wue_or_iwue,clay:heavy_clay_ge35,0.2343,0.0293,0.4392,26.4,0.029417,72,10
+bulk_density,clay:coarse_lt20,-0.0661,-0.0899,-0.0422,-6.39,1e-06,187,47
+bulk_density,clay:medium_20_35,-0.0866,-0.1095,-0.0638,-8.3,0.0,186,51
+bulk_density,clay:heavy_clay_ge35,-0.0928,-0.1302,-0.0553,-8.86,3.8e-05,77,23
