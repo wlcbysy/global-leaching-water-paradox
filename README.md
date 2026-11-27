@@ -90,7 +90,7 @@ The 1991–2019 baseline uses 67,420 land cells. Five climate models, three path
 
 ## Citation and reuse
 
-Cite Yu, S.-Y., Du, J. & Li, S., *Supply, soil hydraulic and consumptive limits govern the global leaching-water paradox*, code and harmonized data, v1.1.0 (Concept DOI: https://doi.org/10.5281/zenodo.24564111). The version release links to the citable archive. [GitHub release](https://github.com/wlcbysy/global-leaching-water-paradox/releases/tag/v1.1.0)
+Cite Yu, S.-Y., Du, J. & Li, S., *Supply, soil hydraulic and consumptive limits govern the global leaching-water paradox*, code and harmonized data, v1.1.1 (Concept DOI: https://doi.org/10.5281/zenodo.24564111). The version release links to the citable archive. [GitHub release](https://github.com/wlcbysy/global-leaching-water-paradox/releases/tag/v1.1.1)
 
 Code is licensed under MIT. Author-created harmonized data and figure source data are licensed under CC BY 4.0. Embedded third-party components retain their original terms. [License](LICENSE) · [Dataset references and file specifications](DATA_SOURCES.md)
 
