@@ -44,6 +44,9 @@ from shapely.geometry import box
 import statsmodels.formula.api as smf
 
 from fig_style import (
+    NE_BORDERS_50M,
+    NE_LAKES_50M,
+    NE_LAND_50M,
     NW_FIG1_PALETTE,
     PARADOX_COLORS,
     ROBIN_CRS,
@@ -163,7 +166,7 @@ def build_figS1_schematic() -> None:
     ax.text(0.0, 3.24, "Leaching-water paradox (baseline)", ha="left", va="center", fontsize=7.0, fontweight="bold", color="#7A2424")
     draw_accent_card(0.00, 1.76, 1.94, 1.14, "Freshwater scarcity", f"{n_exc}/{n_maj} basins > SBWA", PARADOX_COLORS["PARADOX_INSOLVENT_BLUE_AND_GW"], "#FDF6F6")
     draw_accent_card(2.42, 1.76, 1.94, 1.14, "Brackish & return reuse", r"Applied $\mathrm{EC_w}\uparrow$", PARADOX_COLORS["GW_DEPLETION_ONLY"], "#FEFAF2")
-    draw_accent_card(2.42, 0.12, 1.94, 1.14, r"Baseline LR$\uparrow$ & salt load", rf"$\mathit{{V}}_{{\mathrm{{leach}}}}$={vl_salt:.1f} ({vl_amb:.1f} all) km$^3$ yr$^{{-1}}$, {s_in_pre:.0f} Mt", PARADOX_COLORS["PARADOX_BLUE_WATER_EXCEEDED"], "#FDF7F5", body_fs=5.2)
+    draw_accent_card(2.42, 0.12, 1.94, 1.14, r"Baseline LR$\uparrow$ & salt load", rf"$\mathit{{V}}_{{\mathrm{{leach}}}}$={vl_salt:.1f} ({vl_amb:.1f} all) km$^3$ yr$^{{-1}}$, {s_in_pre:.0f} Mt yr$^{{-1}}$", PARADOX_COLORS["PARADOX_BLUE_WATER_EXCEEDED"], "#FDF7F5", body_fs=4.75)
     draw_accent_card(0.00, 0.12, 1.94, 1.14, "Modeled salt debt", rf"{debt_mt:.1f} Mt yr$^{{-1}}$ ({debt_pct:.1f}% input)", PARADOX_COLORS["PARADOX_INSOLVENT_BLUE_AND_GW"], "#FDF6F6")
 
     draw_arrow(1.96, 2.33, 2.39, 2.33, PARADOX_COLORS["PARADOX_INSOLVENT_BLUE_AND_GW"], lw=1.05)
@@ -177,7 +180,7 @@ def build_figS1_schematic() -> None:
 
     # Column 2: Three intervention levers (post-intervention feedbacks)
     ax.text(4.63, 3.24, "Intervention levers", ha="left", va="center", fontsize=7.0, fontweight="bold", color="#222222")
-    draw_accent_card(4.63, 2.06, 2.58, 0.84, "1. Blending reference", rf"$\mathrm{{EC_w^*}}_{{90}}$={ecw_star:.2f} dS m$^{{-1}}$ ($\mathit{{P}}$={p_pen + 1e-9:.1f} km$^3$, $\Delta\mathit{{S}}$=+{d_s:.0f} Mt)", NW_FIG1_PALETTE["lever_blend"], "#F4F8FC", body_fs=5.2)
+    draw_accent_card(4.63, 2.06, 2.58, 0.84, "1. Blending reference", rf"$\mathrm{{EC_w^*}}_{{90}}$={ecw_star:.2f} dS m$^{{-1}}$ ($\mathit{{P}}$={p_pen + 1e-9:.1f} km$^3$ yr$^{{-1}}$, $\Delta\mathit{{S}}$=+{d_s:.0f} Mt yr$^{{-1}}$)", NW_FIG1_PALETTE["lever_blend"], "#F4F8FC", body_fs=4.75)
     draw_accent_card(4.63, 1.09, 2.58, 0.84, "2. Soil hydraulics", rf"$\mathit{{K_s}}$ +{ks_pct:.0f}%, WUE +{wue_pct:.1f}% ($\mathit{{H}}_{{\mathrm{{cons}}}}^*$)", NW_FIG1_PALETTE["lever_hyd"], "#F2FAF7", body_fs=5.45)
     draw_accent_card(4.63, 0.12, 2.58, 0.84, "3. Demand caps & transition", f"Enforce ET cap · shift {n_unrescued} exceeded", NW_FIG1_PALETTE["lever_cap"], "#F7F5FA", body_fs=5.4)
 
@@ -231,17 +234,48 @@ def build_fig1() -> None:
     SLATE_ZERO = "#5B7387"
 
     # -------------------------------------------------------------------------
-    # Panel a: Frameless Curved 0.5-degree Robinson Globe + Continuous 0.5° Latitudinal Ribbon
+    # Panel a: Rectangular 0.5-degree Robinson Map + Continuous 0.5° Latitudinal Ribbon
     # -------------------------------------------------------------------------
     ax_a = fig.add_axes([0.016, 0.622, 0.788, 0.362])
     add_fig_panel_label(fig, X_LEFT_LABEL, 0.990, "a")
-    land_wgs = plot_robinson_basemap(
-        ax_a,
-        xlim_lon=(-138.0, 168.0),
-        ylim_lat=(-48.0, 64.0),
-        graticule_lats=(-30, 0, 30, 60),
-        curved_frame=True,
-    )
+    ax_a.set_facecolor("#F2F6FA")
+    xlim_lon = (-142.0, 170.0)
+    ylim_lat = (-48.5, 64.0)
+    clip_poly = box(-179.9, -56.0, 179.9, 70.0)
+    land_wgs = gpd.clip(gpd.read_file(NE_LAND_50M), clip_poly)
+    land_rob = land_wgs.to_crs(ROBIN_CRS)
+    tr_rob = Transformer.from_crs("EPSG:4326", ROBIN_CRS, always_xy=True)
+
+    grat_lons = np.linspace(-179.0, 179.0, 240)
+    for glat in (-30.0, 0.0, 30.0, 60.0):
+        gx, gy = tr_rob.transform(grat_lons, np.full_like(grat_lons, glat))
+        ax_a.plot(gx, gy, ls="--", color="#DFE7EE", lw=0.38, zorder=0.4)
+    grat_lats = np.linspace(-54.0, 68.0, 120)
+    for glon in (-120.0, -60.0, 0.0, 60.0, 120.0):
+        gx, gy = tr_rob.transform(np.full_like(grat_lats, glon), grat_lats)
+        ax_a.plot(gx, gy, ls=":", color="#DFE7EE", lw=0.35, zorder=0.4)
+
+    land_rob.plot(ax=ax_a, facecolor="#ECEEE9", edgecolor="#9CA49E", linewidth=0.30, zorder=1.0)
+    if NE_BORDERS_50M.is_file():
+        borders = gpd.clip(gpd.read_file(NE_BORDERS_50M), clip_poly).to_crs(ROBIN_CRS)
+        borders.plot(ax=ax_a, color="#D5D8D2", linewidth=0.20, zorder=1.4)
+    if NE_LAKES_50M.is_file():
+        lakes = gpd.clip(gpd.read_file(NE_LAKES_50M), clip_poly).to_crs(ROBIN_CRS)
+        lakes.plot(ax=ax_a, facecolor="#F2F6FA", edgecolor="#B8C5CE", linewidth=0.18, zorder=1.6)
+
+    x_min, _ = tr_rob.transform(xlim_lon[0], 0.0)
+    x_max, _ = tr_rob.transform(xlim_lon[1], 0.0)
+    _, y_min = tr_rob.transform(0.0, ylim_lat[0])
+    _, y_max = tr_rob.transform(0.0, ylim_lat[1])
+    ax_a.set_xlim(x_min, x_max)
+    ax_a.set_ylim(y_min, y_max)
+    ax_a.set_aspect("equal", adjustable="box")
+    ax_a.set_xticks([])
+    ax_a.set_yticks([])
+    for sp in ("top", "right", "bottom", "left"):
+        ax_a.spines[sp].set_visible(True)
+        ax_a.spines[sp].set_color("#BCC7D1")
+        ax_a.spines[sp].set_linewidth(0.60)
 
     b_status = sb.set_index("aware_basin_idx")["paradox_status_amb"].to_dict()
     salt_cells = grid[grid["salt_affected"] & (grid["salt_irrig_ha"] > 0) & (grid["vleach_amb_km3_yr"].fillna(0.0) >= 0)].copy()
@@ -266,7 +300,6 @@ def build_fig1() -> None:
     sb["tot_demand"] = sb["atotuse_pos"] + sb["vleach_amb_km3_yr"]
     sb["leach_flipped"] = (sb["atotuse_pos"] <= sb["sbwa_efr60_km3_yr"]) & sb["blue_water_exceeded_amb"]
     fl_all = sb[sb["leach_flipped"]].copy()
-    tr_rob = Transformer.from_crs("EPSG:4326", ROBIN_CRS, always_xy=True)
     fl_x, fl_y = tr_rob.transform(fl_all["lon_centroid"].values, fl_all["lat_centroid"].values)
     ax_a.scatter(fl_x, fl_y, facecolor="none", edgecolor="white", linewidths=1.65, s=32, zorder=4.8)
     ax_a.scatter(fl_x, fl_y, facecolor="none", edgecolor="#111111", linewidths=0.95, s=22, zorder=5.0)
@@ -328,12 +361,12 @@ def build_fig1() -> None:
     y_note_lat = y_45n + (y_60n - y_45n) * 0.45
     ax_lat.text(4.8, y_note_lat, f"25°–45°N\n({pct_25_45n:.0f}%)", ha="center", va="center", fontsize=5.65, color="#333333")
 
-    # Embedded 100%-stacked global proportion bar directly below globe
+    # Embedded 100%-stacked global proportion bar directly below rectangular map
     st_cnt = p1["salt_affected_basins_ge_10kha"]["paradox_status_ambient_counts"]
     st_mha = p1["salt_affected_basins_ge_10kha"]["salt_irrig_mha_by_status_ambient"]
     tot_maj_mha = sum(float(st_mha.get(s, 0.0)) for s in order)
     minor_mha = float(salt_cells.loc[salt_cells["b_stat"] == "MINOR_BASIN", "salt_irrig_ha"].sum() / 1e6)
-    ax_comp = fig.add_axes([pos_a.x0 + 0.088, pos_a.y0 - 0.024, pos_a.width - 0.110, 0.017])
+    ax_comp = fig.add_axes([pos_a.x0 + 0.068, pos_a.y0 - 0.025, pos_a.width - 0.068, 0.017])
     ax_comp.set_xlim(0.0, 100.0)
     ax_comp.set_ylim(0.0, 1.0)
     ax_comp.set_xticks([])
@@ -679,7 +712,8 @@ def build_fig2() -> None:
     add_fig_panel_label(fig, 0.008, 0.484, "c")
     ax_d = fig.add_axes([0.458, 0.080, 0.244, 0.368])
     add_fig_panel_label(fig, 0.354, 0.484, "d")
-    ax_e = fig.add_axes([0.788, 0.080, 0.194, 0.368])
+    ax_e = fig.add_axes([0.788, 0.194, 0.194, 0.254])
+    ax_e_n = fig.add_axes([0.788, 0.080, 0.194, 0.098])
     add_fig_panel_label(fig, 0.716, 0.484, "e")
 
     # -------------------------------------------------------------------------
@@ -772,7 +806,6 @@ def build_fig2() -> None:
         "threshold_hi": sig_ci[1],
     }))
     ax_a.plot(ec_grid, pred_sig, color="#4A5568", ls=":", lw=1.25, label=f"Cont. sigmoidal  {float(lg_c['ecw_star_90pct_dsm']) + 1e-6:.2f}", zorder=3)
-    ax_a.text(14.37, 0.795, "9 tolerant-crop\nfamilies", ha="center", va="bottom", fontsize=5.1, color="#555555")
 
     pd.concat(points)[["series","contrast_id","family_id","control_arm_id","metric_name","experiment_type","ecw_control_dsm",
                        "ecw_treatment_dsm","lnRR","w_obs","plotted_response","shown"]].to_csv(SRC_DIR/"Fig2A_observations.csv",index=False)
@@ -910,9 +943,6 @@ def build_fig2() -> None:
     r_hi_pp = pp_v.loc[pp_v["ecw_dsm"] >= ecw90_cont, "ratio"].values
 
     ax_b_ins = ax_b.inset_axes([0.13, 0.54, 0.54, 0.25])
-    matched = next(r for r in p2b["monitoring_checks"] if r["threshold"] == "field_harvest")
-    ax_b.text(.78,.83, f"Greater buildup\nin {matched['families_higher']}/{matched['paired_families']} matched\nfamilies",
-              ha="center", va="center", transform=ax_b.transAxes, fontsize=5.2, color="#454d52")
     ax_b_ins.set_facecolor((1.0, 1.0, 1.0, 0.88))
     ax_b_ins.set_xscale("log")
     ax_b_ins.set_xlim(0.42, 28.0)
@@ -1043,41 +1073,141 @@ def build_fig2() -> None:
     ax_d.legend(loc="upper left", frameon=False, fontsize=5.2, handletextpad=0.30, labelspacing=0.22)
 
     # -------------------------------------------------------------------------
-    # Panel e: Predicted Within-Study Soil EC Slope by Depth (Observed Years 1-3)
+    # Panel e: Predicted Within-Study Soil EC Slope by Depth + Sample-Size Track
     # -------------------------------------------------------------------------
     yr_d = p2b["within_study_year_x_depth"]
     pslp = yr_d["predicted_slopes"]
     yrs_x = [1, 2, 3]
+
+    def _norm_depth_e(d: object) -> str:
+        s = str(d or "").lower()
+        if "topsoil" in s or "0_20" in s:
+            return "topsoil_0_20"
+        if "root" in s or "0_40" in s or "0_60" in s or "20_40" in s:
+            return "rootzone_0_40_60"
+        if "subsoil" in s or "40_100" in s or "gt100" in s:
+            return "subsoil_40_100"
+        return "whole_profile_or_unspecified"
+
+    se_e = se_all_df.copy()
+    se_e["depth_std"] = se_e["soil_depth_stratum"].map(_norm_depth_e)
+    se_e["yr_num"] = pd.to_numeric(se_e["study_year_index"], errors="coerce")
+    se_e = se_e[
+        se_e["depth_std"].isin(["topsoil_0_20", "rootzone_0_40_60", "subsoil_40_100"])
+        & se_e["yr_num"].between(1.0, 3.0)
+    ].copy()
+    yr_fam_cnt = se_e.groupby("family_id")["yr_num"].nunique()
+    se_e = se_e[se_e["family_id"].isin(yr_fam_cnt[yr_fam_cnt >= 2].index)].copy()
+    se_e["yr_int"] = np.rint(se_e["yr_num"]).astype(int)
+    assert len(se_e) == int(yr_d["k"]) and se_e["family_id"].nunique() == int(yr_d["n_clusters"])
+
+    depth_k_map = se_e.groupby("depth_std")["family_id"].size().to_dict()
+    depth_fam_map = se_e.groupby("depth_std")["family_id"].nunique().to_dict()
+    yr_k_map = se_e.groupby("yr_int")["family_id"].size().to_dict()
+    yr_fams_map = se_e.groupby("yr_int")["family_id"].nunique().to_dict()
+    cell_k_map = se_e.groupby(["yr_int", "depth_std"])["family_id"].size().to_dict()
+    cell_fam_map = se_e.groupby(["yr_int", "depth_std"])["family_id"].nunique().to_dict()
+    max_cell_k = max(cell_k_map.values())
+
     dep_cfg = [
-        ("topsoil_0_20", "0–20 cm", COL_DEPTH[0], "o-", -0.11),
-        ("rootzone_0_40_60", "0–40/60 cm", COL_DEPTH[1], "s--", 0.0),
-        ("subsoil_40_100", "40–100 cm", COL_DEPTH[2], "D:", 0.11),
+        ("topsoil_0_20", "0–20 cm", COL_DEPTH[0], "o", "-", -0.21),
+        ("rootzone_0_40_60", "0–40/60 cm", COL_DEPTH[1], "s", "--", 0.0),
+        ("subsoil_40_100", "40–100 cm", COL_DEPTH[2], "D", ":", 0.21),
     ]
     yd_rows = []
     ax_e.grid(axis="y", color="#EEF1F4", lw=0.45, zorder=0.5)
-    ax_e.axhspan(-0.044, 0.0, facecolor="#F5F6F8", zorder=0.3)
-    for dk, lbl, col, fmt, off in dep_cfg:
+    ax_e.axhspan(-0.020, 0.0, facecolor="#F5F6F8", zorder=0.3)
+    e_leg_handles = []
+    for dk, lbl, col, mk, ls_e, off in dep_cfg:
+        xs_pos = np.array(yrs_x, dtype=float) + off
         ys_v = [pslp[f"year_{yr}"][dk]["slope"] for yr in yrs_x]
         lo_v = [pslp[f"year_{yr}"][dk]["slope"] - pslp[f"year_{yr}"][dk]["ci95"][0] for yr in yrs_x]
         hi_v = [pslp[f"year_{yr}"][dk]["ci95"][1] - pslp[f"year_{yr}"][dk]["slope"] for yr in yrs_x]
+        ks_v = [int(cell_k_map.get((yr, dk), 0)) for yr in yrs_x]
+        fams_v = [int(cell_fam_map.get((yr, dk), 0)) for yr in yrs_x]
+
+        ax_e.plot(xs_pos, ys_v, ls=ls_e, color=col, lw=1.15, zorder=3.5)
         ax_e.errorbar(
-            np.array(yrs_x) + off, ys_v, yerr=[lo_v, hi_v],
-            fmt=fmt, color=col, markeredgecolor="white", markeredgewidth=0.45,
-            markersize=4.3, lw=1.25, capsize=2.0, label=lbl, zorder=4,
+            xs_pos, ys_v, yerr=[lo_v, hi_v],
+            fmt="none", ecolor=col, elinewidth=1.05, capsize=1.8, zorder=3.8,
         )
-        for yr, sv, lv, hv in zip(yrs_x, ys_v, lo_v, hi_v):
-            yd_rows.append({"year": yr, "depth": dk, "slope": sv, "ci_lo": sv - lv, "ci_hi": sv + hv})
+        s_markers = [13.0 + 34.0 * (kv / max_cell_k) for kv in ks_v]
+        ax_e.scatter(
+            xs_pos, ys_v, s=s_markers, marker=mk, facecolor=col,
+            edgecolor="white", linewidths=0.55, zorder=4.5,
+        )
+        dk_tot = int(depth_k_map[dk])
+        e_leg_handles.append(
+            mpl.lines.Line2D(
+                [0], [0], color=col, ls=ls_e, lw=1.15, marker=mk, markersize=4.1,
+                markerfacecolor=col, markeredgecolor="white", markeredgewidth=0.45,
+                label=rf"{lbl} ($\mathit{{k}}$={dk_tot})",
+            )
+        )
+        for yr, sv, lv, hv, kv, fv in zip(yrs_x, ys_v, lo_v, hi_v, ks_v, fams_v):
+            yd_rows.append({
+                "year": yr,
+                "depth": dk,
+                "k": kv,
+                "n_families": fv,
+                "year_k": int(yr_k_map[yr]),
+                "year_families": int(yr_fams_map[yr]),
+                "depth_k": dk_tot,
+                "depth_families": int(depth_fam_map[dk]),
+                "slope": sv,
+                "ci_lo": sv - lv,
+                "ci_hi": sv + hv,
+            })
+
+        ax_e_n.bar(
+            xs_pos, ks_v, width=0.195, color=col, alpha=0.88,
+            edgecolor="white", linewidth=0.35, zorder=3.0,
+        )
+        for xp, kv in zip(xs_pos, ks_v):
+            ax_e_n.text(
+                xp, kv + 4.5, f"{kv}", ha="center", va="bottom",
+                fontsize=4.75, fontweight="bold", color=col, zorder=5.0,
+            )
+
     ax_e.axhline(0.0, ls="--", color="#666666", lw=0.65, zorder=1)
     ax_e.set_xticks(yrs_x)
-    ax_e.set_xticklabels(["1", "2", "3"], fontsize=6.3)
-    ax_e.set_xlim(0.55, 3.45)
-    ax_e.set_ylim(-0.044, 0.145)
-    ax_e.tick_params(axis="y", labelsize=6.3)
-    ax_e.set_ylabel(r"Soil EC sensitivity (lnRR dS$^{-1}$ m)", fontsize=7.4, labelpad=2.2)
-    ax_e.set_xlabel("Observation year", fontsize=7.4, labelpad=2.2)
+    ax_e.set_xticklabels([])
+    ax_e.tick_params(axis="x", length=2.0)
+    ax_e.set_xlim(0.52, 3.48)
+    ax_e.set_ylim(-0.020, 0.172)
+    ax_e.set_yticks([0.00, 0.04, 0.08, 0.12])
+    ax_e.tick_params(axis="y", labelsize=6.1)
+    ax_e.set_ylabel(r"Soil EC sensitivity (lnRR dS$^{-1}$ m)", fontsize=6.6, labelpad=2.2)
+    ax_e.yaxis.set_label_coords(-0.235, 0.50)
     p_int = yr_d["terms"]["dECw_x_subsoil_x_logYr"]["p_val"]
-    ax_e.text(0.04, 0.97, rf"Subsoil $\times$ year {fmt_p(p_int)}", transform=ax_e.transAxes, va="top", ha="left", fontsize=5.45, color="#222222")
-    ax_e.legend(loc="lower right", frameon=False, fontsize=5.2, handletextpad=0.35, labelspacing=0.22)
+    ax_e.text(
+        0.04, 0.975,
+        rf"Total $\mathit{{k}}$ = {yr_d['k']} ({yr_d['n_clusters']} families)",
+        transform=ax_e.transAxes, va="top", ha="left", fontsize=5.25, fontweight="bold", color="#111111", zorder=6.0,
+    )
+    ax_e.text(
+        0.04, 0.865,
+        rf"Subsoil $\times$ year {fmt_p(p_int)}",
+        transform=ax_e.transAxes, va="top", ha="left", fontsize=5.1, color="#333333", zorder=6.0,
+    )
+    ax_e.legend(
+        handles=e_leg_handles, loc="lower right", bbox_to_anchor=(1.02, 1.015),
+        ncol=2, frameon=False, fontsize=4.80, columnspacing=0.50,
+        handlelength=1.25, handletextpad=0.25, labelspacing=0.20, borderaxespad=0.0,
+    )
+
+    ax_e_n.grid(axis="y", color="#EEF1F4", lw=0.45, zorder=0.5)
+    ax_e_n.set_xlim(0.52, 3.48)
+    ax_e_n.set_ylim(0, 168)
+    ax_e_n.set_yticks([0, 60, 120])
+    ax_e_n.set_yticklabels(["0", "60", "120"], fontsize=5.8)
+    ax_e_n.set_xticks(yrs_x)
+    ax_e_n.set_xticklabels([f"Yr {yr} ({yr_fams_map[yr]})" for yr in yrs_x], fontsize=5.55)
+    ax_e_n.tick_params(axis="x", length=2.2, pad=2.0)
+    ax_e_n.tick_params(axis="y", length=2.2)
+    ax_e_n.set_ylabel(r"Contrasts ($\mathit{k}$)", fontsize=6.1, labelpad=2.2)
+    ax_e_n.yaxis.set_label_coords(-0.235, 0.50)
+    ax_e_n.set_xlabel("Observation year (families)", fontsize=6.9, labelpad=2.2)
 
     pd.DataFrame(bin_rows).to_csv(SRC_DIR / "Fig2A_yield_absolute_ecw.csv", index=False)
     sec_bdf.to_csv(SRC_DIR / "Fig2B_soil_ec_absolute_ecw.csv", index=False)
@@ -1189,27 +1319,32 @@ def build_fig3() -> None:
     COL_RISK = "#A61C28"
     COL_TEAL = "#1D7F70"
 
-    fig = plt.figure(figsize=(179 / 25.4, 134 / 25.4))
+    fig = plt.figure(figsize=(179 / 25.4, 138 / 25.4))
 
-    # Top row: Unified twin-column Panel a (Overall REML | Soil Clay Moderation)
-    ax_a1 = fig.add_axes([0.140, 0.558, 0.448, 0.372])
-    ax_a2 = fig.add_axes([0.614, 0.558, 0.372, 0.372])
+    # Row 1 (aligned architectural grid, y = [0.556, 0.916]):
+    #   Unified twin-column Panel a (Cols 1-2, right edge 0.654) | Panel b (Col 3, [0.752, 0.986])
+    ax_a = fig.add_axes([0.132, 0.556, 0.284, 0.360])
+    ax_b = fig.add_axes([0.436, 0.556, 0.218, 0.360])
     add_fig_panel_label(fig, 0.008, 0.980, "a")
 
-    # Bottom row: Three decoupling mechanisms (b: salt transport, c: hyd vs EC, d: ET audit)
-    ax_b = fig.add_axes([0.124, 0.088, 0.248, 0.348])
-    add_fig_panel_label(fig, 0.008, 0.474, "b")
+    ax_c = fig.add_axes([0.752, 0.556, 0.234, 0.360])
+    add_fig_panel_label(fig, 0.684, 0.980, "b")
 
-    ax_c = fig.add_axes([0.454, 0.088, 0.196, 0.310])
-    ax_c_top = fig.add_axes([0.454, 0.400, 0.196, 0.036])
-    ax_c_rgt = fig.add_axes([0.652, 0.088, 0.032, 0.310])
-    add_fig_panel_label(fig, 0.388, 0.474, "c")
+    # Row 2 (aligned 3-column grid, y = [0.086, 0.436]):
+    #   Panel c (Col 1, top reaches 0.436) | Panel d (Col 2, right edge 0.654) | Panel e (Col 3, [0.752, 0.986])
+    ax_d = fig.add_axes([0.072, 0.086, 0.216, 0.310])
+    ax_d_top = fig.add_axes([0.072, 0.398, 0.216, 0.038])
+    ax_d_rgt = fig.add_axes([0.290, 0.086, 0.030, 0.310])
+    add_fig_panel_label(fig, 0.008, 0.476, "c")
 
-    ax_d = fig.add_axes([0.764, 0.088, 0.222, 0.348])
-    add_fig_panel_label(fig, 0.696, 0.474, "d")
+    ax_e = fig.add_axes([0.404, 0.086, 0.250, 0.350])
+    add_fig_panel_label(fig, 0.344, 0.476, "d")
+
+    ax_f = fig.add_axes([0.752, 0.086, 0.234, 0.350])
+    add_fig_panel_label(fig, 0.684, 0.476, "e")
 
     # -------------------------------------------------------------------------
-    # Panel a (Left): Overall Three-Level REML Forest on lnRR Scale
+    # Panel a: Overall Three-Level REML Forest on lnRR Scale
     # -------------------------------------------------------------------------
     eps_order = [
         ("ks_saturated", "Saturated hydraulic\n" + r"conductivity ($\mathit{K_s}$)"),
@@ -1225,7 +1360,7 @@ def build_fig3() -> None:
     e_map = {r["endpoint"]: r for r in p2a["headline_exact_variance_sensitivity"]}
     y_pos = np.arange(len(eps_order))[::-1]  # 4, 3, 2, 1, 0
 
-    for ax_top in (ax_a1, ax_a2):
+    for ax_top in (ax_a, ax_b):
         ax_top.grid(axis="x", color="#EEF1F4", lw=0.45, zorder=0.4)
         for yi in y_pos:
             if yi % 2 == 1:
@@ -1241,47 +1376,47 @@ def build_fig3() -> None:
         ci = rh.get("ci95")
         pi = rh.get("pi95")
         if mu is not None and pi is not None:
-            ax_a1.plot([pi[0], pi[1]], [yi, yi], "-", color=COL_PI, lw=1.25, alpha=0.90, zorder=2)
+            ax_a.plot([pi[0], pi[1]], [yi, yi], "-", color=COL_PI, lw=1.20, alpha=0.90, zorder=2)
         if mu is not None and ci is not None:
-            ax_a1.plot([ci[0], ci[1]], [yi, yi], "-", color=COL_PRI, lw=2.8, solid_capstyle="round", zorder=3)
-            ax_a1.scatter([mu], [yi], color=COL_PRI, edgecolor="white", linewidths=0.50, s=30, zorder=4)
+            ax_a.plot([ci[0], ci[1]], [yi, yi], "-", color=COL_PRI, lw=2.6, solid_capstyle="round", zorder=3)
+            ax_a.scatter([mu], [yi], color=COL_PRI, edgecolor="white", linewidths=0.48, s=26, zorder=4)
         if re and re.get("mu_lnrr") is not None and ep != "direct_salt_export_or_storage_only":
-            ax_a1.scatter([re["mu_lnrr"]], [yi - 0.19], color=COL_EX, edgecolor="white", linewidths=0.45, marker="D", s=18, zorder=5)
+            ax_a.scatter([re["mu_lnrr"]], [yi - 0.19], color=COL_EX, edgecolor="white", linewidths=0.42, marker="D", s=16, zorder=5)
 
         pct_val = rh.get("pct_change")
         pct_str = f"{pct_val:+.1f}%".replace("-", "−") if pct_val is not None else "—"
-        ax_a1.text(3.66, yi + 0.04, pct_str, va="bottom", ha="left", fontsize=5.3, fontweight="bold", color="#111111")
+        ax_a.text(3.66, yi + 0.04, pct_str, va="bottom", ha="left", fontsize=5.0, fontweight="bold", color="#111111")
         if ep == "direct_salt_export_or_storage_only":
             sub_lbl = rf"($\mathit{{k}}$={rh.get('k')}, {rh.get('n_clusters')} cl; $\mathit{{P}}$={rh['p_val']:.3f})"
         else:
             sub_lbl = rf"($\mathit{{k}}$={rh.get('k')}, {rh.get('n_clusters')} cl)"
-        ax_a1.text(3.66, yi - 0.04, sub_lbl, va="top", ha="left", fontsize=5.1, color="#555555")
+        ax_a.text(3.66, yi - 0.04, sub_lbl, va="top", ha="left", fontsize=4.65, color="#555555")
         f_rows.append({"endpoint": ep, "k": rh.get("k"), "n_clusters": rh.get("n_clusters"), "mu_lnrr": mu, "ci95": ci, "pi95": pi, "I2_pct": rh.get("I2_pct"), "p_val": rh.get("p_val"), "exact_mu_lnrr": re.get("mu_lnrr") if ep != "direct_salt_export_or_storage_only" else None})
 
     lf_only = leach_strat.get("by_physical_category", {}).get("leaching_fraction_water_ratio", {})
     if lf_only.get("mu_lnrr") is not None:
-        ax_a1.scatter([lf_only["mu_lnrr"]], [0.0 - 0.22], facecolor="white", edgecolor="#444444", marker="^", s=21, linewidths=0.95, zorder=5)
+        ax_a.scatter([lf_only["mu_lnrr"]], [0.0 - 0.22], facecolor="white", edgecolor="#444444", marker="^", s=19, linewidths=0.90, zorder=5)
 
     pct_ticks = [-75, 0, 200, 2000]
-    ax_a1.set_xticks([math.log(1.0 + p / 100.0) for p in pct_ticks])
-    ax_a1.set_xticklabels(["−75%", "0%", "+200%", "+2,000%"], fontsize=5.6)
-    ax_a1.set_xlim(-1.82, 6.75)
-    ax_a1.spines["bottom"].set_bounds(-1.75, 3.55)
-    ax_a1.set_ylim(-0.58, 4.55)
-    ax_a1.set_yticks(y_pos)
-    ax_a1.set_yticklabels([x[1] for x in eps_order], fontsize=5.75)
-    ax_a1.set_xlabel("Overall amendment effect (% change, lnRR scale)", fontsize=6.6, labelpad=2.2)
-    ax_a1.xaxis.set_label_coords(((-1.75 + 3.55) / 2.0 - (-1.82)) / (6.75 - (-1.82)), -0.115)
-    a1_handles = [
-        mpl.lines.Line2D([0], [0], color=COL_PRI, lw=2.5, marker="o", markersize=4.3, markerfacecolor=COL_PRI, markeredgecolor="white", markeredgewidth=0.45, label="95% CI (REML)"),
-        mpl.lines.Line2D([0], [0], color=COL_PI, lw=1.25, label="95% PI"),
-        mpl.lines.Line2D([0], [0], color="none", marker="D", markersize=4.0, markerfacecolor=COL_EX, markeredgecolor="white", markeredgewidth=0.4, label="Exact var."),
-        mpl.lines.Line2D([0], [0], color="none", marker="^", markersize=4.3, markerfacecolor="white", markeredgecolor="#444444", markeredgewidth=0.9, label="LF ratio (1 cl)"),
+    ax_a.set_xticks([math.log(1.0 + p / 100.0) for p in pct_ticks])
+    ax_a.set_xticklabels(["−75%", "0%", "+200%", "+2,000%"], fontsize=5.25)
+    ax_a.set_xlim(-1.82, 7.35)
+    ax_a.spines["bottom"].set_bounds(-1.75, 3.55)
+    ax_a.set_ylim(-0.58, 4.55)
+    ax_a.set_yticks(y_pos)
+    ax_a.set_yticklabels([x[1] for x in eps_order], fontsize=5.45)
+    ax_a.set_xlabel("Overall effect (% change, lnRR)", fontsize=6.3, labelpad=2.2)
+    ax_a.xaxis.set_label_coords(((-1.75 + 3.55) / 2.0 - (-1.82)) / (7.35 - (-1.82)), -0.118)
+    a_handles = [
+        mpl.lines.Line2D([0], [0], color=COL_PRI, lw=2.3, marker="o", markersize=3.8, markerfacecolor=COL_PRI, markeredgecolor="white", markeredgewidth=0.40, label="95% CI (REML)"),
+        mpl.lines.Line2D([0], [0], color=COL_PI, lw=1.20, label="95% PI"),
+        mpl.lines.Line2D([0], [0], color="none", marker="D", markersize=3.6, markerfacecolor=COL_EX, markeredgecolor="white", markeredgewidth=0.38, label="Exact var."),
+        mpl.lines.Line2D([0], [0], color="none", marker="^", markersize=3.9, markerfacecolor="white", markeredgecolor="#444444", markeredgewidth=0.85, label="LF ratio (1 cl)"),
     ]
-    ax_a1.legend(handles=a1_handles, loc="lower left", bbox_to_anchor=(-0.02, 1.015), ncol=4, frameon=False, fontsize=5.05, columnspacing=0.55, handletextpad=0.25, borderaxespad=0.0)
+    ax_a.legend(handles=a_handles, loc="lower left", bbox_to_anchor=(-0.03, 1.005), ncol=2, frameon=False, fontsize=4.75, columnspacing=0.80, handletextpad=0.25, labelspacing=0.18, borderaxespad=0.0)
 
     # -------------------------------------------------------------------------
-    # Panel a (Right): Soil Clay-Texture Moderation Aligned Row-for-Row
+    # Panel b: Soil Clay-Texture Moderation Aligned Row-for-Row with Panel a
     # -------------------------------------------------------------------------
     clay_df = pd.DataFrame(p2a["h2_clay_moderation"])
     c_eps = [
@@ -1309,62 +1444,63 @@ def build_fig3() -> None:
             if isinstance(ci_c, str):
                 ci_c = json.loads(ci_c)
             pv_c = float(row_c["p_val"].iloc[0])
-            ax_a2.plot([ci_c[0], ci_c[1]], [y_cur, y_cur], "-", color=col_c, lw=1.25, solid_capstyle="round", zorder=3.0)
+            ax_b.plot([ci_c[0], ci_c[1]], [y_cur, y_cur], "-", color=col_c, lw=1.20, solid_capstyle="round", zorder=3.0)
             sig_c = pv_c < 0.05
-            ax_a2.scatter(
-                [mu_v], [y_cur], marker=mk_c, s=23,
+            ax_b.scatter(
+                [mu_v], [y_cur], marker=mk_c, s=21,
                 facecolor=col_c if sig_c else "white",
                 edgecolor="white" if sig_c else col_c,
-                linewidths=0.50 if sig_c else 0.85, zorder=4.0,
+                linewidths=0.45 if sig_c else 0.80, zorder=4.0,
             )
             clay_export.append({"endpoint": ep, "stratum": ck, "mu_lnrr": mu_v, "ci95_low": float(ci_c[0]), "ci95_high": float(ci_c[1]), "pct_change": float(row_c["pct_change"].iloc[0]), "p_val": pv_c, "k": int(row_c["k"].iloc[0]), "n_clusters": int(row_c["n_clusters"].iloc[0])})
 
-    ax_a2.text(1.44, 3.71, r"+323% ($\mathit{P}$ = 0.020)", ha="center", va="top", fontsize=5.15, color=COL_RISK, fontweight="bold")
-    ax_a2.text(0.44, 4.24, r"+55% ($\mathit{P}$ = 0.007)", ha="left", va="bottom", fontsize=5.15, color="#B26B12")
-    ax_a2.text(0.06, 4.00, "Med. (<3 cl)", ha="left", va="center", fontsize=5.05, style="italic", color="#7F8C8D")
-    ax_a2.text(2.74, 0.16, r"$\leftarrow$ Salt transport stratified by metric in b", ha="right", va="center", fontsize=5.05, style="italic", color="#4A5A68")
-    ax_a2.text(2.74, -0.20, r"$\mathit{K_s}$ vs ESP $\leq$ 100%: $\mathit{P}$ = 0.126 (ED Fig. 6b)", ha="right", va="center", fontsize=5.05, color="#555555")
+    ax_b.text(1.44, 3.70, r"+323% ($\mathit{P}$ = 0.020)", ha="center", va="top", fontsize=4.85, color=COL_RISK, fontweight="bold")
+    ax_b.text(0.44, 4.24, r"+55% ($\mathit{P}$ = 0.007)", ha="left", va="bottom", fontsize=4.85, color="#B26B12")
+    ax_b.text(0.06, 4.00, "Med. (<3 cl)", ha="left", va="center", fontsize=4.75, style="italic", color="#7F8C8D")
+    ax_b.text(2.74, 0.16, r"Salt transport in b $\rightarrow$", ha="right", va="center", fontsize=4.75, style="italic", color="#4A5A68")
+    ax_b.text(2.74, -0.20, r"$\mathit{K_s}$ vs ESP $\leq$100%: $\mathit{P}$=0.126", ha="right", va="center", fontsize=4.70, color="#555555")
 
     c_ticks_pct = [0, 50, 200, 1000]
-    ax_a2.set_xticks([math.log(1.0 + p / 100.0) for p in c_ticks_pct])
-    ax_a2.set_xticklabels(["0%", "+50%", "+200%", "+1,000%"], fontsize=5.6)
-    ax_a2.set_xlim(-0.26, 2.82)
-    ax_a2.set_ylim(-0.58, 4.55)
-    ax_a2.set_yticks([4, 3, 2, 1])
-    ax_a2.set_yticklabels([])
-    ax_a2.spines["left"].set_color("#CBD4DC")
-    ax_a2.spines["left"].set_linewidth(0.60)
-    ax_a2.set_xlabel("Effect by soil clay content (% change, lnRR scale)", fontsize=6.6, labelpad=2.2)
-    a2_handles = [
-        mpl.lines.Line2D([0], [0], marker="o", color="none", markerfacecolor="#D98A2B", markeredgecolor="#D98A2B", markersize=4.1, label="Coarse (<20%)"),
-        mpl.lines.Line2D([0], [0], marker="s", color="none", markerfacecolor=COL_PRI, markeredgecolor=COL_PRI, markersize=3.9, label="Medium (20–35%)"),
-        mpl.lines.Line2D([0], [0], marker="D", color="none", markerfacecolor=COL_RISK, markeredgecolor=COL_RISK, markersize=3.8, label="Heavy (≥35% clay)"),
+    ax_b.set_xticks([math.log(1.0 + p / 100.0) for p in c_ticks_pct])
+    ax_b.set_xticklabels(["0%", "+50%", "+200%", "+1,000%"], fontsize=5.25)
+    ax_b.set_xlim(-0.26, 2.82)
+    ax_b.set_ylim(-0.58, 4.55)
+    ax_b.set_yticks([4, 3, 2, 1])
+    ax_b.set_yticklabels([])
+    ax_b.spines["left"].set_color("#CBD4DC")
+    ax_b.spines["left"].set_linewidth(0.60)
+    ax_b.set_xlabel("Effect by clay content (% change)", fontsize=6.3, labelpad=2.2)
+    ax_b.xaxis.set_label_coords(0.50, -0.118)
+    b_handles = [
+        mpl.lines.Line2D([0], [0], marker="o", color="none", markerfacecolor="#D98A2B", markeredgecolor="#D98A2B", markersize=3.8, label="Coarse (<20%)"),
+        mpl.lines.Line2D([0], [0], marker="s", color="none", markerfacecolor=COL_PRI, markeredgecolor=COL_PRI, markersize=3.6, label="Medium (20–35%)"),
+        mpl.lines.Line2D([0], [0], marker="D", color="none", markerfacecolor=COL_RISK, markeredgecolor=COL_RISK, markersize=3.5, label="Heavy (≥35% clay)"),
     ]
-    ax_a2.legend(handles=a2_handles, loc="lower left", bbox_to_anchor=(-0.02, 1.015), ncol=3, frameon=False, fontsize=5.05, columnspacing=0.60, handletextpad=0.22, borderaxespad=0.0)
+    ax_b.legend(handles=b_handles, loc="lower left", bbox_to_anchor=(-0.03, 1.005), ncol=2, frameon=False, fontsize=4.70, columnspacing=0.55, handletextpad=0.20, labelspacing=0.18, borderaxespad=0.0)
 
     # -------------------------------------------------------------------------
-    # Panel b: Stratified Salt Transport Forest + Individual Contrast Strip
+    # Panel c: Stratified Salt Transport Forest + Individual Contrast Strip
     # -------------------------------------------------------------------------
     cats = leach_strat["by_physical_category"]
     salt_obs = salt_audit.copy()
     salt_obs["pct_obs"] = (salt_obs["mean_treatment"].astype(float) / salt_obs["mean_control"].astype(float) - 1.0) * 100.0
 
-    ax_b.grid(axis="x", color="#EEF1F4", lw=0.45, zorder=0.3)
-    ax_b.axhspan(1.58, 2.42, facecolor="#F6F8FA", zorder=0.2)
-    ax_b.axhspan(-0.52, 0.48, facecolor="#FDF7F0", zorder=0.2)
-    ax_b.axvline(0.0, ls="--", color="#555555", lw=0.75, zorder=1.5)
-    ax_b.axhline(0.50, ls="--", color="#B8C0C8", lw=0.65, zorder=1.4)
+    ax_c.grid(axis="x", color="#EEF1F4", lw=0.45, zorder=0.3)
+    ax_c.axhspan(1.58, 2.42, facecolor="#F6F8FA", zorder=0.2)
+    ax_c.axhspan(-0.52, 0.48, facecolor="#FDF7F0", zorder=0.2)
+    ax_c.axvline(0.0, ls="--", color="#555555", lw=0.75, zorder=1.5)
+    ax_c.axhline(0.50, ls="--", color="#B8C0C8", lw=0.65, zorder=1.4)
 
-    rng_b = np.random.default_rng(20261126)
+    rng_c = np.random.default_rng(20261126)
     salt_rows = []
-    b_ytick_labels = []
-    b_specs = [
-        ("leaching_fraction_water_ratio", "Drainage / infiltration", "Drainage / infil.\n(1 family, LF)"),
-        ("soil_salt_storage_change", "Change in soil salt storage", "Salt storage\n(3 families)"),
-        ("salt_removal_per_unit_water", "Salt removal per unit water", "Salt removal\n(3 families)"),
-        ("direct", "Direct salt outcomes combined", "Direct combined\n(6 families)"),
+    c_ytick_labels = []
+    c_specs = [
+        ("leaching_fraction_water_ratio", "Drainage / infiltration", "Drain. / infil.\n(1 fam., LF)"),
+        ("soil_salt_storage_change", "Change in soil salt storage", "Salt storage\n(3 fam.)"),
+        ("salt_removal_per_unit_water", "Salt removal per unit water", "Salt removal\n(3 fam.)"),
+        ("direct", "Direct salt outcomes combined", "Direct comb.\n(6 fam.)"),
     ]
-    for y, (key, name, y_disp) in enumerate(b_specs):
+    for y, (key, name, y_disp) in enumerate(c_specs):
         r = leach_strat["direct_salt_export_or_storage_only"] if key == "direct" else cats[key]
         lo, hi = 100.0 * np.expm1(r["ci95"])
         val = float(r["pct_change"])
@@ -1374,44 +1510,44 @@ def build_fig3() -> None:
             obs_vals = salt_obs.loc[salt_obs["physical_category"] != "leaching_fraction_water_ratio", "pct_obs"].values
         else:
             obs_vals = salt_obs.loc[salt_obs["physical_category"] == key, "pct_obs"].values
-        y_jit = y - 0.20 + rng_b.uniform(-0.055, 0.055, size=len(obs_vals))
-        ax_b.scatter(obs_vals, y_jit, color=color, s=10.0, alpha=0.42, edgecolors="white", linewidths=0.25, zorder=2.5)
+        y_jit = y - 0.20 + rng_c.uniform(-0.055, 0.055, size=len(obs_vals))
+        ax_c.scatter(obs_vals, y_jit, color=color, s=9.5, alpha=0.42, edgecolors="white", linewidths=0.25, zorder=2.5)
 
-        ax_b.plot([lo, hi], [y, y], color=color, lw=2.3, solid_capstyle="round", zorder=3.5)
-        mkr_b = "D" if key == "direct" else ("^" if y == 0 else "o")
-        sz_b = 30 if key in ("direct", "leaching_fraction_water_ratio") else 27
-        ax_b.scatter([val], [y], s=sz_b, marker=mkr_b, color=color, edgecolor="white", linewidths=0.55, zorder=4.5)
+        ax_c.plot([lo, hi], [y, y], color=color, lw=2.2, solid_capstyle="round", zorder=3.5)
+        mkr_c = "D" if key == "direct" else ("^" if y == 0 else "o")
+        sz_c = 28 if key in ("direct", "leaching_fraction_water_ratio") else 25
+        ax_c.scatter([val], [y], s=sz_c, marker=mkr_c, color=color, edgecolor="white", linewidths=0.50, zorder=4.5)
 
         val_str = f"{val:+.1f}%".replace("-", "−")
         if key == "leaching_fraction_water_ratio":
-            sub_b = rf"($\mathit{{k}}$={r['k']}, desc.)"
+            sub_c_txt = rf"($\mathit{{k}}$={r['k']}, desc.)"
         else:
-            sub_b = rf"($\mathit{{k}}$={r['k']}, {fmt_p(r.get('p_val'))})"
-        ax_b.text(183.0, y + 0.04, val_str, va="bottom", ha="left", fontsize=5.1, fontweight="bold", color="#111111")
-        ax_b.text(183.0, y - 0.04, sub_b, va="top", ha="left", fontsize=4.85, color="#555555")
+            sub_c_txt = rf"($\mathit{{k}}$={r['k']}, {fmt_p(r.get('p_val'))})"
+        ax_c.text(182.0, y + 0.04, val_str, va="bottom", ha="left", fontsize=4.95, fontweight="bold", color="#111111")
+        ax_c.text(182.0, y - 0.04, sub_c_txt, va="top", ha="left", fontsize=4.60, color="#555555")
 
-        b_ytick_labels.append(y_disp)
+        c_ytick_labels.append(y_disp)
         salt_rows.append(dict(outcome=name, families=r["n_clusters"], contrasts=r["k"], estimate_pct=val, lower_pct=lo, upper_pct=hi))
 
-    ax_b.set_yticks(range(4))
-    ax_b.set_yticklabels(b_ytick_labels, fontsize=5.35)
-    ax_b.set_xlim(-52.0, 290.0)
-    ax_b.spines["bottom"].set_bounds(-50.0, 178.0)
-    ax_b.set_ylim(-0.55, 3.55)
-    ax_b.set_xticks([-50, 0, 50, 100, 150])
-    ax_b.set_xticklabels(["−50%", "0%", "+50%", "+100%", "+150%"], fontsize=5.45)
-    ax_b.set_xlabel("Change from control (%)", fontsize=6.6, labelpad=2.2)
-    ax_b.xaxis.set_label_coords(((-50.0 + 178.0) / 2.0 - (-52.0)) / (290.0 - (-52.0)), -0.118)
+    ax_c.set_yticks(range(4))
+    ax_c.set_yticklabels(c_ytick_labels, fontsize=5.15)
+    ax_c.set_xlim(-52.0, 286.0)
+    ax_c.spines["bottom"].set_bounds(-50.0, 178.0)
+    ax_c.set_ylim(-0.55, 3.55)
+    ax_c.set_xticks([-50, 0, 50, 100, 150])
+    ax_c.set_xticklabels(["−50%", "0%", "+50%", "+100%", "+150%"], fontsize=4.90)
+    ax_c.set_xlabel("Salt transport change (%)", fontsize=6.3, labelpad=2.2)
+    ax_c.xaxis.set_label_coords(((-50.0 + 178.0) / 2.0 - (-52.0)) / (286.0 - (-52.0)), -0.118)
 
-    b_handles = [
-        mpl.lines.Line2D([0], [0], color=COL_PRI, lw=2.2, marker="D", markersize=4.0, markerfacecolor=COL_PRI, markeredgecolor="white", markeredgewidth=0.45, label="REML 95% CI"),
-        mpl.lines.Line2D([0], [0], color="none", marker="o", markersize=3.5, markerfacecolor=COL_TEAL, alpha=0.55, markeredgecolor="white", markeredgewidth=0.25, label="Contrasts"),
-        mpl.lines.Line2D([0], [0], color=COL_EX, lw=2.2, marker="^", markersize=4.2, markerfacecolor=COL_EX, markeredgecolor="white", markeredgewidth=0.45, label="LF (1 cl)"),
+    c_handles = [
+        mpl.lines.Line2D([0], [0], color=COL_PRI, lw=2.0, marker="D", markersize=3.8, markerfacecolor=COL_PRI, markeredgecolor="white", markeredgewidth=0.40, label="REML 95% CI"),
+        mpl.lines.Line2D([0], [0], color="none", marker="o", markersize=3.4, markerfacecolor=COL_TEAL, alpha=0.55, markeredgecolor="white", markeredgewidth=0.25, label="Contrasts"),
+        mpl.lines.Line2D([0], [0], color=COL_EX, lw=2.0, marker="^", markersize=4.0, markerfacecolor=COL_EX, markeredgecolor="white", markeredgewidth=0.40, label="LF (1 cl)"),
     ]
-    ax_b.legend(handles=b_handles, loc="lower left", bbox_to_anchor=(-0.03, 1.015), ncol=3, frameon=False, fontsize=4.85, columnspacing=0.42, handletextpad=0.20, borderaxespad=0.0)
+    ax_c.legend(handles=c_handles, loc="lower left", bbox_to_anchor=(-0.05, 1.005), ncol=2, frameon=False, fontsize=4.70, columnspacing=0.55, handletextpad=0.20, labelspacing=0.18, borderaxespad=0.0)
 
     # -------------------------------------------------------------------------
-    # Panel c: Marginal-Density Dual-Pathway Quadrant Scatter (Hydraulic vs EC)
+    # Panel d: Marginal-Density Dual-Pathway Quadrant Scatter (Hydraulic vs EC)
     # -------------------------------------------------------------------------
     dp = p2a["dual_pathway_hydraulic_vs_ec"]
     fp_d = pd.DataFrame(dp["family_points"])
@@ -1421,67 +1557,140 @@ def build_fig3() -> None:
 
     x_d_grid = np.linspace(-1.42, 2.35, 200)
     dens_hyd = gaussian_kde(fp_d["hyd_lnrr"].values)(x_d_grid)
-    ax_c_top.fill_between(x_d_grid, 0.0, dens_hyd, facecolor=COL_PRI, alpha=0.22, edgecolor="none")
-    ax_c_top.plot(x_d_grid, dens_hyd, color=COL_PRI, lw=0.85)
-    ax_c_top.axvline(0.0, ls=":", color="#777777", lw=0.65)
-    ax_c_top.set_xlim(-1.42, 2.35)
-    ax_c_top.set_ylim(0.0, float(dens_hyd.max()) * 1.15)
-    ax_c_top.set_xticks([])
-    ax_c_top.set_yticks([])
+    ax_d_top.fill_between(x_d_grid, 0.0, dens_hyd, facecolor=COL_PRI, alpha=0.22, edgecolor="none")
+    ax_d_top.plot(x_d_grid, dens_hyd, color=COL_PRI, lw=0.85)
+    ax_d_top.axvline(0.0, ls=":", color="#777777", lw=0.65)
+    ax_d_top.set_xlim(-1.42, 2.35)
+    ax_d_top.set_ylim(0.0, float(dens_hyd.max()) * 1.15)
+    ax_d_top.set_xticks([])
+    ax_d_top.set_yticks([])
     for sp in ("top", "left", "right"):
-        ax_c_top.spines[sp].set_visible(False)
-    ax_c_top.spines["bottom"].set_linewidth(0.45)
-    ax_c_top.spines["bottom"].set_color("#CCCCCC")
+        ax_d_top.spines[sp].set_visible(False)
+    ax_d_top.spines["bottom"].set_linewidth(0.45)
+    ax_d_top.spines["bottom"].set_color("#CCCCCC")
 
     y_d_grid = np.linspace(-2.25, 1.38, 200)
     dens_ec = gaussian_kde(fp_d["soil_EC_lnrr"].values)(y_d_grid)
-    ax_c_rgt.fill_betweenx(y_d_grid, 0.0, dens_ec, facecolor=COL_RISK, alpha=0.20, edgecolor="none")
-    ax_c_rgt.plot(dens_ec, y_d_grid, color=COL_RISK, lw=0.85)
-    ax_c_rgt.axhline(0.0, ls=":", color="#777777", lw=0.65)
-    ax_c_rgt.set_ylim(-2.25, 1.38)
-    ax_c_rgt.set_xlim(0.0, float(dens_ec.max()) * 1.15)
-    ax_c_rgt.set_xticks([])
-    ax_c_rgt.set_yticks([])
+    ax_d_rgt.fill_betweenx(y_d_grid, 0.0, dens_ec, facecolor=COL_RISK, alpha=0.20, edgecolor="none")
+    ax_d_rgt.plot(dens_ec, y_d_grid, color=COL_RISK, lw=0.85)
+    ax_d_rgt.axhline(0.0, ls=":", color="#777777", lw=0.65)
+    ax_d_rgt.set_ylim(-2.25, 1.38)
+    ax_d_rgt.set_xlim(0.0, float(dens_ec.max()) * 1.15)
+    ax_d_rgt.set_xticks([])
+    ax_d_rgt.set_yticks([])
     for sp in ("top", "right", "bottom"):
-        ax_c_rgt.spines[sp].set_visible(False)
-    ax_c_rgt.spines["left"].set_linewidth(0.45)
-    ax_c_rgt.spines["left"].set_color("#CCCCCC")
+        ax_d_rgt.spines[sp].set_visible(False)
+    ax_d_rgt.spines["left"].set_linewidth(0.45)
+    ax_d_rgt.spines["left"].set_color("#CCCCCC")
 
-    ax_c.grid(True, color="#EEF1F4", lw=0.45, zorder=0.5)
-    ax_c.fill_between([0.0, 2.35], -2.25, 0.0, facecolor="#EBF6F4", alpha=0.52, zorder=0.2)
-    ax_c.fill_between([0.0, 2.35], 0.0, 1.38, facecolor="#FCECE8", alpha=0.52, zorder=0.2)
+    ax_d.grid(True, color="#EEF1F4", lw=0.45, zorder=0.5)
+    ax_d.fill_between([0.0, 2.35], -2.25, 0.0, facecolor="#EBF6F4", alpha=0.52, zorder=0.2)
+    ax_d.fill_between([0.0, 2.35], 0.0, 1.38, facecolor="#FCECE8", alpha=0.52, zorder=0.2)
     x_ols = np.array([-1.25, 2.15])
-    ax_c.plot(x_ols, ov["ols_intercept"] + ov["ols_slope"] * x_ols, "--", color="#666666", lw=0.85, alpha=0.72, zorder=2.5)
+    ax_d.plot(x_ols, ov["ols_intercept"] + ov["ols_slope"] * x_ols, "--", color="#666666", lw=0.85, alpha=0.72, zorder=2.5)
     for reg, nm, col, mk in [
         ("sodic_or_saline_sodic_high_esp", "Sodic", COL_EX, "o"),
-        ("saline_or_unspecified", "Saline / unspecified", COL_PRI, "s"),
+        ("saline_or_unspecified", "Saline / unspec.", COL_PRI, "s"),
     ]:
         sub_p = fp_d[fp_d["sodicity_regime"] == reg]
-        ax_c.scatter(sub_p["hyd_lnrr"], sub_p["soil_EC_lnrr"], color=col, marker=mk, s=24, alpha=0.88, edgecolors="white", lw=0.40, label=nm, zorder=4)
-    ax_c.axhline(0.0, ls=":", color="#777777", lw=0.65, zorder=1.5)
-    ax_c.axvline(0.0, ls=":", color="#777777", lw=0.65, zorder=1.5)
+        ax_d.scatter(sub_p["hyd_lnrr"], sub_p["soil_EC_lnrr"], color=col, marker=mk, s=22, alpha=0.88, edgecolors="white", lw=0.38, label=nm, zorder=4)
+    ax_d.axhline(0.0, ls=":", color="#777777", lw=0.65, zorder=1.5)
+    ax_d.axvline(0.0, ls=":", color="#777777", lw=0.65, zorder=1.5)
     ov_rho = f"{ov['spearman_r']:+.3f}".replace("-", "−")
-    ax_c.text(
+    ax_d.text(
         0.04, 0.96,
         rf"All $\mathit{{n}}$ = {ov['n_families']}: $\mathit{{\rho}}$ = {ov_rho}" + "\n" + rf"{fmt_p(ov['spearman_p'])}",
-        transform=ax_c.transAxes, ha="left", va="top", fontsize=5.1, color="#222222",
+        transform=ax_d.transAxes, ha="left", va="top", fontsize=4.95, color="#222222",
     )
-    ax_c.text(0.96, 0.95, f"EC rose ({pct_ret}%)", transform=ax_c.transAxes, ha="right", va="top", fontsize=5.05, style="italic", color=COL_RISK, alpha=0.85)
-    ax_c.text(0.96, 0.22, f"EC fell ({pct_des}%)", transform=ax_c.transAxes, ha="right", va="bottom", fontsize=5.05, style="italic", color=COL_TEAL, alpha=0.90)
-    ax_c.set_xlim(-1.42, 2.35)
-    ax_c.set_ylim(-2.25, 1.38)
-    ax_c.tick_params(labelsize=5.6)
-    ax_c.set_xlabel("Infiltration change (lnRR)", fontsize=6.6, labelpad=2.2)
-    ax_c.set_ylabel("Soil EC change (lnRR)", fontsize=6.6, labelpad=2.0)
-    ax_c.legend(loc="lower left", frameon=False, fontsize=5.05, handletextpad=0.22, labelspacing=0.18)
+    ax_d.text(0.96, 0.95, f"EC rose ({pct_ret}%)", transform=ax_d.transAxes, ha="right", va="top", fontsize=4.85, style="italic", color=COL_RISK, alpha=0.85)
+    ax_d.text(0.96, 0.20, f"EC fell ({pct_des}%)", transform=ax_d.transAxes, ha="right", va="bottom", fontsize=4.85, style="italic", color=COL_TEAL, alpha=0.90)
+    ax_d.set_xlim(-1.42, 2.35)
+    ax_d.set_ylim(-2.25, 1.38)
+    ax_d.tick_params(labelsize=5.35)
+    ax_d.set_xlabel("Infiltration change (lnRR)", fontsize=6.3, labelpad=2.4)
+    ax_d.xaxis.set_label_coords(0.50, -0.140)
+    ax_d.set_ylabel("Soil EC change (lnRR)", fontsize=6.3, labelpad=1.8)
+    ax_d.legend(loc="lower left", frameon=False, fontsize=4.85, handletextpad=0.20, labelspacing=0.16)
 
     # -------------------------------------------------------------------------
-    # Panel d: Clean Water-Use Ratio Rainclouds (Verified ET vs Supply IWUE)
+    # Panel e: WUE Numerator-Denominator Decomposition (Yield Ratio vs ET Ratio)
     # -------------------------------------------------------------------------
     aud_sum = json.loads((table_input("armB_wue_et_64families_audit_summary.json")).read_text(encoding="utf-8"))
     audit_df = pd.read_csv(HARMONIZED / "armB_wue_et_64families_audit_current.csv")
     fam_country = audit_df.groupby("family_id")["country"].first().to_dict()
 
+    ab_df = audit_df[audit_df["category"].isin(["A_direct_reported_ET", "B_inferred_Y_over_WUE_ET"])].copy()
+    ye_fam = ab_df.groupby("family_id", as_index=False).agg(
+        country=("country", "first"),
+        audit_category=("category", lambda s: "A_direct_ET" if (s == "A_direct_reported_ET").any() else "B_inferred_ET"),
+        n_pairs=("pair_id", "count"),
+        ln_et_ratio=("ln_et_ratio", "mean"),
+        lnRR_yield=("lnRR_yield", "mean"),
+        lnRR_wue=("lnRR_wue", "mean"),
+    ).dropna(subset=["ln_et_ratio", "lnRR_yield"]).copy()
+    ye_fam["et_ratio"] = np.exp(ye_fam["ln_et_ratio"])
+    ye_fam["yield_ratio"] = np.exp(ye_fam["lnRR_yield"])
+    ye_fam["wue_ratio"] = np.exp(ye_fam["lnRR_wue"])
+
+    n_ye = len(ye_fam)
+    n_ye_cn = int((ye_fam["country"] == "China").sum())
+    n_ye_noncn = n_ye - n_ye_cn
+    n_et_up = int((ye_fam["et_ratio"] >= 1.0).sum())
+    n_et_dn = n_ye - n_et_up
+    n_noncn_up = int(((ye_fam["country"] != "China") & (ye_fam["et_ratio"] >= 1.0)).sum())
+    n_wue_up = int((ye_fam["yield_ratio"] > ye_fam["et_ratio"]).sum())
+    med_et = float(ye_fam["et_ratio"].median())
+    med_y = float(ye_fam["yield_ratio"].median())
+
+    ax_e.grid(True, color="#EEF1F4", lw=0.45, zorder=0.4)
+    ax_e.set_xlim(0.78, 1.22)
+    ax_e.set_ylim(0.88, 1.68)
+    ax_e.fill_between([0.78, 1.00], 1.00, 1.68, facecolor="#EBF6F4", alpha=0.52, zorder=0.2)
+    ax_e.fill_between([1.00, 1.22], 1.00, 1.68, facecolor="#FCECE8", alpha=0.52, zorder=0.2)
+    ax_e.fill_between([0.78, 1.22], 0.88, 1.00, facecolor="#F7F8FA", alpha=0.70, zorder=0.2)
+
+    # Iso-WUE diagonals: ΔWUE = 0% (Y = ET) and +25% (Y = 1.25 * ET)
+    x_iso = np.linspace(0.78, 1.22, 100)
+    ax_e.plot(x_iso, x_iso, "--", color="#7F8C8D", lw=0.75, alpha=0.80, zorder=1.6)
+    ax_e.plot(x_iso, 1.25 * x_iso, ":", color="#95A5A6", lw=0.75, alpha=0.85, zorder=1.6)
+    ax_e.axvline(1.0, ls="--", color="#222222", lw=0.85, zorder=1.8)
+    ax_e.axhline(1.0, ls=":", color="#666666", lw=0.70, zorder=1.8)
+
+    ye_cn = ye_fam[ye_fam["country"] == "China"]
+    ye_nc = ye_fam[ye_fam["country"] != "China"]
+    ax_e.scatter(ye_cn["et_ratio"], ye_cn["yield_ratio"], color=COL_TEAL, marker="o", s=22, alpha=0.84, edgecolors="white", linewidths=0.40, zorder=3.5, label=f"China ({n_ye_cn})")
+    ax_e.scatter(ye_nc["et_ratio"], ye_nc["yield_ratio"], color=COL_EX, marker="^", s=27, alpha=0.92, edgecolors="white", linewidths=0.42, zorder=4.0, label=f"Non-China ({n_ye_noncn})")
+
+    # Group median diamond with subtle IQR bars
+    et_q25, et_q75 = np.percentile(ye_fam["et_ratio"], [25, 75])
+    y_q25, y_q75 = np.percentile(ye_fam["yield_ratio"], [25, 75])
+    ax_e.plot([et_q25, et_q75], [med_y, med_y], "-", color="#1B2631", lw=1.15, zorder=4.8)
+    ax_e.plot([med_et, med_et], [y_q25, y_q75], "-", color="#1B2631", lw=1.15, zorder=4.8)
+    ax_e.scatter([med_et], [med_y], marker="D", s=34, facecolor="#1B2631", edgecolor="white", linewidths=0.60, zorder=5.2, label="Median (IQR)")
+
+    ax_e.text(0.793, 1.655, r"ET$\downarrow$ saving" + f"\n({n_et_dn}/{n_ye})", ha="left", va="top", fontsize=4.85, color=COL_TEAL, fontweight="bold")
+    ax_e.text(1.207, 1.655, r"ET$\uparrow$ rebound" + f"\n({n_et_up}/{n_ye}; {n_noncn_up}/{n_ye_noncn} non-CN)", ha="right", va="top", fontsize=4.85, color=COL_RISK, fontweight="bold")
+    ax_e.text(1.206, 1.488, "+25% WUE", ha="right", va="top", fontsize=4.55, color="#6C7A86", rotation=32)
+    ax_e.text(1.205, 1.195, r"$\Delta$WUE = 0%", ha="right", va="top", fontsize=4.55, color="#6C7A86", rotation=26)
+    ax_e.text(
+        1.000, 0.896,
+        f"All {n_ye}/{n_ye} yield↑ ({n_wue_up}/{n_ye} WUE↑) | Med.: +{(med_y-1)*100:.1f}% Y, +{(med_et-1)*100:.1f}% ET",
+        ha="center", va="bottom", fontsize=4.50, color="#222222", fontweight="bold",
+        bbox=dict(facecolor="#F7F8FA", edgecolor="none", pad=1.0, alpha=0.95), zorder=6.0,
+    )
+
+    ax_e.set_xticks([0.8, 0.9, 1.0, 1.1, 1.2])
+    ax_e.set_xticklabels(["0.8", "0.9", "1.0", "1.1", "1.2"], fontsize=5.35)
+    ax_e.set_yticks([1.0, 1.2, 1.4, 1.6])
+    ax_e.set_yticklabels(["1.0", "1.2", "1.4", "1.6"], fontsize=5.35)
+    ax_e.set_xlabel(r"Verified ET ratio ($\mathrm{ET}_{\mathrm{T}}/\mathrm{ET}_{\mathrm{C}}$)", fontsize=6.3, labelpad=2.4)
+    ax_e.xaxis.set_label_coords(0.50, -0.124)
+    ax_e.set_ylabel(r"Crop yield ratio ($\mathit{Y}_{\mathrm{T}}/\mathit{Y}_{\mathrm{C}}$)", fontsize=6.3, labelpad=1.8)
+    ax_e.legend(loc="lower left", bbox_to_anchor=(-0.03, 1.014), ncol=3, frameon=False, fontsize=4.60, columnspacing=0.45, handletextpad=0.16, borderaxespad=0.0)
+
+    # -------------------------------------------------------------------------
+    # Panel f: Clean Water-Use Ratio Rainclouds (Verified ET vs Supply IWUE)
+    # -------------------------------------------------------------------------
     r_ab = np.exp(audit_df[audit_df["category"].isin(["A_direct_reported_ET", "B_inferred_Y_over_WUE_ET"])].groupby("family_id")["ln_et_ratio"].mean().dropna())
     r_a = np.exp(audit_df[audit_df["category"] == "A_direct_reported_ET"].groupby("family_id")["ln_et_ratio"].mean().dropna())
     r_c = np.exp(audit_df[audit_df["category"] == "C_IWUE_irrigation_supply"].groupby("family_id")["ln_irr_ratio"].mean().dropna())
@@ -1492,68 +1701,71 @@ def build_fig3() -> None:
         (0, r"Supply IWUE" + "\n" + rf"($\mathit{{n}}$ = {len(r_c)})", f"Supply IWUE (n={len(r_c)})", r_c, aud_sum["C_IWUE_irrigation_supply_ratio"]["ratio_median"], aud_sum["C_IWUE_irrigation_supply_ratio"]["ratio_median_ci95"], "#7D8C9B", False),
     ]
 
-    ax_d.set_xscale("log")
-    ax_d.set_xlim(0.38, 2.38)
-    ax_d.set_ylim(-0.55, 2.74)
-    ax_d.fill_between([0.38, 1.00], 0.50, 2.74, facecolor="#EBF6F4", alpha=0.52, zorder=0.2)
-    ax_d.fill_between([1.00, 2.38], 0.50, 2.74, facecolor="#FCECE8", alpha=0.52, zorder=0.2)
-    ax_d.fill_between([0.38, 2.38], -0.55, 0.50, facecolor="#F4F5F7", alpha=0.75, zorder=0.2)
-    ax_d.axvline(1.0, ls="--", color="#222222", lw=0.95, zorder=1.5)
-    ax_d.axhline(0.5, ls="--", color="#AAAAAA", lw=0.65, zorder=1.0)
+    ax_f.set_xscale("log")
+    ax_f.set_xlim(0.38, 2.38)
+    ax_f.set_ylim(-0.55, 2.74)
+    ax_f.fill_between([0.38, 1.00], 0.50, 2.74, facecolor="#EBF6F4", alpha=0.52, zorder=0.2)
+    ax_f.fill_between([1.00, 2.38], 0.50, 2.74, facecolor="#FCECE8", alpha=0.52, zorder=0.2)
+    ax_f.fill_between([0.38, 2.38], -0.55, 0.50, facecolor="#F4F5F7", alpha=0.75, zorder=0.2)
+    ax_f.axvline(1.0, ls="--", color="#222222", lw=0.90, zorder=1.5)
+    ax_f.axhline(0.5, ls="--", color="#AAAAAA", lw=0.65, zorder=1.0)
 
     x_log_grid = np.linspace(math.log(0.40), math.log(1.80), 180)
-    x_e_grid = np.exp(x_log_grid)
+    x_f_grid = np.exp(x_log_grid)
     et_export_rows = []
     for yi, ylbl, clean_lbl, arr_r, med_v, ci_v, col_r, is_main in et_specs:
         d_r = gaussian_kde(np.log(arr_r))(x_log_grid)
         d_scaled = d_r / max(float(d_r.max()), 1e-8) * 0.34
-        ax_d.fill_between(x_e_grid, yi + 0.04, yi + 0.04 + d_scaled, facecolor=col_r, alpha=0.24, edgecolor=col_r, lw=0.80, zorder=2.2)
-        rng_e = np.random.default_rng(20261125 + yi)
-        y_jit = yi - 0.16 + rng_e.uniform(-0.07, 0.07, size=len(arr_r))
+        ax_f.fill_between(x_f_grid, yi + 0.04, yi + 0.04 + d_scaled, facecolor=col_r, alpha=0.24, edgecolor=col_r, lw=0.78, zorder=2.2)
+        rng_f = np.random.default_rng(20261125 + yi)
+        y_jit = yi - 0.16 + rng_f.uniform(-0.07, 0.07, size=len(arr_r))
         is_cn = np.array([fam_country.get(fam, "") == "China" for fam in arr_r.index])
         x_clipped = np.clip(arr_r.values, 0.40, 1.85)
         if is_cn.any():
-            ax_d.scatter(x_clipped[is_cn], y_jit[is_cn], color=col_r, s=12.5, alpha=0.72, edgecolors="white", linewidths=0.30, zorder=3.0)
+            ax_f.scatter(x_clipped[is_cn], y_jit[is_cn], color=col_r, s=11.5, alpha=0.72, edgecolors="white", linewidths=0.28, zorder=3.0)
         if (~is_cn).any():
-            ax_d.scatter(x_clipped[~is_cn], y_jit[~is_cn], color=COL_EX, marker="^", s=16.5, alpha=0.88, edgecolors="white", linewidths=0.32, zorder=3.4)
-        ax_d.plot([ci_v[0], ci_v[1]], [yi, yi], "-", color=col_r, lw=2.3, solid_capstyle="round", zorder=4.0)
-        ax_d.scatter([med_v], [yi], marker="D", s=24, facecolor=col_r, edgecolor="white", linewidths=0.55, zorder=5.0)
+            ax_f.scatter(x_clipped[~is_cn], y_jit[~is_cn], color=COL_EX, marker="^", s=15.5, alpha=0.88, edgecolors="white", linewidths=0.30, zorder=3.4)
+        ax_f.plot([ci_v[0], ci_v[1]], [yi, yi], "-", color=col_r, lw=2.2, solid_capstyle="round", zorder=4.0)
+        ax_f.scatter([med_v], [yi], marker="D", s=22, facecolor=col_r, edgecolor="white", linewidths=0.50, zorder=5.0)
         txt_r = f"{med_v:.3f} ({ci_v[0]:.2f}–{ci_v[1]:.2f})"
-        ax_d.text(1.13, yi + 0.14, txt_r, ha="left", va="center", fontsize=5.1, color=col_r, fontweight="bold" if is_main else "normal", zorder=5.5)
+        ax_f.text(1.13, yi + 0.14, txt_r, ha="left", va="center", fontsize=4.95, color=col_r, fontweight="bold" if is_main else "normal", zorder=5.5)
         for family, rv in arr_r.items():
             et_export_rows.append({"family_id": family, "country": fam_country.get(family, "Unknown"), "stratum": clean_lbl, "ratio": float(rv), "median": float(med_v), "ci95_low": float(ci_v[0]), "ci95_high": float(ci_v[1])})
 
-    d_handles = [
-        mpl.lines.Line2D([0], [0], color="none", marker="o", markersize=3.8, markerfacecolor=COL_TEAL, markeredgecolor="white", markeredgewidth=0.3, label="China"),
-        mpl.lines.Line2D([0], [0], color="none", marker="^", markersize=4.2, markerfacecolor=COL_EX, markeredgecolor="white", markeredgewidth=0.3, label="Non-China"),
+    f_handles = [
+        mpl.lines.Line2D([0], [0], color="none", marker="o", markersize=3.6, markerfacecolor=COL_TEAL, markeredgecolor="white", markeredgewidth=0.28, label="China"),
+        mpl.lines.Line2D([0], [0], color="none", marker="^", markersize=4.0, markerfacecolor=COL_EX, markeredgecolor="white", markeredgewidth=0.28, label="Non-China (ET: 1.054)"),
     ]
-    ax_d.legend(handles=d_handles, loc="lower left", bbox_to_anchor=(-0.03, 1.015), ncol=2, frameon=False, fontsize=4.85, columnspacing=0.65, handletextpad=0.18, borderaxespad=0.0)
-    ax_d.text(0.03, 0.96, r"$\leftarrow$ ET$\downarrow$ (saving)", transform=ax_d.transAxes, ha="left", va="top", fontsize=5.05, color=COL_TEAL, fontweight="bold")
-    ax_d.text(0.97, 0.96, r"ET$\uparrow$ (depletion) $\rightarrow$", transform=ax_d.transAxes, ha="right", va="top", fontsize=5.05, color=COL_RISK, fontweight="bold")
-    ax_d.text(0.40, 0.43, r"Supply ratio ($\mathit{I}_{\mathrm{T}}/\mathit{I}_{\mathrm{C}}$)", ha="left", va="top", fontsize=5.05, style="italic", color="#55606E")
-    ax_d.set_yticks([x[0] for x in et_specs])
-    ax_d.set_yticklabels([x[1] for x in et_specs], fontsize=5.35)
-    ax_d.set_xticks([0.5, 0.75, 1.0, 1.25, 1.5])
-    ax_d.set_xticklabels(["0.5", "0.75", "1.0", "1.25", "1.5"], fontsize=5.6)
-    ax_d.xaxis.set_minor_locator(mpl.ticker.NullLocator())
-    ax_d.set_xlabel("Water-use ratio (T / C)", fontsize=6.6, labelpad=2.2)
+    ax_f.legend(handles=f_handles, loc="lower left", bbox_to_anchor=(-0.04, 1.014), ncol=2, frameon=False, fontsize=4.65, columnspacing=0.45, handletextpad=0.16, borderaxespad=0.0)
+    ax_f.text(0.03, 0.96, r"$\leftarrow$ ET$\downarrow$ (saving)", transform=ax_f.transAxes, ha="left", va="top", fontsize=4.85, color=COL_TEAL, fontweight="bold")
+    ax_f.text(0.97, 0.96, r"ET$\uparrow$ (depletion) $\rightarrow$", transform=ax_f.transAxes, ha="right", va="top", fontsize=4.85, color=COL_RISK, fontweight="bold")
+    ax_f.text(0.40, 0.43, r"Supply ratio ($\mathit{I}_{\mathrm{T}}/\mathit{I}_{\mathrm{C}}$)", ha="left", va="top", fontsize=4.85, style="italic", color="#55606E")
+    ax_f.set_yticks([x[0] for x in et_specs])
+    ax_f.set_yticklabels([x[1] for x in et_specs], fontsize=5.15)
+    ax_f.set_xticks([0.5, 0.75, 1.0, 1.25, 1.5])
+    ax_f.set_xticklabels(["0.5", "0.75", "1.0", "1.25", "1.5"], fontsize=5.35)
+    ax_f.xaxis.set_minor_locator(mpl.ticker.NullLocator())
+    ax_f.set_xlabel("Water-use ratio (T / C)", fontsize=6.3, labelpad=2.4)
+    ax_f.xaxis.set_label_coords(0.50, -0.124)
     et_pts = pd.DataFrame(et_export_rows)
 
     forest = pd.DataFrame(f_rows)
-    for interval in ("ci95","pi95"):
-        forest[[interval+"_low",interval+"_high"]] = pd.DataFrame(forest[interval].tolist(),index=forest.index)
-    forest.drop(columns=["ci95","pi95"]).to_csv(SRC_DIR / "Fig3A_reml_forest.csv", index=False)
-    effects = pd.read_csv(grid_input("pillar2_armB_merged_current.csv"),low_memory=False)
-    physical = effects.metric_bucket.str.startswith("infiltration_rate_",na=False) | effects.metric_bucket.isin(
-        ["ks_saturated","bulk_density","wue_or_iwue","leaching_efficiency_or_fraction"])
-    effects.loc[physical].to_csv(SRC_DIR/"Fig3A_amendment_contrasts.csv",index=False)
-    salt_audit[["doi","contrast_index","treatment_label","control_label","mean_treatment","mean_control","unit",
-                "physical_category","soil_depth_cm","sampling_period"]].to_csv(SRC_DIR/"Fig3B_salt_observations.csv",index=False)
-    audit_df.drop(columns=["evidence_quote"],errors="ignore").to_csv(SRC_DIR/"Fig3D_denominator_records.csv",index=False)
-    pd.DataFrame(salt_rows).to_csv(SRC_DIR / "Fig3B_salt_transport.csv", index=False)
+    for interval in ("ci95", "pi95"):
+        forest[[interval + "_low", interval + "_high"]] = pd.DataFrame(forest[interval].tolist(), index=forest.index)
+    forest.drop(columns=["ci95", "pi95"]).to_csv(SRC_DIR / "Fig3A_reml_forest.csv", index=False)
+    effects = pd.read_csv(grid_input("pillar2_armB_merged_current.csv"), low_memory=False)
+    physical = effects.metric_bucket.str.startswith("infiltration_rate_", na=False) | effects.metric_bucket.isin(
+        ["ks_saturated", "bulk_density", "wue_or_iwue", "leaching_efficiency_or_fraction"])
+    effects.loc[physical].to_csv(SRC_DIR / "Fig3A_amendment_contrasts.csv", index=False)
     pd.DataFrame(clay_export).to_csv(SRC_DIR / "Fig3A_clay_moderation.csv", index=False)
+    pd.DataFrame(salt_rows).to_csv(SRC_DIR / "Fig3B_salt_transport.csv", index=False)
+    salt_audit[["doi", "contrast_index", "treatment_label", "control_label", "mean_treatment", "mean_control", "unit",
+                "physical_category", "soil_depth_cm", "sampling_period"]].to_csv(SRC_DIR / "Fig3B_salt_observations.csv", index=False)
     fp_d.to_csv(SRC_DIR / "Fig3C_dual_pathway_hyd_ec.csv", index=False)
-    et_pts.to_csv(SRC_DIR / "Fig3D_comeasured_yield_wue_et.csv", index=False)
+    ye_fam[["family_id", "country", "audit_category", "n_pairs", "et_ratio", "yield_ratio", "wue_ratio",
+            "ln_et_ratio", "lnRR_yield", "lnRR_wue"]].sort_values("et_ratio").to_csv(SRC_DIR / "Fig3D_yield_vs_et_decomposition.csv", index=False)
+    et_pts.to_csv(SRC_DIR / "Fig3E_comeasured_yield_wue_et.csv", index=False)
+    audit_df.drop(columns=["evidence_quote", "local_pdf_path"], errors="ignore").to_csv(SRC_DIR / "Fig3E_denominator_records.csv", index=False)
 
     save_pub_figure(fig, FIG_DIR / "Fig3_Hydraulic_Recovery_ArmB.pdf", FIG_DIR / "Fig3_Hydraulic_Recovery_ArmB.png", "Fig3")
 

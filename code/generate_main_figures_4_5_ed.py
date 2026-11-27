@@ -2211,16 +2211,27 @@ def build_ed_fig6() -> None:
         bars[-1].set_linewidth(0.65)
 
         for yi, v in zip(y, vals):
-            is_diff = abs(float(v) - base_v) > tol or yi == len(vals) - 1
-            ax.text(
-                float(v) + pad_v, yi,
-                _fmt_hu(float(v), 1) if idx_p < 2 else f"{int(v)}",
-                va="center", ha="left", fontsize=5.2,
-                fontweight="bold" if is_diff else "normal",
-                color="#111111" if is_diff else "#555555",
-                bbox={"boxstyle": "square,pad=0.05", "facecolor": "white", "edgecolor": "none", "alpha": 0.90},
-                zorder=6.0,
-            )
+            fv = float(v)
+            is_diff = abs(fv - base_v) > tol or yi == len(vals) - 1
+            if idx_p == 2 and 0.0 < base_v - fv <= 1.5:
+                ax.text(
+                    fv - 0.30, yi,
+                    f"{int(v)}",
+                    va="center", ha="right", fontsize=5.2,
+                    fontweight="bold", color="#FFFFFF",
+                    zorder=6.0,
+                )
+            else:
+                x_txt = max(fv, base_v) + pad_v if (idx_p < 2 and fv < base_v < fv + pad_v * 3.2) else fv + pad_v
+                ax.text(
+                    x_txt, yi,
+                    _fmt_hu(fv, 1) if idx_p < 2 else f"{int(v)}",
+                    va="center", ha="left", fontsize=5.2,
+                    fontweight="bold" if is_diff else "normal",
+                    color="#111111" if is_diff else "#555555",
+                    bbox={"boxstyle": "square,pad=0.05", "facecolor": "white", "edgecolor": "none", "alpha": 0.90},
+                    zorder=6.0,
+                )
         ax.set_yticks(y)
         ax.set_yticklabels(lbls if idx_p == 0 else [], fontsize=5.3)
         ax.set_xlim(0.0, max(vals) * 1.26)

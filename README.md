@@ -15,7 +15,7 @@ The field-harvest model estimates 90% of the fitted low-salinity plateau at 3.51
 | `data/analysis_input/` | Four Parquet files and a second, identical copy of the Arm B table. These contain the baseline grid, soil and aquifer covariates, baseline zoning and the SSP5-8.5 mid-century zoning grid. |
 | `data/basemap/` | Four Natural Earth public-domain vector layers in zipped shapefile format |
 | `tables/` | 22 machine-readable result and validation tables (CSV or JSON) |
-| `source_data/` | 69 panel CSVs and 13 Excel workbooks for Figures 1–5 and Extended Data Figures 1–8. Each workbook's Contents sheet maps worksheets to their source files. |
+| `source_data/` | 70 panel CSVs and 13 Excel workbooks for Figures 1–5 and Extended Data Figures 1–8. Each workbook's Contents sheet maps worksheets to their source files. |
 | `qa/` | The completed extraction checklist and summary, and the original manuscript-package quality report. Its package hashes describe that package at the time of inspection. |
 | `outputs/` | Created by the commands below. Contains regenerated tables, figures, panels, workbooks and optional blank recoding forms. |
 

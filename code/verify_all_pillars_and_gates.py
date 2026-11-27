@@ -230,8 +230,8 @@ def main() -> None:
         # A regenerated workbook uses regenerated panel CSVs where available.
         # The archived workbook always belongs to the archived source CSVs.
         book_counts.append(verify_workbook(regenerated if regenerated.is_file() else archived))
-    if sum(row["panel_tables"] for row in book_counts) != 69:
-        failures.append("Expected 69 workbook-to-CSV comparisons")
+    if sum(row["panel_tables"] for row in book_counts) != 70:
+        failures.append("Expected 70 workbook-to-CSV comparisons")
     report = {
         "panel_tables_checked": sum(row["panel_tables"] for row in book_counts),
         "workbook_data_cells_checked": sum(row["verified_data_cells"] for row in book_counts),
