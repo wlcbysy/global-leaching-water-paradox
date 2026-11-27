@@ -30,7 +30,7 @@
     "aoa_coverage_pct": 96.92
   },
   "abstract_words": 148,
-  "main_text_words": 3879,
+  "main_text_words": 3886,
   "reference_entries": 50,
   "source_data_workbooks": {
     "Source_Data_Fig1.xlsx": {
@@ -132,8 +132,8 @@
       "embedded_current_figures": 13,
       "image_width_mm": 179.5,
       "paragraphs_checked": 355,
-      "native_superscripts": 324,
-      "native_subscripts": 171
+      "native_superscripts": 327,
+      "native_subscripts": 173
     },
     "20261123_Supplementary_Information.docx": {
       "embedded_current_figures": 0,
@@ -144,11 +144,11 @@
     }
   },
   "package_sha256": {
-    "20261123_BrackishIrrigation_LeachingParadox.docx": "f34d5ea93216fcc7f90b3d7b54074781b06f0f3127bf4b52a9e0efe6cbd98e35",
-    "20261123_BrackishIrrigation_LeachingParadox.md": "05e1443248fe4ed34670835714fc3f0c1f565687878c543678443d977eb24eee",
-    "20261123_Supplementary_Information.docx": "243c2848cd32adc84489c0fa73d028a7125a6718f173663ea2ed06ab3b7c5e47",
-    "20261123_Supplementary_Information.md": "f334cc1d614e0a32189c3951976905c41fccde76be4d51d9207258657ce5101c",
-    "Cover_Letter_Nature_Water.md": "af5aab1be095beee68387fc63d8e0e2e7df9ac79eedfe0f214d5e36c4aef8ca4",
+    "20261123_BrackishIrrigation_LeachingParadox.docx": "15446816cbd662838421f6e94a935b77db60abca6fb622da01d058a0c54b00eb",
+    "20261123_BrackishIrrigation_LeachingParadox.md": "6bb62129dc8269225663b8f23b5622592e1899d1f537b2d59d2524e425ec01d7",
+    "20261123_Supplementary_Information.docx": "9b67800cad6d45c5cd9972b9e569686a9aee4b84aba8266642a1a9ffa7725785",
+    "20261123_Supplementary_Information.md": "401c8b20ffbf8deac3b7c0483bc548153e638d52bf97900f61b8715a666c3a8f",
+    "Cover_Letter_Nature_Water.md": "fa2492d4539d157939df67cfdd39b8b3ed3be822e7a3393d9703d3a3ca155883",
     "Figures/ED_Fig1_Conceptual_Framework_Three_Tier.pdf": "addfff9e11fa58cee7020987114d35286e6224d1ad3fad8b9bcd3cde9cb79866",
     "Figures/ED_Fig1_Conceptual_Framework_Three_Tier.png": "6417b1cd208698b8020b339208f6103431b510aeb8a855c940b9d5575833fa05",
     "Figures/ED_Fig2_Hydrological_Validation.pdf": "929a413bf8bb78e19dcb13bbf00a5fdca988de74ac58c305fa44ad9b6478a195",
@@ -266,15 +266,15 @@
       "main": {
         "pages": 41,
         "checked_title_pages": {
-          "Table 1. Measured budgets": 20,
+          "Table 1. Measured water–salt budgets": 20,
           "Extended Data Table 1. Global": 32,
           "Extended Data Table 2. Irrigation": 33,
           "Figure 2. Field harvest": 22,
           "Figure 3. Hydraulic": 23,
           "Figure 4. From": 24
         },
-        "sha256_pdf": "434598936134c536adaccb35a93413bee8765b3830d924f8a3958c18b68e55af",
-        "sha256_source_docx": "f34d5ea93216fcc7f90b3d7b54074781b06f0f3127bf4b52a9e0efe6cbd98e35",
+        "sha256_pdf": "44b639a8701985ceb0acab6f086c70befd472c300f814bf8d9c317edd0a67b41",
+        "sha256_source_docx": "15446816cbd662838421f6e94a935b77db60abca6fb622da01d058a0c54b00eb",
         "producer": "LibreOffice 26.2.3.2 (AARCH64)"
       },
       "supplementary": {
@@ -283,8 +283,8 @@
           "Supplementary Table 8. National": 19,
           "Supplementary Table 10. Capped": 22
         },
-        "sha256_pdf": "e648fc1f0c06df42f4fc90c37040f4caeda3d67d74b08e0af0c712c4a283b86c",
-        "sha256_source_docx": "243c2848cd32adc84489c0fa73d028a7125a6718f173663ea2ed06ab3b7c5e47",
+        "sha256_pdf": "d6511d8ff4cf0cb64c6070783d97fa68cada5642a496b313311b0e797ea40a6f",
+        "sha256_source_docx": "9b67800cad6d45c5cd9972b9e569686a9aee4b84aba8266642a1a9ffa7725785",
         "producer": "LibreOffice 26.2.3.2 (AARCH64)"
       }
     }

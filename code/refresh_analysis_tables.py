@@ -78,7 +78,7 @@ def refresh_tables():
                  ('Soil response by year and depth','467 (25)','—','—','Subsoil/topsoil slope ratio 1.26 in year 1 and 1.76 in year 3, interaction *P* = 0.551')])
     title = ('Extended Data Table 2. Irrigation-water thresholds retaining 90% and 80% of the fitted low-salinity response, and separate soil-salinity outcomes. '
              'Parentheses around thresholds give 95% family-bootstrap intervals. The piecewise model uses breakpoint *t* (dS m<sup>-1</sup>) and slope *b* (m dS<sup>-1</sup>). '
-             'Seasonal monitoring ratios are dimensionless. The matched comparison uses a two-sided family sign test. Supplementary Tables 3 and 4 give additional subsets and crop groups.')
+             'Seasonal monitoring ratios are dimensionless. The matched comparison uses a two-sided family sign test. Additional subsets and crop groups are reported in Supplementary Tables 3 and 4.')
     blocks = [title + "\n\n" + table(["Outcome and stratum", "Records (families)",
               "90% response EC<sub>w</sub> ("+UNIT+")", "80% response EC<sub>w</sub> ("+UNIT+")", "Other outcome or model parameter"], rows)]
     blocks.append("Additional Maas–Hoffman subsets\n\n"+table(["Stratum","Model","Records (families)","90% response","80% response","Interval"], detailed_rows))
