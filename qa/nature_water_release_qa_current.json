@@ -29,8 +29,8 @@
     "aoa_outside_cells": 169,
     "aoa_coverage_pct": 96.92
   },
-  "abstract_words": 146,
-  "main_text_words": 3869,
+  "abstract_words": 148,
+  "main_text_words": 3879,
   "reference_entries": 50,
   "source_data_workbooks": {
     "Source_Data_Fig1.xlsx": {
@@ -114,16 +114,16 @@
   },
   "figure_width_mm": {
     "Fig1_Leaching_Paradox_Salt_Debt": 179.8,
-    "Fig2_ECw_Thresholds_ArmA": 179.19,
-    "Fig3_Hydraulic_Recovery_ArmB": 178.11,
+    "Fig2_ECw_Thresholds_ArmA": 179.34,
+    "Fig3_Hydraulic_Recovery_ArmB": 177.93,
     "Fig4_Water_Salt_Accounting_Zones": 178.56,
     "Fig5_Limits_Salt_Future": 179.8,
     "ED_Fig1_Conceptual_Framework_Three_Tier": 179.8,
-    "ED_Fig2_Hydrological_Validation": 178.49,
+    "ED_Fig2_Hydrological_Validation": 177.57,
     "ED_Fig3_PRISMA_Funnel_Bias": 177.04,
     "ED_Fig4_Empirical_Sites_AOA": 177.57,
     "ED_Fig5_ArmA_Sensitivity": 177.79,
-    "ED_Fig6_ArmB_Robustness_WaterRegime": 178.64,
+    "ED_Fig6_ArmB_Robustness_WaterRegime": 178.79,
     "ED_Fig7_Pillar3_Sensitivity_Tornado": 177.21,
     "ED_Fig8_Observed_Budgets_Soil_Prescriptions": 177.21
   },
@@ -131,7 +131,7 @@
     "20261123_BrackishIrrigation_LeachingParadox.docx": {
       "embedded_current_figures": 13,
       "image_width_mm": 179.5,
-      "paragraphs_checked": 356,
+      "paragraphs_checked": 355,
       "native_superscripts": 324,
       "native_subscripts": 171
     },
@@ -139,43 +139,43 @@
       "embedded_current_figures": 0,
       "image_width_mm": 179.5,
       "paragraphs_checked": 1224,
-      "native_superscripts": 226,
-      "native_subscripts": 136
+      "native_superscripts": 204,
+      "native_subscripts": 138
     }
   },
   "package_sha256": {
-    "20261123_BrackishIrrigation_LeachingParadox.docx": "8a9c0cfc6634fc6388d5c18379d5c0f7ee78a7639df385107b68ff75a2c0bda7",
-    "20261123_BrackishIrrigation_LeachingParadox.md": "5a1adc69c2c4d70477b67799e043de61bbef97e51c4c4338d950ce800ca60210",
-    "20261123_Supplementary_Information.docx": "c93af616dab65b744bba65e4aa39ce1377ea27848833555a4efdcc74ced882fb",
-    "20261123_Supplementary_Information.md": "fd7bc94d6685bb954589bbeced6a39bea081b4201585d3e5c4a3adfbce8714fd",
+    "20261123_BrackishIrrigation_LeachingParadox.docx": "f34d5ea93216fcc7f90b3d7b54074781b06f0f3127bf4b52a9e0efe6cbd98e35",
+    "20261123_BrackishIrrigation_LeachingParadox.md": "05e1443248fe4ed34670835714fc3f0c1f565687878c543678443d977eb24eee",
+    "20261123_Supplementary_Information.docx": "243c2848cd32adc84489c0fa73d028a7125a6718f173663ea2ed06ab3b7c5e47",
+    "20261123_Supplementary_Information.md": "f334cc1d614e0a32189c3951976905c41fccde76be4d51d9207258657ce5101c",
     "Cover_Letter_Nature_Water.md": "af5aab1be095beee68387fc63d8e0e2e7df9ac79eedfe0f214d5e36c4aef8ca4",
-    "Figures/ED_Fig1_Conceptual_Framework_Three_Tier.pdf": "85630e33958a9ad6b7d2391348519d5593a0b665535c1188dc3dc9a4f812efa7",
-    "Figures/ED_Fig1_Conceptual_Framework_Three_Tier.png": "7987c624e359ae1f809285001ea0349ce03dd06975d87f3d8b902afa8e62ac8d",
-    "Figures/ED_Fig2_Hydrological_Validation.pdf": "e8d8dafc95bf0952924651480d0aa43fc9ec5c59d9120dc78ea28b8b8cc0db74",
-    "Figures/ED_Fig2_Hydrological_Validation.png": "9baa21f8605e7c4605c93759fb1df41b3e72680d864a13ae7a08174408ebb3a6",
-    "Figures/ED_Fig3_PRISMA_Funnel_Bias.pdf": "1796928f6aaaa21f1761266a628323c08641c4e5c32e86076ff16135577829d7",
-    "Figures/ED_Fig3_PRISMA_Funnel_Bias.png": "9ba46d9e8ebd6d56eb4988a7ceae80e438daf7d963b70de63b8aa83c2f56316a",
-    "Figures/ED_Fig4_Empirical_Sites_AOA.pdf": "0aafefcb105c490ec8d1fb680aa0acf6196acd586215af7d7d442eac3e6a69b7",
-    "Figures/ED_Fig4_Empirical_Sites_AOA.png": "a8d64096952f05f5503cabe0a256bbc17c4bfecdcb7eec56db902637a8233971",
-    "Figures/ED_Fig5_ArmA_Sensitivity.pdf": "1d50f639b8f36edd55c8ff7de7a7bf05d69f250450a26aab3962271a7766ca54",
-    "Figures/ED_Fig5_ArmA_Sensitivity.png": "393f3027e4ce6aa109a81fc731e100072c36edc9d9d75508d92b2fa722de21f9",
-    "Figures/ED_Fig6_ArmB_Robustness_WaterRegime.pdf": "717ed723bf07f40323684d7ab919d80ccccb5249029780d1deb8fa7baf7f35e4",
-    "Figures/ED_Fig6_ArmB_Robustness_WaterRegime.png": "656faeaf06b2cd8d276f27e852305933610c1680df0e9782ac2ede53d7ed0848",
-    "Figures/ED_Fig7_Pillar3_Sensitivity_Tornado.pdf": "a6db3b0d1b86914864436a12a1ab40290cde3ef7e2a12b1a2f6130713e925dde",
-    "Figures/ED_Fig7_Pillar3_Sensitivity_Tornado.png": "a3a2c4dbb4b70212308e5e0e46bbd085c083e69d495fc45dd4c849fc6760951a",
-    "Figures/ED_Fig8_Observed_Budgets_Soil_Prescriptions.pdf": "a6580456fffac842a0c439cbc06de9a12dc102107b12e3b432b919bb8b4794d1",
-    "Figures/ED_Fig8_Observed_Budgets_Soil_Prescriptions.png": "5572f5a08004692cced9cd1ae3806ad8564ff0b4d735f411f1c61b471c8120e2",
-    "Figures/Fig1_Leaching_Paradox_Salt_Debt.pdf": "52a62570c98eeeaf6a080be91708375db2468ff03fa4664094f054d024092cae",
-    "Figures/Fig1_Leaching_Paradox_Salt_Debt.png": "d30c0363cbb3ac7f71d40cb1321e8c530ac2b7d4cdff81ebf91cb698a6948ffa",
-    "Figures/Fig2_ECw_Thresholds_ArmA.pdf": "4cb7b5a821b4d7409b66b0cc96f917a72532c92f6ca8803bc79a0ce5ef8a5757",
-    "Figures/Fig2_ECw_Thresholds_ArmA.png": "459f23212b24afed52318e82724013c4209de3186edc58733a53a3cbca111b72",
-    "Figures/Fig3_Hydraulic_Recovery_ArmB.pdf": "7740b8c3941cd816384ac0447c1ded6d236c49f8e233ab428e62ac90ef356fb9",
-    "Figures/Fig3_Hydraulic_Recovery_ArmB.png": "6cd079893af27cdbd359d393f2f4a5c54520cf6c8adb9238ce4a5fa3e4c2bf66",
-    "Figures/Fig4_Water_Salt_Accounting_Zones.pdf": "e323c6272fbdbc49a3953da7ac3bb804e7c7efd23f36ad0587aa2b9114b19d33",
-    "Figures/Fig4_Water_Salt_Accounting_Zones.png": "f4a8cfd2060623837ec5ca26bb4a2d8e101ee1a1f557ad34f875b1d2f1df6614",
-    "Figures/Fig5_Limits_Salt_Future.pdf": "d215c3b59b3c946adb447617fe1cfb47b514066fb087763efa32765b0ff0e794",
-    "Figures/Fig5_Limits_Salt_Future.png": "850fcf88ce4973ff78188a01a977743496f6c63af8f843f73177dfeb79ecd3db",
-    "SUBMISSION_CHECKLIST.md": "ccb084d1b097a33a4582b5e9705cdcc7ecf3901d6ce58770dda00fd943a2bdc2",
+    "Figures/ED_Fig1_Conceptual_Framework_Three_Tier.pdf": "addfff9e11fa58cee7020987114d35286e6224d1ad3fad8b9bcd3cde9cb79866",
+    "Figures/ED_Fig1_Conceptual_Framework_Three_Tier.png": "6417b1cd208698b8020b339208f6103431b510aeb8a855c940b9d5575833fa05",
+    "Figures/ED_Fig2_Hydrological_Validation.pdf": "929a413bf8bb78e19dcb13bbf00a5fdca988de74ac58c305fa44ad9b6478a195",
+    "Figures/ED_Fig2_Hydrological_Validation.png": "8d262fd49c452405b0aedf97dadb3e64657729e6bf92fc3ffb4ef28d76e37882",
+    "Figures/ED_Fig3_PRISMA_Funnel_Bias.pdf": "23d47cf54c57c372c8bd16bb935240c049f24a1e62b4757e7e8ce9d2d35de8de",
+    "Figures/ED_Fig3_PRISMA_Funnel_Bias.png": "d293a283c60d8e7bd900cfbb112a66266121c1792690cd59acf3a3199607dea3",
+    "Figures/ED_Fig4_Empirical_Sites_AOA.pdf": "b82345dfecef0bf2db01f46f3b940d537f278983cae1d564839d646b49a62a0e",
+    "Figures/ED_Fig4_Empirical_Sites_AOA.png": "3b33aa56342eefe4d5774991de800ef3d4bf9e8d0b896ac0b3f98c6db48f2e31",
+    "Figures/ED_Fig5_ArmA_Sensitivity.pdf": "750ffe3ef7618dbab497d6ecc290cd84b4f5778699059803c8312381783ca27f",
+    "Figures/ED_Fig5_ArmA_Sensitivity.png": "8fa2fdf553fdb623ba80d694e49e10b1bc30ead7a1bf2f071fbb1897b98f7c1d",
+    "Figures/ED_Fig6_ArmB_Robustness_WaterRegime.pdf": "7f4e9fd5db3223c8b8a6bc0bfc10ccb8faeca61501c782bd151c43cc9a2b0c04",
+    "Figures/ED_Fig6_ArmB_Robustness_WaterRegime.png": "b31516307c536ca4b0ea5ac952cce29a426f1173c2200a5089fd0d1830ec274b",
+    "Figures/ED_Fig7_Pillar3_Sensitivity_Tornado.pdf": "7c08eedde8d46cc5379347ddd697922be5dc88ef0244a0c4ff3a1ae9e6ef364c",
+    "Figures/ED_Fig7_Pillar3_Sensitivity_Tornado.png": "216ccf31067a6aa7719952a49d5c3691165331969cab24d560d4e03009d8be03",
+    "Figures/ED_Fig8_Observed_Budgets_Soil_Prescriptions.pdf": "7b08fab0d8893d24533f62c83c0257218a2e89723cb35a6f6ac3e63eaf9acc4f",
+    "Figures/ED_Fig8_Observed_Budgets_Soil_Prescriptions.png": "b3bbc4f5342c0fd26c73843a349852126d188be2456b0c31de90da084d34d86f",
+    "Figures/Fig1_Leaching_Paradox_Salt_Debt.pdf": "05db2a2f154b90e3d957667d1cc9c1f1450cac6162a01493fa27d5329d1e5043",
+    "Figures/Fig1_Leaching_Paradox_Salt_Debt.png": "4cb5acc37fdcbf285fee16ce03a874e2376ebfbc4bf7a3c2b8a5f55f72779444",
+    "Figures/Fig2_ECw_Thresholds_ArmA.pdf": "98c1f84b057bc1fa89bf1cfdbc681e1041fd2ab293b418fb4019fed85b75894e",
+    "Figures/Fig2_ECw_Thresholds_ArmA.png": "538d460828ba0634f287434da81a018cd4fed466f67b7c572aa0d3c73c553900",
+    "Figures/Fig3_Hydraulic_Recovery_ArmB.pdf": "f122bfa5ca565ae96ddc5e99f71631b3d71f43fa242326eb62b32d84c608d5a3",
+    "Figures/Fig3_Hydraulic_Recovery_ArmB.png": "b51783ec09d54d601cbf47533f16eea615d036761ea441be4350aa58aa99a833",
+    "Figures/Fig4_Water_Salt_Accounting_Zones.pdf": "9bbde478846a86b961dd5e3b5606fcd23ced2fec2676ed0e1788ff19ea24993c",
+    "Figures/Fig4_Water_Salt_Accounting_Zones.png": "2e6a3a825cba15a206b3b7bab64425ae6226fa3d08eae0dc99745fb930f9d2f1",
+    "Figures/Fig5_Limits_Salt_Future.pdf": "8d1935596c5a8d6ca0d3b6baa00438b6ee8d499e631a86a5b9fcae8311960ebc",
+    "Figures/Fig5_Limits_Salt_Future.png": "5aebf1c4ce4c77294f2aff0b09a307f41ff1dacb2c60fcec2bc445557ff0f1a9",
+    "SUBMISSION_CHECKLIST.md": "a08140565087f6ea2f9c7db7185793ef7b68f3ff3f9871cc27ebb965cb9b0102",
     "Source_Data/ED_Fig1_accounting.csv": "c020b139c07af37ac66c6491b320074e127f8911ea3b038033229a3e37d2e600",
     "Source_Data/ED_Fig2A_vleach_ecw_curve.csv": "feca0c361c9e992aa218dad928b2ad61f4fa4d4aaf34694a963437491f59f178",
     "Source_Data/ED_Fig2B_salt_area_defs.csv": "cb391b9a126e2c7b30696df0334fe8c22ac584d00a0675e95f681154fe84b7a9",
@@ -260,5 +260,33 @@
     "Source_Data/Source_Data_Fig4.xlsx": "dc5a3c116c9f72c12a59d9118e5bffb17bbfd3fa14215a390e244c8acf79d094",
     "Source_Data/Source_Data_Fig5.xlsx": "9ae1165becf357df743fbbdcdd80c9c8dc5dd7c1f9323e725c04381de81c483d"
   },
-  "submission_status": "NOT_SUBMITTED"
+  "submission_status": "NOT_SUBMITTED",
+  "rendered_layout": {
+    "LibreOffice": {
+      "main": {
+        "pages": 41,
+        "checked_title_pages": {
+          "Table 1. Measured budgets": 20,
+          "Extended Data Table 1. Global": 32,
+          "Extended Data Table 2. Irrigation": 33,
+          "Figure 2. Field harvest": 22,
+          "Figure 3. Hydraulic": 23,
+          "Figure 4. From": 24
+        },
+        "sha256_pdf": "434598936134c536adaccb35a93413bee8765b3830d924f8a3958c18b68e55af",
+        "sha256_source_docx": "f34d5ea93216fcc7f90b3d7b54074781b06f0f3127bf4b52a9e0efe6cbd98e35",
+        "producer": "LibreOffice 26.2.3.2 (AARCH64)"
+      },
+      "supplementary": {
+        "pages": 24,
+        "checked_title_pages": {
+          "Supplementary Table 8. National": 19,
+          "Supplementary Table 10. Capped": 22
+        },
+        "sha256_pdf": "e648fc1f0c06df42f4fc90c37040f4caeda3d67d74b08e0af0c712c4a283b86c",
+        "sha256_source_docx": "243c2848cd32adc84489c0fa73d028a7125a6718f173663ea2ed06ab3b7c5e47",
+        "producer": "LibreOffice 26.2.3.2 (AARCH64)"
+      }
+    }
+  }
 }
